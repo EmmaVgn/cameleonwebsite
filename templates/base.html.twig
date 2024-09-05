@@ -6,7 +6,7 @@
 			{% block title %}Cameleon website
 			{% endblock %}
 		</title>
-		<link rel="icon" type="image/png" href="/img/mstile-144x144.png">
+		<link rel="icon" type="image/png" href="img/favicon-32x32.png">
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 			<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,8 +24,9 @@
 	</head>
 	<body>
 		<header>
-			{% if app.request.attributes.get('_route') != 'homepage' %}
-				{% include "shared/_navbar.html.twig" %}
+			{% set isHomepage = app.request.attributes.get('_route') == 'homepage' %}
+			{% if not isHomepage %}
+				{% include "shared/_navbar.html.twig" with {'navbarClass': 'navbar-background'} %}
 			{% endif %}
 		</header>
 

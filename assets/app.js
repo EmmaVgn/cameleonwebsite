@@ -11,12 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Scroll Y:', window.scrollY); 
         if (window.scrollY > 50) {
             if (!navbar.classList.contains('scrolled')) {
-                console.log('Adding "scrolled" class'); 
                 navbar.classList.add('scrolled');
             }
         } else {
             if (navbar.classList.contains('scrolled')) {
-                console.log('Removing "scrolled" class'); 
                 navbar.classList.remove('scrolled');
             }
         }
@@ -33,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollIcon = document.querySelector('.scroll-down-icon');
 
     scrollIcon.addEventListener('click', function(event) {
-        console.log('Icône de défilement cliquée !');
 
         event.preventDefault(); 
 
@@ -44,3 +41,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+

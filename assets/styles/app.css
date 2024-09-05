@@ -13,7 +13,6 @@ body {
   height: 100%;
   text-decoration: none;
   list-style: none;
-  /* background-color: #032b35f4; */
 }
 
 a {
@@ -42,6 +41,20 @@ h4 {
   z-index: 1;
   width: 100%;
   color: white;
+}
+
+.navbar-background {
+  background-color: #032b35f4;
+  border-radius: 10px;
+}
+
+.navbar-background .navbar-brand,
+.navbar-background .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-background .navbar-nav .nav-link:hover {
+  color: rgba(151, 19, 19, 0.8);
 }
 
 .navbar.scrolled {
@@ -78,18 +91,36 @@ h4 {
 /*--------------------------------------------------------------
 # Homepage 
 --------------------------------------------------------------*/
+.custom-navbar .navbar {
+  margin: 0; /* Retire les marges de la navbar interne */
+}
+
+.custom-navbar {
+  position: fixed; /* Fixe la navbar en haut */
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  z-index: 1;
+  width: 100%;
+  color: white;
+  padding: 10px 20px; /* Ajuste le padding selon tes besoins */
+}
+
 .hero-section {
-  background-image: url("/img/ai-generated-8540914_1280.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 90vh;
+  background-color: #032b35f4;
+  color: white;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-
   align-items: center;
-  color: white;
-  overflow: hidden;
-  justify-content: flex-start;
+  justify-content: center;
+  padding-top: -200px;
+  position: relative;
 }
 
 .typing-effect {
@@ -99,6 +130,7 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 2;
 }
 
 .line {
@@ -106,7 +138,7 @@ h4 {
   font-family: "Raleway Dots", sans-serif;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid white; /* Curseur clignotant */
+  border-right: 2px solid white;
   width: 0;
   animation: typing 3s steps(30, end) forwards,
     blink-caret 0.75s step-end infinite;
@@ -142,20 +174,55 @@ h4 {
   }
 }
 
+/* Tree container */
+#tree-container {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30%;
+  height: auto;
+}
+
+#tree-container svg {
+  width: 100%;
+  height: auto;
+}
+
+#tree-container svg path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke: #000;
+  fill: none;
+  animation: draw 8s linear infinite;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll down icon
+--------------------------------------------------------------*/
 .scroll-down-icon {
   position: absolute;
   text-align: center;
-  margin-top: 850px;
-  font-size: 2rem; /* Taille de l'icône */
-  color: white; /* Couleur de l'icône */
-  background-color: rgba(0, 0, 0, 0.5); /* Fond légèrement opaque */
+  margin-top: 900px;
+  font-size: 2rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   padding: 10px;
   transition: background-color 0.3s;
 }
 
 .scroll-down-icon:hover {
-  background-color: rgba(0, 0, 0, 0.8); /* Couleur de fond au survol */
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .scroll-down-icon i {

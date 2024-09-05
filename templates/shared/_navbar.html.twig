@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg ">
+<nav class="navbar navbar-expand-lg {% if not isHomepage %}navbar-background{% endif %}">
 	<div class="container-fluid">
 		<img src="/img/giphy-3--unscreen.gif" style="width: 3%">
 		<a class="navbar-brand" href="{{ path('homepage') }}">Mon Site</a>
@@ -21,7 +21,6 @@
 					<a class="nav-link" href="">Contact</a>
 				</li>
 			</ul>
-
 		</div>
 	</div>
 </nav>
