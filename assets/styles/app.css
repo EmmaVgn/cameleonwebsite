@@ -29,7 +29,6 @@ h4 {
 /*--------------------------------------------------------------
 # Navbar 
 --------------------------------------------------------------*/
-
 .navbar {
   margin-top: 35px;
   margin-bottom: 35px;
@@ -92,7 +91,7 @@ h4 {
 # Homepage 
 --------------------------------------------------------------*/
 .custom-navbar .navbar {
-  margin: 0; /* Retire les marges de la navbar interne */
+  margin: 0;
 }
 
 .custom-navbar {
@@ -124,13 +123,11 @@ h4 {
 }
 
 .typing-effect {
-  position: relative;
-  margin-top: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 2;
 }
 
 .line {
@@ -177,10 +174,10 @@ h4 {
 /* Tree container */
 #tree-container {
   position: absolute;
-  left: 0;
-  top: 50%;
+  left: 100px;
+  top: 55%;
   transform: translateY(-50%);
-  width: 30%;
+  width: 25%;
   height: auto;
 }
 
@@ -192,9 +189,9 @@ h4 {
 #tree-container svg path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  stroke: #000;
-  fill: none;
-  animation: draw 8s linear infinite;
+  stroke: #ffffff;
+  stroke-width: 2;
+  animation: draw 5s linear infinite;
 }
 
 @keyframes draw {
@@ -206,6 +203,43 @@ h4 {
   }
 }
 
+/* Chamelon animate */
+#chameleon-container {
+  position: absolute;
+  right: 0px;
+  top: 75%;
+  transform: translateY(-50%);
+  width: 25%;
+  height: auto;
+}
+
+#chameleon-container svg {
+  width: 60%;
+  height: auto;
+}
+
+#chameleon-container svg path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke: #ffffff;
+  stroke-width: 2;
+  animation: draw 5s linear infinite;
+}
+
+@keyframes animateChameleon {
+  0% {
+    opacity: 0;
+    transform: scale(1) translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translateX(0);
+  }
+}
 /*--------------------------------------------------------------
 # Scroll down icon
 --------------------------------------------------------------*/
@@ -288,5 +322,11 @@ h4 {
 
   #custom-jumbotron {
     padding: 1rem;
+  }
+}
+
+@media (max-width: 1084px) {
+  #tree-container {
+    display: none;
   }
 }
