@@ -13,6 +13,7 @@ body {
   height: 100%;
   text-decoration: none;
   list-style: none;
+  background-color: #fff;
 }
 
 a {
@@ -206,7 +207,7 @@ h4 {
 /* Chamelon animate */
 #chameleon-container {
   position: absolute;
-  right: 0px;
+  right: 2px;
   top: 75%;
   transform: translateY(-50%);
   width: 25%;
