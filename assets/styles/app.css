@@ -54,22 +54,17 @@ h4 {
 }
 
 .navbar-background .navbar-nav .nav-link:hover {
-  color: rgba(151, 19, 19, 0.8);
+  color: rgba(139, 34, 34, 0.8);
 }
 
 .navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgba(3, 43, 53, 0.7);
+  box-shadow: 0 4px 8px rgba(3, 43, 53, 0.2);
 }
 
 .navbar .navbar-brand,
 .navbar .navbar-nav .nav-link {
   color: white;
-}
-
-.navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navbar.scrolled .navbar-brand,
@@ -78,7 +73,29 @@ h4 {
 }
 
 .navbar .navbar-nav .nav-link:hover {
-  color: rgba(151, 19, 19, 0.8);
+  color: rgba(3, 43, 53, 0.8);
+}
+
+.navbar .navbar-nav .nav-link {
+  font-size: 1.2rem; /* Augmente la taille du texte */
+  padding: 10px 20px; /* Ajoute plus d'espacement autour des liens */
+  letter-spacing: 0.05rem; /* Ajoute un léger espacement entre les lettres pour améliorer la lisibilité */
+}
+
+.navbar .navbar-brand {
+  font-size: 1.5rem; /* Augmente la taille du texte de la marque */
+  font-weight: bold; /* Renforce la police pour la marque */
+}
+
+/* Ajout du soulignement pour l'élément actif (current page) */
+.navbar .navbar-nav .nav-link.active {
+  text-decoration: underline; /* Applique un soulignement à l'élément actif */
+  text-underline-offset: 4px; /* Décale légèrement le soulignement pour améliorer l'apparence */
+  text-decoration-thickness: 2px; /* Épaissit le soulignement pour plus de visibilité */
+}
+/* Optionnel : ajustement de la hauteur des éléments de la navbar */
+.navbar-nav .nav-item {
+  margin-right: 15px; /* Ajoute de l'espacement entre chaque élément */
 }
 
 /*--------------------------------------------------------------
