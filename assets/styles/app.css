@@ -142,10 +142,12 @@ h4 {
 
 .typing-effect {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 60%;
+  top: 35%;
   transform: translate(-50%, -50%);
   text-align: center;
+  flex: 1;
+  margin-right: 20px;
 }
 
 .line {
@@ -155,6 +157,8 @@ h4 {
   overflow: hidden;
   border-right: 2px solid white;
   width: 0;
+  line-height: 3.5rem;
+  margin-bottom: 20px;
   animation: typing 3s steps(30, end) forwards,
     blink-caret 0.75s step-end infinite;
 }
@@ -168,6 +172,9 @@ h4 {
 }
 .line:nth-of-type(3) {
   animation-delay: 6s;
+}
+.line:nth-of-type(4) {
+  animation-delay: 9s;
 }
 
 @keyframes typing {
@@ -221,19 +228,20 @@ h4 {
   }
 }
 
-/* Chamelon animate */
+/* chameleon animate */
 #chameleon-container {
   position: absolute;
-  right: 2px;
-  top: 75%;
+  right: -10px;
+  top: 20%;
   transform: translateY(-50%);
-  width: 25%;
+  width: 15%;
   height: auto;
 }
 
 #chameleon-container svg {
-  width: 60%;
+  width: 100%;
   height: auto;
+  opacity: 0.3;
 }
 
 #chameleon-container svg path {
@@ -244,27 +252,13 @@ h4 {
   animation: draw 5s linear infinite;
 }
 
-@keyframes animateChameleon {
-  0% {
-    opacity: 0;
-    transform: scale(1) translateX(0);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.1) translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1) translateX(0);
-  }
-}
 /*--------------------------------------------------------------
 # Scroll down icon
 --------------------------------------------------------------*/
 .scroll-down-icon {
   position: absolute;
   text-align: center;
-  margin-top: 900px;
+  margin-top: 850px;
   font-size: 2rem;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
