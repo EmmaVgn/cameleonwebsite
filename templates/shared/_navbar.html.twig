@@ -8,17 +8,30 @@
 		<div class="collapse navbar-collapse">
 			<ul class="navbar-nav mx-auto text-dark">
 				<li class="nav-item">
-					<a class="nav-link active" href="{{ path('homepage') }}">Accueil<span class="visually-hidden">(current)</span>
+					<a class="nav-link {% if app.request.get('_route') == 'homepage' %}active{% endif %}" href="{{ path('homepage') }}">
+						Accueil
+						<span class="visually-hidden">(current)</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="">Mes services</a>
+					<a class="nav-link {% if app.request.get('_route') == 'services_index' %}active{% endif %}" href="{{ path('services_index') }}">
+						Mes services
+					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="">Qui suis-je</a>
+					<a class="nav-link {% if app.request.get('_route') == 'about_index' %}active{% endif %}" href="{{ path('about_index') }}">
+						Qui suis-je
+					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="">Contact</a>
+					<a class="nav-link {% if app.request.get('_route') == 'contact_index' %}active{% endif %}" href="{{ path('contact_index') }}">
+						Contact
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link {% if app.request.get('_route') == 'blog_index' %}active{% endif %}" href="{{ path('blog_index') }}">
+						Blog
+					</a>
 				</li>
 			</ul>
 		</div>
