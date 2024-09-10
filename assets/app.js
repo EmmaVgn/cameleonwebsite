@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         event.preventDefault(); 
 
-        const target = document.querySelector('#custom-jumbotron');
+        const target = document.querySelector('#iam');
  
         if (target) {
             target.scrollIntoView({ behavior: 'smooth' });

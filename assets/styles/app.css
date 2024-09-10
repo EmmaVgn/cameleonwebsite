@@ -297,6 +297,25 @@ h4 {
 }
 
 /*--------------------------------------------------------------
+# ABOUT
+--------------------------------------------------------------*/
+/* IAM */
+
+.iam-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.iam-image {
+  width: 300px;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid #032b35f4;
+  position: relative;
+  left: 60%;
+}
+
+/*--------------------------------------------------------------
 # Responsive
 --------------------------------------------------------------*/
 @media (max-width: 768px) {
@@ -339,6 +358,9 @@ h4 {
 
 @media (max-width: 1084px) {
   #tree-container {
+    display: none;
+  }
+  #Chameleon-container {
     display: none;
   }
 }
