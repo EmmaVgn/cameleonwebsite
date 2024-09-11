@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         event.preventDefault(); 
 
-        const target = document.querySelector('#iam');
+        const target = document.querySelector('#project');
  
         if (target) {
             target.scrollIntoView({ behavior: 'smooth' });

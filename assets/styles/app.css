@@ -77,25 +77,24 @@ h4 {
 }
 
 .navbar .navbar-nav .nav-link {
-  font-size: 1.2rem; /* Augmente la taille du texte */
-  padding: 10px 20px; /* Ajoute plus d'espacement autour des liens */
-  letter-spacing: 0.05rem; /* Ajoute un léger espacement entre les lettres pour améliorer la lisibilité */
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  letter-spacing: 0.05rem;
 }
 
 .navbar .navbar-brand {
-  font-size: 1.5rem; /* Augmente la taille du texte de la marque */
-  font-weight: bold; /* Renforce la police pour la marque */
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-/* Ajout du soulignement pour l'élément actif (current page) */
 .navbar .navbar-nav .nav-link.active {
-  text-decoration: underline; /* Applique un soulignement à l'élément actif */
-  text-underline-offset: 4px; /* Décale légèrement le soulignement pour améliorer l'apparence */
-  text-decoration-thickness: 2px; /* Épaissit le soulignement pour plus de visibilité */
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
 }
-/* Optionnel : ajustement de la hauteur des éléments de la navbar */
+
 .navbar-nav .nav-item {
-  margin-right: 15px; /* Ajoute de l'espacement entre chaque élément */
+  margin-right: 15px;
 }
 
 /*--------------------------------------------------------------
@@ -113,7 +112,7 @@ h4 {
 }
 
 .custom-navbar {
-  position: fixed; /* Fixe la navbar en haut */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -125,7 +124,7 @@ h4 {
   z-index: 1;
   width: 100%;
   color: white;
-  padding: 10px 20px; /* Ajuste le padding selon tes besoins */
+  padding: 10px 20px;
 }
 
 .hero-section {
@@ -252,6 +251,87 @@ h4 {
   animation: draw 5s linear infinite;
 }
 
+/* Project */
+.project-container {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.project-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 3rem;
+}
+
+/*Objective */
+.container-objective {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/*Listing */
+/* Container for the entire listing */
+.listing-container {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  padding: 20px;
+}
+
+/* Content area */
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Computer image styling */
+.computer-image img {
+  width: 100%; /* Adjust width as needed */
+  max-width: 500px; /* Adjust maximum width as needed */
+  height: auto;
+}
+
+/* Text content area */
+.text-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Content boxes styling */
+.content-box {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 300px;
+  max-width: 80%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.top-left {
+  top: 10%;
+  left: -65%;
+}
+
+.top-right {
+  top: 10%;
+  right: -64%;
+}
+
+.bottom-right {
+  bottom: 10%;
+  right: -64%;
+}
+
 /*--------------------------------------------------------------
 # Scroll down icon
 --------------------------------------------------------------*/
@@ -302,8 +382,9 @@ h4 {
 /* IAM */
 
 .iam-container {
-  margin-top: 10px;
+  margin-top: 40px;
   margin-bottom: 10px;
+  position: relative;
 }
 
 .iam-image {
@@ -312,8 +393,13 @@ h4 {
   border-radius: 50%;
   border: 5px solid #032b35f4;
   position: relative;
-  left: 60%;
+  left: 50%;
+  transform: translateX(-50%);
 }
+
+/*--------------------------------------------------------------
+# SERVICES
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Responsive

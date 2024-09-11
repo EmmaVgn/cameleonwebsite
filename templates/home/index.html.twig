@@ -11,21 +11,25 @@
 		{% include "home/tree.html.twig" %}
 		<div class="effect-container">
 			{% include "home/typing.html.twig" %}
-			{% include "home/chameleon.html.twig" %}
+
 		</div>
-<<<<<<< HEAD
-		<a href="#iam" class=" scroll-down-icon">
-=======
-		<a href=" #custom-jumbotron" class=" scroll-down-icon">
->>>>>>> 4db7d472c16756047c0100649998547115b5cd0a
+		<a href="#project" class=" scroll-down-icon">
 			<i class="fa-solid fa-chevron-down"></i>
 		</a>
 	</div>
-
-	<div id="iam">
-		{% include "about/iam.html.twig" %}
+	<div class="container mt-9">
+		<div id="project" class="project-container">
+			<h2>
+				Vous avez un projet ?
+			</h2>
+			<p>
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic ut at facere consequatur aliquam officia minus labore nam tempora corrupti minima odio, accusantium quas culpa incidunt ipsam facilis architecto itaque?
+																																																								"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+			</p>
+		</div>
 	</div>
-	{% include "services/objective.html.twig" %}
 
-
+	<div class="container-services">
+		{% include "services/listing.html.twig" %}
+	</div>
 {% endblock %}
