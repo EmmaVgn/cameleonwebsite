@@ -128,14 +128,15 @@ h4 {
 }
 
 .hero-section {
-  background-color: #032b35f4;
+  background: linear-gradient(135deg, #032b35, #1b4f5f, #064663);
+  background-size: 200% 200%;
+  animation: backgroundAnimation 10s ease infinite;
   color: white;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: -200px;
   position: relative;
 }
 
@@ -151,6 +152,7 @@ h4 {
 
 .line {
   font-size: 2.5rem;
+  position: relative;
   font-family: "Raleway Dots", sans-serif;
   white-space: nowrap;
   overflow: hidden;
@@ -176,6 +178,18 @@ h4 {
   animation-delay: 9s;
 }
 
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @keyframes typing {
   from {
     width: 0;
@@ -185,14 +199,12 @@ h4 {
   }
 }
 
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: white;
-  }
+.tagline {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #f5f5f5;
+  text-align: center;
+  font-style: italic;
 }
 
 /* Tree container */
@@ -227,142 +239,7 @@ h4 {
   }
 }
 
-/* chameleon animate */
-#chameleon-container {
-  position: absolute;
-  right: -10px;
-  top: 20%;
-  transform: translateY(-50%);
-  width: 15%;
-  height: auto;
-}
-
-#chameleon-container svg {
-  width: 100%;
-  height: auto;
-  opacity: 0.3;
-}
-
-#chameleon-container svg path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  stroke: #ffffff;
-  stroke-width: 2;
-  animation: draw 5s linear infinite;
-}
-
-/* Project */
-.project-container {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.project-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 3rem;
-}
-
-/*Objective */
-.container-objective {
-  margin-top: 60px;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-/*Listing */
-.listing-container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  margin-top: 80px;
-}
-
-.content {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.computer-image img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-}
-
-.text-content {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.content-box {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid #ccc;
-  padding: 20px;
-  width: 300px;
-  max-width: 80%;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.top-left {
-  top: -40%;
-  left: -45%;
-}
-
-.top-right {
-  top: -40%;
-  right: -20%;
-}
-
-.middle-right {
-  top: 10%;
-  right: -60%;
-}
-
-.bottom-right {
-  bottom: 10%;
-  right: -64%;
-}
-
-.bottom-left {
-  bottom: 10%;
-  left: -64%;
-}
-
-.content-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-}
-
-.content-link {
-  text-decoration: none;
-  color: black;
-}
-
-.content-link:hover {
-  color: black;
-}
-
-.container-services h2 {
-  text-align: center;
-  margin-bottom: 8%;
-  margin-top: 3%;
-  font-size: 3rem;
-}
-
-/*--------------------------------------------------------------
-# Scroll down icon
---------------------------------------------------------------*/
+/*Scroll down icon*/
 .scroll-down-icon {
   position: absolute;
   text-align: center;
@@ -399,9 +276,105 @@ h4 {
   transform: translateY(5px);
 }
 
-#custom-jumbotron {
-  padding: 2rem;
-  background-color: #f8f9fa;
+/* Project */
+.project-container {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.project-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 3rem;
+}
+
+/*Listing */
+.listing-container {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.computer-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.text-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-box {
+  width: 20%;
+  height: auto;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.top-left {
+  top: 10%; /* Ajustez selon le besoin */
+  left: 20%; /* Ajustez selon le besoin */
+}
+
+.top-right {
+  top: 10%; /* Ajustez selon le besoin */
+  right: 20%; /* Ajustez selon le besoin */
+}
+
+.middle-right {
+  top: 40%; /* Ajustez selon le besoin */
+  right: 15%; /* Ajustez selon le besoin */
+}
+
+.bottom-right {
+  bottom: 10%; /* Ajustez selon le besoin */
+  right: 10%; /* Ajustez selon le besoin */
+}
+
+.bottom-left {
+  bottom: 10%;
+  left: 10%;
+}
+
+.content-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.content-link {
+  text-decoration: none;
+  color: black;
+}
+
+.content-link:hover {
+  color: black;
+}
+
+.container-services h2 {
+  text-align: center;
+  font-size: 3rem;
 }
 
 /*--------------------------------------------------------------
@@ -428,12 +401,107 @@ h4 {
 /*--------------------------------------------------------------
 # SERVICES
 --------------------------------------------------------------*/
-
+/*Objective */
+.container-objective {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  position: relative;
+}
 /*--------------------------------------------------------------
 # Responsive
 --------------------------------------------------------------*/
-@media (max-width: 768px) {
+/*HOMEPAGE TAILLE TABLETTES PAYASAGR*/
+@media (max-width: 1024px) {
+  .logo {
+    width: 8% !important;
+  }
   .line {
+    font-size: 2rem;
+    position: relative;
+    left: -25%;
+  }
+
+  #tree-container {
+    top: 65%;
+    left: 38%;
+  }
+
+  .scroll-down-icon {
+    font-size: 1.8rem;
+    padding: 10px;
+  }
+
+  .title-services {
+    font-size: 2rem;
+    margin-bottom: 28%;
+    margin-top: 3%;
+  }
+
+  .content-box {
+    width: 58%;
+    max-width: 100%;
+    margin-bottom: 100px;
+  }
+
+  .top-left {
+    top: -30%;
+    left: -45%;
+  }
+
+  .top-right {
+    top: -25%;
+    right: 10%;
+  }
+
+  .bottom-left {
+    bottom: -30%;
+    left: -34%;
+  }
+
+  .bottom-right {
+    bottom: -30%;
+    right: -45%;
+  }
+
+  .middle-right {
+    top: 10%;
+    right: -40%;
+  }
+}
+/*HOMEPAGE TAILLE TABLETTES PAYASAGR*/
+@media (max-width: 900px) {
+  .listing-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Utilisation complète de la largeur disponible */
+    margin-bottom: 20px;
+  }
+
+  .top-left,
+  .top-right,
+  .middle-right,
+  .bottom-right,
+  .bottom-left {
+    position: relative; /* Réinitialise les positions */
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin: 10px 0;
+  }
+}
+
+/*HOMEPAGE TAILLE TELEPHONE*/
+
+@media (max-width: 768px) {
+  .line h1 {
     font-size: 1.8rem;
   }
 
@@ -467,14 +535,5 @@ h4 {
 
   #custom-jumbotron {
     padding: 1rem;
-  }
-}
-
-@media (max-width: 1084px) {
-  #tree-container {
-    display: none;
-  }
-  #Chameleon-container {
-    display: none;
   }
 }
