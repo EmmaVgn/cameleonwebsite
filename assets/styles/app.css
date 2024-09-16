@@ -479,6 +479,107 @@ h4 {
   margin-bottom: 20px;
   position: relative;
 }
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact-page {
+  padding: 40px 0;
+}
+
+.contact-header {
+  margin-bottom: 40px;
+}
+
+.contact-header h2 {
+  font-size: 2rem;
+  color: #032b35;
+  transition: color 0.3s;
+}
+
+.contact-header h2:hover {
+  color: #025c6b;
+}
+
+.contact-header p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.contact-content .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-form-wrapper {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-form-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h3 {
+  color: #032b35;
+  margin-bottom: 20px;
+}
+
+.contact-form .form-control {
+  border-radius: 5px;
+}
+
+#contact-button {
+  background-color: #032b35;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#contact-button:hover {
+  background-color: #025c6b;
+  transform: scale(1.05);
+}
+
+.contact-info-wrapper {
+  background: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-wrapper h3,
+.contact-info-wrapper h4 {
+  color: #032b35;
+  margin-bottom: 10px;
+}
+
+.contact-info-wrapper p {
+  color: #555;
+  font-size: 1rem;
+}
+
+.contact-info-wrapper iframe {
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-content .row {
+    flex-direction: column;
+  }
+}
+
 /*--------------------------------------------------------------
 # Responsive
 --------------------------------------------------------------*/
@@ -607,5 +708,12 @@ h4 {
 
   #custom-jumbotron {
     padding: 1rem;
+  }
+}
+
+/*Contact*/
+@media (max-width: 768px) {
+  .contact-content .row {
+    flex-direction: column;
   }
 }

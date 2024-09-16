@@ -75,3 +75,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   });
   
+
+  // Numéro de siret
+  document.addEventListener('DOMContentLoaded', function() {
+    const companyNameField = document.querySelector('input[name="contact[companyName]"]');
+    const siretNumberField = document.querySelector('input[name="contact[siretNumber]"]');
+
+    function toggleSiretField() {
+        if (companyNameField.value.trim() !== '') {
+            siretNumberField.closest('.form-group').style.display = 'block';
+        } else {
+            siretNumberField.closest('.form-group').style.display = 'none';
+        }
+    }
+
+    companyNameField.addEventListener('input', toggleSiretField);
+
+    // Initial check
+    toggleSiretField();
+});

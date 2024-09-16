@@ -30,7 +30,10 @@
 			{% endif %}
 		</header>
 
-		<main role="main"> {% block body %}{% endblock %}
+		<main role="main">
+			{% block body %}
+				{% include "shared/_flash.html.twig" %}
+			{% endblock %}
 			{% include "shared/_footer.html.twig" %}
 		</main>
 	</body>
