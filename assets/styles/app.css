@@ -480,6 +480,32 @@ h4 {
   position: relative;
 }
 
+/*Picto*/
+.avt_container {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  width: 73%;
+  padding: 1.5rem 0;
+}
+
+.avt_title {
+  padding: 0 0, 4rem;
+  position: relative;
+  z-index: 3;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-top: 0, 5rem;
+}
+
+.avt_subtitle {
+  position: relative;
+  top: -0, 5rem;
+}
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -573,11 +599,13 @@ h4 {
   margin-top: 20px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contact-content .row {
-    flex-direction: column;
-  }
+.contact-final-message {
+  display: flex;
+  align-items: center;
+}
+
+.contact-final-message h4 {
+  margin-right: 250px;
 }
 
 /*--------------------------------------------------------------

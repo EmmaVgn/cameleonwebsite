@@ -16,7 +16,7 @@
 				class="row">
 				<!-- Formulaire de contact -->
 				<div class="col-md-6 contact-form-wrapper">
-					<h3>Envoyez-nous un message</h3>
+					<h3>Envoyez-moi un message</h3>
 					{{ form_start(form, {'attr': {'class': 'contact-form'}}) }}
 					{{ form_errors(form) }}
 					<div class="row">
@@ -51,44 +51,23 @@
                         {{ form_end(form) }}
                     </div>
 
-                    <!-- Coordonnées -->
                     <div class="col-md-6 contact-info-wrapper">
                         <h3>Nos coordonnées</h3>
                         <p><strong>Email :</strong> contact@cameleon-solutions.fr</p>
                         <p><strong>Téléphone :</strong> 01 02 03 04 05</p>
                         <p><strong>Adresse :</strong> 123 Rue de l'Innovation, 75001 Paris, France</p>
 
-                        <!-- Carte Google Maps -->
-                        <h4>Nous rendre visite</h4>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.8487139224662!2d0.5953470768072524!3d44.62056797107276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aae20114cd36c9%3A0x5bd854f4e68979c3!2s5110%20Av.%20des%20Pyr%C3%A9n%C3%A9es%2C%2047330%20Montauriol!5e0!3m2!1sfr!2sfr!4v1726495962696!5m2!1sfr!2sfr" width="450" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                        <!-- Horaires d'ouverture -->
                         <h4>Horaires d'ouverture</h4>
                         <p><strong>Lundi - Vendredi :</strong> 9h - 18h</p>
                         <p><strong>Samedi - Dimanche :</strong> Fermé</p>
+                        <div class="contact-final-message">
+                            <h4>A très vite!</h4>
+                            <img src="/img/giphy-3--unscreen.gif" alt="" width="200" >
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const companyNameField = document.querySelector('input[name="contact[companyName]"]');
-            const siretNumberField = document.querySelector('.siret-number-field');
-
-            function toggleSiretField() {
-                if (companyNameField.value.trim() !== '') {
-                    siretNumberField.style.display = 'block';
-                } else {
-                    siretNumberField.style.display = 'none';
-                }
-            }
-
-            companyNameField.addEventListener('input', toggleSiretField);
-
-            // Initial check
-            toggleSiretField();
-        });
-    </script>
 {% endblock %}
