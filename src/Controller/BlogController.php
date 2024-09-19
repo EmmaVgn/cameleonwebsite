@@ -12,16 +12,16 @@ class BlogController extends AbstractController
     #[Route('/blog', name: 'blog_list')]
     public function list(ArticleRepository $articleRepository): Response
     {
-        $articles = $articleRepository->findAll();
+        $articles = $articleRepository->findBy([], [], 3);
         return $this->render('blog/list.html.twig', [
             'articles' => $articles,
         ]);
     }
 
-    #[Route('/blog/{id}', name: 'blog_show')]
-    public function show(int $id, ArticleRepository $articleRepository): Response
+    #[Route('/blog/{slug}', name: 'blog_show')]
+    public function show($slug, ArticleRepository $articleRepository): Response
     {
-        $article = $articleRepository->find($id);
+        $article = $articleRepository->find($slug);
         if (!$article) {
             throw $this->createNotFoundException('Article not found');
         }
