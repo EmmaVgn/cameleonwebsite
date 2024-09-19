@@ -3,6 +3,25 @@ import './styles/app.css';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 
+// Changement de mots 
+document.addEventListener('DOMContentLoaded', () => {
+  const wordElement = document.getElementById('word');
+  const words = ['créative', 'souriante', 'passionnée'];
+  let currentIndex = 0;
+
+  function changeWord() {
+    wordElement.style.opacity = 0; 
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % words.length;
+      wordElement.textContent = words[currentIndex]; 
+      wordElement.style.opacity = 1; 
+    }, 500); 
+  }
+
+  setInterval(changeWord, 3000); 
+});
+
+
 // Navbar scroll effect
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
@@ -28,19 +47,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //Chevron down
 document.addEventListener('DOMContentLoaded', function() {
-    const scrollIcon = document.querySelector('.scroll-down-icon');
+  const scrollIcon = document.querySelector('.scroll-down-icon');
 
-    scrollIcon.addEventListener('click', function(event) {
+  if (scrollIcon) {
+      scrollIcon.addEventListener('click', function(event) {
+          event.preventDefault(); 
 
-        event.preventDefault(); 
-
-        const target = document.querySelector('#project');
- 
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
+          const target = document.querySelector('#project');
+   
+          if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+          }
+      });
+  }
 });
+
 
 //popup
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -75,22 +96,30 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   });
   
+// defilement page 
+document.addEventListener('DOMContentLoaded', () => {
+  const fadeInElements = document.querySelectorAll('.fade-in');
 
-  // Numéro de siret
-  document.addEventListener('DOMContentLoaded', function() {
-    const companyNameField = document.querySelector('input[name="contact[companyName]"]');
-    const siretNumberField = document.querySelector('input[name="contact[siretNumber]"]');
+  function checkVisibility() {
+    const windowHeight = window.innerHeight;
+    
+    fadeInElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
 
-    function toggleSiretField() {
-        if (companyNameField.value.trim() !== '') {
-            siretNumberField.closest('.form-group').style.display = 'block';
-        } else {
-            siretNumberField.closest('.form-group').style.display = 'none';
-        }
-    }
+      if (elementTop < windowHeight * 0.8) { 
+        element.classList.add('visible');
+      }
+    });
+  }
 
-    companyNameField.addEventListener('input', toggleSiretField);
-
-    // Initial check
-    toggleSiretField();
+  // Initial check to handle already visible elements
+  checkVisibility();
+  
+  // Check visibility on scroll
+  window.addEventListener('scroll', checkVisibility);
 });
+
+
+
+
+

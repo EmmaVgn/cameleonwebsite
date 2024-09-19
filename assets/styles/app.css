@@ -27,6 +27,18 @@ h4 {
   font-family: "Playfair Display", serif;
 }
 
+/* Styles pour les éléments qui apparaissent lors du défilement */
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /*--------------------------------------------------------------
 # Navbar 
 --------------------------------------------------------------*/
@@ -207,6 +219,35 @@ h4 {
   font-style: italic;
 }
 
+.typing-effect {
+  position: absolute;
+  left: 60%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  flex: 1;
+  margin-right: 20px;
+}
+
+.line {
+  font-size: 2.5rem;
+  position: relative;
+  font-family: "Raleway Dots", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  width: fit-content;
+  line-height: 3.5rem;
+  margin-bottom: 20px;
+}
+
+#word {
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  text-decoration: underline;
+}
+
 /* Tree container */
 #tree-container {
   position: absolute;
@@ -278,15 +319,54 @@ h4 {
 
 /* Project */
 .project-container {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  position: relative;
+  padding: 2rem;
+  text-align: center;
 }
 
-.project-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 3rem;
+.project-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #333;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.heading-part1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.7rem;
+}
+
+.heading-part2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  position: relative;
+  top: 1.2rem;
+  left: -5%;
+  font-style: italic;
+}
+
+.heading-part1::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 100%;
+  border-bottom: 4px solid #032b35f4;
+  z-index: 1;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: justify;
 }
 
 /*Listing */
@@ -333,23 +413,23 @@ h4 {
 }
 
 .top-left {
-  top: 10%; /* Ajustez selon le besoin */
-  left: 20%; /* Ajustez selon le besoin */
+  top: 10%;
+  left: 20%;
 }
 
 .top-right {
-  top: 10%; /* Ajustez selon le besoin */
-  right: 20%; /* Ajustez selon le besoin */
+  top: 10%;
+  right: 20%;
 }
 
 .middle-right {
-  top: 40%; /* Ajustez selon le besoin */
-  right: 15%; /* Ajustez selon le besoin */
+  top: 40%;
+  right: 15%;
 }
 
 .bottom-right {
-  bottom: 10%; /* Ajustez selon le besoin */
-  right: 10%; /* Ajustez selon le besoin */
+  bottom: 10%;
+  right: 10%;
 }
 
 .bottom-left {
@@ -375,22 +455,32 @@ h4 {
 .container-services h2 {
   text-align: center;
   font-size: 3rem;
+  font-family: "Playfair Display", serif; /* Assurez-vous d'utiliser la même famille de polices */
+  font-weight: bold; /* Vous pouvez ajuster le poids si nécessaire */ /* Ajustez en fonction de la mise en page souhaitée */
+
+  color: #032b35; /* Assurez-vous que la couleur est cohérente avec votre palette */
+}
+
+.title-service {
+  font-size: 3rem; /* Ajustez la taille de la police pour qu'elle corresponde à vos besoins */
+  font-family: "Playfair Display", serif; /* Utiliser la même police que pour h1, h2, etc. */
+  font-weight: bold; /* Assurez-vous que le poids de la police est cohérent */
+  text-align: center; /* Pour centrer le titre */
+  color: #032b35; /* Assurez-vous que la couleur est cohérente avec le reste */
 }
 
 /* Popup Container */
 .popup {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background */
-  z-index: 1000; /* Ensure it sits above other content */
-  backdrop-filter: blur(
-    5px
-  ); /* Optional: Adds a blur effect to the background */
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  backdrop-filter: blur(5px);
 }
 
 /* Popup Content */
@@ -399,12 +489,12 @@ h4 {
   margin: 10% auto;
   padding: 30px;
   border: 1px solid #ddd;
-  border-radius: 10px; /* Rounded corners */
+  border-radius: 10px;
   width: 90%;
-  max-width: 600px; /* Adjust as needed */
+  max-width: 600px;
   position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-  animation: popupFadeIn 0.3s ease-out; /* Animation for popup appearance */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: popupFadeIn 0.3s ease-out;
 }
 
 /* Popup Title */
@@ -433,7 +523,7 @@ h4 {
 
 .close:hover,
 .close:focus {
-  color: #ff5722; /* Color change on hover */
+  color: #ff5722;
   text-decoration: none;
 }
 
@@ -480,6 +570,40 @@ h4 {
   position: relative;
 }
 
+/*Contact*/
+.service-contact-section {
+  background-color: #f5f5f5;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.service-contact-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.service-contact-section p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-contact-section .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.service-contact-section .btn-primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
 /*Picto*/
 .avt_container {
   background-color: rgba(0, 0, 0, 0.1);
@@ -487,23 +611,29 @@ h4 {
   text-align: center;
   justify-content: space-around;
   align-items: center;
-  margin: auto;
-  width: 73%;
+  margin: 0;
+  width: 100%;
   padding: 1.5rem 0;
 }
 
 .avt_title {
-  padding: 0 0, 4rem;
+  padding: 0 4rem;
   position: relative;
   z-index: 3;
   text-transform: uppercase;
   margin-bottom: 0;
-  margin-top: 0, 5rem;
+  margin-top: 0.5rem;
 }
 
 .avt_subtitle {
   position: relative;
-  top: -0, 5rem;
+  top: -0.5rem;
+}
+
+/*Contact Form*/
+.show {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
 /*--------------------------------------------------------------
@@ -739,9 +869,78 @@ h4 {
   }
 }
 
+@media (max-width: 768px) {
+  .project-heading {
+    font-size: 1.5rem;
+  }
+
+  .heading-part1 {
+    font-size: 1.8rem;
+  }
+
+  .heading-part2 {
+    font-size: 1.4rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+}
+
 /*Contact*/
 @media (max-width: 768px) {
   .contact-content .row {
     flex-direction: column;
+  }
+}
+
+/*Picto*/
+@media (max-width: 768px) {
+  .avt_container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avt_item {
+    max-width: 90%;
+  }
+
+  .avt_title {
+    padding: 0 1rem;
+    font-size: 0.9rem;
+  }
+
+  .avt_subtitle {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .avt_title {
+    font-size: 0.8rem;
+  }
+
+  .avt_subtitle {
+    font-size: 0.7rem;
+  }
+
+  .avt_item {
+    max-width: 100%;
+  }
+}
+
+/*Service/contact*/
+@media (max-width: 768px) {
+  .service-contact-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .service-contact-section p {
+    font-size: 0.9rem;
+  }
+
+  .service-contact-section .btn-primary {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
 }

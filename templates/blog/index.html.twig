@@ -1,20 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello BlogController!{% endblock %}
-
+{% block title %}Caméléon Solutions
+{% endblock %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<main>
+		<aside>
+			<!-- Barre latérale : recherche, catégories, articles récents, etc. -->
+		</aside>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+		<section class="blog-posts">
+			<article class="post-summary">
+				<h2>
+					<a href="article1.html">Titre de l'Article 1</a>
+				</h2>
+				<p>Date de publication | Auteur</p>
+				<img src="image1.jpg" alt="Image de l'article">
+				<p>Extrait ou résumé de l'article...</p>
+				<a href="article1.html">Lire la suite</a>
+			</article>
+			<!-- Répéter pour chaque article -->
+		</section>
+	</main>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Users/emma/Code/En cours/cameleonwebsite/src/Controller/BlogController.php</code></li>
-        <li>Your template at <code>/Users/emma/Code/En cours/cameleonwebsite/templates/blog/index.html.twig</code></li>
-    </ul>
-</div>
+
+	<section>
+		<!-- Liens vers des articles connexes -->
+		<a href="article2.html">Titre de l'Article Connexe</a>
+		<a href="article2.html">Titre de l'Article Connexe</a>
+	</section>
+	<section>
+		<!-- Formulaire d'abonnement à la newsletter -->
+	</section>
+	<section>
+		<!-- Mentions légales et politique de confidentialité -->
+	</section>
+
 {% endblock %}
