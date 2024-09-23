@@ -5,9 +5,14 @@
 
 {% block body %}
 
-	{% include "about/iam.html.twig" %}
 
-	{% include "services/objective.html.twig" %}
-	{% include "services/picto.html.twig" %}
-	{% include "services/contact.html.twig" %}
-{% endblock %}
+	{% include "home/project.html.twig" %}
+
+	<div class="container-services fade-in">
+		<h3 class="title-service">
+			Ce que je propose
+		</h3>
+		{% include "services/listing.html.twig" %}
+		{% include "services/picto.html.twig" %}
+		{% include "services/contact.html.twig" %}
+	{% endblock %}
