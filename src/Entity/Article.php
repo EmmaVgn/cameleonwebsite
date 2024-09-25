@@ -2,8 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticleRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ArticleRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article
@@ -17,9 +20,12 @@ class Article
     private ?string $title = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $content = null;
+    private ?string $subtitle = null;
 
     #[ORM\Column(length: 255)]
+    private ?string $content = null;
+
+    #[ORM\Column(type: Types::STRING, length: 255, nullable: true)]
     private ?string $image = null;
 
     #[ORM\Column]
@@ -27,6 +33,18 @@ class Article
 
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
+
+    /**
+     * @var Collection<int, Images>
+     */
+    #[ORM\OneToMany(targetEntity: Images::class, mappedBy: 'images')]
+    private Collection $images;
+
+    public function __construct()
+    {
+        $this->publishedAt = new \DateTimeImmutable();
+        $this->images = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -45,6 +63,16 @@ class Article
         return $this;
     }
 
+        public function getSubtitle(): ?string
+    {
+        return $this->subtitle;
+    }
+    public function setSubtitle(string $subtitle): static
+    {
+        $this->subtitle = $subtitle;
+        return $this;
+    }
+
     public function getContent(): ?string
     {
         return $this->content;
@@ -53,18 +81,6 @@ class Article
     public function setContent(string $content): static
     {
         $this->content = $content;
-
-        return $this;
-    }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): static
-    {
-        $this->image = $image;
 
         return $this;
     }
@@ -92,4 +108,31 @@ class Article
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Images>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+    public function addImage(Images $image): static
+    {
+        if (!$this->images->contains($image)) {
+            $this->images->add($image);
+            $image->setImages($this);
+        }
+        return $this;
+    }
+    public function removeImage(Images $image): static
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getImages() === $this) {
+                $image->setImages(null);
+            }
+        }
+        return $this;
+    }
+
 }
