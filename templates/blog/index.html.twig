@@ -17,6 +17,7 @@
 								<div class="col-sm-6">
 									<div class="blog-grid">
 										<div class="blog-img">
+											<img src="{{ asset('img/blog/' ~ article.imageName) }}" alt="{{ article.name }}" class="img-fluid" width="400" height="200">
 											<div class="date">
 												<span>
 													<div class="entry-date">{{ article.createdAt|date('F j, Y') }}</div>

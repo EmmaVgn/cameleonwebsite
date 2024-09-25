@@ -773,6 +773,37 @@ h4 {
 /*--------------------------------------------------------------
 # BLOG
 --------------------------------------------------------------*/
+.card-img-top {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img-top img {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.card-img-top:hover img {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.overlay {
+  transition: background 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.card-img-top:hover .overlay {
+  opacity: 1;
+}
+
+.btn-outline-primary {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+}
 
 /*--------------------------------------------------------------
 # Responsive
