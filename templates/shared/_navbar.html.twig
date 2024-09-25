@@ -29,6 +29,20 @@
 					</a>
 				</li>
 			</ul>
+			<ul class="navbar-nav">
+				{% if app.user %}
+					{% if is_granted('ROLE_ADMIN') %}
+						<li class="nav-item">
+							<a href="{{ path('admin') }}" class="nav-link">Administration</a>
+						</li>
+					{% endif %}
+					<li class="nav-item active">
+						<a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+					</li>
+					{% else %}
+
+
+				{% endif %}
+			</div>
 		</div>
-	</div>
-</nav>
+	</nav>
