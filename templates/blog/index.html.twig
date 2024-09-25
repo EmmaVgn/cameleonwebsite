@@ -1,53 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Blog - Caméléon Solutions
+{% block title %}Les conseils de Marie
 {% endblock %}
 
 {% block body %}
-	<div class="container">
-		<div class="row">
-			{% for article in articles %}
-				<div class="col-md-3">
-					<article class="post">
-						<div class="article-v2">
-							<figure class="article-thumb">
-								<a href="{{ path('article_show', {'id': article.id}) }}">
-									<img src="{{ asset('images/' ~ article.image) }}" alt="{{ article.title }}"/>
-								</a>
-							</figure>
-							<!-- /.article-thumb -->
-							<div class="article-content-main">
-								<div class="article-header">
-									<h2 class="entry-title">
-										<a href="{{ path('article_show', {'id': article.id}) }}">{{ article.title }}</a>
-									</h2>
-									<div class="entry-meta">
-										<div class="entry-date">{{ article.publishedAt|date('F j, Y') }}</div>
-									</div>
-									<!-- /.entry-meta -->
-								</div>
-								<!-- /.article-header -->
-								<div class="article-content">
-									<p>{{ article.content|slice(0, 100) ~ '...' }}</p>
-								</div>
-								<!--  /.article-content -->
-								<div class="article-footer">
-									<div class="row">
-										<div class="col-6 text-left footer-link">
-											<a href="{{ path('article_show', {'id': article.id}) }}" class="more-link">Read More</a>
+	<main>
+		<h1>Les conseils de Marie</h1>
+		<hr>
+
+		<section class="blog-listing gray-bg">
+			<div class="container">
+				<div class="row align-items-start">
+					<div class="col-lg-8 m-15px-tb">
+						<div class="row">
+							{% for article in article %}
+								<div class="col-sm-6">
+									<div class="blog-grid">
+										<div class="blog-img">
+											<div class="date">
+												<span>
+													<div class="entry-date">{{ article.createdAt|date('F j, Y') }}</div>
+												</span>
+											</div>
+										</div>
+										<div class="blog-info">
+											<h5>{{ article.name }}</h5>
+											<p>{{ article.subtitle }}</p>
+											<div class="btn-bar">
+												<a href="{{ path('advise_show', {'slug': article.slug}) }}" class="custom-btn">
+													Lire plus
+												</a>
+											</div>
 										</div>
 									</div>
-									<!--  /.row -->
 								</div>
-								<!--  /.article-footer -->
-							</div>
-							<!--  /.article-content-main -->
+							{% endfor %}
 						</div>
-						<!--  /.article-v2 -->
-					</article>
-					<!--  /.post -->
+					</div>
 				</div>
-			{% endfor %}
-		</div>
-	</div>
+			</div>
+		</section>
+	</main>
 {% endblock %}

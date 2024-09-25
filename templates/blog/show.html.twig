@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	{{ article.title }}
+	{{ article.name }}
 	- Caméléon Solutions
 {% endblock %}
 
@@ -9,14 +9,12 @@
 	<div class="container">
 		<article class="post">
 			<div class="article-v2">
-				<figure class="article-thumb">
-					<img src="{{ asset('images/' ~ article.image) }}" alt="{{ article.title }}"/>
-				</figure>
+				<figure class="article-thumb"></figure>
 				<div class="article-content-main">
 					<div class="article-header">
-						<h2 class="entry-title">{{ article.title }}</h2>
+						<h2 class="entry-title">{{ article.name }}</h2>
 						<div class="entry-meta">
-							<div class="entry-date">{{ article.publishedAt|date('F j, Y') }}</div>
+							<div class="entry-date">{{ article.createdAt|date('F j, Y') }}</div>
 						</div>
 					</div>
 					<div class="article-content">

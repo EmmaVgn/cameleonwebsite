@@ -40,19 +40,14 @@ class ArticleCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('title', 'Titre'),
+            TextField::new('name', 'Titre'),
             TextareaField::new('subtitle', 'Sous-titre'),
             TextareaField::new('content', 'Contenu'),
             SlugField::new('slug')
-                ->setTargetFieldName('title') // Spécifie le champ utilisé pour générer le slug
-                ->setFormTypeOptions(['disabled' => true]), // Rendre le champ slug non modifiable dans le formulaire
-            ImageField::new('image', 'Image')
+                ->setTargetFieldName('name'), // Spécifie le champ utilisé pour générer le slug
+                ImageField::new('imageName')
                 ->setBasePath('img/blog/')
                 ->setUploadDir('public/img/blog')
-                ->setRequired(false) // Si vous ne voulez pas que ce champ soit requis
-                ->setFormTypeOptions([
-                    'help' => 'Téléchargez une image pour cet article.'
-                ])
             
         ];
     }

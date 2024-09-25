@@ -13,18 +13,14 @@
 							<div class="article-v2">
 								<figure class="article-thumb">
 									231
-									<a href="{{ path('blog_show', {'slug': article.slug}) }}">
-										<img src="{{ asset('images/' ~ article.image) }}" alt="{{ article.title }}"/>
-									</a>
+									<a href="{{ path('blog_show', {'slug': article.slug}) }}"></a>
 								</figure>
 								<div class="article-content-main">
 									<div class="article-header">
 										<h2 class="entry-title">
-											<a href="{{ path('blog_show', {'slug': article.slug}) }}">{{ article.title }}</a>
+											<a href="{{ path('blog_show', {'slug': article.slug}) }}">{{ article.name }}</a>
 										</h2>
-										<div class="entry-meta">
-											<div class="entry-date">{{ article.publishedAt|date('F j, Y') }}</div>
-										</div>
+										<div class="entry-meta"></div>
 									</div>
 									<div class="article-content">
 										<p>{{ article.content|slice(0, 100) ~ '...' }}</p>
