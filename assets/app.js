@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     });
   });
+
+  
   
 // defilement page 
 document.addEventListener('DOMContentLoaded', () => {

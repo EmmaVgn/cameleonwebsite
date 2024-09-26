@@ -318,7 +318,7 @@ h4 {
 }
 
 /* Project */
-.project-container {
+* Project */ .project-container {
   padding: 2rem;
   text-align: center;
 }
@@ -331,33 +331,38 @@ h4 {
   font-size: 1.8rem;
   color: #333;
   position: relative;
-  flex-wrap: wrap;
 }
 
 .heading-part1 {
   font-size: 2.4rem;
   font-weight: 600;
   position: relative;
+  width: 100%;
+  white-space: nowrap; /* Empêche le retour à la ligne */
   padding-bottom: 0.7rem;
+  left: -3%; /* Ajuste le positionnement si nécessaire */
 }
 
 .heading-part2 {
   font-size: 1.6rem;
+  width: 100%;
   font-weight: 400;
   position: relative;
-  top: 1.2rem;
-  left: -5%;
+  white-space: nowrap; /* Empêche le retour à la ligne */
   font-style: italic;
+  margin-top: 2.8rem; /* Ajoute de l'espace entre les deux lignes */
+  left: -9%;
 }
 
 .heading-part1::after {
   content: "";
   position: absolute;
-  bottom: -0.5rem;
+  bottom: -1.5rem;
   left: 0;
   width: 100%;
   border-bottom: 4px solid #032b35f4;
   z-index: 1;
+  width: 165%;
 }
 
 .project-description {
@@ -369,214 +374,156 @@ h4 {
   text-align: justify;
 }
 
-.project-container {
-  position: relative;
-  display: inline-block;
-  width: 70%;
-  vertical-align: top;
-}
-
-.photo-container {
-  position: absolute;
-  top: 60%;
-  right: -180px; /* Ajustez selon l'espace souhaité à droite */
-  transform: translateY(-50%);
-  text-align: center;
-}
-
-.profile-photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile pour un effet de relief */
-  margin-top: 20px; /* Crée de l'espace entre le caméléon et la photo */
-}
-
-.chameleon-img {
-  position: absolute;
-  top: -30px; /* Ajustez selon la taille du caméléon */
-  left: 50%;
-  transform: translateX(-110%) rotate(-30deg);
-  width: 100px; /* Taille du caméléon */
-  z-index: 2;
+.my-photo {
+  max-width: 100%; /* Assure que l'image s'adapte à son conteneur */
+  border-radius: 10px; /* Coins arrondis pour l'image */
+  margin-left: 30px;
 }
 
 /* Listing */
+/* Listing */
 .listing-container {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 20px; /* Ajouter du padding autour du container */
-  background-color: #f9f9f9; /* Fond léger pour le container */
-  border-radius: 10px; /* Coins arrondis pour le container */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  position: relative; /* Pour le positionnement de la ligne */
+  position: relative;
 }
 
 .timeline {
   position: relative;
-  padding: 20px 0; /* Padding en haut et en bas */
+  padding: 20px 0;
+  display: flex; /* Utiliser flexbox pour la disposition horizontale */
+  justify-content: space-between; /* Espacer les éléments */
+  align-items: flex-start; /* Aligner les éléments en haut */
 }
 
-/* Style pour la ligne comme une branche */
-.timeline::before {
-  content: "";
+.timeline-line {
   position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 12px; /* Épaisseur de la ligne */
-  background-color: #8b4513; /* Couleur marron pour la branche */
-  border-radius: 6px; /* Coins arrondis */
-  transform: translateX(-50%); /* Centrer la ligne */
-  z-index: 10; /* Derrière les boxes */
-  clip-path: polygon(
-    50% 0%,
-    100% 25%,
-    85% 10%,
-    80% 30%,
-    90% 100%,
-    60% 80%,
-    40% 100%,
-    10% 30%,
-    15% 10%
-  ); /* Crée une forme irrégulière plus ramifiée */
+  left: 0;
+  right: 0;
+  top: 50%; /* Centrer la ligne verticalement */
+  height: 4px; /* Épaisseur de la ligne */
+  background-color: #ccc; /* Couleur de la ligne */
+  z-index: 0; /* Derrière les boxes */
 }
 
-/* Ajout d'une texture pour imiter l'écorce */
-.timeline::before {
-  background: linear-gradient(
-    135deg,
-    #8b4513 25%,
-    #a0522d 25%,
-    #a0522d 50%,
-    #8b4513 50%,
-    #8b4513 75%,
-    #a0522d 75%,
-    #a0522d
-  );
-  background-size: 20px 20px; /* Taille de la texture */
+.content-link {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Disposition verticale pour chaque box */
+  align-items: center; /* Centrer les boxes */
+  width: 20%; /* Ajustez selon vos besoins */
+  margin: 0; /* Pas de marge verticale */
 }
 
 .content-box {
-  background-color: rgba(255, 255, 255, 0.95); /* Fond légèrement opaque */
-  border: 1px solid #ccc;
-  text-align: center;
-  border-radius: 8px; /* Coins arrondis */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
-  padding: 15px; /* Ajouter du padding interne */
-  position: relative; /* Pour la position absolue de la bulle */
-  margin-bottom: 30px; /* Espace entre les boxes */
-  z-index: 15; /* Au-dessus de la ligne */
-  width: 250px; /* Largeur des boxes */
+  width: 100%; /* Prendre toute la largeur de content-link */
+  padding: 10px;
+  background-color: white; /* Couleur de fond des boxes */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Au-dessus de la ligne */
+
+  transform: translateY(20px); /* Déplacement vers le bas */
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.left {
-  position: relative;
-  transform: translateX(-50%); /* Décalage vers la gauche */
+.content-box.active {
+  opacity: 1; /* Rendre visible */
+  transform: translateY(0); /* Réinitialiser la translation */
 }
 
-.right {
-  position: relative;
-  transform: translateX(50%); /* Décalage vers la droite */
+.align-top {
+  margin-top: -1px; /* Espace entre les boxes */
 }
 
-/* Alignement à gauche ou droite */
-.content-box:nth-child(odd) {
-  margin-left: calc(
-    50% - 135px
-  ); /* Ajustez cette valeur pour éviter le chevauchement */
+.align-bottom {
+  margin-top: 250px; /* Espace entre les boxes */
 }
 
-.content-box:nth-child(even) {
-  margin-left: calc(
-    50% + 15px
-  ); /* Ajustez cette valeur pour éviter le chevauchement */
-}
-
-.content-box:hover {
-  transform: scale(1.05); /* Légère animation au survol */
-  cursor: pointer; /* Changer le curseur au survol */
-}
-
-.container-services h2,
-.title-service {
-  text-align: center;
-  font-size: 3rem;
-  font-family: "Playfair Display", serif;
-  font-weight: bold;
-  color: #032b35;
-}
-
-/* Popup Container */
+/*popup*/
 .popup {
   display: none;
   position: fixed;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1000;
-  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Popup Content */
 .popup-content {
   background-color: #ffffff;
   margin: 10% auto;
-  padding: 30px;
-  border: 1px solid #ddd;
+  padding: 20px;
   border-radius: 10px;
   width: 90%;
   max-width: 600px;
   position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  animation: popupFadeIn 0.3s ease-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  animation: fadeIn 0.3s ease-out;
 }
 
-/* Popup Title */
-.popup-content h2 {
-  margin-top: 0;
-  font-size: 1.5rem;
+.popup.active {
+  display: block; /* Afficher quand la classe active est ajoutée */
+}
+
+.popup-content h4 {
+  margin-bottom: 10px;
   color: #333;
 }
 
-/* Popup Text */
 .popup-content p {
-  font-size: 1rem;
-  color: #666;
   line-height: 1.5;
+  color: #555;
 }
 
-/* Close Button */
+.popup-price {
+  font-weight: bold;
+  color: #032b35;
+  margin-top: 10px;
+}
+
+.contact-button-popup {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button-popup:hover {
+  background-color: #e64a19;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .close {
-  color: #333;
-  float: right;
-  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #aaa;
+  font-size: 28px;
   font-weight: bold;
   cursor: pointer;
-  transition: color 0.3s ease;
 }
 
 .close:hover,
 .close:focus {
-  color: #ff5722;
+  color: black;
   text-decoration: none;
-}
-
-/* Popup Animation */
-@keyframes popupFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  cursor: pointer;
 }
 
 /*--------------------------------------------------------------
@@ -911,31 +858,6 @@ h4 {
     max-width: 100%;
     margin-bottom: 100px;
   }
-
-  .top-left {
-    top: -30%;
-    left: -45%;
-  }
-
-  .top-right {
-    top: -25%;
-    right: 10%;
-  }
-
-  .bottom-left {
-    bottom: -30%;
-    left: -34%;
-  }
-
-  .bottom-right {
-    bottom: -30%;
-    right: -45%;
-  }
-
-  .middle-right {
-    top: 10%;
-    right: -40%;
-  }
 }
 /*HOMEPAGE TAILLE TABLETTES PAYASAGR*/
 @media (max-width: 900px) {
@@ -951,19 +873,6 @@ h4 {
     align-items: center;
     width: 100%; /* Utilisation complète de la largeur disponible */
     margin-bottom: 20px;
-  }
-
-  .top-left,
-  .top-right,
-  .middle-right,
-  .bottom-right,
-  .bottom-left {
-    position: relative; /* Réinitialise les positions */
-    top: auto;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    margin: 10px 0;
   }
 }
 
