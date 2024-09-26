@@ -402,104 +402,111 @@ h4 {
   z-index: 2;
 }
 
-/*Listing */
+/* Listing */
 .listing-container {
   width: 100%;
-  height: auto;
-  box-sizing: border-box;
-  overflow: hidden;
   margin-bottom: 20px;
+  padding: 20px; /* Ajouter du padding autour du container */
+  background-color: #f9f9f9; /* Fond léger pour le container */
+  border-radius: 10px; /* Coins arrondis pour le container */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* Pour le positionnement de la ligne */
 }
 
-.content {
+.timeline {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 20px 0; /* Padding en haut et en bas */
 }
 
-.computer-image img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-}
-
-.text-content {
+/* Style pour la ligne comme une branche */
+.timeline::before {
+  content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 12px; /* Épaisseur de la ligne */
+  background-color: #8b4513; /* Couleur marron pour la branche */
+  border-radius: 6px; /* Coins arrondis */
+  transform: translateX(-50%); /* Centrer la ligne */
+  z-index: 10; /* Derrière les boxes */
+  clip-path: polygon(
+    50% 0%,
+    100% 25%,
+    85% 10%,
+    80% 30%,
+    90% 100%,
+    60% 80%,
+    40% 100%,
+    10% 30%,
+    15% 10%
+  ); /* Crée une forme irrégulière plus ramifiée */
+}
+
+/* Ajout d'une texture pour imiter l'écorce */
+.timeline::before {
+  background: linear-gradient(
+    135deg,
+    #8b4513 25%,
+    #a0522d 25%,
+    #a0522d 50%,
+    #8b4513 50%,
+    #8b4513 75%,
+    #a0522d 75%,
+    #a0522d
+  );
+  background-size: 20px 20px; /* Taille de la texture */
 }
 
 .content-box {
-  width: 20%;
-  height: auto;
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.95); /* Fond légèrement opaque */
   border: 1px solid #ccc;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  padding: 15px; /* Ajouter du padding interne */
+  position: relative; /* Pour la position absolue de la bulle */
+  margin-bottom: 30px; /* Espace entre les boxes */
+  z-index: 15; /* Au-dessus de la ligne */
+  width: 250px; /* Largeur des boxes */
 }
 
-.top-left {
-  top: 10%;
-  left: 20%;
+.left {
+  position: relative;
+  transform: translateX(-50%); /* Décalage vers la gauche */
 }
 
-.top-right {
-  top: 10%;
-  right: 20%;
+.right {
+  position: relative;
+  transform: translateX(50%); /* Décalage vers la droite */
 }
 
-.middle-right {
-  top: 40%;
-  right: 15%;
+/* Alignement à gauche ou droite */
+.content-box:nth-child(odd) {
+  margin-left: calc(
+    50% - 135px
+  ); /* Ajustez cette valeur pour éviter le chevauchement */
 }
 
-.bottom-right {
-  bottom: 10%;
-  right: 10%;
-}
-
-.bottom-left {
-  bottom: 10%;
-  left: 10%;
+.content-box:nth-child(even) {
+  margin-left: calc(
+    50% + 15px
+  ); /* Ajustez cette valeur pour éviter le chevauchement */
 }
 
 .content-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
+  transform: scale(1.05); /* Légère animation au survol */
+  cursor: pointer; /* Changer le curseur au survol */
 }
 
-.content-link {
-  text-decoration: none;
-  color: black;
-}
-
-.content-link:hover {
-  color: black;
-}
-
-.container-services h2 {
+.container-services h2,
+.title-service {
   text-align: center;
   font-size: 3rem;
-  font-family: "Playfair Display", serif; /* Assurez-vous d'utiliser la même famille de polices */
-  font-weight: bold; /* Vous pouvez ajuster le poids si nécessaire */ /* Ajustez en fonction de la mise en page souhaitée */
-
-  color: #032b35; /* Assurez-vous que la couleur est cohérente avec votre palette */
-}
-
-.title-service {
-  font-size: 3rem; /* Ajustez la taille de la police pour qu'elle corresponde à vos besoins */
-  font-family: "Playfair Display", serif; /* Utiliser la même police que pour h1, h2, etc. */
-  font-weight: bold; /* Assurez-vous que le poids de la police est cohérent */
-  text-align: center; /* Pour centrer le titre */
-  color: #032b35; /* Assurez-vous que la couleur est cohérente avec le reste */
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  color: #032b35;
 }
 
 /* Popup Container */
