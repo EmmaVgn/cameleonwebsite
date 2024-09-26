@@ -95,7 +95,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     });
   });
-
+  const contactButtons = document.querySelectorAll('.contact-button-popup');
+  contactButtons.forEach(button => {
+      button.addEventListener('click', function() {
+          window.location.href = '/contact'; // Remplacez par l'URL de votre page de contact
+      });
+  });
   
   
 // defilement page 
