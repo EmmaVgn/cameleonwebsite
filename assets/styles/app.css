@@ -318,7 +318,7 @@ h4 {
 }
 
 /* Project */
-* Project */ .project-container {
+.project-container {
   padding: 2rem;
   text-align: center;
 }
@@ -338,9 +338,9 @@ h4 {
   font-weight: 600;
   position: relative;
   width: 100%;
-  white-space: nowrap; /* Empêche le retour à la ligne */
+  white-space: nowrap;
   padding-bottom: 0.7rem;
-  left: -3%; /* Ajuste le positionnement si nécessaire */
+  left: -3%;
 }
 
 .heading-part2 {
@@ -348,9 +348,9 @@ h4 {
   width: 100%;
   font-weight: 400;
   position: relative;
-  white-space: nowrap; /* Empêche le retour à la ligne */
+  white-space: nowrap;
   font-style: italic;
-  margin-top: 2.8rem; /* Ajoute de l'espace entre les deux lignes */
+  margin-top: 2.8rem;
   left: -9%;
 }
 
@@ -375,67 +375,96 @@ h4 {
 }
 
 .my-photo {
-  max-width: 100%; /* Assure que l'image s'adapte à son conteneur */
-  border-radius: 10px; /* Coins arrondis pour l'image */
+  max-width: 100%;
+  border-radius: 10px;
   margin-left: 30px;
 }
 
 /* Listing */
-/* Listing */
-.listing-container {
+.container-services {
+  margin-top: 60px;
+  margin-bottom: 20px;
   position: relative;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title-service {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title-service::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #032b35;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.listing-container {
+  display: flex;
+  align-items: center;
 }
 
 .timeline {
-  position: relative;
-  padding: 20px 0;
-  display: flex; /* Utiliser flexbox pour la disposition horizontale */
-  justify-content: space-between; /* Espacer les éléments */
-  align-items: flex-start; /* Aligner les éléments en haut */
-}
-
-.timeline-line {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%; /* Centrer la ligne verticalement */
-  height: 4px; /* Épaisseur de la ligne */
-  background-color: #ccc; /* Couleur de la ligne */
-  z-index: 0; /* Derrière les boxes */
+  display: flex;
+  align-items: stretch;
+  width: 100%;
 }
 
 .content-link {
   position: relative;
   display: flex;
-  flex-direction: column; /* Disposition verticale pour chaque box */
-  align-items: center; /* Centrer les boxes */
-  width: 20%; /* Ajustez selon vos besoins */
-  margin: 0; /* Pas de marge verticale */
+  align-items: center;
+  width: 20%;
+  margin: 0;
+  color: white;
 }
 
 .content-box {
-  width: 100%; /* Prendre toute la largeur de content-link */
-  padding: 10px;
-  background-color: white; /* Couleur de fond des boxes */
+  width: 90%;
+  padding: 20px;
+  background-color: #032b35;
+  text-align: center;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1; /* Au-dessus de la ligne */
-
-  transform: translateY(20px); /* Déplacement vers le bas */
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
 }
 
-.content-box.active {
-  opacity: 1; /* Rendre visible */
-  transform: translateY(0); /* Réinitialiser la translation */
+.content-box:hover {
+  transform: scale(1.6);
+  background-color: #023d4cc1;
 }
 
-.align-top {
-  margin-top: -1px; /* Espace entre les boxes */
+/* Effet au survol */
+.content-link:hover .content-box {
+  transform: scale(1.02);
 }
 
-.align-bottom {
-  margin-top: 250px; /* Espace entre les boxes */
+/* Styles pour les titres */
+.content-box h4 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* Styles pour les paragraphes */
+.content-box p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /*popup*/
