@@ -6,7 +6,7 @@ console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 // Changement de mots 
 document.addEventListener('DOMContentLoaded', () => {
   const wordElement = document.getElementById('word');
-  const words = ['créative', 'souriante', 'passionnée'];
+  const words = ['créative', 'à l\écoute', 'passionnée'];
   let currentIndex = 0;
 
   function changeWord() {
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const contactButtons = document.querySelectorAll('.contact-button-popup');
   contactButtons.forEach(button => {
       button.addEventListener('click', function() {
-          window.location.href = '/contact'; // Remplacez par l'URL de votre page de contact
+          window.location.href = '/contact'; 
       });
   });
   

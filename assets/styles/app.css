@@ -555,6 +555,25 @@ h4 {
   cursor: pointer;
 }
 
+/* Label Qualiopi */
+.label-round {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -80px;
+  margin-left: -26px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+}
+
+.label-round img {
+  width: 100%;
+  height: auto;
+}
 /*--------------------------------------------------------------
 # ABOUT
 --------------------------------------------------------------*/
