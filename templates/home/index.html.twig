@@ -25,7 +25,14 @@
 		</h3>
 		{% include "services/listing.html.twig" %}
 		{% include "services/picto.html.twig" %}
-		{% include "services/contact.html.twig" %}
+	</div>
+	<div class="container-services fade-in">
+		<h3 class="title-service">Ce que j'ai déjà réalisé</h3>
+		{% include 'project/realisations.html.twig' with {'project': project} %}
 
 	</div>
+	<div class="container-services fade-in">
+		{% include "services/contact.html.twig" %}
+	</div>
+
 {% endblock %}

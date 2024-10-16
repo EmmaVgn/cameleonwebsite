@@ -1,0 +1,133 @@
+<div class="row">
+	{% for project in project %}
+		<div class="col-md-4 mb-4">
+			<div class="flip-card project-card" data-id="{{ project.id }}">
+				<div class="flip-card-inner">
+					<div class="flip-card-front">
+						<div class="card-body">
+							<h5 class="card-title">{{ project.title }}</h5>
+							<p class="card-text">{{ project.short_description }}</p>
+						</div>
+					</div>
+					<div class="flip-card-back">
+						<button class="btn btn-primary view-details" data-id="{{ project.id }}">Voir Détails</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+
+<!-- Section pour afficher les détails du projet sélectionné -->
+<div id="projectDetails" class="mt-4 container">
+	<div
+		class="row">
+		<!-- Section des images -->
+		<div
+			class="col-md-8">
+			<!-- Image principale -->
+			<img
+			id="mainImage" src="" class="img-fluid main-image" alt="Main Image" data-toggle="modal" data-target="#imageModal" onclick="setModalImage(this.src)">
+			<!-- Images secondaires, cachées par défaut -->
+			<div
+				class="row mt-2" id="secondaryImages" style="display: none;"><!-- Les petites images seront insérées ici dynamiquement -->
+			</div>
+		</div>
+
+		<!-- Description du projet à droite -->
+		<div class="col-md-4">
+			<div class="project-description">
+				<h4 id="projectTitle">Sélectionnez un projet pour voir les détails</h4>
+				<p id="projectDescription" class="mt-2"></p>
+				<button onclick="showSecondaryImages()" class="btn btn-primary">Afficher les images</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal Bootstrap pour agrandir les images -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="imageModalLabel">Agrandir l'image</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img id="modalImage" src="" class="img-fluid" alt="Image agrandie">
+			</div>
+		</div>
+	</div>
+</div>
+
+{% block javascripts %}
+	<script>
+
+		document.addEventListener('DOMContentLoaded', function () {
+const projects = {{ project|json_encode|raw }};
+// Animation pour les cartes de projets
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach((card, index) => {
+card.style.opacity = 0;
+card.style.transform = 'translateY(20px)';
+card.style.transition = 'opacity 0.5s ease, transform 0.5s ease'; // Ajout de la transition
+
+setTimeout(() => {
+card.style.opacity = 1;
+card.style.transform = 'translateY(0)';
+}, index * 100);
+});
+
+// Ajouter un écouteur d'événement pour les boutons de détails
+document.querySelectorAll('.view-details').forEach(button => {
+button.addEventListener('click', function () {
+const projectId = this.getAttribute('data-id');
+const project = projects.find(p => p.id == projectId);
+
+// Mettre à jour le titre et la description
+document.getElementById('projectTitle').innerText = project.title;
+document.getElementById('projectDescription').innerText = project.description;
+
+// Mettre à jour l'image principale
+document.getElementById('mainImage').src = project.image;
+
+// Vider et ajouter les images secondaires
+const secondaryImages = document.getElementById('secondaryImages');
+secondaryImages.innerHTML = ''; // Vider les anciennes images
+project.images.forEach((image) => {
+const colDiv = document.createElement('div');
+colDiv.className = 'col-6 mb-2';
+colDiv.innerHTML = `<img src="${image}" class="img-fluid square-image" alt="${
+project.title
+}" onclick="setModalImage('${image}')">`;
+secondaryImages.appendChild(colDiv);
+});
+});
+});
+
+// Fonction pour définir l'image du modal
+function setModalImage(src) {
+document.getElementById('modalImage').src = src;
+// Affiche le modal
+const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+modal.show();
+}
+
+// Clic en dehors du modal pour le fermer
+document.getElementById('imageModal').addEventListener('click', function (event) {
+const modalContent = document.querySelector('.modal-content');
+if (event.target === this) { // Vérifiez seulement si c'est le modal qui a été cliqué
+const modal = bootstrap.Modal.getInstance(this);
+if (modal) {
+modal.hide(); // Cache le modal
+}
+}
+});
+});
+
+function showSecondaryImages() {
+const secondaryImages = document.getElementById('secondaryImages');
+secondaryImages.style.display = 'flex'; // Utiliser 'grid' ou 'block' selon la mise en page souhaitée
+}
+	</script>
+{% endblock %}

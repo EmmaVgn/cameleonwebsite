@@ -6,7 +6,7 @@ console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 // Changement de mots 
 document.addEventListener('DOMContentLoaded', () => {
   const wordElement = document.getElementById('word');
-  const words = ['créative', 'à l\écoute', 'passionnée'];
+  const words = ['créative', 'à l\'écoute', 'passionnée'];
   let currentIndex = 0;
 
   function changeWord() {
@@ -134,12 +134,15 @@ document.addEventListener("DOMContentLoaded", function() {
   articles.forEach((article, index) => {
       article.style.opacity = 0;
       article.style.transform = 'translateY(20px)';
+      article.style.transition = 'opacity 0.5s ease, transform 0.5s ease'; // Ajout de la transition ici
+
       setTimeout(() => {
-          article.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
           article.style.opacity = 1;
           article.style.transform = 'translateY(0)';
       }, index * 100);
   });
 });
 
+
+//realisation
 
