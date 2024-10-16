@@ -27,14 +27,16 @@ class HomeController extends AbstractController
         ],
         [
             'id' => 2,
-            'title' => 'BeeHealth',
-            'short_description' => 'Création d\'un site e-commerce pour une apicultrice. ',
+            'title' => 'Aromelis',
+            'short_description' => 'Création d\'un site e-commerce pour une apicultrice incluant la charte graphique ',
             'description' => 'Site e-commerce pour vente de miel, huiles essentielles, recharges d\hydrolats et produits de la ruche. ',
-            'image' => '/images/project-b.jpg',
+            'image' => '/img/project b/Image-13.png',
             'images' => [
-                '/images/project-b-1.jpg',
-                '/images/project-b-2.jpg',
-                '/images/project-b-3.jpg',
+                '/img/project b/Image-14.png',
+                '/img/project b/Image-12.png',
+                '/img/project b/Image-15.png',
+                '/img/project b/Image-16.png',
+                '/img/project b/Image-17.png',
             ],
         ],
         [
