@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row d-flex justify-content-center">
 	{% for project in project %}
-		<div class="col-md-4 mb-4">
-			<div class="flip-card project-card" data-id="{{ project.id }}">
+		<div class="col-md-6 mb-4 mt-5  ">
+			<div class=" flip-card project-card" data-id=" {{ project.id }} ">
 				<div class="flip-card-inner">
 					<div class="flip-card-front">
 						<div class="card-body">
@@ -16,10 +16,7 @@
 			</div>
 		</div>
 	{% endfor %}
-</div>
-
-<!-- Section pour afficher les détails du projet sélectionné -->
-<div id="projectDetails" class="mt-4 container">
+</div><!-- Section pour afficher les détails du projet sélectionné --><div id="projectDetails" class="mt-4 container">
 	<div
 		class="row">
 		<!-- Section des images -->
@@ -43,10 +40,7 @@
 			</div>
 		</div>
 	</div>
-</div>
-
-<!-- Modal Bootstrap pour agrandir les images -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+</div><!-- Modal Bootstrap pour agrandir les images --><div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -59,7 +53,6 @@
 		</div>
 	</div>
 </div>
-
 {% block javascripts %}
 	<script>
 

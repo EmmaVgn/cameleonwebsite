@@ -44,11 +44,20 @@ class HomeController extends AbstractController
             'title' => 'Application Météo',
             'short_description' => 'Création d\'une application météo.',
             'description' => 'Création d\'une application météo avec affichage des températures, des conditions météorologiques.',
-            'image' => '/images/project-b.jpg',
+            'image' => '/img/project c/Image-18.png',
             'images' => [
-                '/images/project-b-1.jpg',
-                '/images/project-b-2.jpg',
-                '/images/project-b-3.jpg',
+                '/img/project c/Image-19.png',
+            ],
+        ],
+        [
+            'id' => 4,
+            'title' => 'Les maisons de Marie',
+            'short_description' => 'Création d\'un site pour un établissement touristique',
+            'description' => 'Création d\'un site pour un établissement touristique. Présentation des chambres, des activités et des tarifs.',
+            'image' => '/img/project d/Image-20.png',
+            'images' => [
+                '/img/project d/Image-22.png',
+                '/img/project d/Image-21.png',
             ],
         ],
   
