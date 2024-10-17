@@ -6,7 +6,7 @@ console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 // Changement de mots 
 document.addEventListener('DOMContentLoaded', () => {
   const wordElement = document.getElementById('word');
-  const words = ['créative', 'à l\'écoute', 'passionnée'];
+  const words = ['créative','adaptable', 'à l\'écoute', 'passionnée'];
   let currentIndex = 0;
 
   function changeWord() {

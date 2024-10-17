@@ -1,10 +1,11 @@
-<div class="row d-flex justify-content-center">
+<div class="row d-flex justify-content-center project-container">
 	{% for project in project %}
-		<div class="col-md-6 mb-4 mt-5  ">
+		<div class="col-md-6 mb-4 mt-5 ">
 			<div class=" flip-card project-card" data-id=" {{ project.id }} ">
 				<div class="flip-card-inner">
 					<div class="flip-card-front">
 						<div class="card-body">
+
 							<h5 class="card-title">{{ project.title }}</h5>
 							<p class="card-text">{{ project.short_description }}</p>
 						</div>
@@ -24,7 +25,7 @@
 			class="col-md-8">
 			<!-- Image principale -->
 			<img
-			id="mainImage" src="" class="img-fluid main-image" alt="Main Image" data-toggle="modal" data-target="#imageModal" onclick="setModalImage(this.src)">
+			id="mainImage" src="img/autres/Designer (1).jpeg" class="img-fluid main-image" alt="Main Image" data-toggle="modal" data-target="#imageModal" onclick="setModalImage(this.src)">
 			<!-- Images secondaires, cachées par défaut -->
 			<div
 				class="row mt-2" id="secondaryImages" style="display: none;"><!-- Les petites images seront insérées ici dynamiquement -->
@@ -122,5 +123,9 @@ function showSecondaryImages() {
 const secondaryImages = document.getElementById('secondaryImages');
 secondaryImages.style.display = 'flex'; // Utiliser 'grid' ou 'block' selon la mise en page souhaitée
 }
+
+document.getElementById("mainImage").onerror = function () {
+this.src = "/img/autres/default.png";
+};
 	</script>
 {% endblock %}

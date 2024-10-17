@@ -322,6 +322,7 @@ h4 {
 .project-container {
   padding: 2rem;
   text-align: center;
+  width: 100%;
 }
 
 .project-heading {
@@ -341,7 +342,6 @@ h4 {
   width: 100%;
   white-space: nowrap;
   padding-bottom: 0.7rem;
-  left: -3%;
 }
 
 .heading-part2 {
@@ -352,7 +352,7 @@ h4 {
   white-space: nowrap;
   font-style: italic;
   margin-top: 2.8rem;
-  left: -9%;
+  left: -19%;
 }
 
 .heading-part1::after {
@@ -367,12 +367,15 @@ h4 {
 }
 
 .project-description {
+  background-color: #f9f9f9;
+  border-radius: 8px;
   font-size: 1.1rem;
   color: #666;
   line-height: 1.6;
-  margin: 0 auto;
-  max-width: 800px;
   text-align: justify;
+  width: 135%;
+  margin-left: -23%;
+  padding: 1rem;
 }
 
 .my-photo {
@@ -469,6 +472,7 @@ h4 {
 }
 
 /*popup*/
+/* Popup */
 .popup {
   display: none;
   position: fixed;
@@ -480,53 +484,67 @@ h4 {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* Contenu du Popup */
 .popup-content {
   background-color: #ffffff;
   margin: 10% auto;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 30px;
+  border-radius: 15px;
   width: 90%;
   max-width: 600px;
   position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  font-family: Arial, sans-serif;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  font-family: "Arial", sans-serif;
   animation: fadeIn 0.3s ease-out;
+  top: -26%;
 }
 
+/* Afficher quand la classe active est ajoutée */
 .popup.active {
-  display: block; /* Afficher quand la classe active est ajoutée */
+  display: block;
 }
 
+/* Styles des titres et paragraphes */
 .popup-content h4 {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: #333;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
 }
 
 .popup-content p {
-  line-height: 1.5;
+  line-height: 1.6;
   color: #555;
+  text-align: justify;
 }
 
+/* Prix du popup */
 .popup-price {
   font-weight: bold;
   color: #032b35;
-  margin-top: 10px;
+  margin-top: 15px;
+  font-size: 1.2rem;
 }
 
+/* Bouton de contact */
 .contact-button-popup {
-  background-color: #ff5722;
+  background-color: #032b35;
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 10px 15px;
+  padding: 12px 20px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 15px;
-  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
+/* Effet de survol sur le bouton */
 .contact-button-popup:hover {
-  background-color: #e64a19;
+  background-color: #085669;
+  transform: scale(1.05);
 }
 
 /* Animation d'apparition */
@@ -539,6 +557,7 @@ h4 {
   }
 }
 
+/* Fermer le Popup */
 .close {
   position: absolute;
   top: 10px;
@@ -547,13 +566,11 @@ h4 {
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
+  transition: color 0.3s;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+.close:hover {
+  color: #ff5722;
 }
 
 /* Label Qualiopi */
@@ -579,19 +596,19 @@ h4 {
 /*Réalisations*/
 .flip-card {
   background-color: transparent;
-  perspective: 1000px; /* Ajoute de la perspective */
+  perspective: 1000px;
 }
 
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s; /* Transition pour l'effet de flip */
-  transform-style: preserve-3d; /* Préserve l'effet 3D */
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 }
 
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg); /* Pivote la carte */
+  transform: rotateY(180deg);
 }
 
 .flip-card-front,
@@ -599,13 +616,13 @@ h4 {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; /* Masque l'arrière */
+  backface-visibility: hidden;
 }
 
 .flip-card-back {
-  background-color: #f2f2f2; /* Couleur d'arrière-plan pour la carte arrière */
+  background-color: #f2f2f2;
   color: black;
-  transform: rotateY(180deg); /* Pivote l'arrière pour le cacher au départ */
+  transform: rotateY(180deg);
 }
 
 .project-description {
@@ -626,7 +643,7 @@ h4 {
 
 .secondary-image {
   width: 100%;
-  height: 150px; /* Ajustez la hauteur ici */
+  height: 150px;
   object-fit: cover;
 }
 
@@ -649,44 +666,44 @@ h4 {
 }
 
 .carousel-inner img {
-  height: 500px; /* Ajustez cette valeur selon vos besoins */
+  height: 500px;
   object-fit: cover;
 }
 .project-card img {
-  height: 150px; /* Réduit la hauteur de l'image de la carte du projet */
+  height: 150px;
   width: 100%;
-  object-fit: cover; /* Assure que l'image couvre l'espace sans déformation */
+  object-fit: cover;
 }
 
 #projectDetails {
-  margin-top: 3rem; /* Espace au-dessus de la section */
-  padding: 1rem; /* Rembourrage intérieur pour l'espacement */
-  background-color: #f8f9fa; /* Couleur de fond pour la lisibilité */
-  border-radius: 0.5rem; /* Coins arrondis */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  margin-top: 3rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #projectTitle {
-  margin-bottom: 1rem; /* Espace sous le titre */
+  margin-bottom: 1rem;
   margin-top: 3rem;
-  font-size: 1.5rem; /* Taille du texte pour le titre */
+  font-size: 1.5rem;
 }
 
 #projectDescription {
-  margin-top: 1rem; /* Espace au-dessus de la description */
-  font-size: 1rem; /* Taille de police pour la description */
+  margin-top: 1rem;
+  font-size: 1rem;
 }
 .modal-content {
-  text-align: center; /* Centre le contenu dans le modal */
+  text-align: center;
 }
 
 .modal-body {
-  padding: 0; /* Supprime le rembourrage pour éviter des espaces indésirables */
+  padding: 0;
 }
 
 #modalImage {
-  max-width: 100%; /* Fait en sorte que l'image ne dépasse pas la largeur du modal */
-  height: auto; /* Maintient les proportions de l'image */
+  max-width: 100%;
+  height: auto;
 }
 .main-image {
   border-radius: 8px;
@@ -710,24 +727,25 @@ h4 {
 }
 
 .main-image {
-  max-height: 400px; /* Ajustez la hauteur selon vos besoins */
+  max-height: 400px;
 }
 
 .small-image {
-  max-height: 150px; /* Ajustez la hauteur pour les images secondaires */
+  max-height: 150px;
   cursor: pointer;
 }
 .square-image {
-  width: 100%; /* Prend 100% de la largeur de la colonne */
-  height: auto; /* La hauteur s'ajustera automatiquement */
-  aspect-ratio: 1; /* Force le rapport d'aspect à 1:1 pour obtenir un carré */
-  object-fit: cover; /* Recadre l'image pour qu'elle remplisse le carré */
-  cursor: pointer; /* Change le curseur en pointeur pour indiquer que c'est cliquable */
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  cursor: pointer;
 }
 
-/* Optionnel : Ajoutez ce style pour espacer les colonnes si nécessaire */
-.row > div {
-  padding: 5px; /* Ajustez selon votre besoin */
+.project-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 /*--------------------------------------------------------------
@@ -900,8 +918,13 @@ h4 {
 .contact-info-wrapper {
   background: #f1f1f1;
   padding: 20px;
+  margin-left: -20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+  margin-right: 50px;
 }
 
 .contact-info-wrapper h3,
@@ -913,6 +936,10 @@ h4 {
 .contact-info-wrapper p {
   color: #555;
   font-size: 1rem;
+}
+
+.contact-section {
+  margin-top: 40px;
 }
 
 .contact-info-wrapper iframe {

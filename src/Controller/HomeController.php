@@ -16,7 +16,7 @@ class HomeController extends AbstractController
             'id' => 1,
             'title' => 'Garage Thomas',
             'short_description' => 'Création d\'un site vitrine pour un garage automobile.',
-            'description' => 'Site vitrine pour un garage automobile. Présentation des services et des véhicules d\'occasion en vente.',
+            'description' => 'Réalisation d\'un site vitrine pour un garage automobile dans le cadre d\un projet étudiant. Présentation des services et des véhicules d\'occasion en vente.',
             'image' =>  '/img/project a/Image-7.png',
             'images' => [
                 '/img/project a/Image-6.png',
@@ -53,7 +53,7 @@ class HomeController extends AbstractController
             'id' => 4,
             'title' => 'Les maisons de Marie',
             'short_description' => 'Création d\'un site pour un établissement touristique',
-            'description' => 'Création d\'un site pour un établissement touristique. Présentation des chambres, des activités et des tarifs.',
+            'description' => 'Création d\'un site pour un établissement touristique. Présentation des chambres avec possibilité de réservation sur le site, des activités et des tarifs.',
             'image' => '/img/project d/Image-20.png',
             'images' => [
                 '/img/project d/Image-22.png',
