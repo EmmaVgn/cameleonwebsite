@@ -66,7 +66,7 @@ class ContactFormType extends AbstractType
             'required' => true,
             'choices' => [
                 'Demande de devis' => 'devis',
-                'Question sur un produit' => 'produit',
+                'Questions sur un service' => 'service',
                 'Autre' => 'autre',
             ],
             'attr' => [

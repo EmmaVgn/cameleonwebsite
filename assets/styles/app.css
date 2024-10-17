@@ -18,6 +18,11 @@ body {
 
 a {
   text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 h1,
@@ -767,6 +772,38 @@ h4 {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+}
+/*--------------------------------------------------------------
+# MENTIONS LEGALES
+--------------------------------------------------------------*/
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 200;
+}
+
+.legal-article {
+  margin-bottom: 30px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.article-title {
+  font-size: 1.75rem;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.article-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.article-content b {
+  font-weight: bold;
 }
 
 /*--------------------------------------------------------------
