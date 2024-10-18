@@ -3,89 +3,75 @@
 {% endblock %}
 {% block body %}
 	<body id="privacy-policy">
-		<div class="container mt-7">
-			<h1 class="title">Mentions légales</h1>
+		<div class="container mt-5">
+			<h1 class="title text-center">Mentions légales</h1>
 
-			<div class="legal-article">
+			<div class="legal-article mt-4">
 				<h2>I. Présentation du site</h2>
 				<p>Conformément aux dispositions des articles 6.III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N, il est porté à la connaissance des utilisateurs et visiteurs, ci-après l'<strong>utilisateur</strong>, du site Caméléon Solutions, ci-après le "<strong>site</strong>", les présentes mentions légales.</p>
 				<p>La connexion et la navigation sur le site par l'utilisateur implique acceptation intégrale et sans réserve des présentes mentions légales. Ces dernières sont accessibles sur le site à la rubrique "<strong>Mentions légales</strong>".</p>
 				<p>Il est précisé aux utilisateurs du site Caméléon Solutions l’identité des différents intervenants dans le cadre de sa réalisation et de son suivi :</p>
 				<p>
-					<strong>Propriétaire</strong>: Caméléon Solutions – 5110 avenue des Pyrénées, 47330 MONTAURIOL - Contact : contact@cameleon-solutions.fr - Téléphone : [Numéro de téléphone]</p>
+					<strong>Propriétaire</strong>: Caméléon Solutions – 5110 avenue des Pyrénées, 47330 MONTAURIOL - Contact :
+					<a href="mailto:contact@cameleon-solutions.fr">contact@cameleon-solutions.fr</a>
+					- Téléphone : [Numéro de téléphone]
+				</p>
 				<p>
-					<strong>Créateur</strong>: Responsable publication : Vigneron Emma - Contact : contact@cameleon-solutions.fr</p>
+					<strong>Créateur</strong>: Responsable publication : Vigneron Emma - Contact :
+					<a href="mailto:contact@cameleon-solutions.fr">contact@cameleon-solutions.fr</a>
+				</p>
 				<p>
-					<strong>Hébergeur</strong>: Hostinger – Lordou Vyrona 61, Larnaca 7550, Chypre - Contact : support@hostinger.com - Téléphone : +370 645 03378
+					<strong>Hébergeur</strong>: Hostinger – Lordou Vyrona 61, Larnaca 7550, Chypre - Contact :
+					<a href="mailto:support@hostinger.com">support@hostinger.com</a>
+					- Téléphone : +370 645 03378
 				</p>
 			</div>
 
-			<div class="legal-article">
-				<h2>II. CONDITIONS GÉNÉRALES D'UTILISATION DU SITE ET DES SERVICES PROPOSÉS</h2>
-				<p>L’utilisation du site Caméléon Solutions implique l’acceptation pleine et entière des conditions générales d’utilisation ci-après décrites. Ces conditions d’utilisation sont susceptibles d’être modifiées ou complétées à tout moment, les utilisateurs du site Caméléon Solutions sont donc invités à les consulter de manière régulière.</p>
-				<p>Ce site est normalement accessible à tout moment aux utilisateurs. Une interruption pour raison de maintenance technique peut être toutefois décidée par Caméléon Solutions, qui s’efforcera alors de communiquer préalablement aux utilisateurs les dates et heures de l’intervention.</p>
-				<p>Le site Caméléon Solutions est mis à jour régulièrement par Vigneron Emma. De la même façon, les mentions légales peuvent être modifiées à tout moment : elles s’imposent néanmoins à l’utilisateur qui est invité à s’y référer le plus souvent possible afin d’en prendre connaissance.</p>
-			</div>
+			{% set sections = [
+			{
+				"title": "II. CONDITIONS GÉNÉRALES D'UTILISATION DU SITE ET DES SERVICES PROPOSÉS",
+				"content": "L’utilisation du site Caméléon Solutions implique l’acceptation pleine et entière des conditions générales d’utilisation ci-après décrites. Ces conditions d’utilisation sont susceptibles d’être modifiées ou complétées à tout moment, les utilisateurs du site Caméléon Solutions sont donc invités à les consulter de manière régulière. Ce site est normalement accessible à tout moment aux utilisateurs. Une interruption pour raison de maintenance technique peut être toutefois décidée par Caméléon Solutions, qui s’efforcera alors de communiquer préalablement aux utilisateurs les dates et heures de l’intervention. Le site Caméléon Solutions est mis à jour régulièrement par Vigneron Emma. De la même façon, les mentions légales peuvent être modifiées à tout moment : elles s’imposent néanmoins à l’utilisateur qui est invité à s’y référer le plus souvent possible afin d’en prendre connaissance."
+			},
+			{
+				"title": "III. Description des services fournis",
+				"content": "Le site Caméléon Solutions a pour objet de fournir une information concernant l’ensemble des activités de la société. Caméléon Solutions s’efforce de fournir sur le site des informations aussi précises que possible. Toutefois, il ne pourra être tenu responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations. Toutes les informations indiquées sur le site Caméléon Solutions sont données à titre indicatif, et sont susceptibles d’évoluer. Par ailleurs, les renseignements figurant sur le site Caméléon Solutions ne sont pas exhaustifs. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne."
+			},
+			{
+				"title": "IV. PROPRIÉTÉ INTELLECTUELLE ET CONTREFAÇONS",
+				"content": "Caméléon Solutions est propriétaire des droits de propriété intellectuelle ou détient les droits d’usage sur tous les éléments accessibles sur le site, notamment les textes, images, graphismes, logos, icônes, sons, logiciels. Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de Caméléon Solutions."
+			},
+			{
+				"title": "V. LIMITATIONS DE RESPONSABILITÉ",
+				"content": "Caméléon Solutions ne pourra être tenu responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site Caméléon Solutions, et résultant soit de l’utilisation d’un matériel ne répondant pas aux spécifications indiquées, soit de l’apparition d’un bug ou d’une incompatibilité."
+			},
+			{
+				"title": "VI. Gestion des données personnelles",
+				"content": "En France, les données personnelles sont notamment protégées par la loi n° 78-87 du 6 janvier 1978, la loi n° 2004-801 du 6 août 2004, l’article L. 226-13 du Code pénal et la Directive Européenne du 24 octobre 1995. À l'occasion de l'utilisation du site Caméléon Solutions, peuvent être recueillies : l'URL des liens par l'intermédiaire desquels l'utilisateur a accédé au site, le fournisseur d'accès de l'utilisateur, l'adresse de protocole Internet (IP) de l'utilisateur. En tout état de cause, Caméléon Solutions ne collecte des informations personnelles relatives à l'utilisateur que pour le besoin de certains services proposés par le site. L'utilisateur fournit ces informations en toute connaissance de cause, notamment lorsqu'il procède par lui-même à leur saisie. Il est alors précisé à l'utilisateur du site Caméléon Solutions l’obligation ou non de fournir ces informations."
+			},
+			{
+				"title": "VII. Liens hypertextes et cookies",
+				"content": "Le site Caméléon Solutions contient un certain nombre de liens hypertextes vers d’autres sites, mis en place avec l’autorisation de Caméléon Solutions. Cependant, Caméléon Solutions n’a pas la possibilité de vérifier le contenu des sites ainsi visités, et n’assumera en conséquence aucune responsabilité de ce fait. La navigation sur le site Caméléon Solutions est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur. L'utilisateur peut désactiver les cookies en se rendant dans les paramètres de son navigateur."
+			},
+			{
+				"title": "VIII. Droit applicable et attribution de juridiction",
+				"content": "Tout litige en relation avec l’utilisation du site Caméléon Solutions est soumis au droit français. Il est fait attribution exclusive de juridiction aux tribunaux compétents de Agen."
+			},
+			{
+				"title": "IX. LES PRINCIPALES LOIS CONCERNÉES",
+				"content": "Loi n° 78-17 du 6 janvier 1978, notamment modifiée par la loi n° 2004-801 du 6 août 2004 relative à l'informatique, aux fichiers et aux libertés. Loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique."
+			},
+			{
+				"title": "X. Contact",
+				"content": "Pour toute question relative aux présentes mentions légales ou pour exercer vos droits, vous pouvez nous contacter :<br><strong>Caméléon Solutions</strong><br>5110 avenue des Pyrénées,<br>47330 MONTAURIOL<br>Email : <a href='mailto:contact@cameleon-solutions.fr'>contact@cameleon-solutions.fr</a><br>Téléphone : [Numéro de téléphone]"
+			}
+		] %}
 
-			<div class="legal-article">
-				<h2>III. Description des services fournis</h2>
-				<p>Le site Caméléon Solutions a pour objet de fournir une information concernant l’ensemble des activités de la société. Caméléon Solutions s’efforce de fournir sur le site des informations aussi précises que possible. Toutefois, il ne pourra être tenu responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.</p>
-				<p>Toutes les informations indiquées sur le site Caméléon Solutions sont données à titre indicatif, et sont susceptibles d’évoluer. Par ailleurs, les renseignements figurant sur le site Caméléon Solutions ne sont pas exhaustifs. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne.</p>
-			</div>
-
-			<div class="legal-article">
-				<h2>IV. PROPRIÉTÉ INTELLECTUELLE ET CONTREFAÇONS</h2>
-				<p>Caméléon Solutions est propriétaire des droits de propriété intellectuelle ou détient les droits d’usage sur tous les éléments accessibles sur le site, notamment les textes, images, graphismes, logos, icônes, sons, logiciels. Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de Caméléon Solutions.</p>
-			</div>
-
-			<div class="legal-article">
-				<h2>V. LIMITATIONS DE RESPONSABILITÉ</h2>
-				<p>Caméléon Solutions ne pourra être tenu responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site Caméléon Solutions, et résultant soit de l’utilisation d’un matériel ne répondant pas aux spécifications indiquées, soit de l’apparition d’un bug ou d’une incompatibilité.</p>
-			</div>
-
-			<div class="legal-article">
-				<h2>VI. Gestion des données personnelles</h2>
-				<p>En France, les données personnelles sont notamment protégées par la loi n° 78-87 du 6 janvier 1978, la loi n° 2004-801 du 6 août 2004, l’article L. 226-13 du Code pénal et la Directive Européenne du 24 octobre 1995.</p>
-				<p>À l'occasion de l'utilisation du site Caméléon Solutions, peuvent être recueillies : l'URL des liens par l'intermédiaire desquels l'utilisateur a accédé au site, le fournisseur d'accès de l'utilisateur, l'adresse de protocole Internet (IP) de l'utilisateur.</p>
-				<p>En tout état de cause, Caméléon Solutions ne collecte des informations personnelles relatives à l'utilisateur que pour le besoin de certains services proposés par le site. L'utilisateur fournit ces informations en toute connaissance de cause, notamment lorsqu'il procède par lui-même à leur saisie. Il est alors précisé à l'utilisateur du site Caméléon Solutions l’obligation ou non de fournir ces informations.</p>
-				<p>
-					<strong>Caméléon Solutions</strong><br>
-					Email :
-					<a href="mailto:contact@cameleon-solutions.fr">contact@cameleon-solutions.fr</a><br>
-					Téléphone : [Numéro de téléphone]
-				</p>
-			</div>
-
-			<div class="legal-article">
-				<h2>VII. Liens hypertextes et cookies</h2>
-				<p>Le site Caméléon Solutions contient un certain nombre de liens hypertextes vers d’autres sites, mis en place avec l’autorisation de Caméléon Solutions. Cependant, Caméléon Solutions n’a pas la possibilité de vérifier le contenu des sites ainsi visités, et n’assumera en conséquence aucune responsabilité de ce fait.</p>
-				<p>La navigation sur le site Caméléon Solutions est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur. L'utilisateur peut désactiver les cookies en se rendant dans les paramètres de son navigateur.</p>
-			</div>
-
-			<div class="legal-article">
-				<h2>VIII. Droit applicable et attribution de juridiction</h2>
-				<p>Tout litige en relation avec l’utilisation du site Caméléon Solutions est soumis au droit français. Il est fait attribution exclusive de juridiction aux tribunaux compétents de Agen.</p>
-			</div>
-
-			<div class="legal-article">
-				<h2>IX. LES PRINCIPALES LOIS CONCERNÉES</h2>
-				<p>Loi n° 78-17 du 6 janvier 1978, notamment modifiée par la loi n° 2004-801 du 6 août 2004 relative à l'informatique, aux fichiers et aux libertés.</p>
-				<p>Loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique.</p>
-			</div>
-
-			<div class="legal-article">
-				<h2>X. Contact</h2>
-				<p>Pour toute question relative aux présentes mentions légales ou pour exercer vos droits, vous pouvez nous contacter :</p>
-				<p>
-					<strong>Caméléon Solutions</strong><br>
-					5110 avenue des Pyrénées,<br>
-					47330 MONTAURIOL<br>
-					Email :
-					<a href="mailto:contact@cameleon-solutions.fr">contact@cameleon-solutions.fr</a><br>
-					Téléphone : [Numéro de téléphone]
-				</p>
-			</div>
-
+			{% for section in sections %}
+				<div class="legal-article mt-4">
+					<h2>{{ section.title }}</h2>
+					<p>{{ section.content|raw }}</p>
+				</div>
+			{% endfor %}
 		</div>
 	</body>
 {% endblock %}
