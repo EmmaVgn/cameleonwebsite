@@ -27,9 +27,9 @@ class HomeController extends AbstractController
                 'title' => 'Garage Thomas',
                 'short_description' => 'Création d\'un site vitrine pour un garage automobile.',
                 'description' => 'Réalisation d\'un site vitrine pour un garage automobile dans le cadre d\'un projet étudiant. Présentation des services et des véhicules d\'occasion en vente.',
-                'image' =>  '/img/project a/Image-7.png',
+                'image' =>  '/img/project a/Image-6.png',
                 'images' => [
-                    '/img/project a/Image-6.png',
+                    '/img/project a/Image.png',
                     '/img/project a/Image-10.png',
                     '/img/project a/Image-11.png',
                     '/img/project a/Image-3.png',
@@ -42,11 +42,11 @@ class HomeController extends AbstractController
                 'description' => 'Site e-commerce pour vente de miel, huiles essentielles, recharges d\'hydrolats et produits de la ruche.',
                 'image' => '/img/project b/Image-13.png',
                 'images' => [
-                    '/img/project b/Image-14.png',
-                    '/img/project b/Image-12.png',
+                    '/img/project b/Image-17.png',
                     '/img/project b/Image-15.png',
                     '/img/project b/Image-16.png',
-                    '/img/project b/Image-17.png',
+                    '/img/project b/Image-14.png',
+                    '/img/project b/Image-12.png',
                 ],
             ],
             [
