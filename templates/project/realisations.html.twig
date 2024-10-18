@@ -34,6 +34,7 @@
 	</div>
 </div>
 
+
 {% block javascripts %}
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
@@ -94,8 +95,8 @@ secondaryImages.style.display = 'flex';
 // Fonction pour afficher une image dans le modal
 function setModalImage(imageSrc) {
 const modal = document.createElement('div');
-modal.className = 'modal fade show'; // Assurez-vous d'utiliser Bootstrap pour la modal
-modal.style.display = 'block'; // Affiche la modal
+modal.className = 'modal fade show';
+modal.style.display = 'block';
 
 modal.innerHTML = `
                 <div class="modal-dialog modal-dialog-centered modal-lg-custom">
@@ -119,7 +120,7 @@ document.body.removeChild(modal);
 function setModalMainImage(imageSrc) {
 const modal = document.createElement('div');
 modal.className = 'modal fade show'; // Assurez-vous d'utiliser Bootstrap pour la modal
-modal.style.display = 'block'; // Affiche la modal
+modal.style.display = 'block';
 
 modal.innerHTML = `
         <div class="modal-dialog modal-dialog-centered modal-lg-custom"> <!-- Utilisation de la classe personnalisée ici -->
