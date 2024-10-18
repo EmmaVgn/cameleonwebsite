@@ -4,6 +4,14 @@
 	Me contacter - Caméléon Solutions
 {% endblock %}
 
+{% block meta_description %}
+	<meta name="description" content="Contactez Caméléon Solutions pour toutes vos demandes concernant nos services numériques. Remplissez le formulaire ou utilisez nos coordonnées pour nous joindre.">
+{% endblock %}
+
+{% block meta_keywords %}
+	<meta name="keywords" content="contact, Caméléon Solutions, services numériques, formulaire de contact, demande de devis">
+{% endblock %}
+
 {% block body %}
 <div id="contact-page" class="contact-page">
 	<section class="contact-intro text-center">
@@ -13,9 +21,9 @@
 
 	<section class="contact-form-section">
 		<div class="container">
-			<div class="row ontact-section">
+			<div class="row contact-section">
 
-				<div class="col contact-form-wrapper  contact-form">
+				<div class="col contact-form-wrapper contact-form">
 					<h3>Envoyez-moi un message</h3>
 					{{ form_start(form, {'attr': {'class': 'contact-form'}}) }}
 					{{ form_errors(form) }}
@@ -34,41 +42,38 @@
 						</div>
 						<div class="col-md-6 mb-3">
 							{{ form_row(form.companyName, {'attr': {'class': 'form-control', 'placeholder': 'Nom de l\'entreprise (si applicable)'}}) }}
-                            </div>
-                            <div class="col-md-6 mb-3 siret-number-field">
-                                {{ form_row(form.siretNumber, {'attr': {'class': 'form-control', 'placeholder': 'Numéro de SIRET'}}) }}
-                            </div>
-                            <div class="col-12 mb-3">
-                                {{ form_row(form.requestSubject, {'attr': {'class': 'form-control'}}) }}
-                            </div>
-                            <div class="col-12 mb-3">
-                                {{ form_row(form.content, {'attr': {'class': 'form-control', 'rows': 5, 'placeholder': 'Votre demande'}}) }}
-                            </div>
                         </div>
-                        <button id="contact-button" class="btn btn-primary mt-4" type="submit">
-                            <span>Envoyer le message</span>
-                        </button>
-                        {{ form_end(form) }}
+                        <div class="col-md-6 mb-3 siret-number-field">
+                            {{ form_row(form.siretNumber, {'attr': {'class': 'form-control', 'placeholder': 'Numéro de SIRET'}}) }}
+                        </div>
+                        <div class="col-12 mb-3">
+                            {{ form_row(form.requestSubject, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="col-12 mb-3">
+                            {{ form_row(form.content, {'attr': {'class': 'form-control', 'rows': 5, 'placeholder': 'Votre demande'}}) }}
+                        </div>
                     </div>
+                    <button id="contact-button" class="btn btn-primary mt-4" type="submit">
+                        <span>Envoyer le message</span>
+                    </button>
+                    {{ form_end(form) }}
+                </div>
 
-                    <div class="col contact-info-wrapper contact-section">
-                        <h3>Mes coordonnées</h3>
-                        <p><strong>Email :</strong> contact@cameleon-solutions.fr</p>
-                        <p><strong>Téléphone :</strong> 06 35 42 93 11</p>
-                        <p><strong>Adresse :</strong> 5110 Avenue des pyrénées 47330 Montauriol, France</p>
+                <div class="col contact-info-wrapper contact-section">
+                    <h3>Mes coordonnées</h3>
+                    <p><strong>Email :</strong> contact@cameleon-solutions.fr</p>
+                    <p><strong>Téléphone :</strong> 06 35 42 93 11</p>
+                    <p><strong>Adresse :</strong> 5110 Avenue des Pyrénées, 47330 Montauriol, France</p>
 
-                        <h4>Horaires d'ouverture</h4>
-                        <p><strong>Lundi - Samedi :</strong> 8h30 - 18h</p>
-                        <p><strong>Dimanche :</strong> Fermé</p>
-                        <div class="contact-final-message">
-                   
-                          <img src="{{ asset('/img/autres/giphy-3--unscreen.gif') }}" alt="" width="200" style="position: relative; top: 100px;">
-
-                        </div>
+                    <h4>Horaires d'ouverture</h4>
+                    <p><strong>Lundi - Samedi :</strong> 8h30 - 18h</p>
+                    <p><strong>Dimanche :</strong> Fermé</p>
+                    <div class="contact-final-message">
+                        <img src="{{ asset('/img/autres/giphy-3--unscreen.gif') }}" alt="" width="200" style="position: relative; top: 100px;">
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
-
+        </div>
+    </section>
+</div>
 {% endblock %}

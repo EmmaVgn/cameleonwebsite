@@ -3,6 +3,14 @@
 {% block title %}Caméléon Solutions
 {% endblock %}
 
+{% block meta_description %}
+	<meta name="description" content="Bienvenue chez Caméléon Solutions, votre expert en création de sites web et formation aux outils numériques. Donnons vie ensemble à vos projets digitaux sur mesure.">
+{% endblock %}
+
+{% block meta_keywords %}
+	<meta name="keywords" content="création de sites web, formation numérique, solutions digitales, développement personnalisé, projet digital">
+{% endblock %}
+
 {% block body %}
 	<div class="hero-section">
 		<div class="custom-navbar">
@@ -20,19 +28,17 @@
 	{% include "home/project.html.twig" %}
 
 	<div class="container-services fade-in">
-		<h3 class="title-service">
-			Ce que je propose
-		</h3>
+		<h3 class="title-service">Ce que je propose</h3>
 		{% include "services/listing.html.twig" %}
 		{% include "services/picto.html.twig" %}
 	</div>
+
 	<div class="container-services fade-in">
 		<h3 class="title-service">Ce que j'ai déjà réalisé</h3>
 		{% include 'project/realisations.html.twig' with {'project': projects} %}
-
 	</div>
+
 	<div class="container-services fade-in">
 		{% include "services/contact.html.twig" %}
 	</div>
-
 {% endblock %}
