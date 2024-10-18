@@ -8,14 +8,13 @@
 <div id="contact-page" class="contact-page">
 	<section class="contact-intro text-center">
 		<h2>Contactez Caméléon Solutions</h2>
-		<p>Que vous ayez une question sur nos services ou besoin d'un devis, je suis à votre écoute. Envoyez-moii un message via le formulaire ci-dessous ou utilisez nos coordonnées pour nous joindre directement.</p>
+		<p>Que vous ayez une question sur nos services ou besoin d'un devis, je suis à votre écoute. Envoyez-moi un message via le formulaire ci-dessous ou utilisez nos coordonnées pour nous joindre directement.</p>
 	</section>
 
 	<section class="contact-form-section">
 		<div class="container">
-			<div
-				class="row ontact-section">
-				<!-- Formulaire de contact -->
+			<div class="row ontact-section">
+
 				<div class="col contact-form-wrapper  contact-form">
 					<h3>Envoyez-moi un message</h3>
 					{{ form_start(form, {'attr': {'class': 'contact-form'}}) }}
@@ -53,17 +52,17 @@
                     </div>
 
                     <div class="col contact-info-wrapper contact-section">
-                        <h3>Nos coordonnées</h3>
+                        <h3>Mes coordonnées</h3>
                         <p><strong>Email :</strong> contact@cameleon-solutions.fr</p>
                         <p><strong>Téléphone :</strong> 06 35 42 93 11</p>
                         <p><strong>Adresse :</strong> 5110 Avenue des pyrénées 47330 Montauriol, France</p>
 
                         <h4>Horaires d'ouverture</h4>
-                        <p><strong>Lundi - Vendredi :</strong> 8h30 - 18h</p>
-                        <p><strong>Samedi - Dimanche :</strong> Fermé</p>
+                        <p><strong>Lundi - Samedi :</strong> 8h30 - 18h</p>
+                        <p><strong>Dimanche :</strong> Fermé</p>
                         <div class="contact-final-message">
                    
-                          <img src="/img/autres/giphy-3--unscreen.gif" alt="" width="200" style="position: relative; top: 100px;">
+                          <img src="{{ asset('/img/autres/giphy-3--unscreen.gif') }}" alt="" width="200" style="position: relative; top: 100px;">
 
                         </div>
                     </div>

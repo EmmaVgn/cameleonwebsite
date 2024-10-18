@@ -25,7 +25,7 @@
 			class="col-md-8">
 			<!-- Image principale -->
 			<img
-			id="mainImage" src="img/autres/Designer (1).jpeg" class="img-fluid main-image" alt="Main Image" data-toggle="modal" data-target="#imageModal" onclick="setModalImage(this.src)">
+			id="mainImage" src="{{ asset('img/autres/Designer (1).jpeg') }}" class="img-fluid main-image" alt="Main Image" data-toggle="modal" data-target="#imageModal" onclick="setModalImage(this.src)">
 			<!-- Images secondaires, cachées par défaut -->
 			<div
 				class="row mt-2" id="secondaryImages" style="display: none;"><!-- Les petites images seront insérées ici dynamiquement -->
@@ -41,23 +41,25 @@
 			</div>
 		</div>
 	</div>
-</div><!-- Modal Bootstrap pour agrandir les images --><div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="imageModalLabel">Agrandir l'image</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<img id="modalImage" src="" class="img-fluid" alt="Image agrandie">
+
+	<!-- Modal Bootstrap pour agrandir les images -->
+	<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="imageModalLabel">Agrandir l'image</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<img id="modalImage" src="" class="img-fluid" alt="Image agrandie">
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-{% block javascripts %}
-	<script>
+	{% block javascripts %}
+		<script>
 
-		document.addEventListener('DOMContentLoaded', function () {
+			document.addEventListener('DOMContentLoaded', function () {
 const projects = {{ project|json_encode|raw }};
 // Animation pour les cartes de projets
 const projectCards = document.querySelectorAll('.project-card');
@@ -127,5 +129,5 @@ secondaryImages.style.display = 'flex'; // Utiliser 'grid' ou 'block' selon la m
 document.getElementById("mainImage").onerror = function () {
 this.src = "/img/autres/default.png";
 };
-	</script>
-{% endblock %}
+		</script>
+	{% endblock %}
