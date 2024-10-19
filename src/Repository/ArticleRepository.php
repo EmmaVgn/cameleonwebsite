@@ -6,6 +6,7 @@ use App\Entity\Tag;
 use App\Entity\Article;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * @extends ServiceEntityRepository<Article>
@@ -17,14 +18,26 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
-        public function searchByQuery(string $query)
+    public function search(string $searchQuery): array
     {
         return $this->createQueryBuilder('a')
-            ->where('a.name LIKE :query OR a.content LIKE :query')
-            ->setParameter('query', '%' . $query . '%')
+            ->where('a.name LIKE :query OR a.subtitle LIKE :query')
+            ->setParameter('query', '%' . $searchQuery . '%')
+            ->orderBy('a.createdAt', 'DESC')
             ->getQuery()
             ->getResult();
     }
+
+    public function searchQueryBuilder(string $searchQuery): QueryBuilder
+    {
+        return $this->createQueryBuilder('a')
+            ->where('a.name LIKE :searchQuery OR a.subtitle LIKE :searchQuery')
+            ->setParameter('searchQuery', '%' . $searchQuery . '%')
+            ->orderBy('a.createdAt', 'DESC');
+    }
+    
+
+
 
     public function findByTag(Tag $tag)
     {

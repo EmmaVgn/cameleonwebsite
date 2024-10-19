@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Blog - Caméléon Solutions
+{% block title %}Recherche - Blog - Caméléon Solutions
 {% endblock %}
 
 {% block meta_description %}
-	<meta name="description" content="Découvrez les derniers articles de Caméléon Solutions. Restez informé sur les tendances numériques, conseils et actualités du secteur.">
+	<meta name="description" content="Résultats de recherche pour '{{ app.request.get('q') }}' sur le blog de Caméléon Solutions. Découvrez des articles pertinents.">
 {% endblock %}
 
 {% block meta_keywords %}
-	<meta name="keywords" content="blog, articles, Caméléon Solutions, tendances numériques, conseils numériques, actualités, tags, recherche">
+	<meta name="keywords" content="recherche, blog, articles, Caméléon Solutions, {{ app.request.get('q') }}">
 {% endblock %}
 
 {% block body %}
 	<div class="container py-5">
-		<h1 class="text-center mb-5 display-4">Actualités et tendances du développement web</h1>
+		<h1 class="text-center mb-5 display-4">Résultats de recherche pour "{{ app.request.get('q') }}"</h1>
 
 		<div
 			class="row mb-4">
@@ -47,11 +47,13 @@
 											<small class="text-muted">Publié le
 												{{ article.createdAt|date('d M Y') }}</small>
 											<div class="mt-2">
-												{% for tag in article.tags %}
-													<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
+												{% if article.tags is not empty %}
+													{% for tag in article.tags %}
+														<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
+													{% endfor %}
 												{% else %}
 													<span class="text-muted">Aucun tag associé.</span>
-												{% endfor %}
+												{% endif %}
 											</div>
 										</div>
 									</div>
@@ -66,14 +68,15 @@
 				<!-- Pagination -->
 				<div class="d-flex justify-content-center mt-4">
 					{{ knp_pagination_render(articles) }}
+					<!-- articles est un objet de pagination ici -->
 				</div>
+
 			</div>
 
 			<!-- Colonne pour la recherche et les filtres -->
 			<div class="col-md-3 blog-content-display">
-				<!-- Réduction de la colonne de 4 à 3 -->
-				<!-- Barre de recherche -->
-					<form method="GET" action="{{ path('blog_search') }}" class="d-flex mb-4"> <input type="text" name="q" class="form-control me-2" placeholder="Rechercher un article..." value="{{ app.request.get('q') }}">
+				<form method="GET" action="{{ path('blog_search') }}" class="d-flex mb-4">
+					<input type="text" name="q" class="form-control me-2" placeholder="Rechercher un article..." value="{{ app.request.get('q') }}">
 					<button type="submit" class="btn btn-primary">Rechercher</button>
 				</form>
 
@@ -85,26 +88,6 @@
 							<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
 						{% else %}
 							<span class="text-muted">Aucun tag disponible.</span>
-						{% endfor %}
-					</div>
-				</div>
-
-				<!-- Articles Populaires -->
-				<div>
-					<h3 class="text-center mb-3">Articles les plus populaires</h3>
-					<div class="row">
-						{% for popularArticle in popularArticles %}
-							<div class="col-12 mb-3">
-								<div class="card border-0 shadow-sm">
-									<div class="card-body">
-										<h5 class="card-title">
-											<a href="{{ path('blog_show', {'slug': popularArticle.slug}) }}">{{ popularArticle.name|e }}</a>
-										</h5>
-									</div>
-								</div>
-							</div>
-						{% else %}
-							<span class="text-muted">Aucun article populaire.</span>
 						{% endfor %}
 					</div>
 				</div>

@@ -40,22 +40,42 @@ class BlogController extends AbstractController
 
 
     #[Route('/blog/search', name: 'blog_search')]
-    public function search(Request $request, ArticleRepository $articleRepository, PaginatorInterface $paginator): Response
-    {
-        $query = $request->query->get('q');
-        $queryBuilder = $articleRepository->searchByQuery($query);
-
+    public function search(
+        ArticleRepository $articleRepository,
+        TagRepository $tagRepository,
+        Request $request,
+        PaginatorInterface $paginator // Ajoutez ce paramètre
+    ): Response {
+        $searchQuery = $request->query->get('q');
+        
+        // Effectuer la recherche des articles (cela devrait retourner un QueryBuilder)
+        $articlesQuery = $articleRepository->searchQueryBuilder($searchQuery);
+        
+        // Utiliser le paginator pour paginer les résultats
         $articles = $paginator->paginate(
-            $queryBuilder,
-            $request->query->getInt('page', 1),
-            9 // Nombre d'articles par page
+            $articlesQuery, // la requête pour les articles
+            $request->query->getInt('page', 1), // numéro de la page
+            10 // nombre d'articles par page
         );
-
-        return $this->render('blog/display.html.twig', [
-            'articles' => $articles,
-            'query' => $query,
+        
+        // Récupérer tous les tags pour les passer à la vue
+        $tags = $tagRepository->findAll();
+    
+        // Récupérer les articles les plus populaires
+        $popularArticles = $articleRepository->findMostPopularArticles(5); // Limiter à 5 articles
+    
+        return $this->render('blog/search.html.twig', [
+            'articles' => $articles, // articles est maintenant un objet de pagination
+            'tags' => $tags,
+            'popularArticles' => $popularArticles,
+            'query' => $searchQuery,
         ]);
     }
+    
+    
+    
+    
+    
 
     #[Route('/blog/tag/{slug}', name: 'blog_by_tag')]
     public function filterByTag(string $slug, TagRepository $tagRepository, ArticleRepository $articleRepository, PaginatorInterface $paginator, Request $request): Response
