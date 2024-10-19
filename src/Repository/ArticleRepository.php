@@ -2,9 +2,10 @@
 
 namespace App\Repository;
 
+use App\Entity\Tag;
 use App\Entity\Article;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @extends ServiceEntityRepository<Article>
@@ -15,6 +16,25 @@ class ArticleRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Article::class);
     }
+
+    public function searchByQuery(string $query)
+{
+    return $this->createQueryBuilder('a')
+        ->where('a.name LIKE :query OR a.content LIKE :query')
+        ->setParameter('query', '%' . $query . '%')
+        ->getQuery()
+        ->getResult();
+}
+
+public function findByTag(Tag $tag)
+{
+    return $this->createQueryBuilder('a')
+        ->join('a.tags', 't')
+        ->where('t = :tag')
+        ->setParameter('tag', $tag)
+        ->getQuery()
+        ->getResult();
+}
 
 //    /**
 //     * @return Article[] Returns an array of Article objects

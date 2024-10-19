@@ -28,11 +28,12 @@ class Tag
      * @var Collection<int, Article>
      */
     #[ORM\ManyToMany(targetEntity: Article::class, inversedBy: 'tags')]
-    private Collection $tags;
+    private Collection $articles;
 
     public function __construct()
     {
-        $this->tags = new ArrayCollection();
+        $this->articles = new ArrayCollection();
+        $this->updateAt = new \DateTimeImmutable();
     }
 
     public function __toString(): string
@@ -84,23 +85,26 @@ class Tag
     /**
      * @return Collection<int, Article>
      */
-    public function getTags(): Collection
+    public function getArticles(): Collection
     {
-        return $this->tags;
+        return $this->articles;
     }
 
-    public function addTag(Article $tag): static
+    public function addArticle(Article $article): static
     {
-        if (!$this->tags->contains($tag)) {
-            $this->tags->add($tag);
+        if (!$this->articles->contains($article)) {
+            $this->articles->add($article);
+            $article->addTag($this); // Synchronisation bidirectionnelle
         }
 
         return $this;
     }
 
-    public function removeTag(Article $tag): static
+    public function removeArticle(Article $article): static
     {
-        $this->tags->removeElement($tag);
+        if ($this->articles->removeElement($article)) {
+            $article->removeTag($this); // Synchronisation bidirectionnelle
+        }
 
         return $this;
     }

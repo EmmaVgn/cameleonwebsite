@@ -48,7 +48,7 @@ class Article
     /**
      * @var Collection<int, Tag>
      */
-    #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'tags')]
+    #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'articles')]
     private Collection $tags;
 
     public function __construct()
@@ -56,6 +56,11 @@ class Article
         $this->createdAt = new \DateTimeImmutable();
         $this->updatedAt = new \DateTimeImmutable();
         $this->tags = new ArrayCollection();
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
     }
 
     public function getId(): ?int
@@ -179,7 +184,7 @@ class Article
     {
         if (!$this->tags->contains($tag)) {
             $this->tags->add($tag);
-            $tag->addTag($this);
+            $tag->addArticle($this); // Synchronisation bidirectionnelle
         }
 
         return $this;
@@ -188,7 +193,7 @@ class Article
     public function removeTag(Tag $tag): static
     {
         if ($this->tags->removeElement($tag)) {
-            $tag->removeTag($this);
+            $tag->removeArticle($this); // Synchronisation bidirectionnelle
         }
 
         return $this;

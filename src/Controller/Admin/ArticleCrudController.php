@@ -13,6 +13,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
 class ArticleCrudController extends AbstractCrudController
 {
@@ -43,6 +44,10 @@ class ArticleCrudController extends AbstractCrudController
             TextField::new('name', 'Titre'),
             TextareaField::new('subtitle', 'Sous-titre'),
             TextareaField::new('content', 'Contenu'),
+            AssociationField::new('tags', 'Tags')
+            ->setFormTypeOptions([
+                'by_reference' => false, // Important pour les relations ManyToMany
+            ]),        
             SlugField::new('slug')
                 ->setTargetFieldName('name'), // Spécifie le champ utilisé pour générer le slug
                 ImageField::new('imageName')
