@@ -31,4 +31,3 @@ class BlogController extends AbstractController
         ]);
     }
 }
-
