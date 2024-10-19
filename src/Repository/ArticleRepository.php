@@ -17,24 +17,34 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
-    public function searchByQuery(string $query)
-{
-    return $this->createQueryBuilder('a')
-        ->where('a.name LIKE :query OR a.content LIKE :query')
-        ->setParameter('query', '%' . $query . '%')
-        ->getQuery()
-        ->getResult();
-}
+        public function searchByQuery(string $query)
+    {
+        return $this->createQueryBuilder('a')
+            ->where('a.name LIKE :query OR a.content LIKE :query')
+            ->setParameter('query', '%' . $query . '%')
+            ->getQuery()
+            ->getResult();
+    }
 
-public function findByTag(Tag $tag)
-{
-    return $this->createQueryBuilder('a')
-        ->join('a.tags', 't')
-        ->where('t = :tag')
-        ->setParameter('tag', $tag)
-        ->getQuery()
-        ->getResult();
-}
+    public function findByTag(Tag $tag)
+    {
+        return $this->createQueryBuilder('a')
+            ->join('a.tags', 't')
+            ->where('t = :tag')
+            ->setParameter('tag', $tag)
+            ->getQuery()
+            ->getResult();
+    }
+
+    // Méthode pour récupérer les articles les plus populaires
+    public function findMostPopularArticles(int $limit)
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.views', 'DESC') // Trie par le nombre de vues
+            ->setMaxResults($limit) // Limite le nombre de résultats
+            ->getQuery()
+            ->getResult();
+    }
 
 //    /**
 //     * @return Article[] Returns an array of Article objects

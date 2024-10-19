@@ -52,6 +52,9 @@ class Article
     #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'articles')]
     private Collection $tags;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $views = null;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
@@ -203,6 +206,18 @@ class Article
         if ($this->tags->removeElement($tag)) {
             $tag->removeArticle($this); // Synchronisation bidirectionnelle
         }
+
+        return $this;
+    }
+
+    public function getViews(): ?int
+    {
+        return $this->views;
+    }
+
+    public function setViews(?int $views): static
+    {
+        $this->views = $views;
 
         return $this;
     }

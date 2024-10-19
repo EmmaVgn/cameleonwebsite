@@ -28,11 +28,16 @@ class BlogController extends AbstractController
         // Récupère tous les tags
         $tags = $tagRepository->findAll();
 
+        // Récupérer les articles les plus populaires
+        $popularArticles = $articleRepository->findMostPopularArticles(5); // Limiter à 5 articles
+
         return $this->render('blog/display.html.twig', [
             'articles' => $articles,
-            'tags' => $tags, // Passe les tags à la vue
+            'tags' => $tags,
+            'popularArticles' => $popularArticles, // Passez les articles populaires à la vue
         ]);
     }
+
 
     #[Route('/blog/search', name: 'blog_search')]
     public function search(Request $request, ArticleRepository $articleRepository, PaginatorInterface $paginator): Response

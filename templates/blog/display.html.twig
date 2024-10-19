@@ -15,77 +15,96 @@
 	<div class="container py-5">
 		<h1 class="text-center mb-5 display-4">Actualités et tendances du développement web</h1>
 
-		<!-- Barre de recherche -->
-		<div class="row mb-4">
-			<div class="col-md-8 mx-auto">
-				<form method="GET" action="{{ path('blog_search') }}" class="d-flex">
+		<div
+			class="row mb-4">
+			<!-- Colonne pour les articles -->
+			<div
+				class="col-md-8">
+				<!-- Affichage des articles -->
+				<div class="row justify-content-center">
+					{% if articles|length == 0 %}
+						<p class="text-center text-muted">Aucun article ne correspond à votre recherche.</p>
+					{% else %}
+						{% for article in articles %}
+							{% if article.slug %}
+								<div class="col-lg-4 col-md-6 mb-4">
+									<div class="card h-100 shadow-sm border-0 rounded-lg">
+										<div class="card-img-top position-relative">
+											<a href="{{ path('blog_show', {'slug': article.slug}) }}">
+												<img src="{{ asset('img/blog/' ~ article.imageName) }}" alt="{{ article.name|e }}" class="img-fluid rounded-top" style="width: 100%; height: 300px; object-fit: cover;">
+											</a>
+											<div class="overlay d-flex align-items-center justify-content-center" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.6);">
+												<h2 class="text-white text-center h4 font-weight-bold">
+													<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="text-white">{{ article.name|e }}</a>
+												</h2>
+											</div>
+										</div>
+										<div class="card-body d-flex flex-column">
+											<p class="card-text text-muted">{{ article.subtitle|slice(0, 120) ~ '...' }}</p>
+											<div class="mt-auto text-center">
+												<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="btn btn-primary btn-sm">Lire la suite</a>
+											</div>
+										</div>
+										<div class="card-footer bg-white text-center border-0">
+											<small class="text-muted">Publié le
+												{{ article.createdAt|date('d M Y') }}</small>
+											<!-- Tags associés -->
+											<div class="mt-2">
+												{% for tag in article.tags %}
+													<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
+												{% else %}
+													<span class="text-muted">Aucun tag associé.</span>
+												{% endfor %}
+											</div>
+										</div>
+									</div>
+								</div>
+							{% else %}
+								<p class="text-danger">Le slug de l'article "{{ article.name|e }}" est manquant.</p>
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				</div>
+
+				<!-- Pagination -->
+				<div class="d-flex justify-content-center mt-4">
+					{{ knp_pagination_render(articles) }}
+				</div>
+			</div>
+
+			<!-- Colonne pour la recherche et les filtres -->
+			<div
+				class="col-md-4">
+				<!-- Barre de recherche -->
+				<form method="GET" action="{{ path('blog_search') }}" class="d-flex mb-4">
 					<input type="text" name="q" class="form-control me-2" placeholder="Rechercher un article..." value="{{ app.request.get('q') }}">
 					<button type="submit" class="btn btn-primary">Rechercher</button>
 				</form>
-			</div>
-		</div>
 
-		<!-- Filtres par Tags -->
-		<div class="row mb-4">
-			<div class="col-12 text-center">
-				<p class="mb-2">Filtrer par catégories :</p>
-				{% for tag in tags %}
-					<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
-				{% else %}
-					<span class="text-muted">Aucun tag disponible.</span>
-				{% endfor %}
-			</div>
-		</div>
-
-		<!-- Affichage des articles -->
-		<div class="row justify-content-center">
-			{% if articles|length == 0 %}
-				<p class="text-center text-muted">Aucun article ne correspond à votre recherche.</p>
-			{% else %}
-				{% for article in articles %}
-					{% if article.slug %}
-						<div class="col-lg-4 col-md-6 mb-4">
-							<div class="card h-100 shadow-sm border-0 rounded-lg">
-								<div class="card-img-top position-relative">
-									<a href="{{ path('blog_show', {'slug': article.slug}) }}">
-										<img src="{{ asset('img/blog/' ~ article.imageName) }}" alt="{{ article.name|e }}" class="img-fluid rounded-top" style="width: 100%; height: 300px; object-fit: cover;">
-									</a>
-									<div class="overlay d-flex align-items-center justify-content-center" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.6);">
-										<h2 class="text-white text-center h4 font-weight-bold">
-											<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="text-white">{{ article.name|e }}</a>
-										</h2>
-									</div>
-								</div>
-								<div class="card-body d-flex flex-column">
-									<p class="card-text text-muted">{{ article.subtitle|slice(0, 120) ~ '...' }}</p>
-									<div class="mt-auto text-center">
-										<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="btn btn-primary btn-sm">Lire la suite</a>
-									</div>
-								</div>
-								<div class="card-footer bg-white text-center border-0">
-									<small class="text-muted">Publié le
-										{{ article.createdAt|date('d M Y') }}</small>
-									<!-- Tags associés -->
-									<div class="mt-2">
-										{% for tag in article.tags %}
-											<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
-										{% else %}
-											<span class="text-muted">Aucun tag associé.</span>
-										{% endfor %}
-									</div>
-								</div>
-							</div>
-						</div>
+				<!-- Filtres par Tags -->
+				<div class="text-center mb-4">
+					<p class="mb-2">Filtrer par catégories :</p>
+					{% for tag in tags %}
+						<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
 					{% else %}
-						<p class="text-danger">Le slug de l'article "{{ article.name|e }}" est manquant.</p>
-					{% endif %}
-				{% endfor %}
-			{% endif %}
-		</div>
+						<span class="text-muted">Aucun tag disponible.</span>
+					{% endfor %}
+				</div>
 
-		<!-- Pagination -->
-		<div class="d-flex justify-content-center mt-4">
-			{{ knp_pagination_render(articles) }}
+				<!-- Articles Populaires -->
+				<div>
+					<h3 class="text-center mb-3">Articles les plus populaires</h3>
+					<div class="list-group">
+						{% for popularArticle in popularArticles %}
+							<a href="{{ path('blog_show', {'slug': popularArticle.slug}) }}" class="list-group-item list-group-item-action">
+								{{ popularArticle.name|e }}
+							</a>
+						{% else %}
+							<span class="text-muted">Aucun article populaire.</span>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 {% endblock %}
