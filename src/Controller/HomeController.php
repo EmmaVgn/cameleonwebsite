@@ -76,18 +76,18 @@ class HomeController extends AbstractController
     #[Route('/mentions-legales', name: 'home_legal')]
     public function legal(): Response
     {
-        return $this->render('home/legal.html.twig');
+        return $this->render('_partials/_legal.html.twig');
     }
 
     #[Route('/cgv', name: 'home_cgv')]
     public function cgv(): Response
     {
-        return $this->render('home/cgv.html.twig');
+        return $this->render('_partials/_cgv.html.twig');
     }
 
     #[Route('/politiques-de-confidentialite', name: 'home_politique')]
     public function politique(): Response
     {
-        return $this->render('home/politique.html.twig');
+        return $this->render('_partials/_politique.html.twig');
     }
 }

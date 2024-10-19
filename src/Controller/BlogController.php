@@ -10,11 +10,11 @@ use App\Entity\Article;
 
 class BlogController extends AbstractController
 {
-    #[Route('/blog', name: 'blog_list')]
-    public function list(ArticleRepository $articleRepository): Response
+    #[Route('/blog', name: 'blog_display')]
+    public function display(ArticleRepository $articleRepository): Response
     {
         $articles = $articleRepository->findBy([], [], 4); // Modifier pour obtenir 4 articles
-        return $this->render('blog/list.html.twig', [
+        return $this->render('blog/display.html.twig', [
             'articles' => $articles,
         ]);
     }
