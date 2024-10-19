@@ -18,9 +18,7 @@
 		<div
 			class="row mb-4">
 			<!-- Colonne pour les articles -->
-			<div
-				class="col-md-8">
-				<!-- Affichage des articles -->
+			<div class="col-md-8">
 				<div class="row justify-content-center">
 					{% if articles|length == 0 %}
 						<p class="text-center text-muted">Aucun article ne correspond à votre recherche.</p>
@@ -48,7 +46,6 @@
 										<div class="card-footer bg-white text-center border-0">
 											<small class="text-muted">Publié le
 												{{ article.createdAt|date('d M Y') }}</small>
-											<!-- Tags associés -->
 											<div class="mt-2">
 												{% for tag in article.tags %}
 													<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
@@ -84,21 +81,29 @@
 				<!-- Filtres par Tags -->
 				<div class="text-center mb-4">
 					<p class="mb-2">Filtrer par catégories :</p>
-					{% for tag in tags %}
-						<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
-					{% else %}
-						<span class="text-muted">Aucun tag disponible.</span>
-					{% endfor %}
+					<div class="d-flex flex-wrap justify-content-center">
+						{% for tag in tags %}
+							<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
+						{% else %}
+							<span class="text-muted">Aucun tag disponible.</span>
+						{% endfor %}
+					</div>
 				</div>
 
 				<!-- Articles Populaires -->
 				<div>
 					<h3 class="text-center mb-3">Articles les plus populaires</h3>
-					<div class="list-group">
+					<div class="row">
 						{% for popularArticle in popularArticles %}
-							<a href="{{ path('blog_show', {'slug': popularArticle.slug}) }}" class="list-group-item list-group-item-action">
-								{{ popularArticle.name|e }}
-							</a>
+							<div class="col-12 mb-3">
+								<div class="card border-0 shadow-sm">
+									<div class="card-body">
+										<h5 class="card-title">
+											<a href="{{ path('blog_show', {'slug': popularArticle.slug}) }}">{{ popularArticle.name|e }}</a>
+										</h5>
+									</div>
+								</div>
+							</div>
 						{% else %}
 							<span class="text-muted">Aucun article populaire.</span>
 						{% endfor %}

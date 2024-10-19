@@ -5,25 +5,76 @@
 	- Caméléon Solutions
 {% endblock %}
 
+{% block meta_description %}
+	<meta name="description" content="{{ article.subtitle|e }}">
+{% endblock %}
+
 {% block body %}
 	<div class="container my-5">
-		<article class="post">
-			<div class="article-v2">
-				<figure class="article-thumb">
-					<img src="{{ asset('img/blog/' ~ article.imageName) }}" alt="{{ article.name }}" class="img-fluid rounded" style="width: 100%; height: auto;">
-				</figure>
-				<div class="article-content-main">
-					<div class="article-header">
-						<h2 class="entry-title">{{ article.name }}</h2>
-						<div class="entry-meta">
-							<span class="entry-date">{{ article.createdAt|date('F j, Y') }}</span>
+		<div class="row">
+			<div class="col-md-8">
+				<article class="post">
+					<div class="article-v2">
+						<figure class="article-thumb">
+							<img src="{{ asset('img/blog/' ~ article.imageName) }}" alt="{{ article.name|e }}" class="img-fluid rounded" style="width: 100%; height: auto; max-height: 300px; object-fit: cover;">
+						</figure>
+						<div class="article-content-main">
+							<div class="article-header">
+								<h2 class="entry-title display-4">{{ article.name }}</h2>
+								<div class="entry-meta mb-3">
+									<span class="entry-date text-muted">{{ article.createdAt|date('F j, Y') }}</span>
+									<span class="mx-2">|</span>
+								</div>
+							</div>
+							<div class="article-content mb-4">
+								<p>{{ article.content|raw }}</p>
+							</div>
 						</div>
 					</div>
-					<div class="article-content">
-						<p>{{ article.content }}</p>
+				</article>
+
+
+				<div class="text-center mt-5">
+					<a href="{{ path('blog_display') }}" class="btn btn-primary">Retour aux articles</a>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<h4 class="text-center mb-4">Articles Similaires</h4>
+				<div class="row">
+					{% for popularArticle in popularArticles|slice(0, 2) %}
+						{# Limiter à 2 articles #}
+						<div class="col-12 mb-3">
+							<div class="card">
+								<a href="{{ path('blog_show', {'slug': popularArticle.slug}) }}">
+									<img src="{{ asset('img/blog/' ~ popularArticle.imageName) }}" class="card-img-top" alt="{{ popularArticle.name|e }}" style="max-height: 150px; object-fit: cover;">
+								</a>
+								<div class="card-body">
+									<h5 class="card-title">
+										<a href="{{ path('blog_show', {'slug': popularArticle.slug}) }}" class="text-decoration-none">{{ popularArticle.name|e }}</a>
+									</h5>
+									<p class="card-text">{{ popularArticle.subtitle|e }}</p>
+								</div>
+							</div>
+						</div>
+					{% else %}
+						<div class="col-12">
+							<div class="alert alert-muted text-center">Aucun article similaire.</div>
+						</div>
+					{% endfor %}
+				</div>
+
+				<div class="mt-4">
+					<h5 class="font-weight-bold">Tags Associés</h5>
+					<div>
+						{% for tag in article.tags %}
+							<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
+						{% else %}
+							<span class="text-muted">Aucun tag associé.</span>
+						{% endfor %}
 					</div>
 				</div>
 			</div>
-		</article>
+		</div>
 	</div>
 {% endblock %}

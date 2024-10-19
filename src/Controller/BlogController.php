@@ -87,15 +87,24 @@ class BlogController extends AbstractController
     
 
     #[Route('/blog/{slug}', name: 'blog_show')]
-    public function show(string $slug, ArticleRepository $articleRepository): Response
+    public function show(string $slug, ArticleRepository $articleRepository, TagRepository $tagRepository): Response
     {
+        // Récupère tous les tags
+        $tags = $tagRepository->findAll();
+    
+        // Récupérer les articles les plus populaires
+        $popularArticles = $articleRepository->findMostPopularArticles(5); // Limiter à 5 articles
+    
         $article = $articleRepository->findOneBy(['slug' => $slug]);
         if (!$article) {
             throw $this->createNotFoundException('Article non trouvé');
         }
-
+    
         return $this->render('blog/show.html.twig', [
             'article' => $article,
+            'tags' => $tags,
+            'popularArticles' => $popularArticles, // Assurez-vous que c'est passé correctement
         ]);
     }
+    
 }

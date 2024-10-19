@@ -1119,6 +1119,15 @@ h4 {
   line-height: 1.6; /* Améliorer l'interligne pour une meilleure lisibilité */
 }
 
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour les transformations et l'ombre */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lève la carte vers le haut */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Ajoute une ombre portée */
+}
+
 /*--------------------------------------------------------------
 # Responsive
 --------------------------------------------------------------*/
