@@ -13,9 +13,29 @@ class TagRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Tag::class);
+        parent::__construct($registry, Tag::class); // Assurez-vous que Tag::class est bien utilisé ici
     }
 
+    private function generateRandomColor(): string
+    {
+        $characters = '0123456789ABCDEF';
+        $color = '#';
+        for ($i = 0; $i < 6; $i++) {
+            $color .= $characters[rand(0, 15)];
+        }
+        return $color;
+    }
+
+    public function findAllWithColors(): array
+    {
+        $tags = $this->findAll();
+        foreach ($tags as $tag) {
+            // Assigner une couleur aléatoire à chaque tag
+            $tag->setColor($this->generateRandomColor());
+        }
+        return $tags;
+    }
+}
 //    /**
 //     * @return Tag[] Returns an array of Tag objects
 //     */
@@ -40,4 +60,3 @@ class TagRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
-}

@@ -67,13 +67,13 @@
 				<div class="mt-4">
 					<h5 class="font-weight-bold">Tags Associés</h5>
 					<div>
-						{% for tag in article.tags %}
-							<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
-						{% else %}
-							<span class="text-muted">Aucun tag associé.</span>
+						{% for tag in tags %}
+							<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge" style="background-color: {{ tag.color }};">{{ tag.name }}</a>
 						{% endfor %}
 					</div>
 				</div>
+
+
 			</div>
 		</div>
 	</div>

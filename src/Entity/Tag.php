@@ -30,6 +30,9 @@ class Tag
     #[ORM\ManyToMany(targetEntity: Article::class, inversedBy: 'tags')]
     private Collection $articles;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $color = null;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -105,6 +108,18 @@ class Tag
         if ($this->articles->removeElement($article)) {
             $article->removeTag($this); // Synchronisation bidirectionnelle
         }
+
+        return $this;
+    }
+
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    public function setColor(?string $color): static
+    {
+        $this->color = $color;
 
         return $this;
     }

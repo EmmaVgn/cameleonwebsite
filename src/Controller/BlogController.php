@@ -25,6 +25,10 @@ class BlogController extends AbstractController
             4 // Nombre d'articles par page
         );
 
+        // Utilisez findAllWithColors pour récupérer les tags avec couleurs
+        $tags = $tagRepository->findAllWithColors();
+
+
         // Récupère tous les tags
         $tags = $tagRepository->findAll();
 
@@ -47,6 +51,9 @@ class BlogController extends AbstractController
         PaginatorInterface $paginator // Ajoutez ce paramètre
     ): Response {
         $searchQuery = $request->query->get('q');
+
+        // Utilisez findAllWithColors pour récupérer les tags avec couleurs
+        $tags = $tagRepository->findAllWithColors();
         
         // Effectuer la recherche des articles (cela devrait retourner un QueryBuilder)
         $articlesQuery = $articleRepository->searchQueryBuilder($searchQuery);
@@ -83,9 +90,10 @@ class BlogController extends AbstractController
         // Récupère le tag à partir du slug
         $tag = $tagRepository->findOneBy(['slug' => $slug]);
         if (!$tag) {
-            throw $this->createNotFoundException('Tag non trouvé');
+            throw $this->createNotFoundException(sprintf('Tag non trouvé pour le slug "%s"', $slug));
         }
-    
+        dump($slug);
+        $popularArticles = $articleRepository->findMostPopularArticles(5); // Limiter à 5 articles
         $queryBuilder = $articleRepository->findByTag($tag);
     
         $articles = $paginator->paginate(
@@ -93,6 +101,9 @@ class BlogController extends AbstractController
             $request->query->getInt('page', 1),
             9 // Nombre d'articles par page
         );
+
+        // Utilisez findAllWithColors pour récupérer les tags avec couleurs
+        $tags = $tagRepository->findAllWithColors();
     
         // Récupère tous les tags pour le filtre
         $tags = $tagRepository->findAll();
@@ -101,6 +112,7 @@ class BlogController extends AbstractController
             'articles' => $articles,
             'tags' => $tags, // Passez également les tags ici
             'tag' => $tag,
+            'popularArticles' => $popularArticles,
         ]);
     }
     
@@ -111,6 +123,8 @@ class BlogController extends AbstractController
     {
         // Récupère tous les tags
         $tags = $tagRepository->findAll();
+
+        $tags = $tagRepository->findAllWithColors();
     
         // Récupérer les articles les plus populaires
         $popularArticles = $articleRepository->findMostPopularArticles(5); // Limiter à 5 articles
