@@ -42,6 +42,7 @@ class Article
     #[ORM\Column(nullable: true)]
     private ?\DateTimeInterface $updatedAt = null;
 
+
     #[ORM\Column(type: 'string', length: 255)]
     private $slug;
 
@@ -54,14 +55,15 @@ class Article
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
-        $this->updatedAt = new \DateTimeImmutable();
         $this->tags = new ArrayCollection();
     }
 
     public function __toString(): string
     {
-        return $this->name;
+        $this->updatedAt = new \DateTimeImmutable(); // Mettez à jour ici si nécessaire
+        return $this->name ?? 'Unnamed Article'; // Retourne le nom ou une valeur par défaut
     }
+    
 
     public function getId(): ?int
     {
@@ -101,7 +103,7 @@ class Article
         return $this;
     }
 
-        /**
+       /**
          *
     *If manually uploading a file (i.e. not using Symfony Form) ensure an instance
     *of 'UploadedFile' is injected into this setter to trigger the update. If this
@@ -147,6 +149,12 @@ class Article
 
         return $this;
     }
+
+    public function getFormattedCreatedAt(): ?string
+    {
+        return $this->createdAt ? $this->createdAt->format('Y-m-d H:i:s') : 'Not Set';
+    }
+    
     
     public function getSlug(): ?string
     {

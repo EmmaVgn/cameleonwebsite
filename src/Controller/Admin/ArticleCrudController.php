@@ -10,10 +10,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class ArticleCrudController extends AbstractCrudController
 {
@@ -52,7 +53,7 @@ class ArticleCrudController extends AbstractCrudController
                 ->setTargetFieldName('name'), // Spécifie le champ utilisé pour générer le slug
                 ImageField::new('imageName')
                 ->setBasePath('img/blog/')
-                ->setUploadDir('public/img/blog')
+                ->setUploadDir('public/img/blog'),
             
         ];
     }

@@ -30,14 +30,12 @@
 			<div class="col-12 text-center">
 				<p class="mb-2">Filtrer par catégories :</p>
 				{% for tag in tags %}
-					<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name }}</a>
+					<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
 				{% else %}
 					<span class="text-muted">Aucun tag disponible.</span>
-					<!-- Optionnel : message si pas de tags -->
 				{% endfor %}
 			</div>
 		</div>
-
 
 		<!-- Affichage des articles -->
 		<div class="row justify-content-center">
@@ -50,11 +48,11 @@
 							<div class="card h-100 shadow-sm border-0 rounded-lg">
 								<div class="card-img-top position-relative">
 									<a href="{{ path('blog_show', {'slug': article.slug}) }}">
-										<img src="{{ asset('img/blog/' ~ article.imageName) }}" alt="{{ article.name }}" class="img-fluid rounded-top" style="width: 100%; height: 300px; object-fit: cover;">
+										<img src="{{ asset('img/blog/' ~ article.imageName) }}" alt="{{ article.name|e }}" class="img-fluid rounded-top" style="width: 100%; height: 300px; object-fit: cover;">
 									</a>
 									<div class="overlay d-flex align-items-center justify-content-center" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.6);">
 										<h2 class="text-white text-center h4 font-weight-bold">
-											<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="text-white">{{ article.name }}</a>
+											<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="text-white">{{ article.name|e }}</a>
 										</h2>
 									</div>
 								</div>
@@ -69,16 +67,17 @@
 										{{ article.createdAt|date('d M Y') }}</small>
 									<!-- Tags associés -->
 									<div class="mt-2">
-										{% for tag in tag %}
-											<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name }}</a>
+										{% for tag in article.tags %}
+											<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
+										{% else %}
+											<span class="text-muted">Aucun tag associé.</span>
 										{% endfor %}
-
 									</div>
 								</div>
 							</div>
 						</div>
 					{% else %}
-						<p class="text-danger">Le slug de l'article "{{ article.name }}" est manquant.</p>
+						<p class="text-danger">Le slug de l'article "{{ article.name|e }}" est manquant.</p>
 					{% endif %}
 				{% endfor %}
 			{% endif %}
