@@ -80,15 +80,14 @@ h4 {
 --------------------------------------------------------------*/
 .fade-in {
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+  transform: translateY(20px); /* Optionnel : ajoute un effet de translation */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Durée de l'animation */
 }
 
-.fade-in.visible {
+.fade-in.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0); /* Remise à zéro de la translation */
 }
-
 /*--------------------------------------------------------------
 # Navbar 
 --------------------------------------------------------------*/
@@ -182,6 +181,43 @@ h4 {
   width: 100%;
   color: white;
   padding: 10px 20px;
+}
+
+/* Personnalisation du bouton toggler */
+.navbar-toggler {
+  border: none; /* Retire la bordure */
+}
+
+/* Personnalisation de l'icône du toggler */
+.navbar-toggler-icon {
+  background-color: transparent; /* Assure que le fond est transparent */
+  border: none; /* Retire toute bordure */
+}
+
+/* Utilisation d'une image personnalisée pour l'icône si nécessaire */
+.navbar-toggler-icon:before {
+  content: ""; /* Utilisation d'un contenu vide pour l'icône */
+  display: inline-block;
+  width: 30px; /* Largeur de l'icône */
+  height: 3px; /* Épaisseur de la barre */
+  background-color: white; /* Couleur de la barre */
+  position: relative; /* Positionnement relatif */
+}
+
+/* Créer les autres barres du toggler */
+.navbar-toggler-icon:before,
+.navbar-toggler-icon:after {
+  content: "";
+  display: block;
+  width: 30px; /* Largeur de l'icône */
+  height: 3px; /* Épaisseur de la barre */
+  background-color: white; /* Couleur de la barre */
+  margin: 5px 0; /* Espace entre les barres */
+}
+
+/* Masquer l'icône par défaut de Bootstrap */
+.navbar-toggler-icon {
+  display: none; /* Masquer l'icône Bootstrap */
 }
 
 @media (max-width: 768px) {

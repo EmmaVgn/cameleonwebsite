@@ -110,21 +110,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const fadeInElements = document.querySelectorAll('.fade-in');
 
   function checkVisibility() {
-    const windowHeight = window.innerHeight;
-    
-    fadeInElements.forEach(element => {
-      const elementTop = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      fadeInElements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
 
-      if (elementTop < windowHeight * 0.8) { 
-        element.classList.add('visible');
-      }
-    });
+          if (elementTop < windowHeight * 0.8) { 
+              element.classList.add('show');
+          }
+      });
   }
 
-  // Initial check to handle already visible elements
+  // Appel initial pour afficher les éléments déjà visibles
   checkVisibility();
-  
-  // Check visibility on scroll
+
+  // Ajouter l'écouteur d'événements lors du défilement
   window.addEventListener('scroll', checkVisibility);
 });
 
