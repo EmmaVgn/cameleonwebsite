@@ -4,9 +4,11 @@
 * {
   margin: 0;
   padding: 0;
-  list-style: none;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
+html,
 body {
   font-family: "Raleway", serif;
   position: relative;
@@ -14,10 +16,13 @@ body {
   text-decoration: none;
   list-style: none;
   background-color: #fff;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 a {
   text-decoration: none;
+  list-style: none;
   color: black;
 }
 
@@ -28,7 +33,51 @@ h4 {
   font-family: "Playfair Display", serif;
 }
 
-/* Styles pour les éléments qui apparaissent lors du défilement */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+.container {
+  padding: 15px; /* Ajuste les valeurs si nécessaire */
+}
+
+/*--------------------------------------------------------------
+#Boutons
+--------------------------------------------------------------*/
+.btn-custom {
+  background-color: #032b35;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #085669;
+  transform: scale(1.05);
+}
+
+/*--------------------------------------------------------------
+# Défilement fade-in
+--------------------------------------------------------------*/
 .fade-in {
   opacity: 0;
   transform: translateY(10px);
@@ -55,6 +104,10 @@ h4 {
   z-index: 1;
   width: 100%;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
 }
 
 .navbar-background {
@@ -111,22 +164,6 @@ h4 {
   margin-right: 15px;
 }
 
-.logo {
-  width: 9%;
-  max-width: 200px;
-  height: auto;
-}
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-.footer-custom {
-  background-color: #032b35f4;
-}
-
-/*--------------------------------------------------------------
-# Homepage 
---------------------------------------------------------------*/
 .custom-navbar .navbar {
   margin: 0;
 }
@@ -147,6 +184,96 @@ h4 {
   padding: 10px 20px;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: rgba(3, 43, 53, 0.9);
+  }
+
+  .navbar .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar .navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+
+  .navbar-nav .nav-item {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar .navbar-nav .nav-link {
+    font-size: 1.1rem;
+  }
+
+  .navbar .navbar-brand {
+    font-size: 1.4rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# Logo
+--------------------------------------------------------------*/
+.logo {
+  width: 90%; /* Ajuster la taille du logo */
+  max-width: 200px; /* Taille maximale */
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 30%; /* Augmenter la taille du logo sur les petits écrans */
+    max-width: 150px; /* Taille maximale pour les petits écrans */
+  }
+}
+
+@media (max-width: 1200px) {
+  .logo {
+    width: 60%; /* Ajuster la taille pour les écrans moyens */
+    max-width: 180px; /* Taille maximale pour les écrans moyens */
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer-custom {
+  background-color: #032b35f4;
+}
+
+.footer-custom a {
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 20px;
+  }
+
+  .footer-custom {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer-custom {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .footer-custom p {
+    margin: 5px 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Page d'accueil (arbre + caméléon + typing
+--------------------------------------------------------------*/
 .hero-section {
   background: linear-gradient(135deg, #032b35, #1b4f5f, #064663);
   background-size: 200% 200%;
@@ -171,7 +298,9 @@ h4 {
 }
 
 .line h1 {
-  font-size: 2.5rem; /* Adjust for larger screens */
+  font-size: 2.5rem; /* Taille de la police pour les grands écrans */
+  display: inline; /* S'assure que le h1 reste sur une ligne */
+  line-height: 3.5rem; /* Hauteur de ligne pour l'alignement */
 }
 
 .line {
@@ -185,6 +314,7 @@ h4 {
   margin-bottom: 20px;
   animation: typing 3s steps(30, end) forwards,
     blink-caret 0.75s step-end infinite;
+  line-height: 3.5rem;
 }
 
 /* Animation d'écriture pour chaque ligne */
@@ -238,6 +368,7 @@ h4 {
   text-align: center;
   flex: 1;
   margin-right: 20px;
+  top: 30%;
 }
 
 .line {
@@ -253,10 +384,11 @@ h4 {
 }
 
 #word {
-  display: inline-block;
+  display: inline; /* S'assure que le span est sur la même ligne que le h1 */
   opacity: 1;
   transition: opacity 0.5s ease;
   text-decoration: underline;
+  font-weight: bold;
 }
 
 /* Tree container */
@@ -295,7 +427,7 @@ h4 {
 .scroll-down-icon {
   position: absolute;
   text-align: center;
-  margin-top: 850px;
+  margin-top: 820px;
   font-size: 2rem;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
@@ -328,6 +460,86 @@ h4 {
   transform: translateY(5px);
 }
 
+@media (max-width: 1024px) {
+  .typing-effect {
+    left: 50%; /* Centrer le texte */
+    top: 15%; /* Ajuster la position */
+    transform: translate(-50%, -50%);
+    margin-right: 0; /* Supprimer la marge à droite */
+  }
+
+  .line h1 {
+    font-size: 2rem; /* Réduire la taille de la police */
+    display: block; /* Forcer le h1 à être un bloc pour passer sur deux lignes */
+    text-align: center;
+  }
+
+  #developer {
+    display: block; /* Mettre "Développeuse" sur une nouvelle ligne */
+  }
+
+  #tree-container {
+    left: 50%; /* Centrer le conteneur de l'arbre */
+    top: 60%; /* Ajuster la position */
+    width: 40%; /* Réduire la largeur */
+    transform: translate(-50%, -50%);
+  }
+
+  .scroll-down-icon {
+    margin-top: 1060px; /* Ajuster la position pour les écrans plus petits */
+    font-size: 1.5rem; /* Réduire la taille de l'icône */
+  }
+}
+
+@media (max-width: 768px) {
+  .line h1 {
+    font-size: 1.5rem; /* Réduire encore la taille de la police */
+  }
+
+  .tagline {
+    font-size: 1rem; /* Réduire la taille de la tagline */
+  }
+
+  #tree-container {
+    width: 70%; /* Augmenter la largeur pour les petits écrans */
+  }
+
+  .scroll-down-icon {
+    margin-top: 1150px; /* Ajuster la position pour les petits écrans */
+    font-size: 1.2rem; /* Réduire la taille de l'icône */
+  }
+
+  .typing-effect {
+    top: 20%; /* Ajuster la position pour les petits écrans */
+  }
+}
+
+@media (max-width: 480px) {
+  .line {
+    line-height: 2.5rem; /* Réduire la hauteur de ligne */
+  }
+
+  .line h1 {
+    font-size: 1.2rem; /* Réduire la taille de la police */
+  }
+
+  #tree-container {
+    width: 90%; /* Réduire davantage la largeur */
+  }
+
+  .typing-effect {
+    top: 30%; /* Ajuster encore la position */
+  }
+
+  .scroll-down-icon {
+    margin-top: 900px; /* Déplacer l'icône plus bas pour les très petits écrans */
+    font-size: 1rem; /* Réduire la taille de l'icône */
+  }
+}
+
+/*--------------------------------------------------------------
+# Page d'accueil section projects
+--------------------------------------------------------------*/
 /* Project */
 .project-container {
   padding: 2rem;
@@ -339,6 +551,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column; /* Assure que le contenu est en colonne */
   margin-bottom: 1rem;
   font-size: 1.8rem;
   color: #333;
@@ -348,32 +561,18 @@ h4 {
 .heading-part1 {
   font-size: 2.4rem;
   font-weight: 600;
-  position: relative;
-  width: 100%;
-  white-space: nowrap;
+  white-space: nowrap; /* Évite le passage à la ligne pour les écrans plus larges */
   padding-bottom: 0.7rem;
 }
 
 .heading-part2 {
   font-size: 1.6rem;
-  width: 100%;
   font-weight: 400;
-  position: relative;
-  white-space: nowrap;
   font-style: italic;
-  margin-top: 2.8rem;
-  left: -19%;
-}
-
-.heading-part1::after {
-  content: "";
-  position: absolute;
-  bottom: -1.5rem;
-  left: 0;
-  width: 100%;
-  border-bottom: 4px solid #032b35f4;
-  z-index: 1;
-  width: 165%;
+  margin-top: -1rem; /* Réduire l'écart pour mobile */
+  text-align: center; /* Centrer le texte */
+  margin-left: 0; /* Aucune marge à gauche sur les petits écrans */
+  line-height: 1.2;
 }
 
 .project-description {
@@ -383,18 +582,85 @@ h4 {
   color: #666;
   line-height: 1.6;
   text-align: justify;
-  width: 135%;
-  margin-left: -23%;
   padding: 1rem;
+  margin: 0 auto; /* Centrer la description */
+  width: 100%; /* S'assurer qu'il prend 100% de l'espace */
 }
 
-.my-photo {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-left: 30px;
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .project-heading {
+    font-size: 1.5rem; /* Réduire la taille de la police */
+  }
+
+  .heading-part1 {
+    font-size: 2rem; /* Ajuster la taille pour les écrans moyens */
+  }
+
+  .heading-part2 {
+    margin-left: 20px; /* Ajustement pour plus de lisibilité */
+  }
+
+  .project-description {
+    width: 90%; /* Réduire la largeur pour plus de lisibilité */
+  }
+
+  .my-photo {
+    margin-left: 0; /* Supprimer la marge à gauche */
+    margin-top: 20px; /* Ajouter un espace au-dessus de l'image */
+    max-width: 100%; /* Assurez-vous que l'image ne déborde pas */
+  }
 }
 
-/* Listing */
+@media (max-width: 768px) {
+  .project-heading {
+    font-size: 1.3rem; /* Réduire encore la taille de la police */
+  }
+
+  .heading-part1 {
+    font-size: 1.8rem; /* Ajustement pour les petits écrans */
+  }
+
+  .heading-part2 {
+    margin-left: 10px; /* Déplacer légèrement vers la droite */
+  }
+
+  .project-description {
+    font-size: 1rem; /* Réduire la taille de la description */
+    line-height: 1.4; /* Ajuster la hauteur de ligne */
+  }
+
+  .my-photo {
+    margin-top: 15px; /* Espace au-dessus de l'image */
+  }
+}
+
+@media (max-width: 480px) {
+  .project-heading {
+    font-size: 1.1rem; /* Réduire la taille de la police pour les très petits écrans */
+  }
+
+  .heading-part1 {
+    font-size: 1.5rem; /* Ajustement pour les très petits écrans */
+  }
+
+  .heading-part2 {
+    font-size: 1.2rem; /* Ajustement pour les très petits écrans */
+    margin-left: 5px; /* Ajustement pour un léger décalage */
+  }
+
+  .project-description {
+    font-size: 0.9rem; /* Réduire la taille de la description pour les très petits écrans */
+  }
+
+  .my-photo {
+    max-width: 100%; /* Assurez-vous que l'image ne déborde pas */
+  }
+}
+
+/*--------------------------------------------------------------
+# Page d'accueil (services, pop pup)
+--------------------------------------------------------------*/
 .container-services {
   margin-top: 60px;
   margin-bottom: 20px;
@@ -403,6 +669,30 @@ h4 {
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content-box {
+  position: relative;
+  text-decoration: none;
+}
+
+.label-round {
+  position: absolute; /* Make this position absolute */
+  top: 0%; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100px; /* Set a width */
+  height: 100px; /* Set a height */
+  border-radius: 50%; /* Make it circular */
+  background-color: #f0f0f0; /* Background color */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  overflow: hidden; /* Hide overflow */
+  z-index: 120; /* Keep it above other elements */
+}
+
+.label-round .overlap-img {
+  max-width: 100%; /* Make the image responsive */
+  max-height: 100%; /* Ensure the image fits within the circle */
+  object-fit: cover; /* Cover the entire area */
 }
 
 .title-service {
@@ -427,27 +717,34 @@ h4 {
 
 .listing-container {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap; /* Permet aux éléments de s'enrouler */
+  justify-content: center; /* Centre les éléments */
   padding: 20px;
 }
 
 .timeline {
-  display: flex;
+  display: flex; /* Flex par défaut */
   align-items: stretch;
   width: 100%;
+  flex-direction: column; /* Par défaut en colonne */
+}
+
+.content-link a {
+  text-decoration: none; /* Assurez-vous que les liens ne sont pas soulignés */
+  color: inherit; /* Pour hériter de la couleur du parent */
 }
 
 .content-link {
   position: relative;
-  display: flex;
-  align-items: center;
-  width: 20%;
-  margin: 0;
+  display: block; /* Affichage en bloc par défaut */
+  margin: 10px; /* Ajoute de l'espacement entre les éléments */
   color: white;
+  min-width: 250px; /* Largeur minimale pour les petits écrans */
+  text-decoration: none;
 }
 
 .content-box {
-  width: 90%;
+  width: 100%; /* Prend 100% de l'espace disponible */
   padding: 20px;
   background-color: #032b35;
   text-align: center;
@@ -455,31 +752,85 @@ h4 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   transition: transform 0.3s ease;
+  min-height: 300px;
 }
 
 .content-box:hover {
-  transform: scale(1.6);
+  transform: scale(1.1); /* Légère augmentation au survol */
   background-color: #023d4cc1;
 }
 
-/* Effet au survol */
 .content-link:hover .content-box {
   transform: scale(1.02);
 }
 
-/* Styles pour les titres */
 .content-box h4 {
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* Ajuste la taille pour les petits écrans */
   color: #ffffff;
   margin-bottom: 10px;
 }
 
-/* Styles pour les paragraphes */
 .content-box p {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Ajuste la taille pour les petits écrans */
   color: #666;
   line-height: 1.6;
   margin: 0;
+  margin-top: 120px;
+}
+
+/* Media Queries pour la Responsivité */
+@media (max-width: 1485px) {
+  .content-link {
+    display: flex; /* Utiliser flex uniquement sur desktop */
+    align-items: center; /* Centrer verticalement */
+    flex: 1 1 20%; /* Quatre éléments par ligne */
+  }
+
+  .listing-container {
+    display: flex; /* S'assure que les éléments s'alignent horizontalement */
+  }
+
+  .title-service {
+    font-size: 1.8rem; /* Ajustement de la taille de la police */
+  }
+
+  .content-box h4 {
+    font-size: 1.8rem; /* Ajustement de la taille du titre */
+  }
+}
+
+/* Nouvelle media query pour les écrans larges */
+@media (min-width: 1485px) {
+  .timeline {
+    flex-direction: row; /* Change la direction à ligne */
+  }
+
+  .content-link {
+    flex: 1 1 20%; /* Ajuste la largeur pour s'assurer que plusieurs éléments s'affichent sur la même ligne */
+  }
+
+  .listing-container {
+    flex-wrap: nowrap; /* Ne pas faire de retour à la ligne */
+  }
+}
+
+@media (max-width: 991px) {
+  .content-link {
+    flex: 1 1 100%; /* Un seul élément par ligne (en colonne) */
+    margin: 5px 0; /* Ajoute un espacement vertical */
+  }
+
+  .title-service {
+    font-size: 1.5rem; /* Ajustement de la taille de la police */
+  }
+
+  .content-box h4 {
+    font-size: 1.5rem; /* Ajustement de la taille du titre */
+  }
+
+  .content-box p {
+    font-size: 0.9rem; /* Ajustement de la taille du texte */
+  }
 }
 
 /*popup*/
@@ -507,7 +858,7 @@ h4 {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   font-family: "Arial", sans-serif;
   animation: fadeIn 0.3s ease-out;
-  top: -26%;
+  top: 20%;
 }
 
 /* Afficher quand la classe active est ajoutée */
@@ -584,27 +935,71 @@ h4 {
   color: #ff5722;
 }
 
-/* Label Qualiopi */
-.label-round {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  overflow: hidden;
+/*--------------------------------------------------------------
+# PICTO
+--------------------------------------------------------------*/
+.avt_container {
+  background-color: rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: center;
+  text-align: center;
+  justify-content: space-around;
   align-items: center;
-  margin-top: -80px;
-  margin-left: -26px;
-  background-color: #fff;
-  border: 2px solid #ccc;
-}
-
-.label-round img {
+  margin: 0;
   width: 100%;
-  height: auto;
+  padding: 1.5rem 0;
 }
 
-/*Réalisations*/
+.avt_title {
+  padding: 0 4rem;
+  position: relative;
+  z-index: 3;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+}
+
+.avt_subtitle {
+  position: relative;
+  top: -0.5rem;
+}
+
+@media (max-width: 768px) {
+  .avt_container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avt_item {
+    max-width: 90%;
+  }
+
+  .avt_title {
+    padding: 0 1rem;
+    font-size: 0.9rem;
+  }
+
+  .avt_subtitle {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .avt_title {
+    font-size: 0.8rem;
+  }
+
+  .avt_subtitle {
+    font-size: 0.7rem;
+  }
+
+  .avt_item {
+    max-width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Section réalisations
+--------------------------------------------------------------*/
 .flip-card {
   background-color: transparent;
   perspective: 1000px;
@@ -619,21 +1014,13 @@ h4 {
 }
 
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+  transform: rotateY(360deg);
 }
 
 .flip-card-back {
-  background-color: #f2f2f2;
+  background-color: #f8f9fa;
   color: black;
-  transform: rotateY(180deg);
+  transform: rotateY(360deg);
 }
 
 .realisations-description {
@@ -763,63 +1150,21 @@ h4 {
   max-width: 90%; /* Ajuste cette valeur selon tes besoins */
 }
 
-/*--------------------------------------------------------------
-# ABOUT
---------------------------------------------------------------*/
-/* IAM */
-
-.iam-container {
-  margin-top: 40px;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.iam-image {
-  width: 300px;
-  height: auto;
-  border-radius: 50%;
-  border: 5px solid #032b35f4;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-/*--------------------------------------------------------------
-# MENTIONS LEGALES
---------------------------------------------------------------*/
-.title {
-  font-size: 2.5rem;
-  color: #333;
-  font-weight: 200;
-}
-
-.legal-article {
-  margin-bottom: 30px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-}
-
-.article-title {
-  font-size: 1.75rem;
-  color: black;
-  margin-bottom: 10px;
-}
-
-.article-content {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-}
-
-.article-content b {
+.card-title {
+  font-size: 1.5rem;
   font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
 }
 
 /*--------------------------------------------------------------
-# SERVICES
+# Contact rapide
 --------------------------------------------------------------*/
-/*Contact*/
 .service-contact-section {
   background-color: #f5f5f5;
   padding: 2rem 0;
@@ -853,43 +1198,36 @@ h4 {
   transform: translateY(-2px);
 }
 
-/*Picto*/
-.avt_container {
-  background-color: rgba(0, 0, 0, 0.1);
-  display: flex;
-  text-align: center;
-  justify-content: space-around;
-  align-items: center;
-  margin: 0;
-  width: 100%;
-  padding: 1.5rem 0;
-}
-
-.avt_title {
-  padding: 0 4rem;
-  position: relative;
-  z-index: 3;
-  text-transform: uppercase;
-  margin-bottom: 0;
-  margin-top: 0.5rem;
-}
-
-.avt_subtitle {
-  position: relative;
-  top: -0.5rem;
-}
-
 /*Contact Form*/
 .show {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
 
+@media (max-width: 768px) {
+  .contact-content .row {
+    flex-direction: column;
+  }
+
+  .service-contact-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .service-contact-section p {
+    font-size: 0.9rem;
+  }
+
+  .service-contact-section .btn-primary {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
 .contact-page {
-  padding: 40px 0;
+  padding: 40px 15px; /* Ajustement du padding pour les petits écrans */
 }
 
 .contact-header {
@@ -912,8 +1250,10 @@ h4 {
   margin-bottom: 20px;
 }
 
+/* Flex pour les sections de contact */
 .contact-content .row {
   display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de se replier sur plusieurs lignes */
   justify-content: space-between;
 }
 
@@ -923,6 +1263,8 @@ h4 {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+  flex: 1; /* Permet de prendre un espace flexible */
+  min-width: 300px; /* Largeur minimale pour les petits écrans */
 }
 
 .contact-form-wrapper:hover {
@@ -939,28 +1281,14 @@ h4 {
   border-radius: 5px;
 }
 
-#contact-button {
-  background-color: #032b35;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-#contact-button:hover {
-  background-color: #025c6b;
-  transform: scale(1.05);
-}
-
 .contact-info-wrapper {
   background: #f1f1f1;
   padding: 20px;
   margin-left: -20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Permet de prendre un espace flexible */
+  min-width: 300px; /* Largeur minimale pour les petits écrans */
 }
 
 .contact-form {
@@ -990,50 +1318,86 @@ h4 {
 .contact-final-message {
   display: flex;
   align-items: center;
+  justify-content: center; /* Centrer le message final */
+  flex-direction: column; /* Disposer les éléments en colonne */
 }
 
 .contact-final-message h4 {
   margin-right: 250px;
 }
+
+/* Media Queries pour améliorer la réactivité */
+@media (max-width: 768px) {
+  .contact-form,
+  .contact-info-wrapper {
+    margin-right: 0; /* Supprimer la marge droite pour les petits écrans */
+    margin-left: 0; /* Supprimer la marge gauche pour les petits écrans */
+  }
+
+  .contact-final-message h4 {
+    margin-right: 0; /* Ajustement du message final */
+    text-align: center; /* Centrer le texte */
+  }
+
+  #contact-button {
+    width: 100%; /* Bouton plein largeur */
+  }
+}
+
 /*--------------------------------------------------------------
-# BLOG
+# Blog
 --------------------------------------------------------------*/
-.card-img-top {
-  position: relative;
-  overflow: hidden;
+.article-header {
+  margin-bottom: 20px;
 }
 
-.card-img-top img {
-  transition: transform 0.5s ease, opacity 0.5s ease;
+.entry-title {
+  font-size: 2.5rem; /* Ajuster la taille du titre */
+  font-weight: bold;
 }
 
-.card-img-top:hover img {
-  transform: scale(1.05);
-  opacity: 0.8;
+.entry-meta {
+  font-size: 1rem; /* Ajuster la taille des métadonnées */
 }
 
-.overlay {
-  transition: background 0.5s ease, opacity 0.5s ease;
-  opacity: 0;
+.article-content {
+  font-size: 1.1rem; /* Ajuster la taille du texte de l'article */
+  line-height: 1.6; /* Améliorer l'interligne pour une meilleure lisibilité */
 }
 
-.card-img-top:hover .overlay {
-  opacity: 1;
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour les transformations et l'ombre */
 }
 
-.btn-outline-primary {
-  transition: background-color 0.3s, color 0.3s;
-  border: 1px solid #032b35;
+.card:hover {
+  transform: translateY(-5px); /* Lève la carte vers le haut */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Ajoute une ombre portée */
+}
+
+.blog-content-display {
+  margin-left: 100px; /* Marge en haut de la section */
+}
+
+.card-body a {
+  text-decoration: none; /* Supprime le soulignement */
+}
+
+.link-article a {
+  color: #032b35; /* Couleur du lien */
+  font-weight: bold; /* Gras pour le lien */
+}
+
+.btn-custom-blog {
   background-color: #032b35;
   color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  padding: 10px 20px;
+  font-size: 1rem;
 }
-
-.btn-outline-primary:hover {
-  background-color: #023d4cc1;
-  color: white;
-  border: 1px solid #032b35;
-}
-
 /*--------------------------------------------------------------
 # Login
 --------------------------------------------------------------*/
@@ -1099,313 +1463,34 @@ h4 {
 }
 
 /*--------------------------------------------------------------
-# Blog
+# MENTIONS LEGALES
 --------------------------------------------------------------*/
-.article-header {
-  margin-bottom: 20px;
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 200;
 }
 
-.entry-title {
-  font-size: 2.5rem; /* Ajuster la taille du titre */
-  font-weight: bold;
+.legal-article {
+  margin-bottom: 30px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
-.entry-meta {
-  font-size: 1rem; /* Ajuster la taille des métadonnées */
+.article-title {
+  font-size: 1.75rem;
+  color: black;
+  margin-bottom: 10px;
 }
 
 .article-content {
-  font-size: 1.1rem; /* Ajuster la taille du texte de l'article */
-  line-height: 1.6; /* Améliorer l'interligne pour une meilleure lisibilité */
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
 }
 
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour les transformations et l'ombre */
-}
-
-.card:hover {
-  transform: translateY(-5px); /* Lève la carte vers le haut */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Ajoute une ombre portée */
-}
-
-.blog-content-display {
-  margin-left: 100px; /* Marge en haut de la section */
-}
-
-/*--------------------------------------------------------------
-# Responsive
---------------------------------------------------------------*/
-
-/* HOMEPAGE TAILLE TABLETTES ET MOBILES */
-@media (max-width: 1024px) {
-  .line {
-    font-size: 1.4rem;
-    position: relative;
-    left: -25%;
-  }
-
-  #tree-container {
-    top: 65%;
-    left: 38%;
-  }
-
-  .scroll-down-icon {
-    font-size: 1.8rem;
-    padding: 10px;
-  }
-
-  .title-services {
-    font-size: 2rem;
-    margin: 3% 0 28%;
-  }
-
-  .content-box {
-    width: 90%;
-    max-width: 100%;
-    margin-bottom: 40px;
-  }
-}
-
-@media (max-width: 900px) {
-  .listing-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-
-  .content-box {
-    width: 90%;
-    margin: 10px auto;
-  }
-
-  .timeline {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* LOGO ADAPTATIF */
-@media (min-width: 768px) {
-  .logo {
-    width: 25%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .logo {
-    width: 20%;
-  }
-}
-
-/* HOMEPAGE TAILLE TELEPHONE */
-@media (max-width: 768px) {
-  .line h1 {
-    font-size: 1.8rem;
-  }
-
-  .scroll-down-icon {
-    font-size: 1.5rem;
-    padding: 8px;
-  }
-
-  #custom-jumbotron {
-    padding: 1.5rem;
-  }
-
-  .project-heading {
-    font-size: 1.5rem;
-  }
-
-  .heading-part1 {
-    font-size: 1.8rem;
-  }
-
-  .heading-part2 {
-    font-size: 1.4rem;
-  }
-
-  .project-description {
-    font-size: 1rem;
-  }
-
-  .content-box {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .content-box {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  h4 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: 768px) {
-    .popup {
-      width: 90%;
-      padding: 15px;
-    }
-
-    .popup h4 {
-      font-size: 1.2rem;
-    }
-
-    .popup p {
-      font-size: 0.85rem;
-    }
-  }
-}
-
-/* CONTACT SECTION */
-@media (max-width: 768px) {
-  .contact-content .row {
-    flex-direction: column;
-  }
-
-  .service-contact-section h2 {
-    font-size: 1.5rem;
-  }
-
-  .service-contact-section p {
-    font-size: 0.9rem;
-  }
-
-  .service-contact-section .btn-primary {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* PICTO SECTION */
-@media (max-width: 768px) {
-  .avt_container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .avt_item {
-    max-width: 90%;
-  }
-
-  .avt_title {
-    padding: 0 1rem;
-    font-size: 0.9rem;
-  }
-
-  .avt_subtitle {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .avt_title {
-    font-size: 0.8rem;
-  }
-
-  .avt_subtitle {
-    font-size: 0.7rem;
-  }
-
-  .avt_item {
-    max-width: 100%;
-  }
-}
-/*--------------------------------------------------------------
-# Responsive Contact Page
---------------------------------------------------------------*/
-
-/* Style par défaut pour la page de contact */
-.contact-page {
-  padding: 2rem;
-}
-
-/* Section d'introduction */
-.contact-intro {
-  margin-bottom: 2rem;
-}
-
-.contact-intro h2 {
-  font-size: 2.5rem;
-}
-
-.contact-intro p {
-  font-size: 1.2rem;
-}
-
-/* Section du formulaire de contact */
-.contact-form-section {
-  margin-top: 3rem;
-}
-
-.contact-form-wrapper,
-.contact-info-wrapper {
-  padding: 1rem;
-}
-
-/* Responsive pour tablettes */
-@media (max-width: 1024px) {
-  .contact-intro h2 {
-    font-size: 2rem;
-  }
-
-  .contact-intro p {
-    font-size: 1rem;
-  }
-
-  .contact-form-wrapper h3,
-  .contact-info-wrapper h3 {
-    font-size: 1.5rem;
-  }
-
-  .contact-form-wrapper .form-control {
-    font-size: 0.9rem;
-  }
-}
-
-/* Responsive pour téléphones */
-@media (max-width: 768px) {
-  .contact-intro {
-    text-align: center;
-  }
-
-  .contact-form-wrapper,
-  .contact-info-wrapper {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .contact-info-wrapper {
-    text-align: center;
-  }
-
-  .contact-final-message img {
-    width: 150px; /* Réduire la taille de l'image sur mobile */
-    margin-top: 20px;
-  }
-}
-
-/* Ajustements supplémentaires pour les très petits écrans */
-@media (max-width: 480px) {
-  .contact-intro h2 {
-    font-size: 1.5rem;
-  }
-
-  .contact-intro p {
-    font-size: 0.9rem;
-  }
-
-  .contact-form-wrapper h3,
-  .contact-info-wrapper h3 {
-    font-size: 1.2rem;
-  }
-
-  .contact-form-wrapper .form-control {
-    font-size: 0.8rem;
-  }
+.article-content b {
+  font-weight: bold;
 }
