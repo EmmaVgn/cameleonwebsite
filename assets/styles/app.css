@@ -1477,12 +1477,44 @@ h4 {
 }
 
 /*--------------------------------------------------------------
-# MENTIONS LEGALES
+# MENTIONS LÉGALES
 --------------------------------------------------------------*/
 .title {
   font-size: 2.5rem;
   color: #333;
   font-weight: 200;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.legalies-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Roboto Slab", serif; /* Utiliser la police souhaitée */
+}
+
+.sommaire-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.sommaire-list li {
+  margin: 5px 0;
+}
+
+.sommaire-list a {
+  color: #032b35; /* Couleur des liens */
+  text-decoration: none;
+}
+
+.sommaire-list a:hover {
+  text-decoration: underline;
+}
+
+.policy-section {
+  margin-top: 30px;
 }
 
 .legal-article {
@@ -1491,6 +1523,11 @@ h4 {
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f9f9f9;
+  transition: background-color 0.3s ease; /* Ajout d'une transition */
+}
+
+.legal-article:hover {
+  background-color: #f1f1f1; /* Changement de couleur au survol */
 }
 
 .article-title {
@@ -1507,4 +1544,41 @@ h4 {
 
 .article-content b {
   font-weight: bold;
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem; /* Réduire la taille de la police sur les petits écrans */
+  }
+
+  .legal-article {
+    padding: 10px; /* Ajuster le rembourrage pour les petits écrans */
+  }
+
+  .article-title {
+    font-size: 1.5rem; /* Réduire la taille de la police des titres */
+  }
+
+  .article-content {
+    font-size: 0.9rem; /* Réduire la taille de la police du contenu */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.75rem; /* Réduire encore la taille de la police sur les très petits écrans */
+  }
+
+  .legal-article {
+    padding: 8px; /* Ajustement supplémentaire pour les très petits écrans */
+  }
+
+  .article-title {
+    font-size: 1.25rem; /* Réduire davantage la taille des titres */
+  }
+
+  .article-content {
+    font-size: 0.85rem; /* Réduire davantage la taille du contenu */
+  }
 }
