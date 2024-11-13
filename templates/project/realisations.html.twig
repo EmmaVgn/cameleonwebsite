@@ -5,146 +5,21 @@
 		</div>
 	{% else %}
 		{% for project in projects %}
-			<div class="col-md-6 mb-4 mt-5">
-				<div class="flip-card project-card" data-id="{{ project.id }}">
-					<div class="flip-card-inner">
-						<div class="flip-card-front">
-							<div class="card-body">
-								<h5 class="card-title">{{ project.title }}</h5>
-								<p class="card-text">{{ project.short_description }}</p>
-							</div>
-						</div>
-						<div class="flip-card-back">
-							<button class="btn-custom view-details" data-id="{{ project.id }}">Voir Détails</button>
-						</div>
+			<div class="col-md-4 mb-4 mt-3">
+				<div class="card project-card h-100">
+					<img src="{{ project.image }}" class="card-img-top main-image" alt="{{ project.title }}">
+					<div class="card-body">
+						<h5 class="card-title">{{ project.title }}</h5>
+						<p class="card-text">{{ project.short_description }}</p>
+						{% if project.link %}
+							<a href="{{ project.link }}" class="btn btn-custom mt-2" target="_blank">Voir le site</a>
+						{% else %}
+							<p>Aucun lien disponible</p>
+						{% endif %}
 					</div>
 				</div>
 			</div>
+
 		{% endfor %}
 	{% endif %}
 </div>
-
-
-<div id="projectDetails" class="mt-4 container">
-	<div class="row">
-		<div class="col-md-8">
-			<img id="mainImage" src="{{ asset('img/Designer (1).jpeg') }}" class="img-fluid main-image" alt="Main Image">
-			<div class="row mt-2" id="secondaryImages" style="display: none;"></div>
-		</div>
-		<div class="col-md-4">
-			<div class="realisations-description">
-				<h4 id="projectTitle">Sélectionnez un projet pour voir les détails</h4>
-				<p id="projectDescription" class="mt-2"></p>
-				<button onclick="showSecondaryImages()" class="btn-custom">Afficher les images</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-{% block javascripts %}
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-const projects = {{ projects|json_encode|raw }};
-
-// Animation pour les cartes de projets
-const projectCards = document.querySelectorAll('.project-card');
-projectCards.forEach((card, index) => {
-card.style.opacity = 0;
-card.style.transform = 'translateY(20px)';
-card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-setTimeout(() => {
-card.style.opacity = 1;
-card.style.transform = 'translateY(0)';
-}, index * 100);
-});
-
-// Ajouter un écouteur d'événement pour les boutons de détails
-document.querySelectorAll('.view-details').forEach(button => {
-button.addEventListener('click', function () {
-const projectId = this.getAttribute('data-id');
-const project = projects.find(p => p.id == projectId);
-
-// Mettre à jour le titre et la description
-document.getElementById('projectTitle').innerText = project.title;
-document.getElementById('projectDescription').innerText = project.description;
-
-// Mettre à jour l'image principale
-document.getElementById('mainImage').src = project.image;
-
-// Vider et ajouter les images secondaires
-const secondaryImages = document.getElementById('secondaryImages');
-secondaryImages.innerHTML = '';
-project.images.forEach((image) => {
-const colDiv = document.createElement('div');
-colDiv.className = 'col-6 mb-2';
-colDiv.innerHTML = `<img src="${image}" class="img-fluid square-image" alt="${
-project.title
-}" onclick="setModalImage('${image}')">`;
-secondaryImages.appendChild(colDiv);
-});
-});
-});
-
-// Écouteur d'événement pour l'image principale
-document.getElementById('mainImage').addEventListener('click', function () {
-const mainImageSrc = this.src;
-setModalMainImage(mainImageSrc);
-});
-});
-
-// Fonction pour afficher les images secondaires
-function showSecondaryImages() {
-const secondaryImages = document.getElementById('secondaryImages');
-secondaryImages.style.display = 'flex';
-}
-
-// Fonction pour afficher une image dans le modal
-function setModalImage(imageSrc) {
-const modal = document.createElement('div');
-modal.className = 'modal fade show';
-modal.style.display = 'block';
-
-modal.innerHTML = `
-                <div class="modal-dialog modal-dialog-centered modal-lg-custom">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <img src="${imageSrc}" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-document.body.appendChild(modal);
-modal.addEventListener('click', function () {
-document.body.removeChild(modal);
-});
-}
-
-// Fonction pour afficher l'image principale dans un modal
-function setModalMainImage(imageSrc) {
-const modal = document.createElement('div');
-modal.className = 'modal fade show'; // Assurez-vous d'utiliser Bootstrap pour la modal
-modal.style.display = 'block';
-
-modal.innerHTML = `
-        <div class="modal-dialog modal-dialog-centered modal-lg-custom"> <!-- Utilisation de la classe personnalisée ici -->
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="${imageSrc}" class="img-fluid" alt="Main Image">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                </div>
-            </div>
-        </div>
-    `;
-document.body.appendChild(modal);
-modal.addEventListener('click', function () {
-document.body.removeChild(modal);
-});
-}
-	</script>
-{% endblock %}

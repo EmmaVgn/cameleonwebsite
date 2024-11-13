@@ -1,108 +1,44 @@
-<!-- Footer -->
-<footer
-	class="footer-custom text-center text-lg-start ">
-	<!-- Grid container -->
-	<div
-		class="container p-4">
-		<!--Grid row-->
-		<div
-			class="row my-4">
-			<!--Grid column-->
-			<div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-white">
-				<div class=" shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
-					<img src="{{ asset('img/giphy-3--unscreen.gif') }}" height="150" alt="" loading="lazy" class="logo-footer"/>
-				</div>
-				<ul class="list-unstyled d-flex flex-row justify-content-center">
-					<li>
-						<a class="text-white px-2" href="https://www.facebook.com/profile.php?id=61566862906763">
-							<i class="fab fa-facebook-square"></i>
-						</a>
-					</li>
-					<li>
-						<a class="text-white px-2" href="https://www.instagram.com/cams.olutions/">
-							<i class="fab fa-instagram"></i>
-						</a>
-					</li>
-					<li>
-						<a class="text-white ps-2" href="https://www.linkedin.com/company/cam%C3%A9l%C3%A9on-solutions/">
-							<i class="fa-brands fa-linkedin"></i>
-						</a>
-					</li>
-				</ul>
+<footer class="bg-custom text-white text-center py-4" id="footer">
+	<div class="container p-4">
+		<div class="footer-custom mb-4">
+			<div
+				class="footer-logo">
+				<!-- Logo à gauche -->
+				<a class="navbar-brand" href="{{ path('homepage') }}">
+					<img src="{{ asset('img/CAMELEONSOLUTIONSGIFLOGO-ezgif.com-effects.gif') }}" alt="Logo Les maisons de Marie" class="logo-footer">
+				</a>
+
 			</div>
-			<!--Grid column-->
+			<!-- Informations de contact à droite -->
+			<div class="footer-contact">
+				<p>Contact : +33 6 69 28 48 62</p>
+				<a href="mailto:contact@cameleon-solutions.fr">Email: contact@cameleon-solutions.fr</a>
+				<p>Adresse : Montauriol, France</p>
+			</div>
+		</div>
 
-			<!--Grid column-->
-			<div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-white">
-				<h5 class="text-uppercase mb-4">Liens utiles</h5>
-				<ul class="list-unstyled">
-					<li class="mb-2">
-						<a href="{{ path('homepage') }}" class="text-white">
-							<i class="fa-solid fa-code"></i>
-							Mes services
-						</a>
-					</li>
-					<li class="mb-2">
-						<a href="{{ path('home_legal') }}" class="text-white">
-							<i class="fa-solid fa-code"></i>
-							Mentions légales & conditions generales de vente</li>
-					</li>
-				</a>
-			</li>
-		</ul>
+		<!-- Liens de navigation centrés -->
+		<div class="text-center">
+			<ul class="list-inline mb-0">
+				<li class="list-inline-item">
+					<a href="{{ path('homepage') }}" class="text-white">Accueil</a>
+				</li>
+				<li class="list-inline-item">
+					<a href="{{ path('services_index') }}" class="text-white">Mes Services</a>
+				</li>
+				<li class="list-inline-item">
+					<a href="{{ path('contact_index') }}" class="text-white">Contact</a>
+				</li>
+				<li class="list-inline-item">
+					<a href="{{ path('home_legal') }}" class="text-white">Mentions légales</a>
+				</li>
+			</ul>
+		</div>
+
+		<hr
+		class="text-white mb-3">
+		<!-- Ligne de séparation -->
+		<p class="mb-0">© 2024 Caméléon Solutions Tous droits réservés.</p>
+		<hr class="text-white mt-3">
 	</div>
-	<!--Grid column-->
-
-	<!--Grid column-->
-	<div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-white">
-		<h5 class="text-uppercase mb-4">Services</h5>
-		<ul class="list-unstyled">
-			<li class="mb-2">
-				<a href="" class="text-white">
-					<i class="fa-solid fa-code"></i>
-					Création de site web
-				</a>
-			</li>
-			<li class="mb-2">
-				<a href="" class="text-white">
-					<i class="fa-solid fa-code"></i>
-					Gestion de site web
-				</a>
-			</li>
-			<li class="mb-2">
-				<a href="" class="text-white">
-					<i class="fa-solid fa-code"></i>
-					Conseillère numérique
-				</a>
-			</li>
-
-		</ul>
-	</div>
-	<!--Grid column-->
-
-	<!--Grid column-->
-	<div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-white">
-		<h5 class="text-uppercase mb-4">Contact</h5>
-		<ul class="list-unstyled">
-			<li>
-				<p>
-					<i class="fas fa-map-marker-alt pe-2"></i>5110 avenue des pyrénées, 47330 Montauriol
-				</p>
-			</li>
-			<li>
-				<p>
-					<i class="fas fa-phone pe-2 "></i>+ 33 6 35 42 93 11
-				</p>
-			</li>
-			<li>
-				<p>
-					<i class="fas fa-envelope pe-2 mb-0 "></i>contact@cameleon-solutions.fr
-				</p>
-			</li>
-		</ul>
-	</div>
-	<!--Grid column-->
-</div>
-<div class="text-center p-3 copyright text-white">
-	© 2024 Copyright: VIGNERON
-</div>
+</footer>
