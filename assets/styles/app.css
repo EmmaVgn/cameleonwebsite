@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;1,300&family=Roboto+Slab:wght@100..900&display=swap");
+
 /*--------------------------------------------------------------
 # Général
 --------------------------------------------------------------*/
@@ -18,6 +20,8 @@ body {
   background-color: #fff;
   overflow-x: hidden;
   max-width: 100%;
+  font-size: 1.3rem;
+  line-height: 2;
 }
 
 a {
@@ -26,43 +30,65 @@ a {
   color: black;
 }
 
+/* Titres */
 h1,
 h2,
 h3,
 h4 {
-  font-family: "Playfair Display", serif;
+  font-family: "Roboto Slab", serif;
+  line-height: 1.3;
+  overflow-y: hidden;
+}
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
 }
 
+/* Styles mobiles */
 @media (max-width: 768px) {
   body {
-    font-size: 0.9rem;
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
   }
 
-  h1,
-  h2,
-  h3,
   h4 {
-    font-size: 1.2rem;
-    text-align: center;
+    font-size: 1.25rem;
   }
 }
 
+/* Styles pour les écrans moyens */
 @media (max-width: 1200px) {
   body {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 }
 
 .container {
-  padding: 15px; /* Ajuste les valeurs si nécessaire */
+  padding: 15px;
 }
 
 /*--------------------------------------------------------------
 #Boutons
 --------------------------------------------------------------*/
 .btn-custom {
-  background-color: #032b35;
-  color: white;
+  background-color: #032b35 !important;
+  color: white !important;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -75,19 +101,6 @@ h4 {
   transform: scale(1.05);
 }
 
-/*--------------------------------------------------------------
-# Défilement fade-in
---------------------------------------------------------------*/
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px); /* Optionnel : ajoute un effet de translation */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Durée de l'animation */
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0); /* Remise à zéro de la translation */
-}
 /*--------------------------------------------------------------
 # Navbar 
 --------------------------------------------------------------*/
@@ -106,7 +119,7 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px 0;
+  padding: 3rem 0;
 }
 
 .navbar-background {
@@ -163,6 +176,12 @@ h4 {
   margin-right: 15px;
 }
 
+.navbar-nav .nav-link {
+  font-size: 2.5rem;
+  line-height: 3;
+  padding: 25px 30px;
+}
+
 .custom-navbar .navbar {
   margin: 0;
 }
@@ -185,23 +204,23 @@ h4 {
 
 /* Personnalisation du bouton toggler */
 .navbar-toggler {
-  border: none; /* Retire la bordure */
+  border: none;
 }
 
 /* Personnalisation de l'icône du toggler */
 .navbar-toggler-icon {
-  background-color: transparent; /* Assure que le fond est transparent */
-  border: none; /* Retire toute bordure */
+  background-color: transparent;
+  border: none;
 }
 
 /* Utilisation d'une image personnalisée pour l'icône si nécessaire */
 .navbar-toggler-icon:before {
-  content: ""; /* Utilisation d'un contenu vide pour l'icône */
+  content: "";
   display: inline-block;
-  width: 30px; /* Largeur de l'icône */
-  height: 3px; /* Épaisseur de la barre */
-  background-color: white; /* Couleur de la barre */
-  position: relative; /* Positionnement relatif */
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  position: relative;
 }
 
 /* Créer les autres barres du toggler */
@@ -209,15 +228,15 @@ h4 {
 .navbar-toggler-icon:after {
   content: "";
   display: block;
-  width: 30px; /* Largeur de l'icône */
-  height: 3px; /* Épaisseur de la barre */
-  background-color: white; /* Couleur de la barre */
-  margin: 5px 0; /* Espace entre les barres */
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
 }
 
 /* Masquer l'icône par défaut de Bootstrap */
 .navbar-toggler-icon {
-  display: none; /* Masquer l'icône Bootstrap */
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -233,8 +252,8 @@ h4 {
   }
 
   .navbar .navbar-nav .nav-link {
-    font-size: 1rem;
-    padding: 5px 10px;
+    font-size: 1.4rem;
+    padding: 10px 15px;
   }
 
   .navbar-nav .nav-item {
@@ -256,68 +275,73 @@ h4 {
 # Logo
 --------------------------------------------------------------*/
 .logo {
-  width: 90%; /* Ajuster la taille du logo */
-  max-width: 200px; /* Taille maximale */
+  width: 90%;
+  max-width: 200px;
 }
 
 @media (max-width: 768px) {
   .logo {
-    width: 30%; /* Augmenter la taille du logo sur les petits écrans */
-    max-width: 150px; /* Taille maximale pour les petits écrans */
+    width: 30%;
+    max-width: 150px;
   }
 }
 
 @media (max-width: 1200px) {
   .logo {
-    width: 60%; /* Ajuster la taille pour les écrans moyens */
-    max-width: 180px; /* Taille maximale pour les écrans moyens */
+    width: 60%;
+    max-width: 180px;
   }
 }
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-.footer-custom {
+/* Couleur de fond du footer */
+.bg-custom {
   background-color: #032b35f4;
 }
-
-.footer-custom a {
-  color: white;
-  text-decoration: none;
+/* Mise en forme du footer */
+.footer-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-contact p {
+  margin-bottom: 0;
 }
 
-.logo-footer img {
-  width: 200% !important; /* Augmenter la taille du logo sur les grands écrans */
+.footer-contact a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  margin-top: 150px;
+}
+
+/* Logo centré */
+.logo-footer {
+  height: auto;
+  display: block;
+  margin-left: 0;
+}
+.footer-contact {
+  text-align: right;
+  margin-left: 20px;
 }
 
 @media (max-width: 768px) {
-  main {
-    padding: 20px;
-  }
-
-  .footer-custom {
-    padding: 10px;
+  .footer-contact p,
+  .footer-contact a {
+    font-size: 0.9rem;
   }
 
   .logo-footer {
-    width: 150%; /* Ajuster à 150% sur les petits écrans */
-    max-width: 180px; /* Taille maximale pour les petits écrans */
+    width: 150px;
   }
 }
 
 @media (max-width: 1200px) {
-  .footer-custom {
-    text-align: center;
-    padding: 20px;
-  }
-
-  .footer-custom p {
-    margin: 5px 0;
-  }
-
   .logo-footer {
-    width: 130%; /* Ajuster à 130% pour les écrans moyens */
-    max-width: 250px; /* Taille maximale pour les écrans moyens */
+    width: 180px;
   }
 }
 
@@ -348,9 +372,10 @@ h4 {
 }
 
 .line h1 {
-  font-size: 2.5rem; /* Taille de la police pour les grands écrans */
-  display: inline; /* S'assure que le h1 reste sur une ligne */
-  line-height: 3.5rem; /* Hauteur de ligne pour l'alignement */
+  font-size: 2.5rem;
+  display: inline;
+  line-height: 3.5rem;
+  font-family: "Raleway", sans-serif !important;
 }
 
 .line {
@@ -434,7 +459,7 @@ h4 {
 }
 
 #word {
-  display: inline; /* S'assure que le span est sur la même ligne que le h1 */
+  display: inline;
   opacity: 1;
   transition: opacity 0.5s ease;
   text-decoration: underline;
@@ -512,78 +537,78 @@ h4 {
 
 @media (max-width: 1024px) {
   .typing-effect {
-    left: 50%; /* Centrer le texte */
-    top: 15%; /* Ajuster la position */
+    left: 50%;
+    top: 15%;
     transform: translate(-50%, -50%);
-    margin-right: 0; /* Supprimer la marge à droite */
+    margin-right: 0;
   }
 
   .line h1 {
-    font-size: 2rem; /* Réduire la taille de la police */
-    display: block; /* Forcer le h1 à être un bloc pour passer sur deux lignes */
+    font-size: 2rem;
+    display: block;
     text-align: center;
   }
 
   #developer {
-    display: block; /* Mettre "Développeuse" sur une nouvelle ligne */
+    display: block;
   }
 
   #tree-container {
-    left: 50%; /* Centrer le conteneur de l'arbre */
-    top: 60%; /* Ajuster la position */
-    width: 40%; /* Réduire la largeur */
+    left: 50%;
+    top: 60%;
+    width: 40%;
     transform: translate(-50%, -50%);
   }
 
   .scroll-down-icon {
-    margin-top: 1060px; /* Ajuster la position pour les écrans plus petits */
-    font-size: 1.5rem; /* Réduire la taille de l'icône */
+    margin-top: 1060px;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .line h1 {
-    font-size: 1.5rem; /* Réduire encore la taille de la police */
+    font-size: 1.5rem;
   }
 
   .tagline {
-    font-size: 1rem; /* Réduire la taille de la tagline */
+    font-size: 0.8rem;
   }
 
   #tree-container {
-    width: 70%; /* Augmenter la largeur pour les petits écrans */
+    width: 70%;
   }
 
   .scroll-down-icon {
-    margin-top: 1150px; /* Ajuster la position pour les petits écrans */
-    font-size: 1.2rem; /* Réduire la taille de l'icône */
+    margin-top: 1150px;
+    font-size: 1.2rem;
   }
 
   .typing-effect {
-    top: 20%; /* Ajuster la position pour les petits écrans */
+    top: 20%;
   }
 }
 
 @media (max-width: 480px) {
   .line {
-    line-height: 2.5rem; /* Réduire la hauteur de ligne */
+    line-height: 2.5rem;
   }
 
   .line h1 {
-    font-size: 1.2rem; /* Réduire la taille de la police */
+    font-size: 1rem;
   }
 
   #tree-container {
-    width: 90%; /* Réduire davantage la largeur */
+    width: 90%;
   }
 
   .typing-effect {
-    top: 30%; /* Ajuster encore la position */
+    top: 30%;
   }
 
   .scroll-down-icon {
-    margin-top: 900px; /* Déplacer l'icône plus bas pour les très petits écrans */
-    font-size: 1rem; /* Réduire la taille de l'icône */
+    margin-top: 1200px;
+    font-size: 1rem;
   }
 }
 
