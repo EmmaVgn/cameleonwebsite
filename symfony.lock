@@ -50,6 +50,9 @@
     "knplabs/knp-paginator-bundle": {
         "version": "v6.6.1"
     },
+    "php-flasher/flasher-symfony": {
+        "version": "v2.1.1"
+    },
     "symfony/asset-mapper": {
         "version": "7.1",
         "recipe": {

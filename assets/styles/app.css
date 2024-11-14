@@ -626,7 +626,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; /* Assure que le contenu est en colonne */
+  flex-direction: column; 
   margin-bottom: 1rem;
   font-size: 1.8rem;
   color: #333;
@@ -636,7 +636,7 @@ h4 {
 .heading-part1 {
   font-size: 2.4rem;
   font-weight: 600;
-  white-space: nowrap; /* Évite le passage à la ligne pour les écrans plus larges */
+  white-space: nowrap; 
   padding-bottom: 0.7rem;
 }
 
@@ -644,9 +644,9 @@ h4 {
   font-size: 1.6rem;
   font-weight: 400;
   font-style: italic;
-  margin-top: -1rem; /* Réduire l'écart pour mobile */
-  text-align: center; /* Centrer le texte */
-  margin-left: 0; /* Aucune marge à gauche sur les petits écrans */
+  margin-top: -1rem; 
+  text-align: center; 
+  margin-left: 0; 
   line-height: 1.2;
 }
 
@@ -658,78 +658,78 @@ h4 {
   line-height: 1.6;
   text-align: justify;
   padding: 1rem;
-  margin: 0 auto; /* Centrer la description */
-  width: 100%; /* S'assurer qu'il prend 100% de l'espace */
+  margin: 0 auto; 
+  width: 100%; 
 }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .project-heading {
-    font-size: 1.5rem; /* Réduire la taille de la police */
+    font-size: 1.5rem; 
   }
 
   .heading-part1 {
-    font-size: 2rem; /* Ajuster la taille pour les écrans moyens */
+    font-size: 2rem;
   }
 
   .heading-part2 {
-    margin-left: 20px; /* Ajustement pour plus de lisibilité */
+    margin-left: 20px;
   }
 
   .project-description {
-    width: 90%; /* Réduire la largeur pour plus de lisibilité */
+    width: 90%; 
   }
 
   .my-photo {
-    margin-left: 0; /* Supprimer la marge à gauche */
-    margin-top: 20px; /* Ajouter un espace au-dessus de l'image */
-    max-width: 100%; /* Assurez-vous que l'image ne déborde pas */
+    margin-left: 0; 
+    margin-top: 20px; 
+    max-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
   .project-heading {
-    font-size: 1.3rem; /* Réduire encore la taille de la police */
+    font-size: 1.3rem; 
   }
 
   .heading-part1 {
-    font-size: 1.8rem; /* Ajustement pour les petits écrans */
+    font-size: 1.8rem;
   }
 
   .heading-part2 {
-    margin-left: 10px; /* Déplacer légèrement vers la droite */
+    margin-left: 10px; 
   }
 
   .project-description {
-    font-size: 1rem; /* Réduire la taille de la description */
-    line-height: 1.4; /* Ajuster la hauteur de ligne */
+    font-size: 1rem; 
+    line-height: 1.4; 
   }
 
   .my-photo {
-    margin-top: 15px; /* Espace au-dessus de l'image */
+    margin-top: 15px; /
   }
 }
 
 @media (max-width: 480px) {
   .project-heading {
-    font-size: 1.1rem; /* Réduire la taille de la police pour les très petits écrans */
+    font-size: 1.1rem; 
   }
 
   .heading-part1 {
-    font-size: 1.5rem; /* Ajustement pour les très petits écrans */
+    font-size: 1.5rem; 
   }
 
   .heading-part2 {
-    font-size: 1.2rem; /* Ajustement pour les très petits écrans */
-    margin-left: 5px; /* Ajustement pour un léger décalage */
+    font-size: 1.2rem; 
+    margin-left: 5px; 
   }
 
   .project-description {
-    font-size: 0.9rem; /* Réduire la taille de la description pour les très petits écrans */
+    font-size: 0.9rem; 
   }
 
   .my-photo {
-    max-width: 100%; /* Assurez-vous que l'image ne déborde pas */
+    max-width: 100%; 
   }
 }
 
@@ -1643,3 +1643,24 @@ h4 {
     font-size: 0.85rem; /* Réduire davantage la taille du contenu */
   }
 }
+
+/*--------------------------------------------------------------
+#
+  Fade-in
+  --------------------------------------------------------------*/
+  [class*="reveal"] {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: 0.5s;
+  }
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s cubic-bezier(0.5, 0, 0, 1);
+  }
+  .reveal-2 {
+    transition-delay: 0.1s;
+  }
+  .reveal-3 {
+    transition-delay: 0.2s;
+  }
