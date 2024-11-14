@@ -27,18 +27,18 @@
 
 	{% include "home/project.html.twig" %}
 
-	<div class="container-services ">
+	<div class="container-services reveal ">
 		<h3 class="title-service">Ce que je propose</h3>
 		{% include "services/listing.html.twig" %}
 		{% include "services/picto.html.twig" %}
 	</div>
 
-	<div class="container-services ">
+	<div class="container-services reveal">
 		<h3 class="title-service">Ce que j'ai déjà réalisé</h3>
 		{% include 'project/realisations.html.twig' with {'project': projects} %}
 	</div>
 
-	<div class="container-services ">
+	<div class="container-services reveal ">
 		{% include "shared/_contact_section.html.twig" %}
 	</div>
 {% endblock %}

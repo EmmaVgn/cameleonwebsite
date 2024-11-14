@@ -3,6 +3,7 @@ import './styles/app.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap';
 
+
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 
 function setCookie(name, value, days) {
@@ -30,7 +31,6 @@ window.addEventListener('load', function () {
                 }
             },
             "theme": "classic",
-            "position": "bottom",
             "content": {
                 "message": "Nous utilisons des cookies pour améliorer votre expérience sur notre site.",
                 "dismiss": "Accepter",

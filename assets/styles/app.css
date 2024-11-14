@@ -603,7 +603,7 @@ h4 {
   }
 
   .typing-effect {
-    top: 30%;
+    top: 15%;
   }
 
   .scroll-down-icon {
@@ -616,11 +616,7 @@ h4 {
 # Page d'accueil section projects
 --------------------------------------------------------------*/
 /* Project */
-.project-container {
-  padding: 2rem;
-  text-align: center;
-  width: 100%;
-}
+
 
 .project-heading {
   display: flex;
@@ -636,7 +632,7 @@ h4 {
 .heading-part1 {
   font-size: 2.4rem;
   font-weight: 600;
-  white-space: nowrap; 
+
   padding-bottom: 0.7rem;
 }
 
@@ -1215,11 +1211,7 @@ h4 {
   cursor: pointer;
 }
 
-.project-container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-}
+
 
 .modal-lg-custom {
   max-width: 90%; /* Ajuste cette valeur selon tes besoins */
@@ -1645,8 +1637,7 @@ h4 {
 }
 
 /*--------------------------------------------------------------
-#
-  Fade-in
+  # Fade-in
   --------------------------------------------------------------*/
   [class*="reveal"] {
     opacity: 0;
@@ -1665,15 +1656,21 @@ h4 {
     transition-delay: 0.2s;
   }
 
-
-  /* CSS pour la bannière Cookie Consent */
+/*--------------------------------------------------------------
+#
 /* CSS pour la bannière Cookie Consent */
+  --------------------------------------------------------------*/
+.cc-color-override-688238583.cc-window {
+  position: fixed;
+  bottom: 30px !important; 
+  }
+
 .cc-window {
   position: fixed;
-  bottom: 30px;  /* Place la bannière en bas de la page */
+  bottom: 30px !important;  /* Place la bannière en bas de la page */
   left: 0;
   width: 100%;
-  z-index: 9999;  /* Assurez-vous que la bannière se place au-dessus de tout autre contenu */
+  z-index: 9999 !important;  /* Assurez-vous que la bannière se place au-dessus de tout autre contenu */
   background-color: #000;
   color: #fff;
   text-align: center;

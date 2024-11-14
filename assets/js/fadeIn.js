@@ -1,16 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('.reveal');  // Modifier ici pour correspondre à 'reveal'
-    function checkVisibility() {
-        const windowHeight = window.innerHeight;
-        revealElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            if (elementTop < windowHeight * 0.8) {
-                element.classList.add('reveal-visible');  // Assurez-vous que la classe 'reveal-visible' est ajoutée
-            }
-        });
-    }
-    // Appel initial pour afficher les éléments déjà visibles
-    checkVisibility();
-    // Ajouter l'écouteur d'événements lors du défilement
-    window.addEventListener('scroll', checkVisibility);
-});
+const ratio = .1
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: ratio
+}
+const handleIntersect = function (entries, observer) {
+    entries.forEach(function (entry) {
+        if (entry.intersectionRatio > ratio) {
+            entry.target.classList.add('reveal-visible')
+            observer.unobserve(entry.target)
+        }
+        else {
+            console.log('invisble')
+        }
+    })
+}
+const observer = new IntersectionObserver(handleIntersect, options)
+document.querySelectorAll('.reveal').forEach(function (r) {
+    observer.observe(r)
+})
