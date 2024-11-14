@@ -196,7 +196,7 @@ h4 {
   -webkit-backdrop-filter: blur(10px);
   border-radius: 10px;
   transition: background-color 0.3s, box-shadow 0.3s;
-  z-index: 1000;
+  z-index: 800;
   width: 100%;
   color: white;
   padding: 10px 20px;
@@ -913,7 +913,7 @@ h4 {
 .popup {
   display: none;
   position: fixed;
-  z-index: 1000;
+  z-index: 800;
   left: 0;
   top: 0;
   width: 100%;
@@ -1664,3 +1664,38 @@ h4 {
   .reveal-3 {
     transition-delay: 0.2s;
   }
+
+
+  /* CSS pour la bannière Cookie Consent */
+/* CSS pour la bannière Cookie Consent */
+.cc-window {
+  position: fixed;
+  bottom: 30px;  /* Place la bannière en bas de la page */
+  left: 0;
+  width: 100%;
+  z-index: 9999;  /* Assurez-vous que la bannière se place au-dessus de tout autre contenu */
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 16px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);  /* Ombre pour un peu de profondeur */
+}
+
+.cc-window .cc-compliance {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.cc-window .cc-btn {
+  background-color: #f1d600;
+  border: none;
+  color: #000;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cc-window .cc-btn:hover {
+  background-color: #d1b100;
+}
