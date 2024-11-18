@@ -29,21 +29,32 @@ window.addEventListener('load', function () {
                     "background": "#000"
                 },
                 "button": {
-                    "background": "#f1d600"
+                    "background": "#85d468 ",
+                    "text": "#f5f5e9"
                 }
             },
             "theme": "classic",
+            "type": "opt-out",
             "content": {
                 "message": "Nous utilisons des cookies pour améliorer votre expérience sur notre site.",
                 "dismiss": "Accepter",
+                "deny": "Refuser",
                 "link": "En savoir plus",
                 "href": "/politique-de-confidentialite"
             },
             onStatusChange: function (status) {
                 setCookie('cookieconsent_status', status, 365);
+            },
+            onInitialise: function () {
+                // Ajouter une classe personnalisée au bouton "Accepter"
+                const acceptBtn = document.querySelector('.cc-btn.cc-dismiss');
+                if (acceptBtn) {
+                    acceptBtn.classList.add('custom-accept-btn');
+                }
             }
         });
     } else {
         console.error('CookieConsent library not loaded.');
     }
 });
+

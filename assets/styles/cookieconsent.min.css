@@ -111,7 +111,7 @@
   border-width: 2px;
   border-style: solid;
   text-align: center;
-  white-space: nowrap;
+  #f5f5e9 -space: nowrap;
 }
 .cc-highlight .cc-btn:first-child {
   background-color: transparent;
@@ -228,7 +228,7 @@
 }
 @media screen and (max-width: 900px) {
   .cc-btn {
-    white-space: normal;
+    #f5f5e9 -space: normal;
   }
 }
 @media screen and (max-width: 414px) and (orientation: portrait),

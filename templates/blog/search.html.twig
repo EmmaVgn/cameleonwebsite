@@ -32,8 +32,8 @@
 												<img src="{{ asset('img/blog/' ~ article.imageName) }}" alt="{{ article.name|e }}" class="img-fluid rounded-top" style="width: 100%; height: 300px; object-fit: cover;">
 											</a>
 											<div class="overlay d-flex align-items-center justify-content-center" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.6);">
-												<h2 class="text-white text-center h4 font-weight-bold">
-													<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="text-white">{{ article.name|e }}</a>
+												<h2 class="text-#f5f5e9  text-center h4 font-weight-bold">
+													<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="text-#f5f5e9 ">{{ article.name|e }}</a>
 												</h2>
 											</div>
 										</div>
@@ -43,7 +43,7 @@
 												<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="btn-custom-blog">Lire la suite</a>
 											</div>
 										</div>
-										<div class="card-footer bg-white text-center border-0">
+										<div class="card-footer bg-#f5f5e9  text-center border-0">
 											<small class="text-muted">Publié le
 												{{ article.createdAt|date('d M Y') }}</small>
 											<div class="mt-2">
