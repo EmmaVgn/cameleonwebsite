@@ -49,6 +49,7 @@ class HomeController extends AbstractController
             'short_description' => 'Site de réservation pour un établissement touristique.',
             'link' => 'https://lesmaisonsdemarie.cameleon-solutions.fr/', // Lien vers le site
             'image' => '/img/project d/Image-20.webp',
+            
         ],
     ];
 }

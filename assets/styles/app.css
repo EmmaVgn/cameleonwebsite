@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Special+Elite&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Special+Elite&display=swap");
 
 /*--------------------------------------------------------------
 # Général
@@ -117,7 +117,7 @@ h4 {
   transition: background-color 0.3s, box-shadow 0.3s;
   z-index: 1;
   width: 100%;
-  color: #f5f5e9 ;
+  color: #f5f5e9;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,7 +132,7 @@ h4 {
 
 .navbar-background .navbar-brand,
 .navbar-background .navbar-nav .nav-link {
-  color: #f5f5e9 ;
+  color: #f5f5e9;
 }
 
 .navbar-background .navbar-nav .nav-link:hover {
@@ -146,12 +146,12 @@ h4 {
 
 .navbar .navbar-brand,
 .navbar .navbar-nav .nav-link {
-  color: #f5f5e9 ;
+  color: #f5f5e9;
 }
 
 .navbar.scrolled .navbar-brand,
 .navbar.scrolled .navbar-nav .nav-link {
-  color: #f5f5e9 ;
+  color: #f5f5e9;
 }
 
 .navbar .navbar-nav .nav-link:hover {
@@ -201,7 +201,7 @@ h4 {
   transition: background-color 0.3s, box-shadow 0.3s;
   z-index: 800;
   width: 100%;
-  color: #f5f5e9 ;
+  color: #f5f5e9;
   padding: 10px 20px;
 }
 
@@ -222,7 +222,7 @@ h4 {
   display: inline-block;
   width: 30px;
   height: 3px;
-  background-color: #f5f5e9 ;
+  background-color: #f5f5e9;
   position: relative;
 }
 
@@ -233,7 +233,7 @@ h4 {
   display: block;
   width: 30px;
   height: 3px;
-  background-color: #f5f5e9 ;
+  background-color: #f5f5e9;
   margin: 5px 0;
 }
 
@@ -278,8 +278,8 @@ h4 {
 # Logo
 --------------------------------------------------------------*/
 .logo {
-  width: 90%;
-  max-width: 200px;
+  max-width: 300px; /* Largeur maximale */
+  height: auto; /* Hauteur automatique pour conserver le ratio */
 }
 
 @media (max-width: 768px) {
@@ -311,7 +311,6 @@ h4 {
   flex-wrap: wrap;
 }
 
-
 .footer-contact {
   text-align: right;
   margin-left: 20px;
@@ -327,16 +326,16 @@ h4 {
 
 .slogan-footer {
   margin-top: -10%;
- font-size: 0.8rem;
+  font-size: 0.8rem;
   text-align: left; /* Alignement du texte à gauche si besoin */
-  color: #f5f5e9 ;
+  color: #f5f5e9;
 }
 
 /* Logo centré */
 .logo-footer {
   height: auto;
   display: block;
-  margin: 0 auto; 
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -350,7 +349,7 @@ h4 {
 }
 
 .footer-contact a {
-  color: #f5f5e9 ;
+  color: #f5f5e9;
   text-decoration: none;
   transition: color 0.3s;
   margin-top: 150px;
@@ -435,7 +434,7 @@ h4 {
   background: linear-gradient(135deg, #032b35, #1b4f5f, #064663);
   background-size: 200% 200%;
   animation: backgroundAnimation 10s ease infinite;
-  color: #f5f5e9 ;
+  color: #f5f5e9;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -452,7 +451,6 @@ h4 {
   text-align: center;
   flex: 1;
   margin-right: 20px;
-  
 }
 
 .line h1 {
@@ -467,7 +465,7 @@ h4 {
   font-family: "Raleway Dots", sans-serif;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid #f5f5e9 ;
+  border-right: 2px solid #f5f5e9;
   width: 0;
   line-height: 3.5rem;
   margin-bottom: 20px;
@@ -536,7 +534,7 @@ h4 {
   font-family: "Raleway Dots", sans-serif;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid #f5f5e9 ;
+  border-right: 2px solid #f5f5e9;
   width: fit-content;
   line-height: 3.5rem;
   margin-bottom: 20px;
@@ -588,7 +586,7 @@ h4 {
   text-align: center;
   margin-top: 820px;
   font-size: 2rem;
-  color: #f5f5e9 ;
+  color: #f5f5e9;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   padding: 10px;
@@ -605,7 +603,7 @@ h4 {
 
 .scroll-down-icon {
   font-size: 2rem;
-  color: #f5f5e9 ;
+  color: #f5f5e9;
 
   cursor: pointer;
 }
@@ -701,12 +699,11 @@ h4 {
 --------------------------------------------------------------*/
 /* Project */
 
-
 .project-heading {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; 
+  flex-direction: column;
   margin-bottom: 1rem;
   font-size: 1.8rem;
   color: #333;
@@ -724,9 +721,9 @@ h4 {
   font-size: 1.6rem;
   font-weight: 400;
   font-style: italic;
-  margin-top: -1rem; 
-  text-align: center; 
-  margin-left: 0; 
+  margin-top: -1rem;
+  text-align: center;
+  margin-left: 0;
   line-height: 1.2;
 }
 
@@ -738,14 +735,29 @@ h4 {
   line-height: 1.6;
   text-align: justify;
   padding: 1rem;
-  margin: 0 auto; 
-  width: 100%; 
+  margin: 0 auto;
+  width: 100%;
+}
+
+.my-photo {
+  display: block;
+  max-width: 90%; /* Largeur maximale de 90% pour mieux s'intégrer */
+  height: auto; /* Conserve le ratio de l'image */
+  max-height: 700px; /* Limite de hauteur maximale augmentée */
+  margin: 0 auto; /* Centrage de l'image */
+}
+
+@media (max-width: 768px) {
+  .my-photo {
+    max-width: 100%;
+    max-height: 200px; /* Réduit la hauteur maximale sur mobile */
+  }
 }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .project-heading {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
   }
 
   .heading-part1 {
@@ -757,19 +769,18 @@ h4 {
   }
 
   .project-description {
-    width: 90%; 
+    width: 90%;
   }
 
   .my-photo {
-    margin-left: 0; 
-    margin-top: 20px; 
-    max-width: 100%;
+    max-width: 80%; /* Réduction légère pour l'écran tablette */
+    max-height: 400px;
   }
 }
 
 @media (max-width: 768px) {
   .project-heading {
-    font-size: 1.3rem; 
+    font-size: 1.3rem;
   }
 
   .heading-part1 {
@@ -777,39 +788,42 @@ h4 {
   }
 
   .heading-part2 {
-    margin-left: 10px; 
+    margin-left: 10px;
   }
 
   .project-description {
-    font-size: 1rem; 
-    line-height: 1.4; 
+    font-size: 1rem;
+    line-height: 1.4;
   }
 
   .my-photo {
-    margin-top: 15px; /
+    max-width: 100%; /* Prend toute la largeur disponible sur mobile */
+    max-height: 300px; /* Hauteur maximale réduite */
+    margin-top: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .project-heading {
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
   }
 
   .heading-part1 {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
   }
 
   .heading-part2 {
-    font-size: 1.2rem; 
-    margin-left: 5px; 
+    font-size: 1.2rem;
+    margin-left: 5px;
   }
 
   .project-description {
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
   }
 
   .my-photo {
-    max-width: 100%; 
+    max-width: 100%; /* Pleine largeur sur les très petits écrans */
+    max-height: 250px;
   }
 }
 
@@ -893,7 +907,7 @@ h4 {
   position: relative;
   display: block; /* Affichage en bloc par défaut */
   margin: 10px; /* Ajoute de l'espacement entre les éléments */
-  color: #f5f5e9 ;
+  color: #f5f5e9;
   min-width: 250px; /* Largeur minimale pour les petits écrans */
   text-decoration: none;
 }
@@ -1013,13 +1027,11 @@ h4 {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   font-family: "Arial", sans-serif;
   animation: fadeIn 0.3s ease-out;
-
 }
 
 .content-link {
   cursor: pointer;
 }
-
 
 /* Afficher quand la classe active est ajoutée */
 .popup.active {
@@ -1053,7 +1065,7 @@ h4 {
 /* Bouton de contact */
 .contact-button-popup {
   background-color: #032b35;
-  color: #f5f5e9 ;
+  color: #f5f5e9;
   border: none;
   border-radius: 5px;
   padding: 12px 20px;
@@ -1333,8 +1345,6 @@ h4 {
   flex-direction: column; /* Disposer les éléments en colonne */
 }
 
-
-
 /* Media Queries pour améliorer la réactivité */
 @media (max-width: 768px) {
   .contact-form,
@@ -1342,7 +1352,6 @@ h4 {
     margin-right: 0; /* Supprimer la marge droite pour les petits écrans */
     margin-left: 0; /* Supprimer la marge gauche pour les petits écrans */
   }
-
 
   #contact-button {
     width: 100%; /* Bouton plein largeur */
@@ -1494,9 +1503,9 @@ h4 {
 .sommaire-list {
   list-style-type: none;
   padding: 15px;
-  border: 2px solid #2c3e50; 
-  border-radius: 8px; 
-  background-color: #f4f4f4; 
+  border: 2px solid #2c3e50;
+  border-radius: 8px;
+  background-color: #f4f4f4;
 }
 
 .sommaire-list li {
@@ -1505,17 +1514,16 @@ h4 {
 
 .sommaire-list a {
   text-decoration: none;
-  color: #032b35f4; 
+  color: #032b35f4;
   font-weight: bold;
   font-size: 1.1rem;
   display: block;
   margin-bottom: 10px;
 }
 
-
 .sommaire-list a:hover {
   text-decoration: underline;
-  color: #085669; 
+  color: #085669;
 }
 
 /* Sections de la politique */
@@ -1608,49 +1616,47 @@ h4 {
 
 /* Liens dans les sections */
 .policy-section a {
-  color: #032b35f4; 
+  color: #032b35f4;
   text-decoration: none;
 }
 
 .policy-section a:hover {
   text-decoration: underline;
-  color: #085669; 
+  color: #085669;
 }
 
 /* Pour les liens dans les cartes */
 .policy-section .card a {
-  color: #032b35f4; 
+  color: #032b35f4;
 }
 
 .policy-section .card a:hover {
-  color: #085669; 
+  color: #085669;
 }
-
-
 
 /*--------------------------------------------------------------
   # Fade-in
   --------------------------------------------------------------*/
-  [class*="reveal"] {
-    opacity: 0;
-    transform: translateY(-30px);
-    transition: 0.5s;
-  }
-  .reveal-visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: 1s cubic-bezier(0.5, 0, 0, 1);
-  }
-  .reveal-2 {
-    transition-delay: 0.1s;
-  }
-  .reveal-3 {
-    transition-delay: 0.2s;
-  }
+[class*="reveal"] {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: 0.5s;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 1s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal-2 {
+  transition-delay: 0.1s;
+}
+.reveal-3 {
+  transition-delay: 0.2s;
+}
 
-  /*--------------------------------------------------------------
+/*--------------------------------------------------------------
 /* Bannière Cookie Consent */
-  --------------------------------------------------------------*/
+--------------------------------------------------------------*/
 /* Bannière Cookie Consent */
 .cc-color-override-688238583.cc-window {
   position: fixed;
@@ -1707,6 +1713,3 @@ h4 {
 .cc-btn.cc-dismiss:hover {
   background-color: #333 !important; /* Gris foncé */
 }
-
-
-
