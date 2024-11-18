@@ -54,10 +54,5 @@ class HomeController extends AbstractController
 }
 
 
-    #[Route('/mentions-legales', name: 'home_legal')]
-    public function legal(): Response
-    {
-        return $this->render('_partials/_legal.html.twig');
-    }
 
 }
