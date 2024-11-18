@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;1,300&family=Roboto+Slab:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Special+Elite&display=swap');
 
 /*--------------------------------------------------------------
 # Général
@@ -12,7 +12,8 @@
 
 html,
 body {
-  font-family: "Raleway", serif;
+  font-family: "Roboto Slab", serif;
+  font-display: swap;
   position: relative;
   height: 100%;
   text-decoration: none;
@@ -35,9 +36,10 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Roboto Slab", serif;
+  font-family: "Special Elite", serif;
   line-height: 1.3;
   overflow-y: hidden;
+  font-display: swap;
 }
 h1 {
   font-size: 2.5rem;
@@ -120,6 +122,7 @@ h4 {
   justify-content: center;
   align-items: center;
   padding: 3rem 0;
+  font-family: "Special Elite", serif !important;
 }
 
 .navbar-background {
@@ -449,13 +452,14 @@ h4 {
   text-align: center;
   flex: 1;
   margin-right: 20px;
+  
 }
 
 .line h1 {
   font-size: 2.5rem;
   display: inline;
   line-height: 3.5rem;
-  font-family: "Raleway", sans-serif !important;
+  font-family: "Special Elite", serif !important;
 }
 
 .line {
@@ -1009,8 +1013,13 @@ h4 {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   font-family: "Arial", sans-serif;
   animation: fadeIn 0.3s ease-out;
-  top: 20%;
+
 }
+
+.content-link {
+  cursor: pointer;
+}
+
 
 /* Afficher quand la classe active est ajoutée */
 .popup.active {
@@ -1151,151 +1160,6 @@ h4 {
 /*--------------------------------------------------------------
 # Section réalisations
 --------------------------------------------------------------*/
-.flip-card {
-  background-color: transparent;
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(360deg);
-}
-
-.flip-card-back {
-  background-color: #f5f5e9;
-  color: black;
-  transform: rotateY(360deg);
-}
-
-.realisations-description {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.image-grid {
-  display: flex;
-  justify-content: space-between;
-}
-
-.main-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.secondary-image {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  .image-grid .col-md-8,
-  .image-grid .col-md-4 {
-    width: 100%;
-  }
-}
-.main-image {
-  height: 400px;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-.small-image {
-  height: 150px;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-.carousel-inner img {
-  height: 500px;
-  object-fit: cover;
-}
-.project-card img {
-  height: 150px;
-  width: 100%;
-  object-fit: cover;
-}
-
-#projectDetails {
-  margin-top: 3rem;
-  padding: 1rem;
-  background-color: #f5f5e9;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#projectTitle {
-  margin-bottom: 1rem;
-  margin-top: 3rem;
-  font-size: 1.5rem;
-}
-
-#projectDescription {
-  margin-top: 1rem;
-  font-size: 1rem;
-}
-.modal-content {
-  text-align: center;
-}
-
-.modal-body {
-  padding: 0;
-}
-
-#modalImage {
-  max-width: 100%;
-  height: auto;
-}
-.main-image {
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#secondaryImages img {
-  cursor: pointer;
-  border-radius: 5px;
-  transition: transform 0.3s;
-}
-
-#secondaryImages img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-
-.main-image {
-  max-height: 400px;
-}
-
-.small-image {
-  max-height: 150px;
-  cursor: pointer;
-}
-.square-image {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-
-
-.modal-lg-custom {
-  max-width: 90%; /* Ajuste cette valeur selon tes besoins */
-}
 
 .card-title {
   font-size: 1.5rem;
@@ -1469,9 +1333,7 @@ h4 {
   flex-direction: column; /* Disposer les éléments en colonne */
 }
 
-.contact-final-message h4 {
-  margin-right: 250px;
-}
+
 
 /* Media Queries pour améliorer la réactivité */
 @media (max-width: 768px) {
@@ -1481,10 +1343,6 @@ h4 {
     margin-left: 0; /* Supprimer la marge gauche pour les petits écrans */
   }
 
-  .contact-final-message h4 {
-    margin-right: 0; /* Ajustement du message final */
-    text-align: center; /* Centrer le texte */
-  }
 
   #contact-button {
     width: 100%; /* Bouton plein largeur */

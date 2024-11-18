@@ -20,7 +20,7 @@
 						</figure>
 						<div class="article-content-main">
 							<div class="article-header">
-								<h2 class="entry-title display-4">{{ article.name }}</h2>
+								<h1 class="entry-title display-4">{{ article.name }}</h1>
 								<div class="entry-meta mb-3">
 									<span class="entry-date text-muted">{{ article.createdAt|date('F j, Y') }}</span>
 									<span class="mx-2">|</span>
@@ -33,14 +33,13 @@
 					</div>
 				</article>
 
-
 				<div class="text-center mt-5">
 					<a href="{{ path('blog_display') }}" class="btn-custom btn-sm">Retour aux articles</a>
 				</div>
 			</div>
 
 			<div class="col-md-4">
-				<h4 class="text-center mb-4">Articles Similaires</h4>
+				<h2 class="text-center mb-4">Articles Similaires</h2>
 				<div class="row">
 					{% for popularArticle in popularArticles|slice(0, 2) %}
 						{# Limiter à 2 articles #}
@@ -50,9 +49,9 @@
 									<img src="{{ asset('img/blog/' ~ popularArticle.imageName) }}" class="card-img-top" alt="{{ popularArticle.name|e }}" style="max-height: 150px; object-fit: cover;">
 								</a>
 								<div class="card-body">
-									<h5 class="card-title">
+									<h3 class="card-title">
 										<a href="{{ path('blog_show', {'slug': popularArticle.slug}) }}" class="text-decoration-none">{{ popularArticle.name|e }}</a>
-									</h5>
+									</h3>
 									<p class="card-text">{{ popularArticle.subtitle|e }}</p>
 								</div>
 							</div>
@@ -65,14 +64,13 @@
 				</div>
 
 				<div class="mt-4">
-					<h5 class="font-weight-bold">Tags Associés</h5>
+					<h4 class="font-weight-bold">Tags Associés</h4>
 					<div>
 						{% for tag in tags %}
 							<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge" style="background-color: {{ tag.color }};">{{ tag.name }}</a>
 						{% endfor %}
 					</div>
 				</div>
-
 
 			</div>
 		</div>
