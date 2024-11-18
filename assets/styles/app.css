@@ -840,30 +840,6 @@ h4 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.content-box {
-  position: relative;
-  text-decoration: none;
-}
-
-.label-round {
-  position: absolute; /* Make this position absolute */
-  top: 0%; /* Align to the top */
-  left: 0; /* Align to the left */
-  width: 100px; /* Set a width */
-  height: 100px; /* Set a height */
-  border-radius: 50%; /* Make it circular */
-  background-color: #f0f0f0; /* Background color */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
-  overflow: hidden; /* Hide overflow */
-  z-index: 120; /* Keep it above other elements */
-}
-
-.label-round .overlap-img {
-  max-width: 100%; /* Make the image responsive */
-  max-height: 100%; /* Ensure the image fits within the circle */
-  object-fit: cover; /* Cover the entire area */
-}
-
 .title-service {
   font-size: 1.8rem;
   margin-bottom: 1rem;
@@ -884,11 +860,48 @@ h4 {
   margin-top: 10px;
 }
 
+.content-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #032b35;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  min-height: 300px;
+}
+
+.label-round {
+  position: absolute;
+  top: 3%; /* Ajustez pour positionner la bulle */
+  left: 10%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 120;
+}
+
+.label-round .overlap-img {
+  max-width: 100%; /* Make the image responsive */
+  max-height: 100%; /* Ensure the image fits within the circle */
+  object-fit: cover; /* Cover the entire area */
+}
+
 .listing-container {
   display: flex;
   flex-wrap: wrap; /* Permet aux éléments de s'enrouler */
   justify-content: center; /* Centre les éléments */
   padding: 20px;
+  color: #f5f5e9;
 }
 
 .timeline {
@@ -912,16 +925,8 @@ h4 {
   text-decoration: none;
 }
 
-.content-box {
-  width: 100%; /* Prend 100% de l'espace disponible */
-  padding: 20px;
-  background-color: #032b35;
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
-  min-height: 300px;
+.contact-button-popup:focus {
+  outline: 2px solid #085669;
 }
 
 .content-box:hover {
@@ -941,10 +946,9 @@ h4 {
 
 .content-box p {
   font-size: 0.9rem; /* Ajuste la taille pour les petits écrans */
-  color: #666;
+  color: #f5f5e9;
   line-height: 1.6;
   margin: 0;
-  margin-top: 120px;
 }
 
 /* Media Queries pour la Responsivité */
