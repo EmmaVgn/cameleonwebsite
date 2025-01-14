@@ -51,4 +51,28 @@ window.addEventListener("load", function () {
 }
 , false);
 
+//animation loading onglet navbar
+document.addEventListener('DOMContentLoaded', function () {
+    const navItems = document.querySelectorAll('.navbar-nav .nav-item');
+
+    navItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault(); // Empêche la redirection immédiate
+
+            // Supprime l'effet de loading des autres éléments
+            navItems.forEach(nav => nav.classList.remove('loading'));
+
+            // Ajoute l'effet de loading au <li> cliqué
+            this.classList.add('loading');
+
+            // Simule un délai avant la redirection
+            setTimeout(() => {
+                window.location.href = this.querySelector('.nav-link').href; // Redirige après 1 seconde
+            }, 1000); // Délai de 1 seconde
+        });
+    });
+});
+
+
+
 
