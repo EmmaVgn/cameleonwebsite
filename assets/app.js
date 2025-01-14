@@ -73,6 +73,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// bouton défilement vers le haut 
+document.addEventListener('DOMContentLoaded', function () {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
-
+    scrollToTopBtn.addEventListener('click', function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Défilement fluide
+      });
+    });
+  });
 
