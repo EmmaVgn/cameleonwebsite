@@ -137,7 +137,6 @@ h4 {
 --------------------------------------------------------------*/
 
 .navbar {
-  outline: 1px solid red;
   margin-top: 35px;
   margin-bottom: 35px;
   max-width: 100vw;
@@ -859,7 +858,7 @@ p.tagline {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Positionne le contenu en haut */
+    justify-content: flex-start;
   }
 
   .effect-container {
@@ -920,7 +919,7 @@ p.tagline {
 
   .typing-effect {
     position: relative;
-    top: 5px; /* Monte encore légèrement le texte */
+    top: 5px;
     left: auto;
     transform: none;
     margin-bottom: 15px;
@@ -954,6 +953,13 @@ p.tagline {
     width: 80%;
     margin: 40px auto 0 auto; /* Centrage et ajustement de la position de l'arbre */
     position: relative;
+    margin-top: 90%;
+    margin-right: 40%;
+    margin-left: 1%;
+  }
+
+  .effect-container {
+    margin-top: 130px;
   }
 }
 
