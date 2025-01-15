@@ -40,6 +40,7 @@
 		{% endblock %}
 	</head>
 	<body>
+
 		<header>
 			{% set isHomepage = app.request.attributes.get('_route') == 'homepage' %}
 			{% if not isHomepage %}

@@ -12,13 +12,15 @@
 {% endblock %}
 
 {% block body %}
-	<div class="hero-section">
-		<div class="custom-navbar">
-			{% include "shared/_navbar.html.twig" with {'navbarClass': 'navbar-transparent'} %}
-		</div>
-		{% include "home/tree.html.twig" %}
-		<div class="effect-container">
-			{% include "home/typing.html.twig" %}
+	<div class="container-fluid">
+		<div class="hero-section">
+			<div class="custom-navbar">
+				{% include "shared/_navbar.html.twig" with {'navbarClass': 'navbar-transparent'} %}
+			</div>
+			{% include "home/tree.html.twig" %}
+			<div class="effect-container">
+				{% include "home/typing.html.twig" %}
+			</div>
 		</div>
 	</div>
 
