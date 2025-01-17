@@ -85,3 +85,37 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+// pop up 
+document.querySelectorAll('.content-link').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const popupId = link.getAttribute('data-popup'); // Récupère l'ID de la pop-up
+      const popup = document.getElementById(popupId);
+  
+      if (popup) {
+        const popupContent = popup.querySelector('.popup-content');
+  
+        // Position du clic dans la fenêtre
+        const clickY = event.clientY; 
+  
+        // Appliquer le style dynamique
+        popupContent.style.position = 'absolute';
+        popupContent.style.top = `${clickY}px`; // Applique la hauteur exacte du clic
+        popupContent.style.left = '50%';
+        popupContent.style.transform = 'translate(-50%, 0)'; // Centre horizontalement
+  
+        // Affiche la pop-up
+        popup.classList.add('active');
+      }
+    });
+  });
+  
+  // Fermer la pop-up
+  document.querySelectorAll('.close').forEach((closeButton) => {
+    closeButton.addEventListener('click', () => {
+      const popup = closeButton.closest('.popup'); // Récupère l'élément parent
+      if (popup) {
+        popup.classList.remove('active'); // Masque la pop-up
+      }
+    });
+  });
+  

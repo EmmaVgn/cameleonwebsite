@@ -618,6 +618,10 @@ h4 {
   align-items: center;
   justify-content: center;
   position: relative;
+  box-sizing: border-box;
+  overflow: hidden; /* Empêche le défilement interne */
+  padding: 0;
+  margin: 0;
   text-align: center;
 }
 
@@ -1129,154 +1133,140 @@ p.tagline {
   margin-top: 10px;
 }
 
-.content-box {
+.content-box h4 {
+  font-size: 1.8rem;
+  margin: 0;
+  min-height: 60px; /* Hauteur minimale pour aligner tous les titres */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  padding: 20px;
-  background-color: #032b35;
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
-  min-height: 300px;
+  justify-content: center;
+  color: #f5f5e9;
 }
 
-.label-round {
-  position: absolute;
-  top: 1%; /* Ajustez pour positionner la bulle */
-  left: 8%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: #f0f0f0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  z-index: 120;
-}
-
-.label-round .overlap-img {
-  max-width: 100%; /* Make the image responsive */
-  max-height: 100%; /* Ensure the image fits within the circle */
-  object-fit: cover; /* Cover the entire area */
+.content-box p {
+  flex-grow: 1; /* Remplit l'espace disponible */
+  font-size: 1rem;
+  margin: 10px 0;
+  text-align: justify;
+  color: #f5f5e9;
 }
 
 .listing-container {
   display: flex;
-  flex-wrap: wrap; /* Permet aux éléments de s'enrouler */
-  justify-content: center; /* Centre les éléments */
+  justify-content: center; /* Center the items horizontally */
+  gap: 15px; /* Add space between the blocks */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
   padding: 20px;
   color: #f5f5e9;
 }
 
 .timeline {
-  display: flex; /* Flex par défaut */
-  align-items: stretch;
+  display: flex; /* Change to horizontal layout */
   width: 100%;
-  flex-direction: column; /* Par défaut en colonne */
-}
-
-.content-link a {
-  text-decoration: none; /* Assurez-vous que les liens ne sont pas soulignés */
-  color: inherit; /* Pour hériter de la couleur du parent */
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Space between the blocks */
+  gap: 20px;
 }
 
 .content-link {
-  position: relative;
-  display: block; /* Affichage en bloc par défaut */
-  margin: 10px; /* Ajoute de l'espacement entre les éléments */
+  display: flex;
+  flex-direction: column; /* Ensure content is vertically aligned */
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin: 10px;
   color: #f5f5e9;
-  min-width: 250px; /* Largeur minimale pour les petits écrans */
+  min-width: 250px; /* Ensure there's a minimum size */
   text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-button-popup:focus {
-  outline: 2px solid #085669;
+.content-link:hover {
+  transform: scale(1.05); /* Agrandit légèrement l'élément au survol */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour attirer l'attention */
 }
 
-.content-box:hover {
-  transform: scale(1.1); /* Légère augmentation au survol */
-  background-color: #085669;
+.content-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  padding: 20px;
+  background-color: #032b35;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  min-height: 650px;
+  max-height: 650px; /* Ensures all blocks have similar height */
+  position: relative;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  flex: 1 1 calc(25% - 20px);
 }
 
-.content-link:hover .content-box {
-  transform: scale(1.02);
+.service-logos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  align-items: center;
 }
 
-.content-box h4 {
-  font-size: 1.5rem; /* Ajuste la taille pour les petits écrans */
-  color: #ffffff;
-  margin-bottom: 10px;
+.service-logos img {
+  margin: 0 10px;
+  width: 100px; /* Adjust the logo size */
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 5px; /* Ajoute un peu d'espace autour du logo */
+  background-color: #ffffff; /* Ajoute un fond pour les mettre en valeur */
+  border-radius: 8px;
 }
 
-.content-box p {
-  font-size: 0.9rem; /* Ajuste la taille pour les petits écrans */
-  color: #f5f5e9;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* Media Queries pour la Responsivité */
-@media (max-width: 1485px) {
-  .content-link {
-    display: flex; /* Utiliser flex uniquement sur desktop */
-    align-items: center; /* Centrer verticalement */
-    flex: 1 1 20%; /* Quatre éléments par ligne */
-  }
-
-  .listing-container {
-    display: flex; /* S'assure que les éléments s'alignent horizontalement */
-  }
-
-  .title-service {
-    font-size: 1.8rem; /* Ajustement de la taille de la police */
-  }
-
-  .content-box h4 {
-    font-size: 1.8rem; /* Ajustement de la taille du titre */
-  }
-}
-
-/* Nouvelle media query pour les écrans larges */
-@media (min-width: 1485px) {
-  .timeline {
-    flex-direction: row; /* Change la direction à ligne */
-  }
-
-  .content-link {
-    flex: 1 1 20%; /* Ajuste la largeur pour s'assurer que plusieurs éléments s'affichent sur la même ligne */
-  }
-
-  .listing-container {
-    flex-wrap: nowrap; /* Ne pas faire de retour à la ligne */
-  }
+.service-logos img:hover {
+  transform: scale(1.2); /* Agrandit légèrement au survol */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Effet d'ombre au survol */
 }
 
 @media (max-width: 991px) {
   .content-link {
-    flex: 1 1 100%; /* Un seul élément par ligne (en colonne) */
-    margin: 5px 0; /* Ajoute un espacement vertical */
+    flex: 1 1 100%; /* Stacked on smaller screens */
+    margin: 5px 0;
   }
 
-  .title-service {
-    font-size: 1.5rem; /* Ajustement de la taille de la police */
+  .content-box {
+    min-height: auto; /* Supprime la contrainte de hauteur si nécessaire */
+    max-height: none;
   }
 
   .content-box h4 {
-    font-size: 1.5rem; /* Ajustement de la taille du titre */
+    font-size: 1.5rem;
   }
 
   .content-box p {
-    font-size: 0.9rem; /* Ajustement de la taille du texte */
+    font-size: 0.9rem;
+  }
+
+  .title-service {
+    font-size: 1.5rem;
   }
 }
 
-/*popup*/
-/* Popup */
+@media (max-width: 1500px) {
+  .content-box {
+    flex: 1 1 calc(50% - 20px); /* 50% moins l'espace entre les blocs */
+  }
+}
+
+@media (max-width: 966px) {
+  .content-box {
+    flex: 1 1 100%; /* Prend toute la largeur */
+  }
+}
+
 .popup {
   display: none;
   position: fixed;
@@ -1288,30 +1278,26 @@ p.tagline {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Contenu du Popup */
 .popup-content {
   background-color: #ffffff;
-  margin: 10% auto;
   padding: 30px;
   border-radius: 15px;
   width: 90%;
   max-width: 600px;
-  position: relative;
+  max-height: 90vh;
+  position: absolute;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   font-family: "Arial", sans-serif;
   animation: fadeIn 0.3s ease-out;
 }
 
-.content-link {
-  cursor: pointer;
-}
-
-/* Afficher quand la classe active est ajoutée */
 .popup.active {
   display: block;
 }
 
-/* Styles des titres et paragraphes */
 .popup-content h4 {
   margin-bottom: 15px;
   color: #333;
@@ -1321,13 +1307,6 @@ p.tagline {
   font-weight: 700;
 }
 
-.popup-content p {
-  line-height: 1.6;
-  color: #555;
-  text-align: justify;
-}
-
-/* Prix du popup */
 .popup-price {
   font-weight: bold;
   color: #032b35;
@@ -1335,7 +1314,6 @@ p.tagline {
   font-size: 1.2rem;
 }
 
-/* Bouton de contact */
 .contact-button-popup {
   background-color: #032b35;
   color: #f5f5e9;
@@ -1348,13 +1326,11 @@ p.tagline {
   transition: background-color 0.3s ease, transform 0.2s;
 }
 
-/* Effet de survol sur le bouton */
 .contact-button-popup:hover {
   background-color: #085669;
   transform: scale(1.05);
 }
 
-/* Animation d'apparition */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1364,7 +1340,6 @@ p.tagline {
   }
 }
 
-/* Fermer le Popup */
 .close {
   position: absolute;
   top: 10px;
@@ -1378,6 +1353,16 @@ p.tagline {
 
 .close:hover {
   color: #ff5722;
+}
+
+@media (max-width: 767px) {
+  .popup-content {
+    top: 50%; /* Toujours centré verticalement */
+    transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
+    max-height: 90%; /* Limite la hauteur pour éviter les débordements */
+    overflow-y: auto; /* Ajoute un défilement si nécessaire */
+    padding: 20px; /* Réduit les marges internes */
+  }
 }
 
 /*--------------------------------------------------------------
