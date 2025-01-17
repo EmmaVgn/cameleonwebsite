@@ -73,6 +73,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// loading contact bouton
+document.addEventListener('DOMContentLoaded', function () {
+    const contactButton = document.getElementById('contact-button');
+
+    contactButton.addEventListener('click', function (e) {
+        e.preventDefault(); // Empêche toute action par défaut
+
+        // Ajoute la classe "loading" pour déclencher l'effet
+        this.classList.add('loading');
+
+        // Simule un délai avant une action (par exemple, redirection ou autre)
+        setTimeout(() => {
+            // Exemple de redirection après 2 secondes (remplacez l'URL selon vos besoins)
+            window.location.href = 'https://camelonsolutions.youcanbook.me/';
+        }, 2000); // Délai de 2 secondes
+    });
+});
+
+
 // bouton défilement vers le haut 
 document.addEventListener('DOMContentLoaded', function () {
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');

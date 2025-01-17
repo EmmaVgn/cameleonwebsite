@@ -312,7 +312,7 @@ h4 {
   );
   background-size: 200% 100%;
   animation: liLoading 1.5s linear infinite;
-  border-radius: 8px; /* Arrondi pour un effet élégant */
+  border-radius: 8px;
   transition: background 0.3s ease;
 }
 
@@ -456,8 +456,8 @@ h4 {
 # Logo
 --------------------------------------------------------------*/
 .logo {
-  max-width: 300px; /* Largeur maximale */
-  height: auto; /* Hauteur automatique pour conserver le ratio */
+  max-width: 300px;
+  height: auto;
   margin-left: 0px;
 }
 
@@ -500,13 +500,13 @@ h4 {
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
-  align-items: flex-start; /* Alignement du texte en dessous du logo */
+  align-items: flex-start;
 }
 
 .slogan-footer {
   margin-top: -10%;
   font-size: 0.8rem;
-  text-align: left; /* Alignement du texte à gauche si besoin */
+  text-align: left;
   color: #f5f5e9;
 }
 
@@ -621,7 +621,7 @@ h4 {
   justify-content: center;
   position: relative;
   box-sizing: border-box;
-  overflow: hidden; /* Empêche le défilement interne */
+  overflow: hidden;
   padding: 0;
   margin: 0;
   text-align: center;
@@ -869,12 +869,12 @@ p.tagline {
 
   .effect-container {
     position: relative;
-    top: -500px; /* Monte l'effect-container */
+    top: -500px;
     margin-bottom: 10px;
   }
   .typing-effect {
     position: relative;
-    top: 60px; /* Monte le texte */
+    top: 60px;
     left: auto;
     transform: none;
     margin-bottom: 20px;
@@ -1016,16 +1016,16 @@ p.tagline {
 
 .my-photo {
   display: block;
-  max-width: 90%; /* Largeur maximale de 90% pour mieux s'intégrer */
-  height: auto; /* Conserve le ratio de l'image */
-  max-height: 700px; /* Limite de hauteur maximale augmentée */
-  margin: 0 auto; /* Centrage de l'image */
+  max-width: 90%;
+  height: auto;
+  max-height: 700px;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
   .my-photo {
     max-width: 100%;
-    max-height: 200px; /* Réduit la hauteur maximale sur mobile */
+    max-height: 200px;
   }
 }
 
@@ -1048,7 +1048,7 @@ p.tagline {
   }
 
   .my-photo {
-    max-width: 80%; /* Réduction légère pour l'écran tablette */
+    max-width: 80%;
     max-height: 400px;
   }
 }
@@ -1072,8 +1072,8 @@ p.tagline {
   }
 
   .my-photo {
-    max-width: 100%; /* Prend toute la largeur disponible sur mobile */
-    max-height: 300px; /* Hauteur maximale réduite */
+    max-width: 100%;
+    max-height: 300px;
     margin-top: 20px;
   }
 }
@@ -1097,7 +1097,7 @@ p.tagline {
   }
 
   .my-photo {
-    max-width: 100%; /* Pleine largeur sur les très petits écrans */
+    max-width: 100%;
     max-height: 250px;
   }
 }
@@ -1138,7 +1138,7 @@ p.tagline {
 .content-box h4 {
   font-size: 1.8rem;
   margin: 0;
-  min-height: 60px; /* Hauteur minimale pour aligner tous les titres */
+  min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1146,7 +1146,7 @@ p.tagline {
 }
 
 .content-box p {
-  flex-grow: 1; /* Remplit l'espace disponible */
+  flex-grow: 1;
   font-size: 1rem;
   margin: 10px 0;
   text-align: justify;
@@ -1155,39 +1155,39 @@ p.tagline {
 
 .listing-container {
   display: flex;
-  justify-content: center; /* Center the items horizontally */
-  gap: 15px; /* Add space between the blocks */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
   padding: 20px;
   color: #f5f5e9;
 }
 
 .timeline {
-  display: flex; /* Change to horizontal layout */
+  display: flex;
   width: 100%;
   align-items: stretch;
   flex-wrap: wrap;
-  justify-content: space-between; /* Space between the blocks */
+  justify-content: space-between;
   gap: 20px;
 }
 
 .content-link {
   display: flex;
-  flex-direction: column; /* Ensure content is vertically aligned */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex: 1;
   margin: 10px;
   color: #f5f5e9;
-  min-width: 250px; /* Ensure there's a minimum size */
+  min-width: 250px;
   text-decoration: none;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .content-link:hover {
-  transform: scale(1.05); /* Agrandit légèrement l'élément au survol */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour attirer l'attention */
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .content-box {
@@ -1203,7 +1203,7 @@ p.tagline {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   min-height: 650px;
-  max-height: 650px; /* Ensures all blocks have similar height */
+  max-height: 650px;
   position: relative;
   margin-bottom: 20px;
   box-sizing: border-box;
@@ -1220,17 +1220,17 @@ p.tagline {
 
 .service-logos img {
   margin: 0 10px;
-  width: 100px; /* Adjust the logo size */
+  width: 100px;
   height: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 5px; /* Ajoute un peu d'espace autour du logo */
-  background-color: #ffffff; /* Ajoute un fond pour les mettre en valeur */
+  padding: 5px;
+  background-color: #ffffff;
   border-radius: 8px;
 }
 
 .service-logos img:hover {
-  transform: scale(1.2); /* Agrandit légèrement au survol */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Effet d'ombre au survol */
+  transform: scale(1.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .click-hint {
@@ -1239,7 +1239,7 @@ p.tagline {
   color: #085669;
   display: flex;
   align-items: center;
-  gap: 5px; /* Espace entre l'icône et le texte */
+  gap: 5px;
   opacity: 0.8;
   transition: opacity 0.3s ease;
 }
@@ -1249,7 +1249,7 @@ p.tagline {
 }
 
 .content-link:hover .click-hint {
-  opacity: 1; /* Rend l'indication plus visible au survol */
+  opacity: 1;
 }
 
 @keyframes pulse {
@@ -1270,7 +1270,7 @@ p.tagline {
 .content-link::after {
   content: "Cliquez pour en savoir plus";
   position: absolute;
-  top: 0%; /* Position sous l'élément */
+  top: 0%;
   left: 10%;
   transform: translateX(-50%);
   background-color: #085669;
@@ -1279,22 +1279,22 @@ p.tagline {
   border-radius: 5px;
   font-size: 0.8rem;
   opacity: 0;
-  pointer-events: none; /* Désactive l'interaction avec l'infobulle */
+  pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .content-link:hover::after {
   opacity: 1;
-  transform: translateX(-50%) translateY(-5px); /* L'infobulle remonte légèrement */
+  transform: translateX(-50%) translateY(-5px);
 }
 @media (max-width: 991px) {
   .content-link {
-    flex: 1 1 100%; /* Stacked on smaller screens */
+    flex: 1 1 100%;
     margin: 5px 0;
   }
 
   .content-box {
-    min-height: auto; /* Supprime la contrainte de hauteur si nécessaire */
+    min-height: auto;
     max-height: none;
   }
 
@@ -1313,13 +1313,13 @@ p.tagline {
 
 @media (max-width: 1500px) {
   .content-box {
-    flex: 1 1 calc(50% - 20px); /* 50% moins l'espace entre les blocs */
+    flex: 1 1 calc(50% - 20px);
   }
 }
 
 @media (max-width: 966px) {
   .content-box {
-    flex: 1 1 100%; /* Prend toute la largeur */
+    flex: 1 1 100%;
   }
 }
 
@@ -1370,23 +1370,6 @@ p.tagline {
   font-size: 1.2rem;
 }
 
-.contact-button-popup {
-  background-color: #032b35;
-  color: #f5f5e9;
-  border: none;
-  border-radius: 5px;
-  padding: 12px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: background-color 0.3s ease, transform 0.2s;
-}
-
-.contact-button-popup:hover {
-  background-color: #085669;
-  transform: scale(1.05);
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1413,11 +1396,54 @@ p.tagline {
 
 @media (max-width: 767px) {
   .popup-content {
-    top: 50%; /* Toujours centré verticalement */
-    transform: translate(-50%, -50%); /* Centrage horizontal et vertical */
-    max-height: 90%; /* Limite la hauteur pour éviter les débordements */
-    overflow-y: auto; /* Ajoute un défilement si nécessaire */
-    padding: 20px; /* Réduit les marges internes */
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 90%;
+    overflow-y: auto;
+    padding: 20px;
+  }
+}
+
+/* Container pour les boutons dans le pop-up */
+.contact-button-popup {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Bouton principal (Contactez-moi) */
+.contact-button-popup button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #032b35;
+  border: 2px solid #032b35;
+  border-radius: 25px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-button-popup button:hover {
+  background-color: #085669;
+  color: #f5f5e9 !important;
+  transform: translateY(-3px);
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 767px) {
+  .contact-button-popup {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .contact-button-popup button,
+  .contact-button-popup .btn-rdv {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -1564,7 +1590,7 @@ p.tagline {
 # Contact
 --------------------------------------------------------------*/
 .contact-page {
-  padding: 40px 15px; /* Ajustement du padding pour les petits écrans */
+  padding: 40px 15px;
 }
 
 .contact-header {
@@ -1590,7 +1616,7 @@ p.tagline {
 /* Flex pour les sections de contact */
 .contact-content .row {
   display: flex;
-  flex-wrap: wrap; /* Permet aux éléments de se replier sur plusieurs lignes */
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -1600,8 +1626,8 @@ p.tagline {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
-  flex: 1; /* Permet de prendre un espace flexible */
-  min-width: 300px; /* Largeur minimale pour les petits écrans */
+  flex: 1;
+  min-width: 300px;
 }
 
 .contact-form-wrapper:hover {
@@ -1624,8 +1650,8 @@ p.tagline {
   margin-left: -20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex: 1; /* Permet de prendre un espace flexible */
-  min-width: 300px; /* Largeur minimale pour les petits écrans */
+  flex: 1;
+  min-width: 300px;
 }
 
 .contact-form {
@@ -1655,8 +1681,53 @@ p.tagline {
 .contact-final-message {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centrer le message final */
-  flex-direction: column; /* Disposer les éléments en colonne */
+  justify-content: center;
+  flex-direction: column;
+}
+
+#contact-button {
+  background-color: #032b35;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  position: relative; /* Nécessaire pour l'animation */
+  overflow: hidden; /* Empêche l'animation de dépasser les limites */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Animation de loading */
+#contact-button.loading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%; /* Commence hors de l'élément */
+  width: 300%; /* Couverture complète de l'élément */
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.288),
+    transparent
+  );
+  animation: loadingEffect 1.5s linear infinite; /* Animation continue */
+}
+
+/* Effet d'animation */
+@keyframes loadingEffect {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Hover et transformation pour améliorer l'interaction */
+#contact-button:hover {
+  transform: scale(1.05); /* Légère augmentation de la taille */
 }
 
 /* Media Queries pour améliorer la réactivité */
