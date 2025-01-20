@@ -18,6 +18,16 @@ class HomeController extends AbstractController
             'projects' => $projects, // Corrigé de 'project' à 'projects'
         ]);
     }
+    #[Route('/test', name: 'test')]
+    public function test(): Response
+    {
+       
+
+        return $this->render('home/test.html.twig', [
+            'controller_name' => 'Homepage',
+   
+        ]);
+    }
 
     private function getProjects(): array 
 {
