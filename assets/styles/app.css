@@ -33,11 +33,6 @@ body {
   padding-right: 0;
 }
 
-.container {
-  margin-left: 0 !important; /* Supprime les marges */
-  padding-left: 0 !important; /* Supprime les espaces internes */
-}
-
 a {
   text-decoration: none;
   list-style: none;
