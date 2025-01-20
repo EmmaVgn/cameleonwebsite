@@ -33,6 +33,11 @@ body {
   padding-right: 0;
 }
 
+.container {
+  margin-left: 0 !important; /* Supprime les marges */
+  padding-left: 0 !important; /* Supprime les espaces internes */
+}
+
 a {
   text-decoration: none;
   list-style: none;
@@ -150,8 +155,8 @@ h4 {
   width: 100%;
   color: #f5f5e9;
   display: flex;
-  justify-content: center;
-
+  justify-content: space-between !important;
+  padding-left: 0;
   padding: 3rem 0;
   font-family: "Special Elite", serif !important;
   margin-left: 0px;
@@ -201,6 +206,12 @@ h4 {
 .navbar .navbar-brand {
   font-size: 1.5rem;
   font-weight: bold;
+  margin-right: auto;
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  justify-content: flex-start;
 }
 
 .navbar .navbar-nav .nav-link.active {
@@ -228,6 +239,7 @@ h4 {
   top: 0;
   left: 0;
   right: 0;
+  height: 160px;
   background-color: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -238,7 +250,8 @@ h4 {
   color: #000;
   padding: 10px 20px;
   box-sizing: border-box !important;
-  overflow-x: hidden;
+
+  overflow-y: hidden !important;
 }
 
 .navbar-brand,
@@ -1268,7 +1281,7 @@ p.tagline {
 }
 
 .content-link::after {
-  content: "Cliquez pour en savoir plus";
+  content: "🔎Cliquez pour en savoir plus";
   position: absolute;
   top: 0%;
   left: 10%;
@@ -1797,6 +1810,44 @@ p.tagline {
   padding: 10px 20px;
   font-size: 1rem;
 }
+
+/*--------------------------------------------------------------
+# PDF
+--------------------------------------------------------------*/
+.pdf-download-container {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.pdf-download-container h4 {
+  font-size: 1.5rem;
+  color: #032b35;
+  margin-bottom: 20px;
+}
+
+.btn-pdf {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #032b35;
+  border: 2px solid #032b35;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-pdf:hover {
+  background-color: #085669;
+  transform: translateY(-3px);
+}
+
 /*--------------------------------------------------------------
 # Login
 --------------------------------------------------------------*/

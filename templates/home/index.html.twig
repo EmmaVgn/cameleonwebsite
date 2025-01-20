@@ -12,17 +12,17 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container-fluid">
-		<div class="hero-section">
-			<div class="custom-navbar">
-				{% include "shared/_navbar.html.twig" with {'navbarClass': 'navbar-transparent'} %}
-			</div>
-			{% include "home/tree.html.twig" %}
-			<div class="effect-container">
-				{% include "home/typing.html.twig" %}
-			</div>
+
+	<div class="hero-section">
+		<div class="custom-navbar">
+			{% include "shared/_navbar.html.twig" with {'navbarClass': 'navbar-transparent'} %}
+		</div>
+		{% include "home/tree.html.twig" %}
+		<div class="effect-container">
+			{% include "home/typing.html.twig" %}
 		</div>
 	</div>
+
 	<div class="container-fluid">
 		{% include "home/project.html.twig" %}
 	</div>
@@ -30,6 +30,11 @@
 		<div class="container-services">
 			<h3 class="title-service">Mes services</h3>
 			{% include "services/listing.html.twig" %}
+			<div class="pdf-download-container">
+				<h4>Consultez notre brochure PDF</h4>
+				<a href="/PDF/Catalogue.pdf" target="_blank" class="btn-pdf">Ouvrir le PDF</a>
+			</div>
+
 			{% include "services/picto.html.twig" %}
 		</div>
 	</div>
