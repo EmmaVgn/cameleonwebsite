@@ -53,9 +53,16 @@
                             {{ form_row(form.content, {'attr': {'class': 'form-control', 'rows': 5, 'placeholder': 'Votre demande'}}) }}
                         </div>
                     </div>
-                    <button id="contact-button" class="btn btn-custom mt-4" type="submit">
-                        <span>Envoyer le message</span>
-                    </button>
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <button id="contact-button" class="btn btn-custom" type="submit">
+                            <span>Envoyer le message</span>
+                        </button>
+                        <a href="https://camelonsolutions.youcanbook.me/" class="btn btn-custom" target="_blank">
+                            <span>Prendre un RDV en ligne</span>
+                        </a>
+                    </div>
+
+                    
                     {{ form_end(form) }}
                 </div>
 
