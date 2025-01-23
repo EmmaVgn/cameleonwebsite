@@ -15,18 +15,32 @@
 
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Caméléon Solutions : Construisons ensemble des expériences numériques qui comptent ! Spécialisé dans la création de sites web et la formation aux outils numériques, je suis à votre écoute pour des solutions personnalisées. Donnons vie à vos projets !">
+		<meta name="description" content="Construisons ensemble des expériences numériques uniques : création de sites web, formation et accompagnement personnalisé.">
 		<meta name="keywords" content="Caméléon Solutions, expériences numériques, création de sites web, formation aux outils numériques, solutions personnalisées, développement web, accompagnement numérique">
 		<meta name="author" content="Cameleon Solutions">
 		<meta name="robots" content="index, follow">
 		<meta name="revisit-after" content="7 days">
 		<meta name="language" content="fr">
+		<meta property="og:url" content="{{ app.request.uri }}">
+		<meta name="twitter:title" content="Cameleon Solutions">
+		<meta name="twitter:description" content="Solutions numériques sur mesure : création de sites web, formations, et accompagnement personnalisé. Contactez-nous!">
+		<meta name="twitter:image" content="{{ asset('img/CAMELEON SOLUTIONS fond blanc.png') }}">
+		<meta name="theme-color" content="#ffffff">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="msapplication-TileImage" content="{{ asset('img/mstile-150x150.png') }}">
+		<meta name="msapplication-TileColor" content="#ffffff">
+
 		<meta name="generator" content="Symfony">
 		<meta property="og:title" content="Cameleon Solutions">
-		<meta property="og:image" content="{{ asset('img/favicon.png') }}">
-		<meta property="og:description" content="Caméléon Solutions propose des solutions numériques sur mesure. Création de sites web et formations. Contactez-nous!">
+		<meta property="og:image" content="{{ asset('img/CAMELEON SOLUTIONS fond blanc.png') }}">
+		<meta property="og:image:type" content="image/png">
+
+		<meta property="og:description" content="Solutions numériques sur mesure : création de sites web, formations, et accompagnement personnalisé. Contactez-nous!">
 		<meta name="twitter:card" content="summary_large_image">
-		<link rel="icon" type="image/webpd" href="{{ asset('img/favicon.webp') }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon-16x16.png') }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon-32x32.png') }}">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/apple-touch-icon.png') }}">
+
 
 		{% block stylesheets %}
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
