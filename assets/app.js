@@ -41,23 +41,36 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// pop up
+//pop-up
 document.querySelectorAll(".content-link").forEach((link) => {
-  link.addEventListener("click", (event) => {
-    const popupId = link.getAttribute("data-popup"); // Récupère l'ID de la pop-up
+  link.addEventListener("click", () => {
+    const popupId = link.getAttribute("data-popup");
     const popup = document.getElementById(popupId);
 
     if (popup) {
       const popupContent = popup.querySelector(".popup-content");
 
-      // Position du clic dans la fenêtre
-      const clickY = event.clientY;
+      // Définir les positions spécifiques en fonction de l'ID
+      switch (popupId) {
+        case "popup1":
+          popupContent.style.top = "10%";
+          break;
+        case "popup2":
+          popupContent.style.top = "20%";
+          break;
+        case "popup3":
+          popupContent.style.top = "35%";
+          break;
+        case "popup4":
+          popupContent.style.top = "50%";
+          popupContent.style.transform = "translate(-50%, -50%)";
+          break;
+        default:
+          popupContent.style.top = "30%"; // Position par défaut pour les autres pop-ups
+      }
 
-      // Appliquer le style dynamique
-      popupContent.style.position = "absolute";
-      popupContent.style.top = `${clickY}px`; // Applique la hauteur exacte du clic
       popupContent.style.left = "50%";
-      popupContent.style.transform = "translate(-50%, 0)"; // Centre horizontalement
+      popupContent.style.transform = popupId === "popup4" ? "translate(-50%, -50%)" : "translate(-50%, 0)";
 
       // Affiche la pop-up
       popup.classList.add("active");
@@ -68,9 +81,9 @@ document.querySelectorAll(".content-link").forEach((link) => {
 // Fermer la pop-up
 document.querySelectorAll(".close").forEach((closeButton) => {
   closeButton.addEventListener("click", () => {
-    const popup = closeButton.closest(".popup"); // Récupère l'élément parent
+    const popup = closeButton.closest(".popup");
     if (popup) {
-      popup.classList.remove("active"); // Masque la pop-up
+      popup.classList.remove("active");
     }
   });
 });

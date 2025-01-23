@@ -3,7 +3,6 @@
 		<a class="navbar-brand" href="{{ path('homepage') }}">
 			<link rel="preload" href="{{ asset('img/CAMELEON SOLUTIONS GIF LOGO blanc (1).gif') }}" as="image">
 			<img src="{{ asset('img/CAMELEON SOLUTIONS GIF LOGO blanc (1).gif') }}" class="logo" alt="logo" height="auto">
-
 		</a>
 
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,10 +43,8 @@
 					<li class="nav-item active">
 						<a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
 					</li>
-					{% else %}
-
-
 				{% endif %}
-			</div>
+			</ul>
 		</div>
-	</nav>
+	</div>
+</nav>
