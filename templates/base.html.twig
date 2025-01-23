@@ -44,7 +44,7 @@
 
 		{% block stylesheets %}
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-			<script src="{{ asset('/tarteaucitron/tarteaucitron.css') }}"></script>
+			<link rel="stylesheet" href="{{ asset('/tarteaucitron/css/tarteaucitron.css') }}">
 
 		{% endblock %}
 
@@ -52,7 +52,7 @@
 			{% block importmap %}
 				{{ importmap('app') }}
 				<script src="{{ asset('/tarteaucitron/tarteaucitron.js') }}"></script>
-				<script src="{{ asset('/tarteaucitron/tarteaucitron.fr.js') }}"></script>
+				<script src="{{ asset('/tarteaucitron/lang/tarteaucitron.fr.js') }}"></script>
 
 				<script>
 					document.addEventListener("DOMContentLoaded", function () {

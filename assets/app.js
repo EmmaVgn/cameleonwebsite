@@ -88,13 +88,17 @@ document.querySelectorAll(".close").forEach((closeButton) => {
   });
 });
 
-
+//tarte au citron
 document.addEventListener("DOMContentLoaded", function () {
-    tarteaucitron.init({
-        privacyUrl: "/politique-de-confidentialite",
-        highPrivacy: true,
-        googleConsentMode: true
-    });
+  if (typeof tarteaucitron !== "undefined") {
+      tarteaucitron.init({
+          privacyUrl: "/politique-de-confidentialite", // URL de votre politique de confidentialité
+          highPrivacy: true, // Active une haute confidentialité
+          googleConsentMode: true // Mode de consentement pour Google
+      });
 
-    console.log("Tarteaucitron est initialisé !");
+      console.log("Tarteaucitron est initialisé !");
+  } else {
+      console.error("Tarteaucitron n'est pas chargé !");
+  }
 });
