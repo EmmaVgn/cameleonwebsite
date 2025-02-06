@@ -43,8 +43,8 @@ class HomeController extends AbstractController
             'id' => 2,
             'title' => 'Aromelis',
             'short_description' => 'Site e-commerce pour une apicultrice.',
-            'link' => 'https://aromielis.cameleon-solutions.fr/', // Lien vers le site
-            'image' => '/img/project b/Image-13.webp',
+            'link' => 'https://mariefarjaud.fr/', // Lien vers le site
+            'image' => '/img/project b/Image-2.png',
         ],
         [
             'id' => 3,
