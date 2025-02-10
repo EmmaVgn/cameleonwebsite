@@ -43,11 +43,8 @@
 
 
 		{% block stylesheets %}
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.onload=null;this.media='all';">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" integrity="sha384-..." crossorigin="anonymous">
 			<link rel="stylesheet" href="{{ asset('/tarteaucitron/css/tarteaucitron.css') }}" media="print" onload="this.onload=null;this.media='all';">
-			<link rel="preconnect" href="https://fonts.googleapis.com">
-			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-			<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Special+Elite&display=swap" rel="stylesheet">
 
 		{% endblock %}
 
@@ -90,8 +87,14 @@ tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */
 			{% include "shared/_footer.html.twig" %}
 			<button id="scrollToTopBtn" title="Retour en haut">↑</button>
 		</main>
-		<script src=" {{ asset('/tarteaucitron/tarteaucitron.js') }} "></script>
-		<script src="{{ asset('/tarteaucitron/lang/tarteaucitron.fr.js') }}"></script>
+		{% if tarteaucitron.job is defined %}
+			<script defer>
+				tarteaucitron.job.push('googletagmanager');
+			</script>
+		{% endif %}
+		<script src="{{ asset('/tarteaucitron/tarteaucitron.js') }}" defer></script>
+		<script src="{{ asset('/tarteaucitron/lang/tarteaucitron.fr.js') }}" defer></script>
+
 		<script>
 			document.addEventListener("DOMContentLoaded", function () {
 if (typeof tarteaucitron !== "undefined") {
