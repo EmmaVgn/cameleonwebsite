@@ -24,7 +24,7 @@
 		<meta property="og:url" content="{{ app.request.uri }}">
 		<meta name="twitter:title" content="Cameleon Solutions">
 		<meta name="twitter:description" content="Solutions numériques sur mesure : création de sites web, formations, et accompagnement personnalisé. Contactez-nous!">
-		<meta name="twitter:image" content="{{ asset('img/CAMELEON SOLUTIONS fond blanc.png') }}">
+		<meta name="twitter:image" content="{{ asset('img/CAMELEON-SOLUTIONS-fond-blanc.webp') }}">
 		<meta name="theme-color" content="#ffffff">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="msapplication-TileImage" content="{{ asset('img/mstile-150x150.png') }}">
@@ -32,19 +32,22 @@
 
 		<meta name="generator" content="Symfony">
 		<meta property="og:title" content="Cameleon Solutions">
-		<meta property="og:image" content="{{ asset('img/CAMELEON SOLUTIONS fond blanc.png') }}">
+		<meta property="og:image" content="{{ asset('img/CAMELEON-SOLUTIONS-fond-blanc.webp') }}">
 		<meta property="og:image:type" content="image/png">
 
 		<meta property="og:description" content="Solutions numériques sur mesure : création de sites web, formations, et accompagnement personnalisé. Contactez-nous!">
 		<meta name="twitter:card" content="summary_large_image">
-		<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon-16x16.png') }}">
-		<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon-32x32.png') }}">
-		<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/apple-touch-icon.png') }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon-16x16.webp') }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon-32x32.webp') }}">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/apple-touch-icon.webp') }}">
 
 
 		{% block stylesheets %}
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-			<link rel="stylesheet" href="{{ asset('/tarteaucitron/css/tarteaucitron.css') }}">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.onload=null;this.media='all';">
+			<link rel="stylesheet" href="{{ asset('/tarteaucitron/css/tarteaucitron.css') }}" media="print" onload="this.onload=null;this.media='all';">
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Special+Elite&display=swap" rel="stylesheet">
 
 		{% endblock %}
 
@@ -54,7 +57,40 @@
 
 			{% endblock %}
 		{% endblock %}
-		<script src="{{ asset('/tarteaucitron/tarteaucitron.js') }}"></script>
+
+	</head>
+	<body>
+		<header>
+			{% set isHomepage = app.request.attributes.get('_route') == 'homepage' %}
+			{% if not isHomepage %}
+				{% include "shared/_navbar.html.twig" with {'navbarClass': 'navbar-background'} %}
+			{% endif %}
+		</header>
+		<main>
+			{% block body %}
+				{% if app.environment == 'prod' %}
+					<!-- Google Tag Manager (noscript) -->
+					<noscript>
+						<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFZ2VG76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+					</noscript>
+					<!-- End Google Tag Manager (noscript) -->
+					<script type="text/javascript">
+						tarteaucitron.user.gtagUa = 'G-RMTGZX695N';
+// tarteaucitron.user.gtagCrossdomain = ['example.com', 'example2.com'];
+tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */
+};
+(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+					</script>
+
+				{% endif %}
+				{% include "shared/_flash.html.twig" %}
+
+
+			{% endblock %}
+			{% include "shared/_footer.html.twig" %}
+			<button id="scrollToTopBtn" title="Retour en haut">↑</button>
+		</main>
+		<script src=" {{ asset('/tarteaucitron/tarteaucitron.js') }} "></script>
 		<script src="{{ asset('/tarteaucitron/lang/tarteaucitron.fr.js') }}"></script>
 		<script>
 			document.addEventListener("DOMContentLoaded", function () {
@@ -93,39 +129,5 @@ console.error("Tarteaucitron n'est pas défini !");
 }
 });
 		</script>
-
-	</head>
-	<body>
-
-		<header>
-			{% set isHomepage = app.request.attributes.get('_route') == 'homepage' %}
-			{% if not isHomepage %}
-				{% include "shared/_navbar.html.twig" with {'navbarClass': 'navbar-background'} %}
-			{% endif %}
-		</header>
-		<main>
-			{% block body %}
-				{% if app.environment == 'prod' %}
-					<!-- Google Tag Manager (noscript) -->
-					<noscript>
-						<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFZ2VG76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-					</noscript>
-					<!-- End Google Tag Manager (noscript) -->
-					<script type="text/javascript">
-						tarteaucitron.user.gtagUa = 'G-RMTGZX695N';
-// tarteaucitron.user.gtagCrossdomain = ['example.com', 'example2.com'];
-tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */
-};
-(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
-					</script>
-
-				{% endif %}
-				{% include "shared/_flash.html.twig" %}
-
-
-			{% endblock %}
-			{% include "shared/_footer.html.twig" %}
-			<button id="scrollToTopBtn" title="Retour en haut">↑</button>
-		</main>
 	</body>
 </html>

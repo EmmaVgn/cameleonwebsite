@@ -1,9 +1,13 @@
 <nav class="navbar navbar-expand-lg {% if not isHomepage %}navbar-background{% endif %}">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="{{ path('homepage') }}">
-			<link rel="preload" href="{{ asset('img/CAMELEON SOLUTIONS GIF LOGO blanc (1).gif') }}" as="image">
-			<img src="{{ asset('img/CAMELEON SOLUTIONS GIF LOGO blanc (1).gif') }}" class="logo" alt="logo" height="auto">
+			<video autoplay loop muted playsinline class="logo-video">
+				<source src="{{ asset('img/cameleon-logo-transparent.webm') }}" type="video/webm">
+				<source src="{{ asset('img/cameleon-logo.mp4') }}" type="video/mp4">
+				<img src="{{ asset('img/cameleon-logo.webp') }}" class="logo" alt="Logo Caméléon Solutions">
+			</video>
 		</a>
+
 
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>

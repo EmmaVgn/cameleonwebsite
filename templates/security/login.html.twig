@@ -16,7 +16,11 @@
 	<div class="login-container">
 		<div class="login-box">
 			<div class="login-header">
-				<img src="{{ asset('img/giphy-4-login.gif') }}" alt="Caméléon Solutions" class="login-logo" loading="lazy">
+				<video autoplay loop muted playsinline class="login-video">
+					<source src="{{ asset('img/giphy-4-login.webm') }}" type="video/webm">
+					<source src="{{ asset('img/giphy-4-login.mp4') }}" type="video/mp4">
+					Votre navigateur ne supporte pas les vidéos HTML5.
+				</video>
 				<h1 class="login-title">Connexion</h1>
 				<p class="login-subtitle">Ravi de vous revoir chez Caméléon Solutions</p>
 			</div>

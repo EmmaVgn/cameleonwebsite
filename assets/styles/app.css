@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Special+Elite&display=swap");
-
 /*--------------------------------------------------------------
 # Général
 --------------------------------------------------------------*/
@@ -486,6 +484,13 @@ h4 {
   }
 }
 
+.logo-video {
+  width: 250px;
+  height: auto;
+  display: block;
+  background: transparent;
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -614,6 +619,13 @@ h4 {
     text-align: center; /* Centre le texte */
     margin-top: 5px; /* Réduit l'espace vertical au-dessus */
   }
+}
+
+.logo-footer-video {
+  width: 400px; /* Ajuste selon ton besoin */
+  height: auto;
+  display: block;
+  background: transparent;
 }
 
 /*--------------------------------------------------------------
@@ -1904,6 +1916,16 @@ p.tagline {
 .form-check label {
   font-size: 0.9rem;
   color: #333;
+}
+
+.login-video {
+  width: 100%;
+  max-width: 150px; /* Ajuste selon ton besoin */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 15px; /* Facultatif pour un look plus doux */
+  object-fit: cover;
 }
 
 /*--------------------------------------------------------------

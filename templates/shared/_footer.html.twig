@@ -3,10 +3,14 @@
 		<div class="footer-custom mb-4">
 			<div class="footer-logo">
 				<a class="navbar-brand" href="{{ path('homepage') }}">
-					<img rel="preload" src="{{ asset('img/CAMELEONSOLUTIONSGIFLOGOblancavecsloganbg-tran-.gif') }}" alt="Logo" class="logo-footer" loading="lazy">
+					<video autoplay loop muted playsinline class="logo-footer-video">
+						<source src="{{ asset('img/cameleon-footer-transparent.webm') }}" type="video/webm">
+						<source src="{{ asset('img/cameleon-footer.mp4') }}" type="video/mp4">
+						<img src="{{ asset('img/cameleon-footer.webp') }}" alt="Logo Caméléon Solutions" class="logo-footer">
+					</video>
 				</a>
-
 			</div>
+
 			<!-- Informations de contact à droite -->
 			<div class="footer-contact">
 				<p style="color: #f5f5e9;">Contact : +33 6 69 28 48 62</p>
