@@ -1,6 +1,5 @@
 import "./bootstrap.js";
 import "./styles/minimifier.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 
 

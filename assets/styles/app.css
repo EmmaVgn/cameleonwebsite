@@ -1,14 +1,14 @@
 @font-face {
   font-family: "Roboto Slab";
-  src: url("../fonts/Roboto_Slab/RobotoSlab-Regular.woff2") format("woff2"),
-    url("../fonts/Roboto_Slab/RobotoSlab-Regular.woff") format("woff");
+  src: url("/assets/fonts/RobotoSlab.woff2") format("woff2"),
+    url("/assets/fonts/RobotoSlab.woff") format("woff");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Special Elite";
-  src: url("../fonts/Special_Elite/SpecialElite-Regular.woff2") format("woff2"),
-    url("../fonts/Special_Elite/SpecialElite-Regular.woff") format("woff"),
-    url("../fonts/Special_Elite/SpecialElite-Regular.ttf") format("truetype"); /* Ajout du TTF en fallback */
+  src: url("/assets/fonts/SpecialElite-Regular.woff2") format("woff2"),
+    url("/assets/fonts/SpecialElite-Regular.woff") format("woff");
   font-display: swap;
 }
 
@@ -243,6 +243,7 @@ h4 {
 
 .custom-navbar .navbar {
   margin: 0;
+  height: 150px;
 }
 
 .custom-navbar {
@@ -1242,8 +1243,8 @@ p.tagline {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  min-height: 650px;
-  max-height: 650px;
+  min-height: 850px;
+  max-height: 850px;
   position: relative;
   margin-bottom: 20px;
   box-sizing: border-box;

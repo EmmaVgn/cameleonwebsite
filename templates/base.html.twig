@@ -13,7 +13,6 @@
 			{% endblock %}
 		</title>
 
-
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Construisons ensemble des expériences numériques uniques : création de sites web, formation et accompagnement personnalisé.">
 		<meta name="keywords" content="Caméléon Solutions, expériences numériques, création de sites web, formation aux outils numériques, solutions personnalisées, développement web, accompagnement numérique">
@@ -34,66 +33,30 @@
 		<meta property="og:title" content="Cameleon Solutions">
 		<meta property="og:image" content="{{ asset('img/CAMELEON-SOLUTIONS-fond-blanc.webp') }}">
 		<meta property="og:image:type" content="image/png">
-
 		<meta property="og:description" content="Solutions numériques sur mesure : création de sites web, formations, et accompagnement personnalisé. Contactez-nous!">
 		<meta name="twitter:card" content="summary_large_image">
+
 		<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon-16x16.webp') }}">
 		<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon-32x32.webp') }}">
 		<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/apple-touch-icon.webp') }}">
 
-
 		{% block stylesheets %}
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" integrity="sha384-..." crossorigin="anonymous">
-			<link rel="stylesheet" href="{{ asset('/tarteaucitron/css/tarteaucitron.css') }}" media="print" onload="this.onload=null;this.media='all';">
+			<!-- Préchargement des CSS critiques -->
+			<link rel="preload" href="{{ asset('/css/bootstrap.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+			<link
+			rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
+			<!-- Chargement optimisé de Tarteaucitron -->
+			<link rel="stylesheet" href="{{ asset('/tarteaucitron/css/tarteaucitron.css') }}" media="print" onload="this.onload=null;this.media='all';">
 		{% endblock %}
 
 		{% block javascripts %}
 			{% block importmap %}
 				{{ importmap('app') }}
-
 			{% endblock %}
 		{% endblock %}
-
-	</head>
-	<body>
-		<header>
-			{% set isHomepage = app.request.attributes.get('_route') == 'homepage' %}
-			{% if not isHomepage %}
-				{% include "shared/_navbar.html.twig" with {'navbarClass': 'navbar-background'} %}
-			{% endif %}
-		</header>
-		<main>
-			{% block body %}
-				{% if app.environment == 'prod' %}
-					<!-- Google Tag Manager (noscript) -->
-					<noscript>
-						<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFZ2VG76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-					</noscript>
-					<!-- End Google Tag Manager (noscript) -->
-					<script type="text/javascript">
-						tarteaucitron.user.gtagUa = 'G-RMTGZX695N';
-// tarteaucitron.user.gtagCrossdomain = ['example.com', 'example2.com'];
-tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */
-};
-(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
-					</script>
-
-				{% endif %}
-				{% include "shared/_flash.html.twig" %}
-
-
-			{% endblock %}
-			{% include "shared/_footer.html.twig" %}
-			<button id="scrollToTopBtn" title="Retour en haut">↑</button>
-		</main>
-		{% if tarteaucitron.job is defined %}
-			<script defer>
-				tarteaucitron.job.push('googletagmanager');
-			</script>
-		{% endif %}
-		<script src="{{ asset('/tarteaucitron/tarteaucitron.js') }}" defer></script>
-		<script src="{{ asset('/tarteaucitron/lang/tarteaucitron.fr.js') }}" defer></script>
+		<script src="{{ asset('/tarteaucitron/tarteaucitron.js') }}"></script>
+		<script src="{{ asset('/tarteaucitron/lang/tarteaucitron.fr.js') }}"></script>
 
 		<script>
 			document.addEventListener("DOMContentLoaded", function () {
@@ -132,5 +95,35 @@ console.error("Tarteaucitron n'est pas défini !");
 }
 });
 		</script>
+	</head>
+	<body>
+		<header>
+			{% set isHomepage = app.request.attributes.get('_route') == 'homepage' %}
+			{% if not isHomepage %}
+				{% include "shared/_navbar.html.twig" with {'navbarClass': 'navbar-background'} %}
+			{% endif %}
+		</header>
+
+		<main>
+			{% block body %}
+				{% if app.environment == 'prod' %}
+					<!-- Google Tag Manager (noscript) -->
+					<noscript>
+						<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFZ2VG76" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+					</noscript>
+					<!-- End Google Tag Manager (noscript) -->
+					<script type="text/javascript">
+						tarteaucitron.user.gtagUa = 'G-RMTGZX695N';
+// tarteaucitron.user.gtagCrossdomain = ['example.com', 'example2.com'];
+tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */
+};
+(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+					</script>
+				{% endif %}
+				{% include "shared/_flash.html.twig" %}
+			{% endblock %}
+			{% include "shared/_footer.html.twig" %}
+			<button id="scrollToTopBtn" title="Retour en haut">↑</button>
+		</main>
 	</body>
 </html>

@@ -33,6 +33,7 @@
         "symfony/twig-bundle": "7.1.*",
         "symfony/validator": "7.1.*",
         "symfony/yaml": "7.1.*",
+        "symfonycasts/sass-bundle": "^0.8.2",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/intl-extra": "^3.11",
         "twig/string-extra": "^3.12",

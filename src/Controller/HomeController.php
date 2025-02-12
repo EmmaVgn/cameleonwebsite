@@ -37,21 +37,21 @@ class HomeController extends AbstractController
             'title' => 'Garage Thomas',
             'short_description' => 'Création d\'un site vitrine pour un garage automobile.',
             'link' => 'https://garagethomas.cameleon-solutions.fr/', // Lien vers le site
-            'image' =>  '/img/project a/Image-6.webp',
+            'image' =>  '/img/project a/Image-6-min.webp',
         ],
         [
             'id' => 2,
             'title' => 'Aromelis',
             'short_description' => 'Site e-commerce pour une apicultrice.',
             'link' => 'https://mariefarjaud.fr/', // Lien vers le site
-            'image' => '/img/project b/Image-2.png',
+            'image' => '/img/project b/Image-2-min.webp',
         ],
         [
             'id' => 3,
             'title' => 'Application Météo',
             'short_description' => 'Application météo interactive.',
               'link' => '#',
-            'image' => '/img/project c/Image-18.webp',
+            'image' => '/img/project c/Image-18-min.webp',
         ],
         [
             'id' => 4,
