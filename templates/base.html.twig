@@ -88,6 +88,11 @@ readmoreLink: "/politique-de-cookies", /* Page dédiée aux informations des coo
 // Ajout des services (Google Tag Manager, Google Analytics)
 tarteaucitron.user.googletagmanagerId = 'GTM-TFZ2VG76';
 tarteaucitron.user.gtagUa = 'G-RMTGZX695N'; // UA ou ID GA4
+tarteaucitron.user.facebookpixelId = '1168268418241895'; // Remplace avec ton Pixel ID
+tarteaucitron.user.facebookAccessToken = 'EAANsndT7ZA7oBOxgFdvMXZCUCb9pIUljZBxaLY4Wu9lUnnjVK2lU5sZA96gYuqk9MjgiZCfA97WFXFNJcMyoxRJdgZAe2c8oykKvLOiiV6N2TINZCGVfpIf8bJ8HEvMLvHKv7lZBcFhZAIbXSoatf10ZCCqR8UZCaJZA0rAHNzlQcu20rZAsNPyjIWCF6bkD6Wo6ZC8pBnewZDZD';
+(tarteaucitron.job = tarteaucitron.job || []).push('facebookpixel');
+(tarteaucitron.job = tarteaucitron.job || []).push('facebookConversionsAPI');
+
 (tarteaucitron.job = tarteaucitron.job || []).push('googletagmanager');
 (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
 } else {

@@ -5216,6 +5216,35 @@ tarteaucitron.services.facebookpixel = {
     }
 };
 
+//Conversion API Facebook
+tarteaucitron.services.facebookConversionsAPI = {
+    "key": "facebookConversionsAPI",
+    "type": "ads",
+    "name": "Facebook Conversions API",
+    "uri": "https://www.facebook.com/policies/cookies/",
+    "needConsent": true,
+    "cookies": [],
+    "js": function () {
+        fetch('https://graph.facebook.com/v13.0/1168268418241895/events', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                data: [{
+                    event_name: 'PageView',
+                    event_time: Math.floor(new Date().getTime() / 1000),
+                    action_source: 'website',
+                    event_source_url: window.location.href,
+                    user_data: {},
+                }],
+                access_token: tarteaucitron.user.facebookAccessToken
+            })
+        });
+    }
+};
+
+
 //Issuu
 tarteaucitron.services.issuu = {
     "key": "issuu",

@@ -1,5 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Special+Elite&display=swap");
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("/assets/fonts/RobotoSlab.woff2") format("woff2"),
+    url("/assets/fonts/RobotoSlab.woff") format("woff");
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "Special Elite";
+  src: url("/assets/fonts/SpecialElite-Regular.woff2") format("woff2"),
+    url("/assets/fonts/SpecialElite-Regular.woff") format("woff");
+  font-display: swap;
+}
 body {
   font-family: "Roboto Slab", sans-serif;
 }
