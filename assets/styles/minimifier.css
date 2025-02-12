@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Special+Elite&display=swap);
 a,
 body,
 html {
@@ -25,18 +26,6 @@ a,
 body,
 html {
   list-style: none;
-}
-@font-face {
-  font-family: "Roboto Slab";
-  src: url("/assets/fonts/RobotoSlab.woff2") format("woff2"),
-    url("/assets/fonts/RobotoSlab.woff") format("woff");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Special Elite";
-  src: url("/assets/fonts/SpecialElite-Regular.woff2") format("woff2"),
-    url("/assets/fonts/SpecialElite-Regular.woff") format("woff");
-  font-display: swap;
 }
 * {
   margin: 0;
@@ -1172,10 +1161,6 @@ p.tagline {
   position: relative;
   top: -0.5rem;
 }
-.cc-window,/* Bannière Cookie Consent */ .cc-color-override-688238583.cc-window {
-  position: fixed;
-  bottom: 30px !important;
-}
 @media (max-width: 768px) {
   .avt_container {
     flex-direction: column;
@@ -1688,41 +1673,8 @@ p.tagline {
 .reveal-3 {
   transition-delay: 0.2s;
 }
-.cc-window {
-  left: 0;
-  width: 100%;
-  z-index: 9999 !important;
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  padding: 15px 0;
-  font-size: 16px;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
-}
-.cc-window .cc-compliance {
-  display: inline-block;
-  margin-left: 10px;
-}
-.cc-window .cc-btn:hover {
-  background-color: #d1b100;
-}
-.cc-compliance .cc-btn {
-  display: inline-block;
-  margin-right: 10px;
-}
-.cc-compliance {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.cc-btn.cc-dismiss {
-  background-color: #85d468 !important;
-  color: #000 !important;
-}
-.cc-btn.cc-deny {
-  background-color: #000 !important;
-  color: #fff !important;
-}
-.cc-btn.cc-dismiss:hover {
-  background-color: #333 !important;
+#tarteaucitronAlertBig {
+  transform: scale(0.9);
+  opacity: 0.9;
+  transition: transform 0.3s, opacity 0.3s;
 }

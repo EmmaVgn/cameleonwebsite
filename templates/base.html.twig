@@ -55,7 +55,7 @@
 				{{ importmap('app') }}
 			{% endblock %}
 		{% endblock %}
-		<script src="{{ asset('/tarteaucitron/tarteaucitron.js') }}"></script>
+		<script src="{{ asset('/tarteaucitron/tarteaucitron.js') }}" defer></script>
 		<script src="{{ asset('/tarteaucitron/lang/tarteaucitron.fr.js') }}"></script>
 
 		<script>
@@ -82,7 +82,7 @@ AcceptAllCta: true, /* Bouton "Tout accepter" */
 DenyAllCta: true, /* Bouton "Tout refuser" */
 mandatory: true, /* Afficher les cookies obligatoires */
 googleConsentMode: true, /* Activer Google Consent Mode */
-readmoreLink: "/cookies", /* Page dédiée aux informations des cookies */
+readmoreLink: "/politique-de-cookies", /* Page dédiée aux informations des cookies */
 });
 
 // Ajout des services (Google Tag Manager, Google Analytics)
