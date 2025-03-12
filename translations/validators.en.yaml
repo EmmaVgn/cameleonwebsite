@@ -1,0 +1,7 @@
+validators:
+  This value should not be blank: "First name is required!"
+  This value should not be blank (last_name): "Last name is required!"
+  This value is not a valid email address: "The email {{ value }} is not valid!"
+  This value is not valid: "This number {{ value }} is not valid!"
+  This value is too short. It should have {{ limit }} characters or more: "Your message must be at least {{ limit }} characters long."
+  phone_invalid: "This phone number {{ value }} is not valid!"

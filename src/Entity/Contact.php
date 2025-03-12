@@ -16,25 +16,25 @@ class Contact
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: "Le prénom est obligatoire !")]
+    #[Assert\NotBlank(message: "validators.This value should not be blank")]
     private ?string $firstname = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: "Le nom est obligatoire !")]
+    #[Assert\NotBlank(message: "validators.This value should not be blank (last_name)")]
     private ?string $lastname = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\Email(message: 'L\'email {{ value }} n\'est pas un email valide !')]
+    #[Assert\Email(message: "validators.This value is not a valid email address")]
     private ?string $email = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\Regex('/^0[1-9]([ .-]?[0-9]{2}){4}$/', message: 'Ce numéro {{ value }} n\'est pas valide !')]
+    #[Assert\Regex('/^0[1-9]([ .-]?[0-9]{2}){4}$/', message:"validators.phone_invalid")]
     private ?string $phone = null;
 
     #[ORM\Column(type: Types::TEXT)]
     #[Assert\Length(
         min: 10,
-        minMessage: 'Votre message doit avoir au moins {{ limit }} caractères'
+        minMessage: "validators.This value is too short. It should have {{ limit }} characters or more"
     )]
     private ?string $content = null;
 

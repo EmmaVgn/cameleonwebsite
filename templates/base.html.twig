@@ -102,6 +102,7 @@ console.error("Tarteaucitron n'est pas défini !");
 		</script>
 	</head>
 	<body>
+
 		<header>
 			{% set isHomepage = app.request.attributes.get('_route') == 'homepage' %}
 			{% if not isHomepage %}
@@ -111,6 +112,7 @@ console.error("Tarteaucitron n'est pas défini !");
 
 		<main>
 			{% block body %}
+
 				{% if app.environment == 'prod' %}
 					<!-- Google Tag Manager (noscript) -->
 					<noscript>
