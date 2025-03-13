@@ -39,13 +39,19 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon-16x16.webp') }}">
 		<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon-32x32.webp') }}">
 		<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/apple-touch-icon.webp') }}">
+		<link rel="manifest" href="{{ asset('img/site.webmanifest') }}">
+		<meta name="theme-color" content="#ffffff">
+		<link rel="icon" type="image/png" sizes="192x192" href="{{ asset('img/android-chrome-192x192.png') }}">
+		<link rel="icon" type="image/png" sizes="512x512" href="{{ asset('img/android-chrome-512x512.png') }}">
 
 		{% block stylesheets %}
 			<!-- Préchargement des CSS critiques -->
 			<link rel="preload" href="{{ asset('/css/bootstrap.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+			<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 			<link
-			rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
+			href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Special+Elite&display=swap" rel="stylesheet">
 			<!-- Chargement optimisé de Tarteaucitron -->
 			<link rel="stylesheet" href="{{ asset('/tarteaucitron/css/tarteaucitron.css') }}" media="print" onload="this.onload=null;this.media='all';">
 		{% endblock %}

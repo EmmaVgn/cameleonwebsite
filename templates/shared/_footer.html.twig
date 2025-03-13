@@ -3,20 +3,29 @@
 		<div class="footer-custom mb-4">
 			<div class="footer-logo">
 				<a class="navbar-brand" href="{{ path('homepage') }}">
-					<video autoplay loop muted playsinline class="logo-footer-video">
-						<source src="{{ asset('img/cameleon-footer-transparent.webm') }}" type="video/webm">
-						<source src="{{ asset('img/cameleon-footer.mp4') }}" type="video/mp4">
+					<video id="logo-video-footer" autoplay loop muted playsinline class="logo-video" style="width: 80%;">
+						<source src="{{ asset('img/cameleon-footer-transparent.webm') }}" type="video/mp4">
 					</video>
-
+					<img id="fallback-image-footer" src="{{ asset('img/CAMELEON_SOLUTIONS_slogan.png') }}" alt="Caméléon Solutions" style="display: none; width: 80%;">
 				</a>
 			</div>
 
 			<!-- Informations de contact à droite -->
 			<div class="footer-contact">
-				<p style="color: #f5f5e9;">Contact : +33 6 69 28 48 62</p>
-				<a href="mailto:contact@cameleon-solutions.fr">Email: contact@cameleon-solutions.fr</a>
-				<p style="color: #f5f5e9;">Adresse : Montauriol, France</p>
+				<p style="color: #f5f5e9;">
+					Contact :
+					<a href="https://wa.me/33669284862" target="_blank" style="color: #f5f5e9; text-decoration: none;">
+						+33 6 69 28 48 62 📱
+					</a>
+				</p>
+				<p>
+					<a href="mailto:contact@cameleon-solutions.fr" style="color: #f5f5e9; text-decoration: none;">
+						✉️ Email : contact@cameleon-solutions.fr
+					</a>
+				</p>
+				<p style="color: #f5f5e9;">📍 Adresse : Montauriol, France</p>
 			</div>
+
 		</div>
 
 		<!-- Liens de navigation centrés -->
