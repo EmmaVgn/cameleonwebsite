@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ app.request.locale }}">
+
 	<head>
 		<meta charset="UTF-8">
 		<title>
 			{% block title %}
 				{% if app.request.attributes.get('_route') == 'homepage' %}
-					Cameleon Solutions
+					{{ 'base.title'|trans }}
 				{% else %}
-					{{ page_title | default('Bienvenue') }}
-					- Cameleon Solutions
+					{{ page_title | default('base.welcome'|trans) }}
+					- Caméléon Solutions
 				{% endif %}
 			{% endblock %}
 		</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Construisons ensemble des expériences numériques uniques : création de sites web, formation et accompagnement personnalisé.">
-		<meta name="keywords" content="Caméléon Solutions, expériences numériques, création de sites web, formation aux outils numériques, solutions personnalisées, développement web, accompagnement numérique">
-		<meta name="author" content="Cameleon Solutions">
+		<meta name="description" content="{% block meta_description %}{{ 'meta.default_description'|trans }}{% endblock %}"> {% block meta_keywords %}{% endblock %}
+		<meta name="keywords" content="{{ 'meta.keywords'|trans }}">
+		<meta name="author" content="Caméléon Solutions">
 		<meta name="robots" content="index, follow">
 		<meta name="revisit-after" content="7 days">
-		<meta name="language" content="fr">
+		<meta name="language" content="{{ app.request.locale }}">
 		<meta property="og:url" content="{{ app.request.uri }}">
-		<meta name="twitter:title" content="Cameleon Solutions">
-		<meta name="twitter:description" content="Solutions numériques sur mesure : création de sites web, formations, et accompagnement personnalisé. Contactez-nous!">
-		<meta name="twitter:image" content="{{ asset('img/CAMELEON-SOLUTIONS-fond-blanc.webp') }}">
+		<meta property="og:title" content="{{ 'base.title'|trans }}">
+		<meta property="og:description" content="{{ 'meta.description'|trans }}">
+		<meta name="twitter:title" content="{{ 'base.title'|trans }}">
+		<meta name="twitter:description" content="{{ 'meta.description'|trans }}">
 		<meta name="theme-color" content="#ffffff">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="msapplication-TileImage" content="{{ asset('img/mstile-150x150.png') }}">
@@ -136,7 +138,7 @@ tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */
 				{% include "shared/_flash.html.twig" %}
 			{% endblock %}
 			{% include "shared/_footer.html.twig" %}
-			<button id="scrollToTopBtn" title="Retour en haut">↑</button>
+			<button id="scrollToTopBtn" title="{{ 'base.scroll_top'|trans }}">↑</button>
 		</main>
 	</body>
 </html>

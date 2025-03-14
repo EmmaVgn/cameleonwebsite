@@ -4,18 +4,17 @@
 			<h1 class="line">
 				Emma VIGNERON :
 				<span id="developper">
-					Développeuse
+					{{ 'typing.developer'|trans }}
 				</span>
 				<span id="word">
-					<u>web</u>
+					<u>{{ 'typing.word_default'|trans }}</u>
 				</span>
 			</h1>
 		</b>
 	</div>
-	<p class="tagline">"Construisons ensemble des expériences numériques qui comptent"</p>
+	<p class="tagline">"{{ 'typing.tagline'|trans }}"</p>
 	<div class="button-container mt-4">
-		<a href="{{ path('contact_index') }}" class="cta-button">Me contacter</a>
-		<a href="{{ path('services_index') }}" class="secondary-button">Découvrir mes services</a>
+		<a href="{{ path('contact_index') }}" class="cta-button">{{ 'typing.contact'|trans }}</a>
+		<a href="{{ path('services_index') }}" class="secondary-button">{{ 'typing.services'|trans }}</a>
 	</div>
-
 </div>

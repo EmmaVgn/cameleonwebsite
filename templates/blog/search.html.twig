@@ -1,27 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Recherche - Blog - Caméléon Solutions
+{% block title %}
+	{{ 'blog.search_title'|trans }}
 {% endblock %}
 
 {% block meta_description %}
-	<meta name="description" content="Résultats de recherche pour '{{ app.request.get('q') }}' sur le blog de Caméléon Solutions. Découvrez des articles pertinents.">
+	<meta name="description" content="{{ 'blog.search_description'|trans({'app.request.get(\'q\')': app.request.get('q')}) }}">
 {% endblock %}
 
 {% block meta_keywords %}
-	<meta name="keywords" content="recherche, blog, articles, Caméléon Solutions, {{ app.request.get('q') }}">
+	<meta name="keywords" content="{{ 'blog.search_keywords'|trans({'app.request.get(\'q\')': app.request.get('q')}) }}">
 {% endblock %}
 
 {% block body %}
 	<div class="container py-5">
-		<h1 class="text-center mb-5 display-4">Résultats de recherche pour "{{ app.request.get('q') }}"</h1>
+		<h1 class="text-center mb-5 display-4">{{ 'blog.search_results'|trans({'app.request.get(\'q\')': app.request.get('q')}) }}</h1>
 
 		<div
 			class="row mb-4">
-			<!-- Colonne pour les articles -->
+			<!-- Colonne des articles -->
 			<div class="col-md-8">
 				<div class="row justify-content-center">
 					{% if articles|length == 0 %}
-						<p class="text-center text-muted">Aucun article ne correspond à votre recherche.</p>
+						<p class="text-center text-muted">{{ 'blog.no_results'|trans }}</p>
 					{% else %}
 						{% for article in articles %}
 							{% if article.slug %}
@@ -31,20 +32,15 @@
 											<a href="{{ path('blog_show', {'slug': article.slug}) }}">
 												<img src="{{ asset('img/blog/' ~ article.imageName) }}" alt="{{ article.name|e }}" class="img-fluid rounded-top" style="width: 100%; height: 300px; object-fit: cover;">
 											</a>
-											<div class="overlay d-flex align-items-center justify-content-center" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.6);">
-												<h2 class="text-#f5f5e9  text-center h4 font-weight-bold">
-													<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="text-#f5f5e9 ">{{ article.name|e }}</a>
-												</h2>
-											</div>
 										</div>
 										<div class="card-body d-flex flex-column">
 											<p class="card-text text-muted">{{ article.subtitle|slice(0, 120) ~ '...' }}</p>
 											<div class="mt-auto text-center">
-												<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="btn-custom-blog">Lire la suite</a>
+												<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="btn-custom-blog">{{ 'blog.read_more'|trans }}</a>
 											</div>
 										</div>
-										<div class="card-footer bg-#f5f5e9  text-center border-0">
-											<small class="text-muted">Publié le
+										<div class="card-footer bg-light text-center border-0">
+											<small class="text-muted">{{ 'blog.published_on'|trans }}
 												{{ article.createdAt|date('d M Y') }}</small>
 											<div class="mt-2">
 												{% if article.tags is not empty %}
@@ -52,14 +48,14 @@
 														<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge bg-secondary mx-1">{{ tag.name|e }}</a>
 													{% endfor %}
 												{% else %}
-													<span class="text-muted">Aucun tag associé.</span>
+													<span class="text-muted">{{ 'blog.no_tags'|trans }}</span>
 												{% endif %}
 											</div>
 										</div>
 									</div>
 								</div>
 							{% else %}
-								<p class="text-danger">Le slug de l'article "{{ article.name|e }}" est manquant.</p>
+								<p class="text-danger">{{ 'blog.article_missing_slug'|trans({'article.name': article.name|e}) }}</p>
 							{% endif %}
 						{% endfor %}
 					{% endif %}
@@ -68,21 +64,19 @@
 				<!-- Pagination -->
 				<div class="d-flex justify-content-center mt-4">
 					{{ knp_pagination_render(articles) }}
-					<!-- articles est un objet de pagination ici -->
 				</div>
-
 			</div>
 
-			<!-- Colonne pour la recherche et les filtres -->
+			<!-- Sidebar -->
 			<div class="col-md-3 blog-content-display">
 				<form method="GET" action="{{ path('blog_search') }}" class="d-flex mb-4">
-					<input type="text" name="q" class="form-control me-2" placeholder="Rechercher un article..." value="{{ app.request.get('q') }}">
-					<button type="submit" class="btn-custom-blog">Rechercher</button>
+					<input type="text" name="q" class="form-control me-2" placeholder="{{ 'blog.search_placeholder'|trans }}" value="{{ app.request.get('q') }}">
+					<button type="submit" class="btn-custom-blog">{{ 'blog.search_button'|trans }}</button>
 				</form>
 
 				<!-- Filtres par Tags -->
 				<div class="text-center mb-4">
-					<p class="mb-2">Filtrer par catégories :</p>
+					<p class="mb-2">{{ 'blog.filter_by_category'|trans }}</p>
 					<div class="d-flex flex-wrap justify-content-center">
 						{% for tag in tags %}
 							<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge" style="background-color: {{ tag.color }};">{{ tag.name }}</a>

@@ -4,3 +4,310 @@ menu.home: "Home"
 menu.services: "My Services"
 menu.contact: "Contact"
 menu.blog: "Blog"
+typing.developer: "Developer"
+typing.word_default: "web"
+typing.tagline: "Let's build meaningful digital experiences together"
+typing.contact: "Contact me"
+typing.services: "Discover my services"
+featurette:
+  heading1: "Listening to your expectations"
+  heading2: "for personalized solutions"
+  description1: "At <strong>Caméléon Solutions</strong>, your needs and ambitions are at the heart of every project. I carefully listen to your expectations to develop a tailor-made strategy adapted to your vision."
+  description2: "<strong>Listening</strong> is essential to my approach. From our first exchanges, we define priorities together to create a solution that truly represents you. Whether you have a clear idea or need inspiration, I will guide you in bringing your project to life."
+  description3: "I support you <strong>from design to launch</strong>. I offer high-performance, continuously maintainable websites. I also provide training and coaching in the digital field. Every step benefits from personalized follow-up, as your satisfaction is my priority."
+  description4: "At Caméléon Solutions, I believe in a collaborative approach where <strong>human connection</strong> is at the center. I am convinced that behind every project is a unique story to tell, and I want to be the ally that helps you bring it to light. Together, we create innovative solutions that reflect your values and meet the needs of your clients."
+  description5: "My <strong>goal</strong>: to exceed your expectations with reliable, scalable solutions adapted to your industry."
+  photo_alt: "Photo of Emma Vigneron"
+
+home:
+  services:
+    title: "My Services"
+    pdf:
+      title: "Check out our PDF brochure"
+      description: "To fully enjoy the interactive features, open the PDF in a dedicated app like Adobe Acrobat Reader, or download the file."
+      open: "Open PDF"
+      download: "Download PDF"
+  realisations:
+    title: "My Achievements"
+base:
+  title: "Caméléon Solutions"
+  welcome: "Welcome"
+  scroll_top: "Back to top"
+
+meta:
+  default_description: "Let's build unique digital experiences together: website creation, training, and personalized support."
+  home_description: "Welcome to Caméléon Solutions, your expert in website creation and digital training."
+  home_keywords: "digital agency, web development, online presence, web solutions, custom websites"
+meta.default_keywords: "digital solutions, web development, digital training, website creation, online presence"
+
+services:
+  web_design:
+    title: "Website Design"
+    description: "We create modern, unique, and high-performance websites, designed to perfectly match your needs. Enjoy a responsive design that offers a smooth experience on all devices, an easy-to-use management interface, and advanced customization to best reflect your identity. Our websites are also designed to be scalable, ensuring long-term growth."
+    popup_description: "We use technologies such as WordPress and Symfony to create websites that combine performance and flexibility. Whether you need a showcase site or a more complex platform, we offer a tailor-made solution to meet your expectations."
+    price: "Starting at €700 excl. tax"
+
+  community:
+    title: "Community Manager"
+    description: "Develop your online presence with an effective and impactful communication strategy. We create engaging content, manage your social media, and ensure continuous interaction with your community. Every action aims to strengthen your brand image and retain your customers while increasing your visibility."
+    popup_description: "Develop an effective and impactful communication strategy to enhance your online presence. We manage your social media, create engaging content, and interact with your community to strengthen your brand image."
+    price: "Starting at €200 excl. tax"
+
+  training:
+    title: "Training & Coaching"
+    description: "Gain essential skills to master your digital tools and improve your online visibility. We offer tailor-made training adapted to your level and goals, as well as personalized coaching to help you take control of your website, social media, and digital tools."
+    popup_description: "Tailored training adapted to your needs. Learn how to manage your website, social media, and optimize your online presence. We offer training on tools such as WordPress, social networks, SEO, and much more."
+    price: "Starting at €150 excl. tax for a half-day"
+
+  admin:
+    title: "Administrative Assistance"
+    description: "We assist you with your daily administrative tasks, including drafting letters, document management, online declarations, digital organization, and much more. Benefit from a personalized, simple, and efficient service to make your life easier and save time."
+    popup_description: "Receive assistance with your administrative tasks such as drafting letters, document management, and more. We support you in simplifying your processes and saving time on your administrative tasks."
+    price: "€20 per hour"
+
+  contact: "Contact me"
+  more_info: "🔎 Click to learn more"
+  webdesign:
+    title: "Web Design"
+    subtitle: "Seamless user interfaces and experiences"
+
+  development:
+    title: "Development"
+    subtitle: "Custom and high-performance websites"
+
+  seo:
+    title: "SEO & Optimization"
+    subtitle: "Increase your online visibility"
+
+  support:
+    title: "Customer Service"
+    subtitle: "A single dedicated point of contact"
+
+projects:
+  no_project: "No projects to display."
+  view_site: "View the site"
+  no_link: "No link available"
+  garage_thomas:
+    title: "Garage Thomas"
+    description: "Creation of a showcase website for a car garage."
+  aromelis:
+    title: "Aromelis"
+    description: "E-commerce website for a beekeeper."
+  weather_app:
+    title: "Weather App"
+    description: "Interactive weather application."
+  maisons_marie:
+    title: "Les Maisons de Marie"
+    description: "Booking website for a tourist establishment."
+
+contact.title1: "Contact me to learn more"
+contact.subtitle1: "Do you have questions about my services?"
+contact.email_button: "Send a message"
+contact.appointment_button: "Schedule an online appointment"
+
+footer.contact: "Contact"
+footer.email: "Email"
+footer.address: "Address"
+footer.legal: "Legal Mentions"
+footer.sitemap: "Sitemap"
+footer.rights: "Caméléon Solutions - All rights reserved."
+
+meta.services_description: "Discover the services offered by Caméléon Solutions, from website creation to training in digital tools, tailored to your needs."
+meta.services_keywords: "digital services, website creation, digital training, digital solutions, custom development"
+services.title: "My Services"
+services.heading: "My Services"
+
+contact:
+  title: "Contact Me - Caméléon Solutions"
+  meta_description: "Contact Caméléon Solutions for any inquiries regarding my digital services. Fill out the form or use my contact details to get in touch."
+  meta_keywords: "contact, Caméléon Solutions, digital services, contact form, quote request"
+
+  heading: "Get in Touch with Caméléon Solutions"
+  intro_text: "Whether you have a question about my services or need a quote, I am here to help. Send me a message using the form below or use my contact details to reach me directly."
+
+  form_title: "Send Me a Message"
+  form:
+    firstname: "First Name"
+    lastname: "Last Name"
+    phone: "Phone"
+    email: "Your email address"
+    companyName: "Company Name (if applicable)"
+    siretNumber: "SIRET Number"
+    content: "Your message"
+    submit: "Send Message"
+    book_appointment: "Book an Online Appointment"
+
+  info_title: "My Contact Details"
+  email: "Email"
+  phone: "Phone"
+  address: "Address"
+
+  hours_title: "Opening Hours"
+  hours_week: "Monday - Saturday"
+  hours_sunday: "Sunday"
+  closed: "Closed"
+
+  image_alt: "Chameleon on a tree"
+
+flash:
+  close: "Close"
+
+error:
+  title: "Page Not Found"
+  return_home: "Return to Home"
+  not_found_image_alt: "Page Not Found"
+
+pagination:
+  id: "Id"
+  title: "Title"
+  release: "Release Date"
+
+blog:
+  search_title: "Search - Blog - Caméléon Solutions"
+  search_description: "Search results for '{{ app.request.get('q') }}' on the Caméléon Solutions blog. Discover relevant articles."
+  search_keywords: "search, blog, articles, Caméléon Solutions, {{ app.request.get('q') }}"
+  search_results: 'Search results for "{{ app.request.get(''q'') }}"'
+  no_results: "No articles match your search."
+  read_more: "Read more"
+  back_to_articles: "Back to articles"
+  no_articles: "No articles available."
+  no_popular_articles: "No popular articles."
+  published_on: "Published on"
+  tags: "Tags"
+  filter_by_category: "Filter by categories:"
+  search_placeholder: "Search for an article..."
+  search_button: "Search"
+  article_missing_slug: 'The article "{{ article.name|e }}" is missing a slug.'
+  no_tags: "No associated tags."
+  popular_articles: "Most popular articles"
+  latest_articles: "Latest articles"
+
+  related_articles: "Related Articles"
+  no_related_articles: "No related articles."
+  associated_tags: "Associated Tags"
+  summary: "Summary"
+  legal_mentions: "Legal Mentions"
+  terms_of_sale: "General Terms of Sale (GTS)"
+  privacy_policy: "Privacy Policy & GDPR"
+  terms_of_use: "General Terms of Use (GTU)"
+  cookies_policy: "Cookies Policy"
+  cancellation_policy: "Cancellation Policy"
+
+legal:
+  cancelled:
+    title: "Refund and Cancellation Policy"
+    object: "Purpose"
+    description: "This policy defines the cancellation and refund conditions for services offered by Caméléon Solutions."
+    client_cancellation: "Cancellation by the Client"
+    client_conditions: "If the client cancels, the following conditions apply:"
+    client_condition_1: "Cancellation 7 days before start: full refund."
+    client_condition_2: "Cancellation between 7 and 3 days before: 50% refund."
+    client_condition_3: "Cancellation within 3 days: no refund."
+    company_cancellation: "Cancellation by Caméléon Solutions"
+    company_conditions: "If Caméléon Solutions cancels the service, a full refund will be provided."
+    refund: "Refund"
+    refund_conditions: "The refund will be processed according to the conditions stated above."
+    contact: "Contact"
+    contact_details: "For cancellation or refund requests, contact Caméléon Solutions at contact@cameleon-solutions.fr."
+  cgu:
+    title: "Terms of Use"
+    object: "Purpose"
+    description: "These Terms of Use define the rules for using the Caméléon Solutions website."
+    access: "Access to the Website"
+    access_details: "The website is freely accessible, subject to Internet connection costs."
+    responsibility: "Responsibility"
+    responsibility_details: "Caméléon Solutions disclaims any liability for damages related to the use of the site."
+    contact: "Contact"
+    contact_details: "For any questions regarding the Terms of Use, contact Caméléon Solutions at contact@cameleon-solutions.fr."
+  cgv:
+    title: "General Terms and Conditions of Sale"
+    object: "Purpose"
+    description: "These General Terms and Conditions of Sale define the conditions of sale for services provided by Caméléon Solutions."
+    services: "Offered Services"
+    services_details: "Caméléon Solutions offers website creation, digital management, and training services."
+    payment: "Payment Terms"
+    payment_details: "Payment is made via bank transfer or credit card, with a 40% deposit required upon order."
+    refund: "Refund Policy"
+    refund_details: "A partial refund may be granted in case of cancellation, under the defined conditions."
+    contact: "Contact"
+    contact_details: "For any questions regarding these terms, contact Caméléon Solutions at contact@cameleon-solutions.fr."
+  confidentiality:
+    title: "Privacy Policy"
+    data_collection: "Data Collection"
+    data_collection_details: "We collect your personal information when you use our services."
+    usage: "Data Usage"
+    usage_details: "Your data is used to improve our services and communicate with you."
+    rights: "Your Rights"
+    rights_details: "You can request access, modification, or deletion of your personal data."
+    contact: "Contact"
+    contact_details: "For any requests regarding your personal data, contact Caméléon Solutions at contact@cameleon-solutions.fr."
+  cookies:
+    title: "Cookie Management Policy"
+    definition: "Definition of Cookies"
+    definition_details: "Cookies are files stored on your device that enhance your browsing experience."
+    usage: "Use of Cookies"
+    usage_details: "We use cookies to analyze traffic and improve our services."
+    management: "Managing Cookies"
+    management_details: "You can accept or reject cookies via your browser settings."
+  title: "Legal Notices"
+  heading: "Legal Notices"
+
+  publisher:
+    title: "Site Publisher"
+    company: "Company Name"
+    siret: "SIRET"
+    address: "Address"
+    email: "Email"
+    phone: "Phone"
+    status: "Status"
+    cape_status: "Holder of a CAPE (Business Support Contract) under the guidance of the Altitude association."
+
+  publication:
+    title: "Publication Manager"
+    name: "Name"
+    phone: "Phone"
+    legal_name: "Legal Name"
+    address: "Address"
+    siret: "SIRET Number"
+
+  editor:
+    title: "Editorial Manager"
+    name: "Name"
+    email: "Email"
+    phone: "Phone"
+
+  hosting:
+    title: "Hosting"
+    provider: "Host"
+    address: "Address"
+    email: "Support Email"
+
+  mediation:
+    title: "Consumer Mediation"
+    description: "In accordance with Article L. 612-1 of the Consumer Code, consumers may request mediation."
+    entity: "Entity"
+    address: "Address"
+    phone: "Phone"
+    email: "Email"
+    form: "Or fill out the online form"
+    website: "Contact the mediator"
+
+  additional_info:
+    title: "Additional Legal Information"
+    law_confidence: "Law for Trust in the Digital Economy"
+    law_confidence_value: "Law of June 21, 2004"
+    decree: "Decree related to commercial register"
+    decree_value: "Decree of May 9, 2007 modifying the Commercial Code"
+
+sitemap:
+  title: "Sitemap"
+  heading: "Sitemap"
+  main_navigation: "Main Navigation"
+  legal_pages: "Legal Pages"
+  all_legal: "All Legal Pages"
+  legal_mentions: "Legal Mentions"
+  privacy_policy: "Privacy Policy"
+  terms_of_sale: "General Terms of Sale (GTS)"
+  terms_of_use: "General Terms of Use (GTU)"
+  refund_policy: "Refund/Cancellation Policy"
+  cookies_policy: "Cookies Policy"

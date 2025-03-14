@@ -4,3 +4,307 @@ menu.home: "Accueil"
 menu.services: "Mes services"
 menu.contact: "Contact"
 menu.blog: "Blog"
+typing.developer: "Développeuse"
+typing.word_default: "web"
+typing.tagline: "Construisons ensemble des expériences numériques qui comptent"
+typing.contact: "Me contacter"
+typing.services: "Découvrir mes services"
+featurette:
+  heading1: "À l'écoute de vos attentes"
+  heading2: "pour des solutions personnalisées"
+  description1: "Chez <strong>Caméléon Solutions</strong>, vos besoins et ambitions sont au cœur de chaque projet. J’écoute attentivement vos attentes pour élaborer une stratégie sur mesure, adaptée à votre vision."
+  description2: "<strong>L'écoute</strong> est essentielle dans ma démarche. Dès nos premiers échanges, nous définissons ensemble les priorités pour créer une solution qui vous ressemble. Que vous ayez une idée précise ou besoin d'inspiration, je vous guide pour concrétiser votre projet."
+  description3: "Je vous accompagne <strong>de la conception à la mise en ligne</strong>. Je propose des sites web performants, maintenables en continu. Je propose également des formations et du coaching dans l'univers du numérique. Chaque étape bénéficie d’un suivi personnalisé, car votre satisfaction est ma priorité."
+  description4: "Chez Caméléon Solutions, je crois en une approche collaborative où <strong>l'humain</strong> est au centre. Je suis convaincue que derrière chaque projet se cache une histoire unique à raconter, et je souhaite être l'alliée qui vous aide à la mettre en lumière. Ensemble, nous concevons des solutions innovantes qui reflètent vos valeurs et répondent aux besoins de vos clients."
+  description5: "Mon <strong>objectif</strong> : dépasser vos attentes avec des solutions fiables, évolutives et adaptées à votre secteur."
+  photo_alt: "Photo de Emma Vigneron"
+
+home:
+  services:
+    title: "Mes services"
+    pdf:
+      title: "Consultez notre brochure PDF"
+      description: "Pour profiter pleinement des fonctionnalités interactives, ouvrez le PDF dans une application dédiée comme Adobe Acrobat Reader, sinon téléchargez le fichier."
+      open: "Ouvrir le PDF"
+      download: "Télécharger le PDF"
+  realisations:
+    title: "Mes réalisations"
+base:
+  title: "Caméléon Solutions"
+  welcome: "Bienvenue"
+  scroll_top: "Retour en haut"
+
+meta:
+  default_description: "Construisons ensemble des expériences numériques uniques : création de sites web, formation et accompagnement personnalisé."
+  home_description: "Bienvenue chez Caméléon Solutions, votre expert en création de sites web et formation numérique."
+  default_keywords: "création de sites web, formation numérique, solutions digitales, développement personnalisé, projet digital"
+meta.home_keywords: "agence digitale, développement web, présence en ligne, solutions web, sites web personnalisés"
+meta.services_keywords: "Caméléon Solutions, expériences numériques, création de sites web, formation aux outils numériques, solutions personnalisées, développement web, accompagnement numérique"
+
+services:
+  web_design:
+    title: "Conception de site web"
+    description: "Nous créons des sites modernes, uniques et performants, conçus pour s’adapter parfaitement à vos besoins. Profitez d’un design responsive offrant une expérience fluide sur tous les appareils, d’une gestion simplifiée via une interface intuitive et d’une personnalisation avancée pour refléter au mieux votre identité. Nos sites sont également pensés pour être évolutifs, afin d’accompagner durablement votre croissance."
+    popup_description: "Nous utilisons des technologies comme WordPress et Symfony pour créer des sites web qui allient performance et flexibilité. Que vous ayez besoin d'un site vitrine ou d'une plateforme plus complexe, nous vous offrons une solution sur mesure pour répondre à vos attentes."
+    price: "À partir de 700€ HT"
+
+  community:
+    title: "Community Manager"
+    description: "Développez votre présence en ligne grâce à une stratégie de communication adaptée et percutante. Nous créons des contenus engageants, gérons vos réseaux sociaux et assurons une interaction continue avec votre communauté. Chaque action vise à renforcer votre image de marque et à fidéliser vos clients, tout en augmentant votre visibilité."
+    popup_description: "Développez une stratégie de communication efficace et percutante pour booster votre présence en ligne. Nous gérons vos réseaux sociaux, créons des contenus engageants et interagissons avec votre communauté pour renforcer votre image de marque."
+    price: "À partir de 200€ HT"
+
+  training:
+    title: "Formations et Coaching"
+    description: "Acquérez les compétences essentielles pour maîtriser vos outils numériques et améliorer votre visibilité en ligne. Nous proposons des formations sur mesure, adaptées à votre niveau et à vos objectifs, ainsi qu’un accompagnement personnalisé pour vous aider à prendre en main votre site web, vos réseaux sociaux et vos outils digitaux."
+    popup_description: "Formations sur mesure adaptées à vos besoins. Apprenez à gérer votre site web, vos réseaux sociaux et à optimiser votre présence en ligne. Nous proposons des formations sur des outils comme WordPress, les réseaux sociaux, le SEO, et bien plus."
+    price: "À partir de 150€ HT la demi-journée"
+
+  admin:
+    title: "Aides administratives"
+    description: "Nous vous accompagnons dans vos démarches administratives du quotidien : rédaction de courriers, gestion de documents, aide à la déclaration en ligne, organisation numérique et bien plus encore. Profitez d’un service personnalisé, simple et efficace, pour vous faciliter la vie et vous faire gagner du temps."
+    popup_description: "Recevez de l'aide pour vos démarches administratives : rédaction de courriers, gestion de documents, et plus encore. Nous vous accompagnons pour simplifier vos processus et vous faire gagner du temps dans vos tâches administratives."
+    price: "20€ de l’heure"
+
+  contact: "Contactez-moi"
+  more_info: "🔎 Cliquez pour en savoir plus"
+  webdesign:
+    title: "Webdesign"
+    subtitle: "Interface et expériences utilisateurs fluides"
+
+  development:
+    title: "Développement"
+    subtitle: "Site sur mesure et performant"
+
+  seo:
+    title: "Référencement & Optimisation"
+    subtitle: "Visible sur le net"
+
+  support:
+    title: "Service client"
+    subtitle: "1 seul interlocuteur dédié"
+
+projects:
+  no_project: "Aucun projet à afficher."
+  view_site: "Voir le site"
+  no_link: "Aucun lien disponible"
+  garage_thomas:
+    title: "Garage Thomas"
+    description: "Création d'un site vitrine pour un garage automobile."
+  aromelis:
+    title: "Aromelis"
+    description: "Site e-commerce pour une apicultrice."
+  weather_app:
+    title: "Application Météo"
+    description: "Application météo interactive."
+  maisons_marie:
+    title: "Les maisons de Marie"
+    description: "Site de réservation pour un établissement touristique."
+
+contact.title1: "Contactez-moi pour en savoir plus"
+contact.subtitle1: "Vous avez des questions sur mes services ?"
+contact.email_button: "Envoyer un message"
+contact.appointment_button: "Prendre un RDV en ligne"
+contact:
+  title: "Me contacter - Caméléon Solutions"
+  meta_description: "Contactez Caméléon Solutions pour toutes vos demandes concernant mes services numériques. Remplissez le formulaire ou utilisez mes coordonnées pour me joindre."
+  meta_keywords: "contact, Caméléon Solutions, services numériques, formulaire de contact, demande de devis"
+
+  heading: "Contactez Caméléon Solutions"
+  intro_text: "Que vous ayez une question sur mes services ou besoin d'un devis, je suis à votre écoute. Envoyez-moi un message via le formulaire ci-dessous ou utilisez mes coordonnées pour me joindre directement."
+
+  form_title: "Envoyez-moi un message"
+  form:
+    firstname: "Prénom"
+    lastname: "Nom"
+    phone: "Téléphone"
+    email: "Votre adresse email"
+    companyName: "Nom de l'entreprise (si applicable)"
+    siretNumber: "Numéro de SIRET"
+    content: "Votre message"
+    submit: "Envoyer le message"
+    book_appointment: "Prendre un RDV en ligne"
+
+  info_title: "Mes coordonnées"
+  email: "Email"
+  phone: "Téléphone"
+  address: "Adresse"
+
+  hours_title: "Horaires d'ouverture"
+  hours_week: "Lundi - Samedi"
+  hours_sunday: "Dimanche"
+  closed: "Fermé"
+
+  image_alt: "Caméléon sur un arbre"
+
+flash:
+  close: "Fermer"
+
+error:
+  title: "Page non trouvée"
+  return_home: "Retour à l'accueil"
+  not_found_image_alt: "Page non trouvée"
+
+pagination:
+  id: "Id"
+  title: "Titre"
+  release: "Date de publication"
+
+blog:
+  search_title: "Recherche - Blog - Caméléon Solutions"
+  search_description: "Résultats de recherche pour '{{ app.request.get('q') }}' sur le blog de Caméléon Solutions. Découvrez des articles pertinents."
+  search_keywords: "recherche, blog, articles, Caméléon Solutions, {{ app.request.get('q') }}"
+  search_results: 'Résultats de recherche pour "{{ app.request.get(''q'') }}"'
+  no_results: "Aucun article ne correspond à votre recherche."
+  read_more: "Lire la suite"
+  back_to_articles: "Retour aux articles"
+  no_articles: "Aucun article disponible."
+  no_popular_articles: "Aucun article populaire."
+  published_on: "Publié le"
+  tags: "Tags"
+  filter_by_category: "Filtrer par catégories :"
+  search_placeholder: "Rechercher un article..."
+  search_button: "Rechercher"
+  article_missing_slug: 'Le slug de l''article "{{ article.name|e }}" est manquant.'
+  no_tags: "Aucun tag associé."
+  title: "Blog - Caméléon Solutions"
+  meta_description: "Découvrez les derniers articles de Caméléon Solutions. Restez informé sur les tendances numériques, conseils et actualités du secteur."
+  meta_keywords: "blog, articles, Caméléon Solutions, tendances numériques, conseils numériques, actualités, tags, recherche"
+  main_title: "Actualités et tendances du développement web"
+  popular_articles: "Articles les plus populaires"
+  related_articles: "Articles Similaires"
+  no_related_articles: "Aucun article similaire."
+  associated_tags: "Tags Associés"
+
+footer.contact: "Contact"
+footer.email: "Email"
+footer.address: "Adresse"
+footer.legal: "Mentions légales"
+footer.sitemap: "Plan du site"
+footer.rights: "Caméléon Solutions - Tous droits réservés."
+legal:
+  cancelled:
+    title: "Politique de Remboursement et d'Annulation"
+    object: "Objet"
+    description: "Cette politique définit les conditions d'annulation et de remboursement des services proposés par Caméléon Solutions."
+    client_cancellation: "Annulation par le client"
+    client_conditions: "En cas d'annulation par le client, les conditions suivantes s'appliquent :"
+    client_condition_1: "Annulation 7 jours avant le début : remboursement intégral."
+    client_condition_2: "Annulation entre 7 et 3 jours avant : remboursement de 50%."
+    client_condition_3: "Annulation à moins de 3 jours : aucun remboursement."
+    company_cancellation: "Annulation par Caméléon Solutions"
+    company_conditions: "En cas d'annulation par Caméléon Solutions, un remboursement total sera effectué."
+    refund: "Remboursement"
+    refund_conditions: "Le remboursement sera effectué selon les conditions mentionnées précédemment."
+    contact: "Contact"
+    contact_details: "Pour toute demande d'annulation ou de remboursement, contactez Caméléon Solutions à contact@cameleon-solutions.fr."
+  cgu:
+    title: "Conditions Générales d'Utilisation"
+    object: "Objet"
+    description: "Ces CGU définissent les règles d'utilisation du site Caméléon Solutions."
+    access: "Accès au site"
+    access_details: "Le site est accessible gratuitement, sous réserve des coûts de connexion Internet."
+    responsibility: "Responsabilité"
+    responsibility_details: "Caméléon Solutions décline toute responsabilité en cas de dommages liés à l'utilisation du site."
+    contact: "Contact"
+    contact_details: "Pour toute question relative aux CGU, contactez Caméléon Solutions à contact@cameleon-solutions.fr."
+  cgv:
+    title: "Conditions Générales de Vente"
+    object: "Objet"
+    description: "Les présentes CGV définissent les conditions de vente des services proposés par Caméléon Solutions."
+    services: "Services proposés"
+    services_details: "Caméléon Solutions propose des services de création de sites web, gestion numérique et formations."
+    payment: "Modalités de paiement"
+    payment_details: "Le paiement s'effectue par virement bancaire ou carte bancaire, avec un acompte de 40% à la commande."
+    refund: "Politique de remboursement"
+    refund_details: "Un remboursement partiel peut être accordé en cas d'annulation selon les conditions définies."
+    contact: "Contact"
+    contact_details: "Pour toute question concernant ces CGV, contactez Caméléon Solutions à contact@cameleon-solutions.fr."
+  confidentiality:
+    title: "Politique de Confidentialité"
+    data_collection: "Collecte des données"
+    data_collection_details: "Nous collectons vos informations personnelles lorsque vous utilisez nos services."
+    usage: "Utilisation des données"
+    usage_details: "Vos données sont utilisées pour améliorer nos services et communiquer avec vous."
+    rights: "Vos droits"
+    rights_details: "Vous pouvez demander l'accès, la modification ou la suppression de vos données personnelles."
+    contact: "Contact"
+    contact_details: "Pour toute demande concernant vos données personnelles, contactez Caméléon Solutions à contact@cameleon-solutions.fr."
+  cookies:
+    title: "Politique de Gestion des Cookies"
+    definition: "Définition des cookies"
+    definition_details: "Les cookies sont des fichiers stockés sur votre appareil qui améliorent votre navigation."
+    usage: "Utilisation des cookies"
+    usage_details: "Nous utilisons des cookies pour analyser l’audience et améliorer nos services."
+    management: "Gestion des cookies"
+    management_details: "Vous pouvez accepter ou refuser les cookies via les paramètres de votre navigateur."
+  title: "Mentions Légales"
+  heading: "Mentions Légales"
+
+  publisher:
+    title: "Éditeur du site"
+    company: "Nom de l'entreprise"
+    siret: "SIRET"
+    address: "Adresse"
+    email: "Email"
+    phone: "Téléphone"
+    status: "Statut"
+    cape_status: "Titulaire d'un CAPE (Contrat d'Appui au Projet d'Entreprise) sous l'accompagnement de l'association Altitude."
+
+  publication:
+    title: "Responsable de la publication"
+    name: "Nom"
+    phone: "Téléphone"
+    legal_name: "Raison sociale"
+    address: "Adresse"
+    siret: "Numéro SIRET"
+
+  editor:
+    title: "Responsable de la rédaction"
+    name: "Nom"
+    email: "Email"
+    phone: "Téléphone"
+
+  hosting:
+    title: "Hébergement"
+    provider: "Hébergeur"
+    address: "Adresse"
+    email: "Email support"
+
+  mediation:
+    title: "Médiation de la consommation"
+    description: "Conformément à l'article L. 612-1 du Code de la consommation, le consommateur peut introduire une demande de médiation."
+    entity: "Entité"
+    address: "Adresse"
+    phone: "Téléphone"
+    email: "Mail"
+    form: "Ou en remplissant le formulaire en ligne"
+    website: "Saisir le médiateur"
+
+  additional_info:
+    title: "Informations légales supplémentaires"
+    law_confidence: "Loi pour la confiance dans l'économie numérique"
+    law_confidence_value: "Loi du 21 juin 2004"
+    decree: "Décret relatif au registre du commerce et des sociétés"
+    decree_value: "Décret du 9 mai 2007 modifiant le code de commerce"
+
+  summary: "Sommaire"
+  legal_mentions: "Mentions légales"
+  terms_of_sale: "Conditions Générales de Vente (CGV)"
+  privacy_policy: "Politique de Confidentialité et RGPD"
+  terms_of_use: "Conditions générales d'utilisation"
+  cookies_policy: "Politique des cookies"
+  cancellation_policy: "Politique d'Annulation"
+
+sitemap:
+  title: "Plan du site"
+  heading: "Plan du site"
+  main_navigation: "Navigation Principale"
+  legal_pages: "Pages Légales"
+  all_legal: "Toutes les pages légales"
+  legal_mentions: "Mentions Légales"
+  privacy_policy: "Politique de Confidentialité"
+  terms_of_sale: "Conditions Générales de Vente (CGV)"
+  terms_of_use: "Conditions Générales d'Utilisation (CGU)"
+  refund_policy: "Politique de Remboursement/Annulation"
+  cookies_policy: "Politique de Cookies"

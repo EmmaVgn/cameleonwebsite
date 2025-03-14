@@ -1,26 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block meta_description %}
-	<meta name="description" content="Découvrez les services offerts par Caméléon Solutions, de la création de sites web à la formation aux outils numériques, adaptés à vos besoins.">
+	<meta name="description" content="{{ 'meta.services_description'|trans }}">
 {% endblock %}
 
-{% block meta_keywords %}
-	<meta name="keywords" content="services numériques, création de sites web, formation numérique, solutions digitales, développement personnalisé">
-{% endblock %}
 
-{% block title %}Mes services
+{% block title %}
+	{{ 'services.title'|trans }}
 {% endblock %}
 
 {% block body %}
-
 
 	{% include "home/project.html.twig" %}
 
 	<div class="container-services">
 		<h3 class="title-service">
-			Mes services
+			{{ 'services.heading'|trans }}
 		</h3>
 		{% include "services/listing.html.twig" %}
 		{% include "services/picto.html.twig" %}
 		{% include "shared/_contact_section.html.twig" %}
-	{% endblock %}
+	</div>
+{% endblock %}

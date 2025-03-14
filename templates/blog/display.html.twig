@@ -1,27 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Blog - Caméléon Solutions
+{% block title %}
+	{{ 'blog.title'|trans }}
 {% endblock %}
 
 {% block meta_description %}
-	<meta name="description" content="Découvrez les derniers articles de Caméléon Solutions. Restez informé sur les tendances numériques, conseils et actualités du secteur.">
+	<meta name="description" content="{{ 'blog.meta_description'|trans }}">
 {% endblock %}
 
 {% block meta_keywords %}
-	<meta name="keywords" content="blog, articles, Caméléon Solutions, tendances numériques, conseils numériques, actualités, tags, recherche">
+	<meta name="keywords" content="{{ 'blog.meta_keywords'|trans }}">
 {% endblock %}
 
 {% block body %}
 	<div class="container py-5">
-		<h1 class="text-center mb-5 display-4">Actualités et tendances du développement web</h1>
+		<h1 class="text-center mb-5 display-4">{{ 'blog.main_title'|trans }}</h1>
 
-		<div
-			class="row mb-4">
-			<!-- Colonne pour les articles -->
+		<div class="row mb-4">
 			<div class="col-md-8">
 				<div class="row justify-content-center">
 					{% if articles|length == 0 %}
-						<p class="text-center text-muted">Aucun article ne correspond à votre recherche.</p>
+						<p class="text-center text-muted">{{ 'blog.no_articles'|trans }}</p>
 					{% else %}
 						{% for article in articles %}
 							{% if article.slug %}
@@ -31,66 +30,46 @@
 											<a href="{{ path('blog_show', {'slug': article.slug}) }}">
 												<img src="{{ asset('img/blog/' ~ article.imageName) }}" alt="{{ article.name|e }}" class="img-fluid rounded-top" style="width: 100%; height: 300px; object-fit: cover;">
 											</a>
-											<div class="overlay d-flex align-items-center justify-content-center" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.6);">
-												<h2 class="text-#f5f5e9  text-center h4 font-weight-bold">
-													<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="text-#f5f5e9 ">{{ article.name|e }}</a>
-												</h2>
-											</div>
 										</div>
 										<div class="card-body d-flex flex-column">
 											<p class="card-text text-muted">{{ article.subtitle|slice(0, 120) ~ '...' }}</p>
 											<div class="mt-auto text-center">
-												<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="btn-custom">Lire la suite</a>
+												<a href="{{ path('blog_show', {'slug': article.slug}) }}" class="btn-custom">{{ 'blog.read_more'|trans }}</a>
 											</div>
 										</div>
-										<div class="card-footer bg-#f5f5e9  text-center border-0">
-											<small class="text-muted">Publié le
+										<div class="card-footer text-center border-0">
+											<small class="text-muted">{{ 'blog.published_on'|trans }}
 												{{ article.createdAt|date('d M Y') }}</small>
-											<div class="mt-2">
-												{% for tag in tags %}
-													<span class="badge" style="background-color: {{ tag.color }};">{{ tag.name }}</span>
-												{% endfor %}
-											</div>
 										</div>
 									</div>
 								</div>
-							{% else %}
-								<p class="text-danger">Le slug de l'article "{{ article.name|e }}" est manquant.</p>
 							{% endif %}
 						{% endfor %}
 					{% endif %}
 				</div>
 
-				<!-- Pagination -->
 				<div class="d-flex justify-content-center mt-4">
 					{{ knp_pagination_render(articles) }}
 				</div>
 			</div>
 
-			<!-- Colonne pour la recherche et les filtres -->
 			<div class="col-12 col-md-3 blog-content-display">
-				<!-- Réduction de la colonne de 4 à 3 -->
-				<!-- Barre de recherche -->
-					<form method="GET" action="{{ path('blog_search') }}" class="d-flex mb-4"> <input type="text" name="q" class="form-control me-2" placeholder="Rechercher un article..." value="{{ app.request.get('q') }}">
-					<button type="submit" class="btn-custom-blog">Rechercher</button>
+				<form method="GET" action="{{ path('blog_search') }}" class="d-flex mb-4">
+					<input type="text" name="q" class="form-control me-2" placeholder="{{ 'blog.search_placeholder'|trans }}" value="{{ app.request.get('q') }}">
+					<button type="submit" class="btn-custom-blog">{{ 'blog.search_button'|trans }}</button>
 				</form>
 
-
-				<!-- Filtres par Tags -->
 				<div class="text-center mb-4">
-					<p class="mb-2">Filtrer par catégories :</p>
+					<p class="mb-2">{{ 'blog.filter_by_category'|trans }}</p>
 					<div class="d-flex flex-wrap justify-content-center">
-						<div>
-							{% for tag in tags %}
-								<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge" style="background-color: {{ tag.color }};">{{ tag.name }}</a>
-							{% endfor %}
-						</div>
+						{% for tag in tags %}
+							<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge" style="background-color: {{ tag.color }};">{{ tag.name }}</a>
+						{% endfor %}
 					</div>
 				</div>
 
-				<!-- Articles Populaires -->
 				<div>
-					<h3 class="text-center mb-3">Articles les plus populaires</h3>
+					<h3 class="text-center mb-3">{{ 'blog.popular_articles'|trans }}</h3>
 					<div class="row">
 						{% for popularArticle in popularArticles %}
 							<div class="col-12 mb-3">
@@ -103,12 +82,10 @@
 								</div>
 							</div>
 						{% else %}
-							<span class="text-muted">Aucun article populaire.</span>
+							<span class="text-muted">{{ 'blog.no_popular_articles'|trans }}</span>
 						{% endfor %}
 					</div>
 				</div>
-
-
 			</div>
 		</div>
 	</div>

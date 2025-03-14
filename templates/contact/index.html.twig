@@ -1,86 +1,100 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	Me contacter - Caméléon Solutions
+	{{ 'contact.title'|trans }}
 {% endblock %}
 
 {% block meta_description %}
-	<meta name="description" content="Contactez Caméléon Solutions pour toutes vos demandes concernant mes services numériques. Remplissez le formulaire ou utilisez mes coordonnées pour me joindre.">
+	<meta name="description" content="{{ 'contact.meta_description'|trans }}">
 {% endblock %}
 
 {% block meta_keywords %}
-	<meta name="keywords" content="contact, Caméléon Solutions, services numériques, formulaire de contact, demande de devis">
+	<meta name="keywords" content="{{ 'contact.meta_keywords'|trans }}">
 {% endblock %}
 
 {% block body %}
-<div id="contact-page" class="contact-page">
-	<section class="contact-intro text-center">
-		<h2>Contactez Caméléon Solutions</h2>
-		<p>Que vous ayez une question sur mes services ou besoin d'un devis, je suis à votre écoute. Envoyez-moi un message via le formulaire ci-dessous ou utilisez mes coordonnées pour me joindre directement.</p>
-	</section>
+	<div id="contact-page" class="contact-page">
+		<section class="contact-intro text-center">
+			<h2>{{ 'contact.heading'|trans }}</h2>
+			<p>{{ 'contact.intro_text'|trans }}</p>
+		</section>
 
-	<section class="contact-form-section">
-		<div class="container">
-			<div class="row contact-section">
+		<section class="contact-form-section">
+			<div class="container">
+				<div class="row contact-section">
 
-				<div class="col contact-form-wrapper contact-form">
-					<h3>Envoyez-moi un message</h3>
-					{{ form_start(form, {'attr': {'class': 'contact-form'}}) }}
-					{{ form_errors(form) }}
-					<div class="row">
-						<div class="col-md-6 mb-3">
-							{{ form_row(form.firstname, {'attr': {'class': 'form-control', 'placeholder': 'Prénom'}}) }}
+					<div class="col contact-form-wrapper contact-form">
+						<h3>{{ 'contact.form_title'|trans }}</h3>
+						{{ form_start(form, {'attr': {'class': 'contact-form'}}) }}
+						{{ form_errors(form) }}
+						<div class="row">
+							<div class="col-md-6 mb-3">
+								{{ form_row(form.firstname, {'attr': {'class': 'form-control', 'placeholder': 'contact.form.firstname'|trans }}) }}
+							</div>
+							<div class="col-md-6 mb-3">
+								{{ form_row(form.lastname, {'attr': {'class': 'form-control', 'placeholder': 'contact.form.lastname'|trans }}) }}
+							</div>
+							<div class="col-md-6 mb-3">
+								{{ form_row(form.phone, {'attr': {'class': 'form-control', 'placeholder': 'contact.form.phone'|trans }}) }}
+							</div>
+							<div class="col-md-6 mb-3">
+								{{ form_row(form.email, {'attr': {'class': 'form-control', 'placeholder': 'contact.form.email'|trans }}) }}
+							</div>
+							<div class="col-md-6 mb-3">
+								{{ form_row(form.companyName, {'attr': {'class': 'form-control', 'placeholder': 'contact.form.companyName'|trans }}) }}
+							</div>
+							<div class="col-md-6 mb-3 siret-number-field">
+								{{ form_row(form.siretNumber, {'attr': {'class': 'form-control', 'placeholder': 'contact.form.siretNumber'|trans }}) }}
+							</div>
+							<div class="col-12 mb-3">
+								{{ form_row(form.requestSubject, {'attr': {'class': 'form-control'}}) }}
+							</div>
+							<div class="col-12 mb-3">
+								{{ form_row(form.content, {'attr': {'class': 'form-control', 'rows': 5, 'placeholder': 'contact.form.content'|trans }}) }}
+							</div>
 						</div>
-						<div class="col-md-6 mb-3">
-							{{ form_row(form.lastname, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
+						<div class="d-flex justify-content-between align-items-center mt-4">
+							<button id="contact-button" class="btn btn-custom" type="submit">
+								<span>{{ 'contact.form.submit'|trans }}</span>
+							</button>
+							<a href="https://camelonsolutions.youcanbook.me/" class="btn btn-custom" target="_blank">
+								<span>{{ 'contact.form.book_appointment'|trans }}</span>
+							</a>
 						</div>
-						<div class="col-md-6 mb-3">
-							{{ form_row(form.phone, {'attr': {'class': 'form-control', 'placeholder': 'Téléphone'}}) }}
+
+						{{ form_end(form) }}
+					</div>
+
+					<div class="col contact-info-wrapper contact-section">
+						<h3>{{ 'contact.info_title'|trans }}</h3>
+						<p>
+							<strong>{{ 'contact.email'|trans }}
+								:</strong>
+							contact@cameleon-solutions.fr</p>
+						<p>
+							<strong>{{ 'contact.phone'|trans }}
+								:</strong>
+							06 69 28 48 62</p>
+						<p>
+							<strong>{{ 'contact.address'|trans }}
+								:</strong>
+							Montauriol, France</p>
+
+						<h4>{{ 'contact.hours_title'|trans }}</h4>
+						<p>
+							<strong>{{ 'contact.hours_week'|trans }}
+								:</strong>
+							8h30 - 18h</p>
+						<p>
+							<strong>{{ 'contact.hours_sunday'|trans }}
+								:</strong>
+							{{ 'contact.closed'|trans }}</p>
+						<div class="contact-final-message">
+							<img src="{{ asset('img/arbreEtCameleon.svg') }}" alt="{{ 'contact.image_alt'|trans }}" width="50%" style="top: 150px;">
 						</div>
-						<div class="col-md-6 mb-3">
-							{{ form_row(form.email, {'attr': {'class': 'form-control', 'placeholder': 'contact@cameleon-solutions.fr'}}) }}
-						</div>
-						<div class="col-md-6 mb-3">
-							{{ form_row(form.companyName, {'attr': {'class': 'form-control', 'placeholder': 'Nom de l\'entreprise (si applicable)'}}) }}
-                        </div>
-                        <div class="col-md-6 mb-3 siret-number-field">
-                            {{ form_row(form.siretNumber, {'attr': {'class': 'form-control', 'placeholder': 'Numéro de SIRET'}}) }}
-                        </div>
-                        <div class="col-12 mb-3">
-                            {{ form_row(form.requestSubject, {'attr': {'class': 'form-control'}}) }}
-                        </div>
-                        <div class="col-12 mb-3">
-                            {{ form_row(form.content, {'attr': {'class': 'form-control', 'rows': 5, 'placeholder': 'Votre demande'}}) }}
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mt-4">
-                        <button id="contact-button" class="btn btn-custom" type="submit">
-                            <span>Envoyer le message</span>
-                        </button>
-                        <a href="https://camelonsolutions.youcanbook.me/" class="btn btn-custom" target="_blank">
-                            <span>Prendre un RDV en ligne</span>
-                        </a>
-                    </div>
-
-                    
-                    {{ form_end(form) }}
-                </div>
-
-                <div class="col contact-info-wrapper contact-section">
-                    <h3>Mes coordonnées</h3>
-                    <p><strong>Email :</strong> contact@cameleon-solutions.fr</p>
-                    <p><strong>Téléphone :</strong> 06 69 28 48 62</p>
-                    <p><strong>Adresse :</strong> Montauriol, France</p>
-
-                    <h4>Horaires d'ouverture</h4>
-                    <p><strong>Lundi - Samedi :</strong> 8h30 - 18h</p>
-                    <p><strong>Dimanche :</strong> Fermé</p>
-                    <div class="contact-final-message">
-                        <img src="{{ asset('img/arbreEtCameleon.svg') }}" alt="cameleon sur un arbre" width="50%" style="top: 150px;">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 {% endblock %}

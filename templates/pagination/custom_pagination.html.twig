@@ -1,20 +1,21 @@
-{# total items count #}
+{# Nombre total d'éléments #}
 <div class="count">
 	{{ pagination.getTotalItemCount }}
 </div>
+
 <table>
 	<tr>
-		{# sorting of properties based on query components #}
-		<th>{{ knp_pagination_sortable(pagination, 'Id', 'a.id') }}</th>
+		{# Tri des colonnes #}
+		<th>{{ knp_pagination_sortable(pagination, 'pagination.id'|trans, 'a.id') }}</th>
 		<th {% if pagination.isSorted('a.title') %} class="sorted" {% endif %}>
-			{{ knp_pagination_sortable(pagination, 'Title', 'a.title') }}
+			{{ knp_pagination_sortable(pagination, 'pagination.title'|trans, 'a.title') }}
 		</th>
 		<th {% if pagination.isSorted(['a.date', 'a.time']) %} class="sorted" {% endif %}>
-			{{ knp_pagination_sortable(pagination, 'Release', ['a.date', 'a.time']) }}
+			{{ knp_pagination_sortable(pagination, 'pagination.release'|trans, ['a.date', 'a.time']) }}
 		</th>
 	</tr>
 
-	{# table body #}
+	{# Corps du tableau #}
 	{% for article in pagination %}
 		<tr {% if loop.index is odd %} class="color" {% endif %}>
 			<td>{{ article.id }}</td>
@@ -24,7 +25,8 @@
 		</tr>
 	{% endfor %}
 </table>
-{# display navigation #}
+
+{# Affichage de la navigation #}
 <div class="navigation">
 	{{ knp_pagination_render(pagination) }}
 </div>

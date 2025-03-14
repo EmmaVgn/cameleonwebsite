@@ -1142,7 +1142,7 @@ p.tagline {
 }
 
 .content-link::after {
-  content: "🔎Cliquez pour en savoir plus";
+  content: attr(data-hint);
   position: absolute;
   top: 0%;
   left: 10%;

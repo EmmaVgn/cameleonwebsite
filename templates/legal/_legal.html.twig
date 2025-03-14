@@ -1,126 +1,143 @@
-<section class="legal-page container py-5">
-	<h1 class="text-center mb-4">Mentions Légales</h1>
+{% block body %}
+	<section class="legal-page container py-5">
+		<h1 class="text-center mb-4">{{ 'legal.heading'|trans }}</h1>
 
-	<div class="card mb-4 p-4 shadow-sm">
-		<h2>Éditeur du site</h2>
-		<ul class="list-unstyled">
-			<li>
-				<strong>Nom de l'entreprise :</strong>
-				Caméléon Solutions</li>
-			<li>
-				<strong>SIRET :</strong>
-				424 845 0949</li>
-			<li>
-				<strong>Adresse :</strong>
-				5110 Avenue des Pyrénées, 47330 Montauriol</li>
-			<li>
-				<strong>Email :</strong>
-				<a href="mailto:contact@cameleon-solutions.fr">contact@cameleon-solutions.fr</a>
-			</li>
-			<li>
-				<strong>Téléphone :</strong>
-				06 69 28 48 62</li>
-			<li>
-				<strong>Statut :</strong>
-				Titulaire d'un CAPE (Contrat d'Appui au Projet d'Entreprise) sous l'accompagnement de l'association Altitude.</li>
-		</ul>
-		<img src="{{ asset('img/Altitudes_Logo-Asso-1920w.webp') }}" alt="Logo Altitude" class="img-fluid mt-3">
-	</div>
+		<div class="card mb-4 p-4 shadow-sm">
+			<h2>{{ 'legal.publisher.title'|trans }}</h2>
+			<ul class="list-unstyled">
+				<li>
+					<strong>{{ 'legal.publisher.company'|trans }}
+						:</strong>
+					Caméléon Solutions</li>
+				<li>
+					<strong>{{ 'legal.publisher.siret'|trans }}
+						:</strong>
+					424 845 0949</li>
+				<li>
+					<strong>{{ 'legal.publisher.address'|trans }}
+						:</strong>
+					5110 Avenue des Pyrénées, 47330 Montauriol</li>
+				<li>
+					<strong>{{ 'legal.publisher.email'|trans }}
+						:</strong>
+					<a href="mailto:contact@cameleon-solutions.fr">contact@cameleon-solutions.fr</a>
+				</li>
+				<li>
+					<strong>{{ 'legal.publisher.phone'|trans }}
+						:</strong>
+					06 69 28 48 62</li>
+				<li>
+					<strong>{{ 'legal.publisher.status'|trans }}
+						:</strong>
+					{{ 'legal.publisher.cape_status'|trans }}</li>
+			</ul>
+			<img src="{{ asset('img/Altitudes_Logo-Asso-1920w.webp') }}" alt="Logo Altitude" class="img-fluid mt-3">
+		</div>
 
-	<div class="card mb-4 p-4 shadow-sm">
-		<h2>Responsable de la publication</h2>
-		<ul class="list-unstyled">
-			<li>
-				<strong>Nom :</strong>
-				Incubatest BGE</li>
-			<li>
-				<strong>Téléphone :</strong>
-				05 61 61 45 20</li>
-			<li>
-				<strong>Raison sociale :</strong>
-				Association Altitude</li>
-			<li>
-				<strong>Adresse :</strong>
-				3 chemin du Pigeonnier de la Cépière, 31100 Toulouse</li>
-			<li>
-				<strong>Numéro SIRET :</strong>
-				315 963 108 00206</li>
-		</ul>
-	</div>
+		<div class="card mb-4 p-4 shadow-sm">
+			<h2>{{ 'legal.publication.title'|trans }}</h2>
+			<ul class="list-unstyled">
+				<li>
+					<strong>{{ 'legal.publication.name'|trans }}
+						:</strong>
+					Incubatest BGE</li>
+				<li>
+					<strong>{{ 'legal.publication.phone'|trans }}
+						:</strong>
+					05 61 61 45 20</li>
+				<li>
+					<strong>{{ 'legal.publication.legal_name'|trans }}
+						:</strong>
+					Association Altitude</li>
+				<li>
+					<strong>{{ 'legal.publication.address'|trans }}
+						:</strong>
+					3 chemin du Pigeonnier de la Cépière, 31100 Toulouse</li>
+				<li>
+					<strong>{{ 'legal.publication.siret'|trans }}
+						:</strong>
+					315 963 108 00206</li>
+			</ul>
+		</div>
 
-	<div class="card mb-4 p-4 shadow-sm">
-		<h2>Responsable de la rédaction</h2>
-		<ul class="list-unstyled">
-			<li>
-				<strong>Nom :</strong>
-				Caméléon Solutions</li>
-			<li>
-				<strong>Email :</strong>
-				<a href="mailto:contact@cameleon-solutions.fr">contact@cameleon-solutions.fr</a>
-			</li>
-			<li>
-				<strong>Téléphone :</strong>
-				06 69 28 48 62</li>
-		</ul>
-	</div>
+		<div class="card mb-4 p-4 shadow-sm">
+			<h2>{{ 'legal.editor.title'|trans }}</h2>
+			<ul class="list-unstyled">
+				<li>
+					<strong>{{ 'legal.editor.name'|trans }}
+						:</strong>
+					Caméléon Solutions</li>
+				<li>
+					<strong>{{ 'legal.editor.email'|trans }}
+						:</strong>
+					<a href="mailto:contact@cameleon-solutions.fr">contact@cameleon-solutions.fr</a>
+				</li>
+				<li>
+					<strong>{{ 'legal.editor.phone'|trans }}
+						:</strong>
+					06 69 28 48 62</li>
+			</ul>
+		</div>
 
-	<div class="card mb-4 p-4 shadow-sm">
-		<h2>Hébergement</h2>
-		<ul class="list-unstyled">
-			<li>
-				<strong>Hébergeur :</strong>
-				Hostinger</li>
-			<li>
-				<strong>Adresse :</strong>
-				Hostinger International Ltd., 61 Lordou Vironos Street, 6023 Larnaca, Chypre</li>
-			<li>
-				<strong>Email support :</strong>
-				<a href="mailto:support@hostinger.com">support@hostinger.com</a>
-			</li>
-		</ul>
-	</div>
+		<div class="card mb-4 p-4 shadow-sm">
+			<h2>{{ 'legal.hosting.title'|trans }}</h2>
+			<ul class="list-unstyled">
+				<li>
+					<strong>{{ 'legal.hosting.provider'|trans }}
+						:</strong>
+					Hostinger</li>
+				<li>
+					<strong>{{ 'legal.hosting.address'|trans }}
+						:</strong>
+					Hostinger International Ltd., 61 Lordou Vironos Street, 6023 Larnaca, Chypre</li>
+				<li>
+					<strong>{{ 'legal.hosting.email'|trans }}
+						:</strong>
+					<a href="mailto:support@hostinger.com">support@hostinger.com</a>
+				</li>
+			</ul>
+		</div>
 
-	<div class="card mb-4 p-4 shadow-sm">
-		<h2>Médiation de la consommation</h2>
-		<p>Conformément à l'article L. 612-1 du Code de la consommation, le consommateur, sous réserve de l’article L.612.2 du code de la consommation, a la faculté d’introduire une demande de résolution amiable par voie de médiation, dans un délai inférieur à un an à compter de sa réclamation écrite auprès du professionnel.
-									Altitude a désigné, par adhésion enregistrée sous le numéro 70033/R2211 la SAS Médiation Solution comme entité de médiation de la consommation.</p>
-		<ul class="list-unstyled">
-			<li>
-				<strong>Entité :</strong>
-				SAS Médiation Solution</li>
-			<li>
-				<strong>Adresse :</strong>
-				222 Chem. de la Bergerie, 01800 Saint-Jean-de-Niost</li>
-			<li>
-				<strong>Téléphone :</strong>
-				04 82 53 93 06</li>
-			<li>
-				<strong>Mail:</strong>
-				contact@sasmediationsolution-conso.fr</li>
-			<li>
-				<strong>Ou en remplissant le formulaire en ligne
-				</strong>
-				« Saisir le médiateur » sur le site https://www.sasmediationsolution-conso.fr</li>
-			<li>
-				Quel que soit le moyen de saisine utilisé, la demande doit impérativement contenir :
-												- Les coordonnées postales, téléphoniques et électroniques du demandeur,
-												- Le nom et l’adresse et le numéro d’enregistrement chez Sas Médiation Solution, du professionnel concerné,
-												- Un exposé succinct des faits. Le consommateur précisera au médiateur ce qu’il attend de cette médiation et pourquoi,
-												- Copie de la réclamation préalable,
-												- tous documents permettant l’instruction de la demande (bon de commande, facture, justificatif de paiement, etc.).
-			</li>
-		</ul>
-	</div>
+		<div class="card mb-4 p-4 shadow-sm">
+			<h2>{{ 'legal.mediation.title'|trans }}</h2>
+			<p>{{ 'legal.mediation.description'|trans }}</p>
+			<ul class="list-unstyled">
+				<li>
+					<strong>{{ 'legal.mediation.entity'|trans }}
+						:</strong>
+					SAS Médiation Solution</li>
+				<li>
+					<strong>{{ 'legal.mediation.address'|trans }}
+						:</strong>
+					222 Chem. de la Bergerie, 01800 Saint-Jean-de-Niost</li>
+				<li>
+					<strong>{{ 'legal.mediation.phone'|trans }}
+						:</strong>
+					04 82 53 93 06</li>
+				<li>
+					<strong>{{ 'legal.mediation.email'|trans }}
+						:</strong>
+					contact@sasmediationsolution-conso.fr</li>
+				<li>
+					<strong>{{ 'legal.mediation.form'|trans }}
+						:</strong>
+					<a href="https://www.sasmediationsolution-conso.fr" target="_blank">{{ 'legal.mediation.website'|trans }}</a>
+				</li>
+			</ul>
+		</div>
 
-	<div class="card mb-4 p-4 shadow-sm">
-		<h2>Informations légales supplémentaires</h2>
-		<ul class="list-unstyled">
-			<li>
-				<strong>Loi pour la confiance dans l'économie numérique :</strong>
-				Loi du 21 juin 2004</li>
-			<li>
-				<strong>Décret relatif au registre du commerce et des sociétés :</strong>
-				Décret du 9 mai 2007 modifiant le code de commerce</li>
-		</ul>
-	</div>
-</section>
+		<div class="card mb-4 p-4 shadow-sm">
+			<h2>{{ 'legal.additional_info.title'|trans }}</h2>
+			<ul class="list-unstyled">
+				<li>
+					<strong>{{ 'legal.additional_info.law_confidence'|trans }}
+						:</strong>
+					{{ 'legal.additional_info.law_confidence_value'|trans }}</li>
+				<li>
+					<strong>{{ 'legal.additional_info.decree'|trans }}
+						:</strong>
+					{{ 'legal.additional_info.decree_value'|trans }}</li>
+			</ul>
+		</div>
+	</section>
+{% endblock %}

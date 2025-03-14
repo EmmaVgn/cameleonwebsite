@@ -1,29 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mentions Légales
+{% block title %}
+	{{ 'legal.title'|trans }}
 {% endblock %}
 
 {% block body %}
 	<div class="legalies-container">
-		<h2>Sommaire</h2>
+		<h2>{{ 'legal.summary'|trans }}</h2>
 		<ul class="sommaire-list">
 			<li>
-				<a href="#mentions-legales">Mentions légales</a>
+				<a href="#mentions-legales">{{ 'legal.legal_mentions'|trans }}</a>
 			</li>
 			<li>
-				<a href="#cgv">Conditions Générales de Vente (CGV)</a>
+				<a href="#cgv">{{ 'legal.terms_of_sale'|trans }}</a>
 			</li>
 			<li>
-				<a href="#confidentialite">Politique de Confidentialité et RGPD</a>
+				<a href="#confidentialite">{{ 'legal.privacy_policy'|trans }}</a>
 			</li>
 			<li>
-				<a href="#cgu">Conditions générales d'utilisation</a>
+				<a href="#cgu">{{ 'legal.terms_of_use'|trans }}</a>
 			</li>
 			<li>
-				<a href="#cookies">Politique des cookies</a>
+				<a href="#cookies">{{ 'legal.cookies_policy'|trans }}</a>
 			</li>
 			<li>
-				<a href="#annulation">Politique d'Annulation</a>
+				<a href="#annulation">{{ 'legal.cancellation_policy'|trans }}</a>
 			</li>
 		</ul>
 
@@ -43,20 +44,16 @@
 			{% include "legal/_cgu.html.twig" %}
 		</section>
 
-		<section id="annulation" class="policy-section">
-			{% include "legal/_cancelled.html.twig" %}
-		</section>
-
 		<section id="cookies" class="policy-section">
 			{% include "legal/_cookies.html.twig" %}
 		</section>
 
 		<section id="annulation" class="policy-section">
-			{% include "legal/_personal_data.html.twig" %}
+			{% include "legal/_cancelled.html.twig" %}
 		</section>
 
-
+		<section id="annulation" class="policy-section">
+			{% include "legal/_personal_data.html.twig" %}
+		</section>
 	</div>
-
-
 {% endblock %}

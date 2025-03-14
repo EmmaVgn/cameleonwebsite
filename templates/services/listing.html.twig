@@ -3,33 +3,26 @@
 		class="timeline">
 
 		<!-- Conception -->
-		<div class="content-link" data-popup="popup1">
+		<div class="content-link" data-popup="popup1" data-hint="{{ 'services.more_info'|trans }}">
 			<div class="content-box left" style="--index: 0;">
-				<h4>Conception de site web</h4>
-				<p>
-					Nous créons des sites modernes, uniques et performants, conçus pour s’adapter parfaitement à vos besoins. Profitez d’un design responsive offrant une expérience fluide sur tous les appareils, d’une gestion simplifiée via une interface intuitive et d’une personnalisation avancée pour refléter au mieux votre identité. Nos sites sont également pensés pour être évolutifs, afin d’accompagner durablement votre croissance.
-				</p>
+				<h4>{{ 'services.web_design.title'|trans }}</h4>
+				<p>{{ 'services.web_design.description'|trans|raw }}</p>
 			</div>
 		</div>
 
 		<!-- Community Manager -->
-		<div class="content-link" data-popup="popup2">
+		<div class="content-link" data-popup="popup2" data-hint="{{ 'services.more_info'|trans }}">
 			<div class="content-box right" style="--index: 1;">
-				<h4>Community Manager</h4>
-				<p>
-					Développez votre présence en ligne grâce à une stratégie de communication adaptée et percutante. Nous créons des contenus engageants, gérons vos réseaux sociaux et assurons une interaction continue avec votre communauté. Chaque action vise à renforcer votre image de marque et à fidéliser vos clients, tout en augmentant votre visibilité.
-				</p>
+				<h4>{{ 'services.community.title'|trans }}</h4>
+				<p>{{ 'services.community.description'|trans|raw }}</p>
 			</div>
 		</div>
 
 		<!-- Formations et coaching -->
-		<div class="content-link" data-popup="popup3">
+		<div class="content-link" data-popup="popup3" data-hint="{{ 'services.more_info'|trans }}">
 			<div class="content-box left" style="--index: 2;">
-				<h4>Formations et Coaching</h4>
-				<p>
-					Acquérez les compétences essentielles pour maîtriser vos outils numériques et améliorer votre visibilité en ligne. Nous proposons des formations sur mesure, adaptées à votre niveau et à vos objectifs, ainsi qu’un accompagnement personnalisé pour vous aider à prendre en main votre site web, vos réseaux sociaux et vos outils digitaux.
-				</p>
-				<!-- Ajout des logos en bas du bloc de service -->
+				<h4>{{ 'services.training.title'|trans }}</h4>
+				<p>{{ 'services.training.description'|trans|raw }}</p>
 				<div class="service-logos">
 					<img src="{{ asset('img/qualiopi-min.webp') }}" alt="Logo Qualiopi" width="100" height="100" loading="lazy">
 					<img src="{{ asset('img/logo-chorus-pro.png') }}" alt="Logo Chorus Pro" width="100" height="48" loading="lazy">
@@ -38,12 +31,10 @@
 		</div>
 
 		<!-- Aides administratives -->
-		<div class="content-link" data-popup="popup4">
+		<div class="content-link" data-popup="popup4" data-hint="{{ 'services.more_info'|trans }}">
 			<div class="content-box right" style="--index: 3;">
-				<h4>Aides administratives</h4>
-				<p>
-					Nous vous accompagnons dans vos démarches administratives du quotidien : rédaction de courriers, gestion de documents, aide à la déclaration en ligne, organisation numérique et bien plus encore. Profitez d’un service personnalisé, simple et efficace, pour vous faciliter la vie et vous faire gagner du temps.
-				</p>
+				<h4>{{ 'services.admin.title'|trans }}</h4>
+				<p>{{ 'services.admin.description'|trans|raw }}</p>
 				<div class="service-logos">
 					<img src="{{ asset('img/Logo_cncesu-min.webp') }}" alt="Logo CESU" width="100" height="100" loading="lazy">
 				</div>
@@ -52,84 +43,21 @@
 	</div>
 </div>
 
-
-<!-- Pop-up Conception -->
-<div id="popup1" class="popup">
-	<div class="popup-content">
-		<span class="close">&times;</span>
-		<h4>Conception de site web</h4>
-		<p>
-			Nous utilisons des technologies comme WordPress et Symfony pour créer des sites web qui allient performance et flexibilité. Que vous ayez besoin d'un site vitrine ou d'une plateforme plus complexe, nous vous offrons une solution sur mesure pour répondre à vos attentes.
-		</p>
-		<p class="popup-price">
-			<b>Tarif : À partir de 700€ HT</b>
-		</p>
-		<div class="contact-button-popup">
-			<a href="/contact">
-				<button class="contact-button-popup">Contactez-moi</button>
-			</a>
+<!-- Pop-ups -->
+{% for service in ['web_design', 'community', 'training', 'admin'] %}
+	<div id="popup{{ loop.index }}" class="popup">
+		<div class="popup-content">
+			<span class="close">&times;</span>
+			<h4>{{ ('services.' ~ service ~ '.title')|trans }}</h4>
+			<p>{{ ('services.' ~ service ~ '.popup_description')|trans|raw }}</p>
+			<p class="popup-price">
+				<b>{{ ('services.' ~ service ~ '.price')|trans }}</b>
+			</p>
+			<div class="contact-button-popup">
+				<a href="/contact">
+					<button class="contact-button-popup">{{ 'services.contact'|trans }}</button>
+				</a>
+			</div>
 		</div>
-
 	</div>
-</div>
-
-<!-- Pop-up Community Manager -->
-<div id="popup2" class="popup">
-	<div class="popup-content">
-		<span class="close">&times;</span>
-		<h4>Community Manager</h4>
-		<p>
-			Développez une stratégie de communication efficace et percutante pour booster votre présence en ligne. Nous gérons vos réseaux sociaux, créons des contenus engageants et interagissons avec votre communauté pour renforcer votre image de marque.
-		</p>
-		<p class="popup-price">
-			<b>Formule à partir de 200€ HT</b>
-		</p>
-		<div class="contact-button-popup">
-			<a href="/contact">
-				<button class="contact-button-popup">Contactez-moi</button>
-			</a>
-		</div>
-
-	</div>
-</div>
-
-<!-- Pop-up Formations et Coaching -->
-<div id="popup3" class="popup">
-	<div class="popup-content">
-		<span class="close">&times;</span>
-		<h4>Formations et Coaching</h4>
-		<p>
-			Formations sur mesure adaptées à vos besoins. Apprenez à gérer votre site web, vos réseaux sociaux et à optimiser votre présence en ligne. Nous proposons des formations sur des outils comme WordPress, les réseaux sociaux, le SEO, et bien plus.
-		</p>
-		<p class="popup-price">
-			<b>Tarif : À partir de 150€ HT la demi-journée</b><br>
-
-		</p>
-		<div class="contact-button-popup">
-			<a href="/contact">
-				<button class="contact-button-popup">Contactez-moi</button>
-			</a>
-		</div>
-
-	</div>
-</div>
-
-<!-- Pop-up Aides administratives -->
-<div id="popup4" class="popup">
-	<div class="popup-content">
-		<span class="close">&times;</span>
-		<h4>Aides administratives</h4>
-		<p>
-			Recevez de l'aide pour vos démarches administratives : rédaction de courriers, gestion de documents, et plus encore. Nous vous accompagnons pour simplifier vos processus et vous faire gagner du temps dans vos tâches administratives.
-		</p>
-		<p class="popup-price">
-			<b>Tarif : 20€ de l'heure</b>
-		</p>
-		<div class="contact-button-popup">
-			<a href="/contact">
-				<button class="contact-button-popup">Contactez-moi</button>
-			</a>
-		</div>
-
-	</div>
-</div>
+{% endfor %}

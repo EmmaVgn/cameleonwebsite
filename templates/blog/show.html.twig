@@ -2,7 +2,8 @@
 
 {% block title %}
 	{{ article.name }}
-	- Caméléon Solutions
+	-
+	{{ 'blog.title'|trans }}
 {% endblock %}
 
 {% block meta_description %}
@@ -22,7 +23,7 @@
 							<div class="article-header">
 								<h1 class="entry-title display-4">{{ article.name }}</h1>
 								<div class="entry-meta mb-3">
-									<span class="entry-date text-muted">{{ article.createdAt|date('F j, Y') }}</span>
+									<span class="entry-date text-muted">{{ article.createdAt|date('d M Y') }}</span>
 									<span class="mx-2">|</span>
 								</div>
 							</div>
@@ -34,15 +35,14 @@
 				</article>
 
 				<div class="text-center mt-5">
-					<a href="{{ path('blog_display') }}" class="btn-custom btn-sm">Retour aux articles</a>
+					<a href="{{ path('blog_display') }}" class="btn-custom btn-sm">{{ 'blog.back_to_articles'|trans }}</a>
 				</div>
 			</div>
 
 			<div class="col-md-4">
-				<h2 class="text-center mb-4">Articles Similaires</h2>
+				<h2 class="text-center mb-4">{{ 'blog.related_articles'|trans }}</h2>
 				<div class="row">
 					{% for popularArticle in popularArticles|slice(0, 2) %}
-						{# Limiter à 2 articles #}
 						<div class="col-12 mb-3">
 							<div class="card">
 								<a href="{{ path('blog_show', {'slug': popularArticle.slug}) }}">
@@ -58,13 +58,13 @@
 						</div>
 					{% else %}
 						<div class="col-12">
-							<div class="alert alert-muted text-center">Aucun article similaire.</div>
+							<div class="alert alert-muted text-center">{{ 'blog.no_related_articles'|trans }}</div>
 						</div>
 					{% endfor %}
 				</div>
 
 				<div class="mt-4">
-					<h4 class="font-weight-bold">Tags Associés</h4>
+					<h4 class="font-weight-bold">{{ 'blog.associated_tags'|trans }}</h4>
 					<div>
 						{% for tag in tags %}
 							<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge" style="background-color: {{ tag.color }};">{{ tag.name }}</a>

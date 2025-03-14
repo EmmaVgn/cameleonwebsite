@@ -1,32 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Plan du site
+{% block title %}
+	{{ 'sitemap.title'|trans }}
 {% endblock %}
 
 {% block body %}
 	<section class="legal-page container py-5">
-		<h1 class="text-center mb-4">Plan du site</h1>
+		<h1 class="text-center mb-4">{{ 'sitemap.heading'|trans }}</h1>
 
 		<div class="card mb-4 p-4 shadow-sm">
-			<h2>Navigation Principale</h2>
+			<h2>{{ 'sitemap.main_navigation'|trans }}</h2>
 			<ul>
-    			<li> <a href="{{ path('homepage') }}">Accueil</a></li>
-    			<li> <a href="{{ path('services_index') }}">Nos Services</a></li>
-    			<li> <a href="{{ path('blog_display') }}">Blog</a></li>
-    			<li> <a href="{{ path('contact_index') }}">Contact</a></li>
+				<li><ahref="{{path('homepage')}}">{{ 'menu.home'|trans }}</a></li>
+				<li><ahref="{{path('services_index')}}">{{ 'menu.services'|trans }}</a></li>
+				<li><ahref="{{path('blog_display')}}">{{ 'menu.blog'|trans }}</a></li>
+				<li><ahref="{{path('contact_index')}}">{{ 'menu.contact'|trans }}</a></li>
 			</ul>
 		</div>
 
 		<div class="card mb-4 p-4 shadow-sm">
-			<h2>Pages Légales</h2>
+			<h2>{{ 'sitemap.legal_pages'|trans }}</h2>
 			<ul>
-				<li> <a href="{{ path('legal_all') }}">Tout</a></li>
-    			<li> <a href="{{ path('mentions_legales') }}">Mentions Légales</a></li>
-    			<li> <a href="{{ path('politique_confidentialite') }}">Politique de Confidentialité</a></li>
-    			<li> <a href="{{ path('cgv') }}">Conditions Générales de Vente (CGV)</a></li>
-    			<li> <a href="{{ path('cgu') }}">Conditions Générales d'Utilisation (CGU)</a></li>
-    			<li> <a href="{{ path('politique_remboursement') }}">Politique de Remboursement/Annulation</a></li>
-    			<li> <a href="{{ path('politique_cookies') }}">Politique de Cookies</a></li>
+				<li><ahref="{{path('legal_all')}}">{{ 'sitemap.all_legal'|trans }}</a></li>
+				<li><ahref="{{path('mentions_legales')}}">{{ 'sitemap.legal_mentions'|trans }}</a></li>
+				<li><ahref="{{path('politique_confidentialite')}}">{{ 'sitemap.privacy_policy'|trans }}</a></li>
+				<li><ahref="{{path('cgv')}}">{{ 'sitemap.terms_of_sale'|trans }}</a></li>
+				<li><ahref="{{path('cgu')}}">{{ 'sitemap.terms_of_use'|trans }}</a></li>
+				<li><ahref="{{path('politique_remboursement')}}">{{ 'sitemap.refund_policy'|trans }}</a></li>
+				<li><ahref="{{path('politique_cookies')}}">{{ 'sitemap.cookies_policy'|trans }}</a></li>
 			</ul>
 		</div>
 	</section>
