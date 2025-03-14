@@ -4,7 +4,10 @@
 {% endblock %}
 
 {% block meta_description %}
-	{{ 'meta.home_description'|trans }}
+	{{ 'home.meta_description'|trans }}
+{% endblock %}
+{% block meta_keywords %}
+	<meta name="keywords" content="{{ 'home.meta_keywords'|trans }}">
 {% endblock %}
 
 

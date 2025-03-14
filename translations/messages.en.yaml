@@ -36,9 +36,15 @@ base:
 
 meta:
   default_description: "Let's build unique digital experiences together: website creation, training, and personalized support."
-  home_description: "Welcome to Caméléon Solutions, your expert in website creation and digital training."
-  home_keywords: "digital agency, web development, online presence, web solutions, custom websites"
 meta.default_keywords: "digital solutions, web development, digital training, website creation, online presence"
+blog.meta_keywords: "blog, articles, digital solutions, web development, Caméléon Solutions"
+blog.meta_description: "Discover the latest articles from Caméléon Solutions, your expert in digital solutions. Stay informed about web development, online presence, and more."
+home.meta_keywords: "digital solutions, web development, digital training, website creation, online presence"
+home.meta_description: "Caméléon Solutions offers digital solutions tailored to your needs. Discover our services in website creation, training, and personalized support."
+services.meta_keywords: "digital services, website creation, digital training, digital solutions, custom development"
+services.meta_description: "Discover the services offered by Caméléon Solutions, from website creation to training in digital tools, tailored to your needs."
+contact.meta_keywords: "contact, Caméléon Solutions, digital services, contact form, quote request"
+contact.meta_description: "Contact Caméléon Solutions for any inquiries regarding my digital services. Fill out the form or use my contact details to get in touch."
 
 services:
   web_design:
@@ -112,8 +118,6 @@ footer.legal: "Legal Mentions"
 footer.sitemap: "Sitemap"
 footer.rights: "Caméléon Solutions - All rights reserved."
 
-meta.services_description: "Discover the services offered by Caméléon Solutions, from website creation to training in digital tools, tailored to your needs."
-meta.services_keywords: "digital services, website creation, digital training, digital solutions, custom development"
 services.title: "My Services"
 services.heading: "My Services"
 

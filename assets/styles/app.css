@@ -1632,7 +1632,10 @@ p.tagline {
 }
 
 .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour les transformations et l'ombre */
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 .card:hover {
@@ -1646,15 +1649,15 @@ p.tagline {
 
 .card-body a {
   text-decoration: none; /* Supprime le soulignement */
+  color: #032b35 !important; /* Couleur du lien */
 }
 
 .link-article a {
-  color: #032b35; /* Couleur du lien */
+  color: #032b35 !important; /* Couleur du lien */
   font-weight: bold; /* Gras pour le lien */
 }
 
 .btn-custom-blog {
-  background-color: #032b35;
   color: white;
   border: none;
   border-radius: 5px;

@@ -93,24 +93,27 @@ class BlogController extends AbstractController
             'popularArticles' => $popularArticles,
         ]);
     }
-
-    #[Route('/blog/{slug}', name: 'blog_show')]
-    public function show(string $slug, ArticleRepository $articleRepository, TagRepository $tagRepository, Request $request): Response
-    {
-        $locale = $request->getLocale(); // Récupère la langue actuelle
     
-        $article = $articleRepository->findArticleWithTranslation($slug, $locale);
+    #[Route('/blog/{slug}', name: 'blog_show')]
+    public function show(string $slug, ArticleRepository $articleRepository, TagRepository $tagRepository): Response
+    {
+        // Récupère tous les tags
+        $tags = $tagRepository->findAll();
+
+        $tags = $tagRepository->findAllWithColors();
+    
+        // Récupérer les articles les plus populaires
+        $popularArticles = $articleRepository->findMostPopularArticles(5); // Limiter à 5 articles
+    
+        $article = $articleRepository->findOneBy(['slug' => $slug]);
         if (!$article) {
             throw $this->createNotFoundException('Article non trouvé');
         }
     
-        $tags = $tagRepository->findAllWithColors();
-        $popularArticles = $articleRepository->findMostPopularArticles(5);
-    
         return $this->render('blog/show.html.twig', [
             'article' => $article,
             'tags' => $tags,
-            'popularArticles' => $popularArticles,
+            'popularArticles' => $popularArticles, // Assurez-vous que c'est passé correctement
         ]);
     }
     

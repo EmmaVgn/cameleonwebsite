@@ -1041,12 +1041,20 @@ p.tagline {
 	font-size: 1.1rem;
 	line-height: 1.6;
 }
+ 
+	.card {
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+		}
+	}
+
 .card {
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	&:hover {
 		transform: translateY(-5px);
 		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 	}
+
 }
 .blog-content-display {
 	margin-left: 100px;
@@ -1054,16 +1062,16 @@ p.tagline {
 .card-body {
 	a {
 		text-decoration: none;
+		color: $color_10 !important;
 	}
 }
 .link-article {
 	a {
-		color: $color_10;
+		color: $color_10 !important;
 		font-weight: bold;
 	}
 }
 .btn-custom-blog {
-	background-color: $background-color_2;
 	color: $color_15;
 	border: none;
 	border-radius: 5px;
@@ -1304,7 +1312,7 @@ p.tagline {
 	transition-delay: 0.2s;
 }
 
-#tarteaucitronAlertBig {
+	#tarteaucitronAlertBig {
 		transform: scale(0.9);
 		opacity: 0.9;
 		transition: transform 0.3s ease, opacity 0.3s ease;
