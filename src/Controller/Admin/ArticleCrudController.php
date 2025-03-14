@@ -70,7 +70,7 @@ class ArticleCrudController extends AbstractCrudController implements EventSubsc
         return [
             TextField::new('name', 'Titre'),
             TextareaField::new('subtitle', 'Sous-titre'),
-            TextareaField::new('content', 'Contenu'),
+            TextEditorField::new('content', 'Contenu'),
             AssociationField::new('tags', 'Tags')
             ->setFormTypeOptions([
                 'by_reference' => false, // Important pour les relations ManyToMany
