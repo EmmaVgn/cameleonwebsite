@@ -33,10 +33,14 @@ class Tag
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $color = null;
 
+    #[ORM\OneToMany(targetEntity: TagTranslation::class, mappedBy: "tag", cascade: ["persist", "remove"])]
+    private Collection $translations;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
         $this->updateAt = new \DateTimeImmutable();
+        $this->translations = new ArrayCollection();
     }
 
     public function __toString(): string
@@ -123,4 +127,51 @@ class Tag
 
         return $this;
     }
+
+    public function getTranslations(): Collection
+    {
+    return $this->translations;
+    }
+
+    public function addTranslation(TagTranslation $translation): self
+    {
+        if (!$this->translations->contains($translation)) {
+            $this->translations->add($translation);
+            $translation->setTag($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTranslation(TagTranslation $translation): self
+    {
+        if ($this->translations->removeElement($translation)) {
+            if ($translation->getTag() === $this) {
+                $translation->setTag(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getTranslation(string $locale): ?TagTranslation
+    {
+        foreach ($this->translations as $translation) {
+            if ($translation->getLocale() === $locale) {
+                return $translation;
+            }
+        }
+        return null;
+    }
+
+    public function getTranslatedName(string $locale): ?string
+{
+    foreach ($this->translations as $translation) {
+        if ($translation->getLocale() === $locale) {
+            return $translation->getName();
+        }
+    }
+    return $this->name;
+}
+
 }

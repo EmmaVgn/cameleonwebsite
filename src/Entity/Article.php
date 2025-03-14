@@ -52,6 +52,9 @@ class Article
     #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'articles')]
     private Collection $tags;
 
+    #[ORM\OneToMany(targetEntity: ArticleTranslation::class, mappedBy: "article", cascade: ["persist", "remove"])]
+    private Collection $translations;
+
     #[ORM\Column(nullable: true)]
     private ?int $views = null;
 
@@ -59,13 +62,14 @@ class Article
     {
         $this->createdAt = new \DateTimeImmutable();
         $this->tags = new ArrayCollection();
+        $this->translations = new ArrayCollection();
     }
 
     public function __toString(): string
     {
-        $this->updatedAt = new \DateTimeImmutable(); // Mettez à jour ici si nécessaire
-        return $this->name ?? 'Unnamed Article'; // Retourne le nom ou une valeur par défaut
+        return $this->name ?? 'Unnamed Article';
     }
+    
     
 
     public function getId(): ?int
@@ -221,4 +225,71 @@ class Article
 
         return $this;
     }
+
+        public function getTranslations(): Collection
+    {
+        return $this->translations;
+    }
+
+    public function addTranslation(ArticleTranslation $translation): self
+    {
+        if (!$this->translations->contains($translation)) {
+            $this->translations->add($translation);
+            $translation->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTranslation(ArticleTranslation $translation): self
+    {
+        if ($this->translations->removeElement($translation)) {
+            if ($translation->getArticle() === $this) {
+                $translation->setArticle(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getTranslation(string $locale): ?ArticleTranslation
+    {
+        foreach ($this->translations as $translation) {
+            if ($translation->getLocale() === $locale) {
+                return $translation;
+            }
+        }
+        return null;
+    }
+
+    public function getTranslatedName(string $locale): ?string
+{
+    foreach ($this->translations as $translation) {
+        if ($translation->getLocale() === $locale) {
+            return $translation->getName();
+        }
+    }
+    return $this->name; // Retourne le nom par défaut si pas de traduction
+}
+
+public function getTranslatedSubtitle(string $locale): ?string
+{
+    foreach ($this->translations as $translation) {
+        if ($translation->getLocale() === $locale) {
+            return $translation->getSubtitle();
+        }
+    }
+    return $this->subtitle;
+}
+
+public function getTranslatedContent(string $locale): ?string
+{
+    foreach ($this->translations as $translation) {
+        if ($translation->getLocale() === $locale) {
+            return $translation->getContent();
+        }
+    }
+    return $this->content;
+}
+
 }

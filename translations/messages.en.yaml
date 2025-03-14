@@ -192,6 +192,7 @@ blog:
   terms_of_use: "General Terms of Use (GTU)"
   cookies_policy: "Cookies Policy"
   cancellation_policy: "Cancellation Policy"
+blog.main_title: "Welcome to our Blog"
 
 legal:
   cancelled:

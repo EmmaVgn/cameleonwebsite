@@ -1,77 +1,92 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	{{ article.name }}
+	{{ article.getTranslatedName(app.request.locale) }}
 	-
 	{{ 'blog.title'|trans }}
 {% endblock %}
 
-{% block meta_description %}
-	<meta name="description" content="{{ article.subtitle|e }}">
-{% endblock %}
 
 {% block body %}
 	<div class="container my-5">
-		<div class="row">
+		<div
+			class="row">
+			<!-- Colonne principale -->
 			<div class="col-md-8">
 				<article class="post">
 					<div class="article-v2">
 						<figure class="article-thumb">
-							<img src="{{ asset('img/blog/' ~ article.imageName) }}" alt="{{ article.name|e }}" class="img-fluid rounded" style="width: 100%; height: auto; max-height: 300px; object-fit: cover;">
+							<img src="{{ asset('img/blog/' ~ article.imageName) }}" alt="{{ article.getTranslatedName(app.request.locale)|e }}" class="img-fluid rounded" style="width: 100%; height: auto; max-height: 300px; object-fit: cover;">
 						</figure>
 						<div class="article-content-main">
 							<div class="article-header">
-								<h1 class="entry-title display-4">{{ article.name }}</h1>
+								<h1 class="entry-title display-4">
+									{{ article.getTranslatedName(app.request.locale) }}
+								</h1>
 								<div class="entry-meta mb-3">
-									<span class="entry-date text-muted">{{ article.createdAt|date('d M Y') }}</span>
+									<span class="entry-date text-muted">
+										{{ article.createdAt|date('d M Y') }}
+									</span>
 									<span class="mx-2">|</span>
 								</div>
 							</div>
 							<div class="article-content mb-4">
-								<p>{{ article.content|raw }}</p>
+								<p>{{ article.getTranslatedContent(app.request.locale)|raw }}</p>
 							</div>
 						</div>
 					</div>
 				</article>
 
+				<!-- Bouton Retour -->
 				<div class="text-center mt-5">
-					<a href="{{ path('blog_display') }}" class="btn-custom btn-sm">{{ 'blog.back_to_articles'|trans }}</a>
+					<a href="{{ path('blog_display') }}" class="btn-custom btn-sm">
+						{{ 'blog.back_to_articles'|trans }}
+					</a>
 				</div>
 			</div>
 
-			<div class="col-md-4">
+			<!-- Sidebar -->
+			<div
+				class="col-md-4">
+				<!-- Articles similaires -->
 				<h2 class="text-center mb-4">{{ 'blog.related_articles'|trans }}</h2>
 				<div class="row">
 					{% for popularArticle in popularArticles|slice(0, 2) %}
 						<div class="col-12 mb-3">
 							<div class="card">
 								<a href="{{ path('blog_show', {'slug': popularArticle.slug}) }}">
-									<img src="{{ asset('img/blog/' ~ popularArticle.imageName) }}" class="card-img-top" alt="{{ popularArticle.name|e }}" style="max-height: 150px; object-fit: cover;">
+									<img src="{{ asset('img/blog/' ~ popularArticle.imageName) }}" class="card-img-top" alt="{{ popularArticle.getTranslatedName(app.request.locale)|e }}" style="max-height: 150px; object-fit: cover;">
 								</a>
 								<div class="card-body">
 									<h3 class="card-title">
-										<a href="{{ path('blog_show', {'slug': popularArticle.slug}) }}" class="text-decoration-none">{{ popularArticle.name|e }}</a>
+										<a href="{{ path('blog_show', {'slug': popularArticle.slug}) }}" class="text-decoration-none">
+											{{ popularArticle.getTranslatedName(app.request.locale)|e }}
+										</a>
 									</h3>
-									<p class="card-text">{{ popularArticle.subtitle|e }}</p>
+									<p class="card-text">{{ popularArticle.getTranslatedSubtitle(app.request.locale)|e }}</p>
 								</div>
 							</div>
 						</div>
 					{% else %}
 						<div class="col-12">
-							<div class="alert alert-muted text-center">{{ 'blog.no_related_articles'|trans }}</div>
+							<div class="alert alert-muted text-center">
+								{{ 'blog.no_related_articles'|trans }}
+							</div>
 						</div>
 					{% endfor %}
 				</div>
 
+				<!-- Tags associés -->
 				<div class="mt-4">
 					<h4 class="font-weight-bold">{{ 'blog.associated_tags'|trans }}</h4>
 					<div>
 						{% for tag in tags %}
-							<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge" style="background-color: {{ tag.color }};">{{ tag.name }}</a>
+							<a href="{{ path('blog_by_tag', {'slug': tag.slug}) }}" class="badge" style="background-color: {{ tag.color }};">
+								{{ tag.getTranslatedName(app.request.locale) }}
+							</a>
 						{% endfor %}
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>

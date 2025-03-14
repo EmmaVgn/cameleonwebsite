@@ -59,7 +59,56 @@ class ArticleRepository extends ServiceEntityRepository
             ->getResult();
     }
     
+    public function findAllWithTranslations(string $locale)
+    {
+        return $this->createQueryBuilder('a')
+            ->leftJoin('a.translations', 't', 'WITH', 't.locale = :locale')
+            ->addSelect('t')
+            ->setParameter('locale', $locale)
+            ->orderBy('a.createdAt', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+    
+    public function findOneBySlugWithTranslation(string $slug, string $locale): ?Article
+    {
+        return $this->createQueryBuilder('a')
+            ->leftJoin('a.translations', 't', 'WITH', 't.locale = :locale')
+            ->addSelect('t')
+            ->where('a.slug = :slug')
+            ->setParameter('slug', $slug)
+            ->setParameter('locale', $locale)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+    
+    public function findByTagWithTranslations(Tag $tag, string $locale)
+    {
+        return $this->createQueryBuilder('a')
+            ->leftJoin('a.tags', 't')
+            ->leftJoin('a.translations', 'tr', 'WITH', 'tr.locale = :locale')
+            ->addSelect('tr')
+            ->where(':tag MEMBER OF a.tags')
+            ->setParameter('tag', $tag)
+            ->setParameter('locale', $locale)
+            ->orderBy('a.createdAt', 'DESC')
+            ->getQuery();
+    }
 
+    public function findArticleWithTranslation(string $slug, string $locale)
+{
+    return $this->createQueryBuilder('a')
+        ->leftJoin('a.translations', 't')
+        ->addSelect('t')
+        ->where('a.slug = :slug')
+        ->setParameter('slug', $slug)
+        ->andWhere('t.locale = :locale')
+        ->setParameter('locale', $locale)
+        ->getQuery()
+        ->getOneOrNullResult();
+}
+
+    
 //    /**
 //     * @return Article[] Returns an array of Article objects
 //     */

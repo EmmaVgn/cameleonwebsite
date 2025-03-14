@@ -175,6 +175,7 @@ blog:
   related_articles: "Articles Similaires"
   no_related_articles: "Aucun article similaire."
   associated_tags: "Tags Associés"
+blog.main_title: "Bienvenue sur notre Blog"
 
 footer.contact: "Contact"
 footer.email: "Email"

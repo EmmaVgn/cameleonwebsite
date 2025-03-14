@@ -35,6 +35,30 @@ class TagRepository extends ServiceEntityRepository
         }
         return $tags;
     }
+
+    public function findAllWithTranslations(string $locale)
+{
+    return $this->createQueryBuilder('t')
+        ->leftJoin('t.translations', 'tr', 'WITH', 'tr.locale = :locale')
+        ->addSelect('tr')
+        ->setParameter('locale', $locale)
+        ->orderBy('t.name', 'ASC')
+        ->getQuery()
+        ->getResult();
+}
+
+public function findOneBySlugWithTranslation(string $slug, string $locale): ?Tag
+{
+    return $this->createQueryBuilder('t')
+        ->leftJoin('t.translations', 'tr', 'WITH', 'tr.locale = :locale')
+        ->addSelect('tr')
+        ->where('t.slug = :slug')
+        ->setParameter('slug', $slug)
+        ->setParameter('locale', $locale)
+        ->getQuery()
+        ->getOneOrNullResult();
+}
+
 }
 //    /**
 //     * @return Tag[] Returns an array of Tag objects

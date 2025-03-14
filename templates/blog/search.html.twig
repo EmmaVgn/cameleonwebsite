@@ -4,9 +4,6 @@
 	{{ 'blog.search_title'|trans }}
 {% endblock %}
 
-{% block meta_description %}
-	<meta name="description" content="{{ 'blog.search_description'|trans({'app.request.get(\'q\')': app.request.get('q')}) }}">
-{% endblock %}
 
 {% block meta_keywords %}
 	<meta name="keywords" content="{{ 'blog.search_keywords'|trans({'app.request.get(\'q\')': app.request.get('q')}) }}">

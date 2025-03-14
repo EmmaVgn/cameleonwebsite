@@ -15,8 +15,13 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
+use App\Form\ArticleTranslationType;
+use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityPersistedEvent;
+use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityUpdatedEvent;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-class ArticleCrudController extends AbstractCrudController
+class ArticleCrudController extends AbstractCrudController implements EventSubscriberInterface
 {
 
     private SluggerInterface $slugger;
@@ -39,6 +44,27 @@ class ArticleCrudController extends AbstractCrudController
             ->setDefaultSort(['id' => 'DESC'])
         ;
     }
+
+    public static function getSubscribedEvents()
+    {
+        return [
+            BeforeEntityPersistedEvent::class => 'persistTranslations',
+            BeforeEntityUpdatedEvent::class => 'persistTranslations',
+        ];
+    }
+
+    public function persistTranslations($event)
+    {
+        $entity = $event->getEntityInstance();
+        if (!($entity instanceof Article)) {
+            return;
+        }
+
+        foreach ($entity->getTranslations() as $translation) {
+            $translation->setArticle($entity);
+        }
+    }
+
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -54,6 +80,9 @@ class ArticleCrudController extends AbstractCrudController
                 ImageField::new('imageName')
                 ->setBasePath('img/blog/')
                 ->setUploadDir('public/img/blog'),
+            CollectionField::new('translations', 'Traductions')
+               ->setEntryType(ArticleTranslationType::class)
+               ->setFormTypeOptions(['by_reference' => false]),
             
         ];
     }
