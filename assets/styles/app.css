@@ -623,8 +623,8 @@ p.tagline {
 
 /* Tree container */
 #tree-container {
-  width: 30%;
-  max-width: 370px;
+  width: 50%;
+  max-width: 515px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1649,7 +1649,6 @@ p.tagline {
 
 .card-body a {
   text-decoration: none; /* Supprime le soulignement */
-  color: #032b35 !important; /* Couleur du lien */
 }
 
 .link-article a {

@@ -13,7 +13,7 @@
 						<h5 class="card-title">{{ project.title }}</h5>
 						<p class="card-text">{{ project.short_description }}</p>
 						{% if project.link %}
-							<a href="{{ project.link }}" class="btn btn-custom mt-2" target="_blank">{{ 'projects.view_site'|trans }}</a>
+							<a href="{{ project.link }}" class="btn btn-pdf mt-2" target="_blank">{{ 'projects.view_site'|trans }}</a>
 						{% else %}
 							<p>{{ 'projects.no_link'|trans }}</p>
 						{% endif %}
