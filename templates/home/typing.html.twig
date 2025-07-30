@@ -1,20 +1,20 @@
-<div class="typing-effect mt-5 text-center">
-	<div class="line">
-		<b>
-			<h1 class="line">
-				Emma VIGNERON :
-				<span id="developper">
-					{{ 'typing.developer'|trans }}
-				</span>
-				<span id="word">
-					<u>{{ 'typing.word_default'|trans }}</u>
-				</span>
-			</h1>
-		</b>
-	</div>
-	<p class="tagline">"{{ 'typing.tagline'|trans }}"</p>
-	<div class="button-container mt-4">
-		<a href="{{ path('contact_index') }}" class="cta-button">{{ 'typing.contact'|trans }}</a>
-		<a href="{{ path('services_index') }}" class="secondary-button">{{ 'typing.services'|trans }}</a>
+<div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white py-5">
+	<h1 class="display-4 fw-bold mb-3">
+		Emma VIGNERON
+		<br>
+		<span class="fs-3">
+			<span id="developper">{{ 'typing.developer'|trans }}</span>
+			<span id="word">
+				<u>{{ 'typing.word_default'|trans }}</u>
+			</span>
+		</span>
+
+	</h1>
+
+	<p class="lead fst-italic mb-4">"{{ 'typing.tagline'|trans }}"</p>
+
+	<div class="d-flex flex-wrap gap-3 justify-content-center">
+		<a href="{{ path('contact_index') }}" class="btn btn-custom-outline btn-lg px-4 py-2">{{ 'typing.contact'|trans }}</a>
+		<a href="{{ path('services_index') }}" class="btn btn-light btn-lg px-4 py-2 text-dark">{{ 'typing.services'|trans }}</a>
 	</div>
 </div>

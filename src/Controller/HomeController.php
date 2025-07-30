@@ -57,7 +57,7 @@ class HomeController extends AbstractController
                 'title' => $translator->trans('projects.maisons_marie.title'),
                 'short_description' => $translator->trans('projects.maisons_marie.description'),
                 'link' => 'https://lesmaisonsdemarie.net/',
-                'image' => '/img/project d/Image-26.png',
+                'image' => '/img/project d/Image-5.png',
             ],
         ];
     }

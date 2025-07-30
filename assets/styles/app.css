@@ -135,6 +135,18 @@ h4 {
   transform: scale(1.05);
 }
 
+.btn-custom-outline {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-custom-outline:hover {
+  background-color: #ffffff;
+  color: #032b35 !important;
+}
+
 /*--------------------------------------------------------------
 # Navbar 
 --------------------------------------------------------------*/
@@ -522,6 +534,10 @@ h4 {
   text-align: center;
   gap: 30px;
   padding: 20px;
+}
+
+#word {
+  transition: opacity 0.5s ease-in-out;
 }
 
 .effect-container {
@@ -1085,21 +1101,29 @@ p.tagline {
 }
 
 .service-logos {
-  display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 30px;
+  margin-top: 20px;
+
   align-items: center;
 }
 
 .service-logos img {
   margin: 0 10px;
-  width: 100px;
-  height: auto;
+  margin-top: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 5px;
   background-color: #ffffff;
   border-radius: 8px;
+}
+
+.logo-qualiopi {
+  height: 120px;
+  width: auto;
+}
+
+.logo-chorus {
+  height: 80px;
 }
 
 .service-logos img:hover {
@@ -1242,6 +1266,11 @@ p.tagline {
   color: #032b35;
   margin-top: 15px;
   font-size: 1.2rem;
+}
+
+.popup-content a {
+  color: #000 !important;
+  text-decoration: underline; /* optionnel */
 }
 
 @keyframes fadeIn {

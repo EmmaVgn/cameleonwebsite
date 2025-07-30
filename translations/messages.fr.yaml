@@ -53,23 +53,17 @@ services:
     popup_description: "Nous utilisons des technologies comme WordPress et Symfony pour créer des sites web qui allient performance et flexibilité. Que vous ayez besoin d'un site vitrine ou d'une plateforme plus complexe, nous vous offrons une solution sur mesure pour répondre à vos attentes."
     price: "À partir de 700€ HT"
 
-  community:
-    title: "Community Manager"
-    description: "Développez votre présence en ligne grâce à une stratégie de communication adaptée et percutante. Nous créons des contenus engageants, gérons vos réseaux sociaux et assurons une interaction continue avec votre communauté. Chaque action vise à renforcer votre image de marque et à fidéliser vos clients, tout en augmentant votre visibilité."
-    popup_description: "Développez une stratégie de communication efficace et percutante pour booster votre présence en ligne. Nous gérons vos réseaux sociaux, créons des contenus engageants et interagissons avec votre communauté pour renforcer votre image de marque."
-    price: "À partir de 200€ HT"
+  computer_courses:
+    title: "Cours d'informatique"
+    description: "Apprenez à utiliser votre ordinateur et les outils numériques essentiels en toute confiance. Que vous soyez débutant ou souhaitiez vous perfectionner, nous vous accompagnons dans l’usage des emails, la navigation sur internet, la gestion des fichiers et bien plus."
+    popup_description: "Cours personnalisés pour devenir plus autonome avec l’outil informatique. Idéal pour les débutants ou ceux qui souhaitent renforcer leurs compétences numériques."
+    price: "25€ de l’heure"
 
   training:
-    title: "Formations et Coaching"
-    description: "Acquérez les compétences essentielles pour maîtriser vos outils numériques et améliorer votre visibilité en ligne. Nous proposons des formations sur mesure, adaptées à votre niveau et à vos objectifs, ainsi qu’un accompagnement personnalisé pour vous aider à prendre en main votre site web, vos réseaux sociaux et vos outils digitaux."
-    popup_description: "Formations sur mesure adaptées à vos besoins. Apprenez à gérer votre site web, vos réseaux sociaux et à optimiser votre présence en ligne. Nous proposons des formations sur des outils comme WordPress, les réseaux sociaux, le SEO, et bien plus."
-    price: "À partir de 150€ HT la demi-journée"
-
-  admin:
-    title: "Aides administratives"
-    description: "Nous vous accompagnons dans vos démarches administratives du quotidien : rédaction de courriers, gestion de documents, aide à la déclaration en ligne, organisation numérique et bien plus encore. Profitez d’un service personnalisé, simple et efficace, pour vous faciliter la vie et vous faire gagner du temps."
-    popup_description: "Recevez de l'aide pour vos démarches administratives : rédaction de courriers, gestion de documents, et plus encore. Nous vous accompagnons pour simplifier vos processus et vous faire gagner du temps dans vos tâches administratives."
-    price: "20€ de l’heure"
+    title: "Formations"
+    description: "Acquérez les compétences essentielles pour maîtriser vos outils numériques et améliorer votre visibilité en ligne. Nos formations sont accessibles via notre plateforme dédiée.  Nous proposons des formations sur mesure, adaptées à votre niveau et à vos objectifs, ainsi qu’un accompagnement personnalisé"
+    popup_description: 'Formations sur mesure adaptées à vos besoins. Apprenez à gérer votre site web, vos réseaux sociaux et à optimiser votre présence en ligne. Accédez à notre plateforme : <a href="https://cameleon-solutions-learning.fr" target="_blank" rel="noopener">Cameleon Solutions Learning</a>.'
+    price: "Sur devis"
 
   contact: "Contactez-moi"
   more_info: "🔎 Cliquez pour en savoir plus"
@@ -95,7 +89,7 @@ projects:
   no_link: "Aucun lien disponible"
   garage_thomas:
     title: "Garage Thomas"
-    description: "Création d'un site vitrine pour un garage automobile."
+    description: "Création d'un site vitrine pour un garage automobile fictif."
   aromelis:
     title: "Aromelis"
     description: "Site e-commerce pour une apicultrice."

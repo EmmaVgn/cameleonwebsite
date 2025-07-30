@@ -53,23 +53,17 @@ services:
     popup_description: "We use technologies such as WordPress and Symfony to create websites that combine performance and flexibility. Whether you need a showcase site or a more complex platform, we offer a tailor-made solution to meet your expectations."
     price: "Starting at €700 excl. tax"
 
-  community:
-    title: "Community Manager"
-    description: "Develop your online presence with an effective and impactful communication strategy. We create engaging content, manage your social media, and ensure continuous interaction with your community. Every action aims to strengthen your brand image and retain your customers while increasing your visibility."
-    popup_description: "Develop an effective and impactful communication strategy to enhance your online presence. We manage your social media, create engaging content, and interact with your community to strengthen your brand image."
-    price: "Starting at €200 excl. tax"
+  computer_courses:
+    title: "Computer Courses"
+    description: "Learn to use your computer and essential digital tools with confidence. Whether you’re a beginner or looking to improve your skills, we offer personalized support in using email, navigating the web, managing files, and more."
+    popup_description: "Tailor-made lessons to become more autonomous with your computer and digital tools. Perfect for beginners or anyone wishing to improve their digital literacy."
+    price: "Starting at €20/hour, on-site support included"
 
   training:
-    title: "Training & Coaching"
-    description: "Gain essential skills to master your digital tools and improve your online visibility. We offer tailor-made training adapted to your level and goals, as well as personalized coaching to help you take control of your website, social media, and digital tools."
-    popup_description: "Tailored training adapted to your needs. Learn how to manage your website, social media, and optimize your online presence. We offer training on tools such as WordPress, social networks, SEO, and much more."
-    price: "Starting at €150 excl. tax for a half-day"
-
-  admin:
-    title: "Administrative Assistance"
-    description: "We assist you with your daily administrative tasks, including drafting letters, document management, online declarations, digital organization, and much more. Benefit from a personalized, simple, and efficient service to make your life easier and save time."
-    popup_description: "Receive assistance with your administrative tasks such as drafting letters, document management, and more. We support you in simplifying your processes and saving time on your administrative tasks."
-    price: "€20 per hour"
+    title: "Training"
+    description: "Gain essential skills to master your digital tools and improve your online visibility. Our training courses are accessible through our dedicated platform. We offer tailor-made sessions adapted to your level and goals, along with personalized support."
+    popup_description: 'Tailored training to meet your needs. Learn how to manage your website, social media, and optimize your online presence. Access our platform: <a href="https://cameleon-solutions-learning.fr" target="_blank" rel="noopener">Cameleon Solutions Learning</a>.'
+    price: "On request"
 
   contact: "Contact me"
   more_info: "🔎 Click to learn more"
@@ -95,7 +89,7 @@ projects:
   no_link: "No link available"
   garage_thomas:
     title: "Garage Thomas"
-    description: "Creation of a showcase website for a car garage."
+    description: "Creation of a showcase website for a fictitious  car garage."
   aromelis:
     title: "Aromelis"
     description: "E-commerce website for a beekeeper."

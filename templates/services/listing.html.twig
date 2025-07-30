@@ -13,38 +13,27 @@
 		<!-- Community Manager -->
 		<div class="content-link" data-popup="popup2" data-hint="{{ 'services.more_info'|trans }}">
 			<div class="content-box right" style="--index: 1;">
-				<h4>{{ 'services.community.title'|trans }}</h4>
-				<p>{{ 'services.community.description'|trans|raw }}</p>
+				<h4>{{ 'services.computer_courses.title'|trans }}</h4>
+				<p>{{ 'services.computer_courses.description'|trans|raw }}</p>
 			</div>
 		</div>
+
 
 		<!-- Formations et coaching -->
 		<div class="content-link" data-popup="popup3" data-hint="{{ 'services.more_info'|trans }}">
 			<div class="content-box left" style="--index: 2;">
 				<h4>{{ 'services.training.title'|trans }}</h4>
+				<br>
 				<p>{{ 'services.training.description'|trans|raw }}</p>
-				<div class="service-logos">
-					<img src="{{ asset('img/qualiopi-min.webp') }}" alt="Logo Qualiopi" width="100" height="100" loading="lazy">
-					<img src="{{ asset('img/logo-chorus-pro.png') }}" alt="Logo Chorus Pro" width="100" height="48" loading="lazy">
-				</div>
-			</div>
-		</div>
 
-		<!-- Aides administratives -->
-		<div class="content-link" data-popup="popup4" data-hint="{{ 'services.more_info'|trans }}">
-			<div class="content-box right" style="--index: 3;">
-				<h4>{{ 'services.admin.title'|trans }}</h4>
-				<p>{{ 'services.admin.description'|trans|raw }}</p>
-				<div class="service-logos">
-					<img src="{{ asset('img/Logo_cncesu-min.webp') }}" alt="Logo CESU" width="100" height="100" loading="lazy">
-				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
 <!-- Pop-ups -->
-{% for service in ['web_design', 'community', 'training', 'admin'] %}
+{% for service in ['web_design', 'computer_courses', 'training', 'admin'] %}
+
 	<div id="popup{{ loop.index }}" class="popup">
 		<div class="popup-content">
 			<span class="close">&times;</span>
