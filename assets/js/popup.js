@@ -1,38 +1,41 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-  const contentLinks = document.querySelectorAll('.content-link');
-  const popups = document.querySelectorAll('.popup');
-  const closeButtons = document.querySelectorAll('.close');
-
-  contentLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault(); // Empêche l'action par défaut (si c'était un lien)
-      const popupId = link.getAttribute('data-popup');
-      const popup = document.getElementById(popupId);
-      if (popup) {
-        popup.style.display = 'block'; // Affiche le popup
-      }
+document.addEventListener('DOMContentLoaded', () => {
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); }
     });
-  });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.service-card').forEach(el => io.observe(el));
 
-  closeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const popup = button.closest('.popup');
-      if (popup) {
-        popup.style.display = 'none'; // Masque le popup
-      }
-    });
-  });
+  // Popups open/close (accessibles)
+  let lastFocused = null;
+  function openPopup(id){
+    const popup = document.getElementById(id);
+    if(!popup) return;
+    lastFocused = document.activeElement;
+    popup.setAttribute('aria-hidden','false');
+    document.body.classList.add('popup-open');
+    const closeBtn = popup.querySelector('.close');
+    if(closeBtn) closeBtn.focus();
+  }
+  function closePopup(popup){
+    popup.setAttribute('aria-hidden','true');
+    document.body.classList.remove('popup-open');
+    if(lastFocused) lastFocused.focus();
+  }
 
-  window.addEventListener('click', (e) => {
-    if (e.target.classList.contains('popup')) {
-      e.target.style.display = 'none'; // Masque le popup si on clique en dehors de celui-ci
+  document.querySelectorAll('[data-open]').forEach(btn => {
+    btn.addEventListener('click', () => openPopup(btn.getAttribute('data-open')));
+  });
+  document.querySelectorAll('.popup').forEach(popup => {
+    popup.addEventListener('click', (e) => { if(e.target === popup) closePopup(popup); });
+    const closeBtn = popup.querySelector('.close');
+    if(closeBtn) closeBtn.addEventListener('click', () => closePopup(popup));
+  });
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape'){
+      const opened = document.querySelector('.popup[aria-hidden="false"]');
+      if(opened) closePopup(opened);
     }
-  });
-  
-  const contactButtons = document.querySelectorAll('.contact-button-popup');
-  contactButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      window.location.href = '/contact'; 
-    });
   });
 });

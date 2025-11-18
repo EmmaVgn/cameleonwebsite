@@ -30,14 +30,16 @@
 	<div class="container-fluid reveal">
 		<div class="container-services">
 			<h3 class="title-service">{{ 'home.services.title'|trans }}</h3>
-			{% include "services/listing.html.twig" %}
-			<div class="pdf-download-container">
-				<h4>{{ 'home.services.pdf.title'|trans }}</h4>
-				<p>{{ 'home.services.pdf.description'|trans }}</p>
-				<a href="/PDF/Catalogue_interactif.pdf" target="_blank" class="btn-pdf">{{ 'home.services.pdf.open'|trans }}</a>
-				<a href="/PDF/Catalogue_non_interactif.pdf" download class="btn-pdf">{{ 'home.services.pdf.download'|trans }}</a>
-			</div>
+			<div class="services-hero-bg">
 
+				{% include "services/listing.html.twig" %}
+				<div class="pdf-download-container">
+					<h4>{{ 'home.services.pdf.title'|trans }}</h4>
+					<p>{{ 'home.services.pdf.description'|trans }}</p>
+					<a href="/PDF/Catalogue_interactif.pdf" target="_blank" class="btn-pdf">{{ 'home.services.pdf.open'|trans }}</a>
+					<a href="/PDF/Catalogue_non_interactif.pdf" download class="btn-pdf">{{ 'home.services.pdf.download'|trans }}</a>
+				</div>
+			</div>
 			{% include "services/picto.html.twig" %}
 		</div>
 	</div>

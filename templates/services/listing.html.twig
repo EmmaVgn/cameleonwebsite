@@ -1,51 +1,65 @@
-<div class="listing-container">
-	<div
-		class="timeline">
+<div
+	class="services-grid">
 
-		<!-- Conception -->
-		<div class="content-link" data-popup="popup1" data-hint="{{ 'services.more_info'|trans }}">
-			<div class="content-box left" style="--index: 0;">
-				<h4>{{ 'services.web_design.title'|trans }}</h4>
-				<p>{{ 'services.web_design.description'|trans|raw }}</p>
+	{# 1. Conception #}
+	<article class="service-card" data-popup="popup1">
+		<div class="card-glass">
+			<div class="card-icon" aria-hidden="true">💡</div>
+			<h4 class="card-title">{{ 'services.web_design.title'|trans }}</h4>
+			<p class="card-text">{{ 'services.web_design.description'|trans|raw }}</p>
+			<div class="card-actions">
+				<button class="btn-icon" type="button" data-open="popup1" aria-label="{{ 'services.more_info'|trans }}">
+					En savoir plus
+				</button>
+				<a class="btn-link" href="/contact">{{ 'services.contact'|trans }}</a>
 			</div>
 		</div>
+	</article>
 
-		<!-- Community Manager -->
-		<div class="content-link" data-popup="popup2" data-hint="{{ 'services.more_info'|trans }}">
-			<div class="content-box right" style="--index: 1;">
-				<h4>{{ 'services.computer_courses.title'|trans }}</h4>
-				<p>{{ 'services.computer_courses.description'|trans|raw }}</p>
+	{# 2. Cours informatique #}
+	<article class="service-card" data-popup="popup2">
+		<div class="card-glass">
+			<div class="card-icon" aria-hidden="true">🧑‍🏫</div>
+			<h4 class="card-title">{{ 'services.computer_courses.title'|trans }}</h4>
+			<p class="card-text">{{ 'services.computer_courses.description'|trans|raw }}</p>
+			<div class="card-actions">
+				<button class="btn-icon" type="button" data-open="popup1" aria-label="{{ 'services.more_info'|trans }}">
+					En savoir plus
+				</button>
+				<a class="btn-link" href="/contact">{{ 'services.contact'|trans }}</a>
 			</div>
 		</div>
+	</article>
 
-
-		<!-- Formations et coaching -->
-		<div class="content-link" data-popup="popup3" data-hint="{{ 'services.more_info'|trans }}">
-			<div class="content-box left" style="--index: 2;">
-				<h4>{{ 'services.training.title'|trans }}</h4>
-				<br>
-				<p>{{ 'services.training.description'|trans|raw }}</p>
-
+	{# 3. Formations & coaching #}
+	<article class="service-card" data-popup="popup3">
+		<div class="card-glass">
+			<div class="card-icon" aria-hidden="true">🚀</div>
+			<h4 class="card-title">{{ 'services.training.title'|trans }}</h4>
+			<p class="card-text">{{ 'services.training.description'|trans|raw }}</p>
+			<div class="card-actions">
+				<button class="btn-icon" type="button" data-open="popup1" aria-label="{{ 'services.more_info'|trans }}">
+					En savoir plus
+				</button>
+				<a class="btn-link" href="/contact">{{ 'services.contact'|trans }}</a>
 			</div>
 		</div>
-	</div>
+	</article>
+
 </div>
 
-<!-- Pop-ups -->
+{# Popups (on garde ta boucle) #}
 {% for service in ['web_design', 'computer_courses', 'training', 'admin'] %}
-
-	<div id="popup{{ loop.index }}" class="popup">
+	<div id="popup{{ loop.index }}" class="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title-{{ loop.index }}" aria-hidden="true">
 		<div class="popup-content">
-			<span class="close">&times;</span>
-			<h4>{{ ('services.' ~ service ~ '.title')|trans }}</h4>
+			<button class="close" type="button" aria-label="Fermer">×</button>
+			<h4 id="popup-title-{{ loop.index }}">{{ ('services.' ~ service ~ '.title')|trans }}</h4>
 			<p>{{ ('services.' ~ service ~ '.popup_description')|trans|raw }}</p>
 			<p class="popup-price">
 				<b>{{ ('services.' ~ service ~ '.price')|trans }}</b>
 			</p>
 			<div class="contact-button-popup">
-				<a href="/contact">
-					<button class="contact-button-popup">{{ 'services.contact'|trans }}</button>
-				</a>
+				<a href="/contact" class="btn btn-contact-popup">{{ 'services.contact'|trans }}</a>
 			</div>
 		</div>
 	</div>
