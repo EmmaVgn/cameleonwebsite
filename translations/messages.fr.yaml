@@ -46,22 +46,57 @@ services.heading: "Mes Services"
 services:
   web_design:
     title: "Conception de site web"
-    description: "Nous créons des sites modernes, uniques et performants, conçus pour s’adapter parfaitement à vos besoins. Profitez d’un design responsive offrant une expérience fluide sur tous les appareils, d’une gestion simplifiée via une interface intuitive et d’une personnalisation avancée pour refléter au mieux votre identité. Nos sites sont également pensés pour être évolutifs, afin d’accompagner durablement votre croissance."
-    popup_description: "Nous utilisons des technologies comme WordPress et Symfony pour créer des sites web qui allient performance et flexibilité. Que vous ayez besoin d'un site vitrine ou d'une plateforme plus complexe, nous vous offrons une solution sur mesure pour répondre à vos attentes."
-    price: "À partir de 700€ HT"
+    description: >
+      Chez <strong>Caméléon Solutions</strong>, nous créons des <strong>sites web</strong> et des <strong>applications</strong> modernes, uniques et performantes, conçus pour répondre parfaitement à vos besoins.
+      <br><br>
+      Nos solutions sont <strong>responsive</strong>, <strong>intuitives</strong>, <strong>faciles à gérer</strong> et pensées pour <strong>évoluer avec votre activité</strong>. Nous vous accompagnons de la conception à la mise en ligne, avec un <strong>suivi personnalisé à chaque étape</strong>.
+      <br><br>
+      En fonction de vos objectifs, nous vous proposons deux technologies principales :
+      <br><br>
+      🔹 <strong>WordPress</strong> – idéal pour les sites vitrines et blogs : simplicité, rapidité de mise en ligne, design soigné et gestion autonome.
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;→ <em>Facilité d’utilisation</em> – <em>gestion intuitive</em> – <em>nombreuses extensions</em> – <em>bon référencement naturel</em>.
+      <br><br>
+      🔹 <strong>Symfony</strong> – parfait pour les projets plus complexes ou sur mesure : performances, sécurité, évolutivité.
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;→ <em>Code sur-mesure</em> – <em>haut niveau de personnalisation</em> – <em>adapté aux besoins spécifiques et métiers</em>.
+      <br><br>
+      Que vous optiez pour <strong>WordPress</strong> ou <strong>Symfony</strong>, notre priorité reste la même : vous offrir un <strong>site performant</strong>, <strong>durable</strong> et <strong>aligné avec votre vision</strong>. 🚀
 
   computer_courses:
     title: "Cours d'informatique"
-    description: "Apprenez à utiliser votre ordinateur et les outils numériques essentiels en toute confiance. Que vous soyez débutant ou souhaitiez vous perfectionner, nous vous accompagnons dans l’usage des emails, la navigation sur internet, la gestion des fichiers et bien plus."
-    popup_description: "Cours personnalisés pour devenir plus autonome avec l’outil informatique. Idéal pour les débutants ou ceux qui souhaitent renforcer leurs compétences numériques."
-    price: "25€ de l’heure"
+    description: >
+      <strong>Maîtrisez l'essentiel du numérique à votre rythme</strong> grâce à nos <strong>cours informatiques personnalisés</strong>, accessibles à tous les niveaux.
+
+      Que vous soyez <strong>débutant</strong> ou que vous souhaitiez <strong>vous perfectionner</strong>, nous vous aidons à prendre en main votre ordinateur, smartphone ou tablette, dans une ambiance bienveillante.
+
+      Nos cours couvrent les compétences de base indispensables :
+      <br><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<strong>&bull;</strong> <em>Envoyer et recevoir des emails</em><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<strong>&bull;</strong> <em>Utiliser un navigateur internet en toute sécurité</em><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<strong>&bull;</strong> <em>Créer, organiser et partager des fichiers</em><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<strong>&bull;</strong> <em>Installer et utiliser des applications utiles</em><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<strong>&bull;</strong> <em>Faire des démarches administratives en ligne</em><br><br>
+
+      Chaque séance est <strong>adaptée à vos besoins</strong>, avec des <strong>exemples concrets</strong> et un <strong>accompagnement pas à pas</strong> pour vous rendre autonome dans le monde numérique.
 
   training:
     title: "Formations"
-    description: "Acquérez les compétences essentielles pour maîtriser vos outils numériques et améliorer votre visibilité en ligne. Nos formations sont accessibles via notre plateforme dédiée.  Nous proposons des formations sur mesure, adaptées à votre niveau et à vos objectifs, ainsi qu’un accompagnement personnalisé"
-    popup_description: 'Formations sur mesure adaptées à vos besoins. Apprenez à gérer votre site web, vos réseaux sociaux et à optimiser votre présence en ligne. Accédez à notre plateforme : <a href="https://cameleon-solutions-learning.fr" target="_blank" rel="noopener">Cameleon Solutions Learning</a>.'
-    price: "Sur devis"
+    description: >
+      <strong>Développez vos compétences numériques</strong> grâce à nos <strong>formations accessibles à tous</strong>, adaptées à votre niveau et à vos objectifs.<br><br>
 
+        Que vous souhaitiez <strong>maîtriser les outils Microsoft Office</strong>, <strong>créer votre propre site avec WordPress</strong> ou simplement <strong>gagner en aisance avec les outils du quotidien</strong>, nous vous guidons pas à pas, avec pédagogie et bienveillance.<br><br>
+
+        <strong>Exemples de formations proposées :</strong><br>
+        &nbsp;&nbsp;&bull; <em>Microsoft Office (Word, Excel, PowerPoint...)</em><br>
+        &nbsp;&nbsp;&bull; <em>Création de site web avec WordPress</em><br>
+        &nbsp;&nbsp;&bull; <em>Sécurité numérique et bonnes pratiques</em><br>
+        &nbsp;&nbsp;&bull; <em>Outils numériques du quotidien</em><br><br>
+
+        Les formations sont disponibles en présentiel ou en ligne, via notre plateforme dédiée :<br>
+        👉 <a href="https://cameleon-solutions-learning.fr/" class="blue-link" target="_blank">www.cameleon-solutions-learning.fr</a><br><br>
+
+        <strong>Flexibles, concrètes et personnalisées</strong>, nos formations sont conçues pour vous faire progresser à votre rythme.
   contact: "Contactez-moi"
   more_info: "🔎 Cliquez pour en savoir plus"
   webdesign:

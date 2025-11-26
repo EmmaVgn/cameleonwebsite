@@ -1,66 +1,31 @@
-<div
-	class="services-grid">
+<div class="bg-custom">
+	<div class="services-section">
 
-	{# 1. Conception #}
-	<article class="service-card" data-popup="popup1">
-		<div class="card-glass">
-			<div class="card-icon" aria-hidden="true">💡</div>
-			<h4 class="card-title">{{ 'services.web_design.title'|trans }}</h4>
+		<div class="service-outer central-block">
+			<div class="service-title-box">
+				<i class="fa-solid fa-desktop"></i>
+				<h2 class="card-title">{{ 'services.web_design.title'|trans }}</h2>
+			</div>
 			<p class="card-text">{{ 'services.web_design.description'|trans|raw }}</p>
-			<div class="card-actions">
-				<button class="btn-icon" type="button" data-open="popup1" aria-label="{{ 'services.more_info'|trans }}">
-					En savoir plus
-				</button>
-				<a class="btn-link" href="/contact">{{ 'services.contact'|trans }}</a>
+		</div>
+		{# Deux colonnes #}
+		<div class="service-columns">
+			<div class="service-block">
+				<div class="service-title-box">
+					<i class="fa-solid fa-file-lines"></i>
+					<h2 class="card-title">{{ 'services.computer_courses.title'|trans }}</h2>
+				</div>
+				<p class="card-text">{{ 'services.computer_courses.description'|trans|raw }}</p>
+			</div>
+
+			<div class="service-block">
+				<div class="service-title-box">
+					<i class="fa-solid fa-graduation-cap"></i>
+					<h2 class="card-title">{{ 'services.training.title'|trans }}</h2>
+				</div>
+				<p class="card-text">{{ 'services.training.description'|trans|raw }}</p>
 			</div>
 		</div>
-	</article>
 
-	{# 2. Cours informatique #}
-	<article class="service-card" data-popup="popup2">
-		<div class="card-glass">
-			<div class="card-icon" aria-hidden="true">🧑‍🏫</div>
-			<h4 class="card-title">{{ 'services.computer_courses.title'|trans }}</h4>
-			<p class="card-text">{{ 'services.computer_courses.description'|trans|raw }}</p>
-			<div class="card-actions">
-				<button class="btn-icon" type="button" data-open="popup1" aria-label="{{ 'services.more_info'|trans }}">
-					En savoir plus
-				</button>
-				<a class="btn-link" href="/contact">{{ 'services.contact'|trans }}</a>
-			</div>
-		</div>
-	</article>
-
-	{# 3. Formations & coaching #}
-	<article class="service-card" data-popup="popup3">
-		<div class="card-glass">
-			<div class="card-icon" aria-hidden="true">🚀</div>
-			<h4 class="card-title">{{ 'services.training.title'|trans }}</h4>
-			<p class="card-text">{{ 'services.training.description'|trans|raw }}</p>
-			<div class="card-actions">
-				<button class="btn-icon" type="button" data-open="popup1" aria-label="{{ 'services.more_info'|trans }}">
-					En savoir plus
-				</button>
-				<a class="btn-link" href="/contact">{{ 'services.contact'|trans }}</a>
-			</div>
-		</div>
-	</article>
-
-</div>
-
-{# Popups (on garde ta boucle) #}
-{% for service in ['web_design', 'computer_courses', 'training', 'admin'] %}
-	<div id="popup{{ loop.index }}" class="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title-{{ loop.index }}" aria-hidden="true">
-		<div class="popup-content">
-			<button class="close" type="button" aria-label="Fermer">×</button>
-			<h4 id="popup-title-{{ loop.index }}">{{ ('services.' ~ service ~ '.title')|trans }}</h4>
-			<p>{{ ('services.' ~ service ~ '.popup_description')|trans|raw }}</p>
-			<p class="popup-price">
-				<b>{{ ('services.' ~ service ~ '.price')|trans }}</b>
-			</p>
-			<div class="contact-button-popup">
-				<a href="/contact" class="btn btn-contact-popup">{{ 'services.contact'|trans }}</a>
-			</div>
-		</div>
 	</div>
-{% endfor %}
+</div>

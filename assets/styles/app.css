@@ -1007,20 +1007,6 @@ p.tagline {
   gap: 24px;
   padding: 10px 0;
 }
-.service-card {
-  grid-column: span 4;
-  min-width: 260px;
-}
-@media (max-width: 1200px) {
-  .service-card {
-    grid-column: span 6;
-  }
-}
-@media (max-width: 768px) {
-  .service-card {
-    grid-column: span 12;
-  }
-}
 
 .card-glass {
   position: relative;
@@ -1227,6 +1213,124 @@ p.tagline {
   .image-block {
     margin-top: 1rem;
   }
+}
+.services-full-bg {
+  background-color: #085669;
+}
+.card-white {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+.services-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2rem 0;
+}
+
+.service-columns {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.central-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.service-block {
+  background: #f5f5e9;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  flex: 1 1 300px; /* permet le responsive */
+  max-width: 800px;
+}
+.service-outer {
+  display: flex;
+  justify-content: center;
+  max-width: 1280px; /* 2 * 500px + 2rem (gap) */
+  width: 100%;
+  background: #f5f5e9;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+}
+.service-title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.service-title-box i {
+  font-size: 2.5rem;
+  color: #032b35;
+  margin-bottom: 0.5rem;
+}
+
+.service-title-box h2 {
+  font-family: "Special Elite", serif;
+  font-size: 1.6rem;
+  margin: 0;
+  color: #032b35;
+}
+
+.service-list {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.service-list li {
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  color: #344b52;
+  line-height: 1.6;
+}
+
+/* Deux colonnes côte à côte */
+.service-columns {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.blue-link {
+  color: #032b35 !important; /* bleu classique Bootstrap */
+  text-decoration: underline;
+}
+
+.blue-link:hover {
+  color: #043c4a; /* un bleu un peu plus foncé au survol */
+}
+
+.ligne {
+  width: 100%;
+  height: 2px; /* épaisseur de la ligne */
+  background-color: #032b35; /* ou une autre couleur de ta charte */
+  margin: 2rem 0; /* espacement au-dessus et en dessous */
 }
 
 /*--------------------------------------------------------------

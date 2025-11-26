@@ -19,28 +19,27 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="service-top">
-					<div class="text-block">
+					<div class="lead text-block" style="text-align: justify;">
 						{{ 'featurette.description2'|trans|raw }}
 						{{ 'featurette.description3'|trans|raw }}
 					</div>
-					<div class="image-block">
-						<img src="{{ asset('img/services/service-illustration.webp') }}" alt="Illustration des services" loading="lazy">
+					<div class=" image-block">
+						<img src="{{ asset('img/chat.png') }}" alt="Illustration des services" loading="lazy" style="max-width: 500px; height: auto;">
 					</div>
 				</div>
-
-				<div class="service-description-bottom">
+				<div class="ligne"></div>
+				<div class="lead service-description-bottom" style="text-align: justify;">
 					{{ 'featurette.description4'|trans|raw }}
 				</div>
 
-				{% include "services/listing.html.twig" %}
-
+				<div class="ligne"></div>
 			</div>
 		</div>
-		{% include "services/picto.html.twig" %}
-
-		{% include "shared/_contact_section.html.twig" %}
-
-
 	</div>
+	{% include "services/listing.html.twig" %}
+
+
+	{% include "shared/_contact_section.html.twig" %}
+
 
 {% endblock %}

@@ -28,6 +28,7 @@ base:
   title: "Caméléon Solutions"
   welcome: "Welcome"
   scroll_top: "Back to top"
+En savoir plus: "Learn more"
 
 meta:
   default_description: "Let's build unique digital experiences together: website creation, training, and personalized support."
@@ -44,22 +45,55 @@ contact.meta_description: "Contact Caméléon Solutions for any inquiries regard
 services:
   web_design:
     title: "Website Design"
-    description: "We create modern, unique, and high-performance websites, designed to perfectly match your needs. Enjoy a responsive design that offers a smooth experience on all devices, an easy-to-use management interface, and advanced customization to best reflect your identity. Our websites are also designed to be scalable, ensuring long-term growth."
-    popup_description: "We use technologies such as WordPress and Symfony to create websites that combine performance and flexibility. Whether you need a showcase site or a more complex platform, we offer a tailor-made solution to meet your expectations."
-    price: "Starting at €700 excl. tax"
+    description: >
+      At <strong>Caméléon Solutions</strong>, we create <strong>modern, unique and high-performance websites and applications</strong>, tailored to perfectly meet your needs.
+      <br><br>
+      Our solutions are <strong>responsive</strong>, <strong>intuitive</strong>, <strong>easy to manage</strong>, and designed to <strong>grow with your business</strong>. From design to launch, we offer <strong>personalized support every step of the way</strong>.
+      <br><br>
+      Depending on your goals, we offer two main technologies:
+      <br><br>
+      🔹 <strong>WordPress</strong> – ideal for showcase websites and blogs: simplicity, quick setup, polished design, and autonomous content management.
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;→ <em>Easy to use</em> – <em>intuitive admin</em> – <em>many extensions</em> – <em>good SEO capabilities</em>.
+      <br><br>
+      🔹 <strong>Symfony</strong> – perfect for more complex or custom projects: performance, security, scalability.
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;→ <em>Custom code</em> – <em>high level of personalization</em> – <em>adapted to specific and business needs</em>.
+      <br><br>
+      Whether you choose <strong>WordPress</strong> or <strong>Symfony</strong>, our priority remains the same: to deliver a <strong>high-performing</strong>, <strong>durable</strong>, and <strong>vision-aligned website</strong>. 🚀
 
   computer_courses:
     title: "Computer Courses"
-    description: "Learn to use your computer and essential digital tools with confidence. Whether you’re a beginner or looking to improve your skills, we offer personalized support in using email, navigating the web, managing files, and more."
-    popup_description: "Tailor-made lessons to become more autonomous with your computer and digital tools. Perfect for beginners or anyone wishing to improve their digital literacy."
-    price: "Starting at €20/hour, on-site support included"
+    dservices.computer_courses.description: >
+      <strong>Master the essentials of digital tools at your own pace</strong> with our <strong>personalized computer courses</strong>, accessible to all levels.<br><br>
+
+      Whether you're a <strong>complete beginner</strong> or looking to <strong>improve your skills</strong>, we help you get comfortable with your computer, smartphone, or tablet in a friendly and supportive environment.<br><br>
+
+      <strong>Topics covered:</strong><br>
+      &nbsp;&nbsp;&bull; <em>Sending and receiving emails</em><br>
+      &nbsp;&nbsp;&bull; <em>Browsing the internet safely</em><br>
+      &nbsp;&nbsp;&bull; <em>Creating, organizing and sharing files</em><br>
+      &nbsp;&nbsp;&bull; <em>Managing online administrative tasks</em><br><br>
+
+      Each session is <strong>tailored to your needs</strong>, with <strong>real-life examples</strong> and <strong>step-by-step guidance</strong> to help you become more autonomous in the digital world.
 
   training:
     title: "Training"
-    description: "Gain essential skills to master your digital tools and improve your online visibility. Our training courses are accessible through our dedicated platform. We offer tailor-made sessions adapted to your level and goals, along with personalized support."
-    popup_description: 'Tailored training to meet your needs. Learn how to manage your website, social media, and optimize your online presence. Access our platform: <a href="https://cameleon-solutions-learning.fr" target="_blank" rel="noopener">Cameleon Solutions Learning</a>.'
-    price: "On request"
+    description: >
+      <strong>Develop your digital skills</strong> with our <strong>training courses</strong>, designed to match your goals and experience level.<br><br>
 
+      Whether you’re looking to <strong>improve your use of Microsoft Office</strong>, <strong>create your own website with WordPress</strong>, or simply <strong>gain confidence with digital tools</strong>, we offer clear, hands-on guidance every step of the way.<br><br>
+
+      <strong>Training topics include:</strong><br>
+      &nbsp;&nbsp;&bull; <em>Microsoft Office (Word, Excel, PowerPoint...)</em><br>
+      &nbsp;&nbsp;&bull; <em>Website creation with WordPress</em><br>
+      &nbsp;&nbsp;&bull; <em>Basic cybersecurity and online best practices</em><br>
+      &nbsp;&nbsp;&bull; <em>Everyday digital tools and productivity</em><br><br>
+
+      Trainings are available both in-person and online, via our platform:<br>
+      👉 <a href="https://cameleon-solutions-learning.fr/" class="blue-link"target="_blank">www.cameleon-solutions-learning.fr</a><br><br>
+
+      <strong>Flexible, accessible, and personalized</strong> — our courses are designed to help you succeed at your own pace.
   contact: "Contact me"
   more_info: "🔎 Click to learn more"
   webdesign:
