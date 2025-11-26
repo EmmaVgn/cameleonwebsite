@@ -22,11 +22,6 @@ featurette:
 home:
   services:
     title: "Mes services"
-    pdf:
-      title: "Consultez notre brochure PDF"
-      description: "Pour profiter pleinement des fonctionnalités interactives, ouvrez le PDF dans une application dédiée comme Adobe Acrobat Reader, sinon téléchargez le fichier."
-      open: "Ouvrir le PDF"
-      download: "Télécharger le PDF"
   realisations:
     title: "Mes réalisations"
 base:
@@ -46,6 +41,8 @@ services.meta_keywords: "services numériques, création de site web, formation 
 services.meta_description: "Découvrez les services de Caméléon Solutions : création de sites web, formation aux outils numériques, solutions personnalisées et accompagnement numérique."
 contact.meta_keywords: "contact, Caméléon Solutions, services numériques, formulaire de contact, demande de devis"
 contact.meta_description: "Contactez Caméléon Solutions pour toutes vos demandes concernant mes services numériques. Remplissez le formulaire ou utilisez mes coordonnées pour me joindre."
+services.title: "Mes Services"
+services.heading: "Mes Services"
 services:
   web_design:
     title: "Conception de site web"

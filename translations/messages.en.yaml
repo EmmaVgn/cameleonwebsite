@@ -22,11 +22,6 @@ featurette:
 home:
   services:
     title: "My Services"
-    pdf:
-      title: "Check out our PDF brochure"
-      description: "To fully enjoy the interactive features, open the PDF in a dedicated app like Adobe Acrobat Reader, or download the file."
-      open: "Open PDF"
-      download: "Download PDF"
   realisations:
     title: "My Achievements"
 base:

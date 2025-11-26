@@ -1,43 +1,46 @@
-<div class="avt_container">
-	<div class="avt_item">
-		<i class="fa-solid fa-laptop-code"></i>
-		<div class="border_cont">
-			<p class="avt_title">{{ 'services.webdesign.title'|trans }}</p>
-			<div class="border_b"></div>
+<div class="avt_wrapper">
+	<div class="avt_scroller">
+		<div class="avt_track">
+			{% for i in 1..2 %}
+				{# DUPLICATION POUR SCROLL INFINI #}
+
+				<div class="avt_item design">
+					<i class="fa-solid fa-laptop-code"></i>
+					<div class="border_cont">
+						<p class="avt_title">{{ 'services.webdesign.title'|trans }}</p>
+						<div class="border_b"></div>
+					</div>
+					<p class="avt_subtitle">{{ 'services.webdesign.subtitle'|trans }}</p>
+				</div>
+
+				<div class="avt_item development">
+					<i class="fa-brands fa-codepen"></i>
+					<div class="border_cont">
+						<p class="avt_title">{{ 'services.development.title'|trans }}</p>
+						<div class="border_b"></div>
+					</div>
+					<p class="avt_subtitle">{{ 'services.development.subtitle'|trans }}</p>
+				</div>
+
+				<div class="avt_item seo">
+					<i class="fa-solid fa-search"></i>
+					<div class="border_cont">
+						<p class="avt_title">{{ 'services.seo.title'|trans }}</p>
+						<div class="border_b"></div>
+					</div>
+					<p class="avt_subtitle">{{ 'services.seo.subtitle'|trans }}</p>
+				</div>
+
+				<div class="avt_item support">
+					<i class="fa-solid fa-headset"></i>
+					<div class="border_cont">
+						<p class="avt_title">{{ 'services.support.title'|trans }}</p>
+						<div class="border_b"></div>
+					</div>
+					<p class="avt_subtitle">{{ 'services.support.subtitle'|trans }}</p>
+				</div>
+			{% endfor %}
+
 		</div>
-		<p class="avt_subtitle">{{ 'services.webdesign.subtitle'|trans }}</p>
-	</div>
-
-	<div class="avt_sep"></div>
-
-	<div class="avt_item">
-		<i class="fa-brands fa-codepen"></i>
-		<div class="border_cont">
-			<p class="avt_title">{{ 'services.development.title'|trans }}</p>
-			<div class="border_b"></div>
-		</div>
-		<p class="avt_subtitle">{{ 'services.development.subtitle'|trans }}</p>
-	</div>
-
-	<div class="avt_sep"></div>
-
-	<div class="avt_item">
-		<i class="fa-solid fa-search"></i>
-		<div class="border_cont">
-			<p class="avt_title">{{ 'services.seo.title'|trans }}</p>
-			<div class="border_b"></div>
-		</div>
-		<p class="avt_subtitle">{{ 'services.seo.subtitle'|trans }}</p>
-	</div>
-
-	<div class="avt_sep"></div>
-
-	<div class="avt_item">
-		<i class="fa-solid fa-headset"></i>
-		<div class="border_cont">
-			<p class="avt_title">{{ 'services.support.title'|trans }}</p>
-			<div class="border_b"></div>
-		</div>
-		<p class="avt_subtitle">{{ 'services.support.subtitle'|trans }}</p>
 	</div>
 </div>
