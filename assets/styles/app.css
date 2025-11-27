@@ -1175,17 +1175,14 @@ p.tagline {
   flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 3rem;
 }
 
-.text-block {
-  flex: 1 1 55%;
-}
-
+.text-block,
 .image-block {
-  flex: 1 1 40%;
-  text-align: center;
+  flex: 1 1 100%; /* Forcer 100% même en desktop pour plus de souplesse */
+  max-width: 600px; /* limite pour les grands écrans */
 }
 
 .image-block img {
